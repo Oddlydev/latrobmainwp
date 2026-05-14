@@ -1,0 +1,107 @@
+/**
+ * Add your design tokens as Tailwind theme variables.
+ *
+ * https://tailwindcss.com/docs/theme
+ */
+
+/**
+ * Your theme variables are merged with Tailwind’s defaults, either extending
+ * the default theme with new variables or overriding the values of existing
+ * variables.
+ */
+@theme {
+	/**
+	 * These theme variables use CSS variables set by WordPress using values
+	 * from your `theme.json` file.
+	 *
+	 * If you are using the classic editor, you should use hardcoded color
+	 * values instead of the `var()` functions below.
+     */
+	--color-background: var(--wp--preset--color--background);
+	--color-foreground: var(--wp--preset--color--foreground);
+	--color-primary: var(--wp--preset--color--primary);
+        --container-content: var(--wp--style--global--content-size);
+        --container-wide: var(--wp--style--global--wide-size);
+
+	/**
+	 * These are the default `font-family` theme variables included with
+     * Tailwind. You can update them below by adding custom fonts at the
+	 * beginning of each value.
+	 *
+	 * Default theme variables can be found in their entirety at the links
+	 * below, on GitHub or in Tailwind’s documentation, respectively:
+	 *
+	 * https://github.com/tailwindlabs/tailwindcss/blob/main/packages/tailwindcss/theme.css
+	 * https://tailwindcss.com/docs/theme#default-theme-variable-reference
+	 */
+	--font-sans:
+		ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        --font-mono:
+                ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                "Liberation Mono", "Courier New", monospace;
+
+	/**
+	 * Add your theme below:
+	 */
+        --font-sans: "DM Sans";
+        --font-display: "DM Sans";
+	--font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+	--color-brand-1: #e2231b;
+	--color-brand-2: #ffffff;
+	--color-brand-3: #000000;
+        --color-brand-4: #ecb95e;
+        --color-brand-5: #827842;
+        --color-brand-6: #9b6abf;
+        --color-brand-7: #e5b6c7;
+        --color-brand-8: #abbec2;
+        --color-brand-9: #1c92cc;
+        --color-red-light: rgba(226, 35, 27, 0.1);
+        --color-la-red-1: #e2231b;
+        --color-surface-card: rgba(255, 255, 255, 0.28);
+        --color-surface-card-soft: rgba(255, 255, 255, 0.42);
+        --color-surface-card-hover: rgba(255, 255, 255, 0.7);
+        --color-ink: #0f172a;
+        --color-ink-faint: rgb(0 0 0 / 0.08);
+	--color-panel-border-soft: rgb(15 23 42 / 0.08);
+	--color-contact-hover-border: rgb(226 35 27 / 0.2);
+	--color-contact-icon-surface: #fff1f0;
+	--color-disabled-border: #dde1e6;
+	--color-disabled-surface: #f1f3f5;
+	--color-disabled-ink: #343a40;
+	--color-divider-light: rgb(229 231 235 / 0.8);
+	--color-inverse-10: rgb(255 255 255 / 0.1);
+	--color-inverse-80: rgb(255 255 255 / 0.8);
+	--color-footer-title: #fafafc;
+	--color-footer-body: rgb(250 250 252 / 0.7);
+	--color-footer-link: rgb(250 250 252 / 0.8);
+	--color-footer-built: rgb(250 250 252 / 0.5);
+	--color-footer-divider: rgb(250 250 252 / 0.2);
+	--color-footer-divider-soft: rgb(250 250 252 / 0.1);
+
+	--shadow-soft: 0 12px 40px rgba(15, 23, 42, 0.08);
+	--shadow-card: 0 1px 1px rgba(15, 23, 42, 0.04), 0 16px 32px rgba(15, 23, 42, 0.08);
+        --shadow-la-shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+	--shadow-la-shadow-2: 0 10px 15px -3px rgba(226, 35, 27, 0.2), 0 4px 6px -4px rgba(226, 35, 27, 0.2);
+	--shadow-la-shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -4px rgba(0, 0, 0, 0.2);
+	--shadow-la-shadow-4: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+	--shadow-contact-hover: 0 0 40px 4px rgb(226 35 27 / 0.04);
+	--shadow-card-brand-inset: inset 0 0 40px 4px rgb(226 35 27 / 0.06);
+	--shadow-card-spotlight: 0 0 40px 4px rgb(226 35 27 / 0.06);
+	--shadow-core-feature-stage: 0 32px 90px rgb(15 23 42 / 0.08);
+	--shadow-core-feature-large: 0 9px 72px 10px rgb(226 35 27 / 0.24);
+	--shadow-core-feature-small: 0 18px 30px -14px rgb(0 0 0 / 0.18);
+	--shadow-mobile-menu: 0 2px 16px 0 rgb(0 0 0 / 0.06), 0 0 0 1px rgb(0 0 0 / 0.04);
+
+        --radius-3xl: 1.75rem;
+        --radius-4xl: 2rem;
+
+        --spacing-chip-badge: 1.35rem;
+
+        --background-image-gradient-1: linear-gradient(90deg, #000000 0%, #111827 50%, #000000 100%);
+        --background-image-core-feature-glow-top: linear-gradient(180deg, #fee2e2 0%, rgb(254 226 226 / 0) 100%);
+        --background-image-core-feature-glow-right: linear-gradient(270deg, #fee2e2 0%, rgb(254 226 226 / 0) 100%);
+        --background-image-core-feature-glow-bottom: linear-gradient(0deg, #fee2e2 0%, rgb(254 226 226 / 0) 100%);
+        --background-image-core-feature-glow-left: linear-gradient(90deg, #fee2e2 0%, rgb(254 226 226 / 0) 100%);
+}

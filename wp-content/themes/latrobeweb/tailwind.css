@@ -1,0 +1,884 @@
+/**
+ * This file outputs to `style.css`, your main front-end style sheet, and to
+ * `style-editor.css`, for the WordPress editor.
+ *
+ * You probably won’t need to edit this file. You’re more likely to want to
+ * edit `./tailwind/tailwind-theme.css`, which contains your project’s custom
+ * design tokens, or files in the `./tailwind/custom` folder.
+ *
+ * The comments in this file outline the intended usage for files in the
+ * `./tailwind/custom` folder.
+ */
+
+/**
+ * Add the WordPress file header.
+ */
+@import "./tailwind/custom/file-header.css";
+
+/**
+ * Add Tailwind’s default theme and your custom theme.
+ */
+@import "tailwindcss/theme";
+@import "./tailwind/tailwind-theme.css";
+
+/**
+ * Add custom `@font-face` rules.
+ */
+@import "./tailwind/custom/fonts.css";
+
+/**
+ * Add Tailwind’s Preflight styles.
+ */
+@if $target != editor {
+	@import "tailwindcss/preflight";
+} @else  {
+	/**
+	 * In the editor, we only want to apply Preflight to descendents of an
+	 * element with the `not-prose` class.
+	 */
+	:where(.not-prose) {
+		@import "tailwindcss/preflight";
+	}
+}
+
+/**
+ * Custom app styles.
+ */
+
+@utility font-dlig {
+	font-feature-settings: "dlig" on;
+}
+
+@utility eyebrow {
+        @apply font-dlig tracking-[0.8px] font-sans text-base leading-6 font-semibold uppercase;
+}
+
+@utility body-base-600 {
+	@apply font-dlig font-sans text-base leading-6 font-semibold tracking-normal;
+}
+
+@utility body-base-500 {
+	@apply font-dlig font-sans text-base leading-6 font-medium tracking-normal;
+}
+
+@utility body-base-400 {
+	@apply font-dlig font-sans text-base leading-6 font-normal tracking-normal;
+}
+
+@utility body-sm-600 {
+	@apply font-dlig font-sans text-sm leading-5 font-semibold tracking-normal;
+}
+
+@utility body-sm-500 {
+	@apply font-dlig font-sans text-sm leading-5 font-medium tracking-normal;
+}
+
+@utility body-sm-400 {
+	@apply font-dlig font-sans text-sm leading-5 font-normal tracking-normal;
+}
+
+@utility body-xs-600 {
+	@apply font-dlig font-sans text-xs leading-4 font-semibold tracking-normal;
+}
+
+@utility body-xs-500 {
+	@apply font-dlig font-sans text-xs leading-4 font-medium tracking-normal;
+}
+
+@utility body-xs-400 {
+	@apply font-dlig font-sans text-xs leading-4 font-normal tracking-normal;
+}
+
+@utility body-copy-600 {
+	@apply font-dlig font-sans text-base leading-7 font-semibold tracking-normal;
+}
+
+@utility body-copy-500 {
+	@apply font-dlig font-sans text-base leading-7 font-medium tracking-normal;
+}
+
+@utility body-copy-400 {
+	@apply font-dlig font-sans text-base leading-7 font-normal tracking-normal;
+}
+
+@utility quote-copy-500 {
+	@apply font-sans text-[18px] leading-7 font-medium tracking-normal italic;
+}
+
+html {
+	@apply scroll-smooth bg-white text-black;
+}
+
+body {
+	@apply min-h-screen bg-white font-sans text-black antialiased;
+}
+
+a {
+	@apply transition-colors duration-200;
+}
+
+::selection {
+	@apply bg-brand-1 text-white;
+}
+
+h1 {
+        @apply font-display text-[2.25rem] leading-[110%] lg:text-[3.75rem] lg:leading-[110%] font-black tracking-normal text-black;
+}
+
+h2 {
+        @apply font-display text-[1.875rem] leading-[110%] lg:text-[2.25rem] lg:leading-[110%] font-bold tracking-normal text-black;
+}
+
+h3 {
+        @apply font-display text-[1.5rem] leading-9 tracking-[-0.8px] lg:text-[1.875rem] lg:leading-9 font-black text-black;
+}
+
+h4 {
+        @apply font-display tracking-[-0.8px] text-xl leading-8 font-bold text-black lg:text-2xl;
+}
+
+h5,
+h6 {
+	@apply font-display text-black;
+}
+
+.page-title,
+.entry-title {
+	@apply max-w-content mx-auto mb-6 text-3xl font-extrabold;
+}
+
+.entry-meta,
+.entry-footer,
+.post-navigation,
+#comments {
+	@apply max-w-content mx-auto mb-6;
+}
+
+.page-content > *,
+.entry-content > * {
+	@apply max-w-content mx-auto;
+}
+
+.entry-content > .alignwide {
+	@apply max-w-wide;
+}
+
+.entry-content > .alignfull {
+	@apply max-w-none;
+}
+
+.entry-content > .alignleft {
+	@apply float-left mr-8;
+}
+
+.entry-content > .alignright {
+	@apply float-right ml-8;
+}
+
+.la-container {
+	@apply mx-auto w-full max-w-full px-6 sm:max-w-[680px] sm:px-0 lg:max-w-[1295px];
+}
+
+.la-shell {
+	@apply space-y-16 py-10 sm:py-14;
+}
+
+.la-hero {
+	@apply bg-gradient-1 shadow-soft overflow-hidden rounded-4xl text-white;
+}
+
+.la-hero-inner {
+	@apply grid gap-8 px-6 py-8 sm:px-10 sm:py-10 lg:grid-cols-[minmax(0,1.3fr)_minmax(260px,0.7fr)] lg:items-end;
+}
+
+.la-section {
+	@apply space-y-6;
+}
+
+.la-section-anchor {
+	@apply block scroll-mt-4;
+}
+
+.la-section-heading {
+	@apply space-y-2;
+}
+
+.la-section-heading--center {
+	@apply mx-auto text-center;
+}
+
+.la-section-heading--left {
+	@apply text-left;
+}
+
+.la-section-title {
+        @apply font-display text-[1.875rem] leading-[110%] lg:text-[2.25rem] lg:leading-[110%] font-black tracking-tighter text-black md:font-bold md:tracking-normal lg:font-bold;
+}
+
+.la-section-lead {
+	@apply body-base-400 text-gray-500;
+}
+
+.la-how-it-works-section {
+	position: relative;
+	isolation: isolate;
+}
+
+.la-how-it-works-section::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	pointer-events: none;
+	opacity: 0.2;
+	background: url("./assets/images/how-it-works-mobile.png") 100px 100px
+		repeat;
+}
+
+.la-how-it-works-section > * {
+	position: relative;
+	z-index: 1;
+}
+
+@media (min-width: 768px) {
+	.la-how-it-works-section::before {
+		background-image: url("./assets/images/how-it-works-tablet.png");
+	}
+}
+
+@media (min-width: 1024px) {
+	.la-how-it-works-section::before {
+		background-image: url("./assets/images/how-it-works-desktop.png");
+	}
+}
+
+.la-swatch {
+        @apply rounded-[1.25rem] shadow-soft overflow-hidden border border-slate-200 bg-white;
+}
+
+.la-swatch-chip {
+	@apply h-20 w-full;
+}
+
+.la-purple-wrap {
+	@apply rounded-xl border-2 border-dashed border-violet-400 p-5;
+}
+
+.la-chip:hover,
+.la-chip--hover {
+        @apply border-brand-1 text-brand-1 bg-transparent;
+}
+
+.la-chip:hover .la-chip-count,
+.la-chip--hover .la-chip-count {
+	@apply bg-brand-1 text-brand-2;
+}
+
+.la-chip:active,
+.la-chip--active,
+.la-chip[aria-pressed="true"] {
+	@apply border-brand-1 bg-brand-1 text-brand-2;
+}
+
+.la-chip:active .la-chip-count,
+.la-chip--active .la-chip-count,
+.la-chip[aria-pressed="true"] .la-chip-count {
+	@apply bg-brand-2 text-brand-1;
+}
+
+.la-hero-status-dot {
+	animation: la-dot-pulse 1.1s ease-in-out infinite;
+}
+
+.la-button-home {
+	@apply px-5 py-3 lg:px-8 lg:py-4;
+}
+
+.la-home-hero-shell {
+	@apply shadow-soft relative overflow-hidden border border-gray-200 bg-white text-black;
+}
+
+.la-home-hero-image-desktop {
+	top: -3.499px;
+	left: -2.003px;
+	width: 100.168%;
+	height: 100.42%;
+	max-width: none;
+	object-fit: cover;
+	object-position: 78% center;
+}
+
+.la-home-hero-accent-right {
+        @apply pointer-events-none absolute top-1/2 right-[-10%] hidden h-[78%] w-[52%] -translate-y-1/2 rounded-[33554400px] lg:block;
+        background: rgba(233, 34, 60, 0.05);
+	filter: blur(64px);
+}
+
+.la-home-hero-accent-left {
+	@apply pointer-events-none absolute top-[18%] left-[-8%] hidden h-[44%] w-[42%] rounded-[33554400px] lg:block;
+	background: rgba(233, 34, 60, 0.03);
+	filter: blur(64px);
+}
+
+.la-home-hero-wash {
+	@apply absolute inset-y-0 left-0 hidden w-full lg:block lg:w-[60%];
+	background: linear-gradient(
+		90deg,
+		rgba(247, 247, 247, 0.96) 0%,
+		rgba(247, 247, 247, 0.92) 38%,
+		rgba(247, 247, 247, 0.82) 54%,
+		rgba(247, 247, 247, 0.44) 70%,
+		rgba(247, 247, 247, 0) 100%
+	);
+}
+
+.la-home-hero-top-fade {
+	@apply absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white/35 to-transparent md:hidden lg:hidden;
+}
+
+.la-home-hero-title {
+	@apply font-display text-4xl font-bold leading-[110%] tracking-normal text-black md:font-black lg:text-[60px] lg:font-black;
+}
+
+.la-home-hero-cta {
+	@apply mt-5 flex flex-wrap gap-4 pb-5 md:pb-7 lg:mt-12 lg:pb-0;
+}
+
+.la-card-grid-4 {
+        @apply grid gap-5 md:grid-cols-2 md:gap-5 lg:grid-cols-4 lg:gap-6;
+}
+
+.la-card-grid-3 {
+	@apply grid gap-5 md:grid-cols-2 lg:gap-6 xl:grid-cols-3;
+}
+
+.la-how-track-fill {
+        height: 0;
+}
+
+.la-how-step-row[data-filled="true"] .la-how-step-card {
+	@apply translate-x-0 opacity-100;
+}
+
+.la-how-step-row[data-filled="true"]:hover .la-how-step-card {
+	@apply opacity-100;
+}
+
+@media (min-width: 1024px) {
+	.la-how-step-row[data-filled="true"]:hover .la-how-step-card {
+		transform: translateX(0);
+	}
+
+	.la-how-step-row:hover .la-how-step-card {
+		opacity: 1;
+	}
+
+	.la-how-step-row[data-how-step-side="left"]:hover .la-how-step-card {
+		transform: translateX(-0.75rem);
+	}
+
+	.la-how-step-row[data-how-step-side="right"]:hover .la-how-step-card {
+		transform: translateX(0.75rem);
+	}
+}
+
+.la-article-shell {
+	@apply mx-auto w-full max-w-[808px] overflow-hidden rounded-xl border border-white bg-transparent px-4 pt-10 pb-20 sm:px-6 md:pt-10 md:pb-20 lg:pt-14 lg:pb-24;
+}
+
+.la-wysiwyg-preview-frame {
+	@apply mx-4 my-6 sm:mx-auto sm:my-8 sm:w-full sm:max-w-[860px] lg:my-10;
+}
+
+.la-wysiwyg-preview-frame .la-article-shell {
+	@apply pt-8 pb-5 md:pt-10 md:pb-5 lg:pt-14 lg:pb-5;
+}
+
+.la-article {
+	@apply w-full;
+}
+
+.la-article-header {
+	@apply mb-10 text-center md:mb-12;
+}
+
+.la-article-header h1 {
+	@apply text-center;
+}
+
+.la-article-meta {
+	@apply body-sm-400 mt-3 inline-flex items-center justify-center gap-3 text-gray-500;
+}
+
+.la-article-meta-separator {
+	@apply inline-block h-1 w-1 rounded-full bg-gray-400;
+}
+
+.la-wysiwyg {
+	@apply text-gray-500;
+}
+
+.la-wysiwyg > :where(h1, h2, h3, h4):not(:first-child) {
+	@apply mt-12 md:mt-14;
+}
+
+.la-wysiwyg
+	> :where(
+		p,
+		ul,
+		ol,
+		blockquote,
+		figure,
+		.wp-block-image,
+		.wp-block-quote,
+		.wp-block-pullquote
+	):not(:first-child) {
+	@apply mt-6;
+}
+
+.la-wysiwyg > :where(figure, .wp-block-image):not(:first-child) {
+	@apply mt-8;
+}
+
+.la-wysiwyg :where(p, li) {
+	@apply body-copy-400 text-gray-500;
+}
+
+.la-wysiwyg p {
+	@apply m-0;
+}
+
+.la-wysiwyg :where(strong, b) {
+	@apply body-copy-600 text-black;
+}
+
+.la-wysiwyg a {
+	@apply body-copy-500 text-brand-1 underline decoration-solid decoration-[0.095em] underline-offset-[25%];
+	text-decoration-skip-ink: none;
+	text-underline-position: from-font;
+}
+
+.la-wysiwyg a:hover {
+	@apply text-brand-1;
+}
+
+.la-wysiwyg ul {
+	@apply m-0 list-none p-0;
+}
+
+.la-wysiwyg ul li {
+	@apply relative pl-8;
+}
+
+.la-wysiwyg ul li + li {
+	@apply mt-4;
+}
+
+.la-wysiwyg ul li::before {
+	content: "";
+	position: absolute;
+	top: 6px;
+	left: 0;
+	width: 16px;
+	height: 16px;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M14.6668 7.99998C14.6668 4.31808 11.682 1.33331 8.00016 1.33331C4.31826 1.33331 1.3335 4.31808 1.3335 7.99998C1.3335 11.6818 4.31826 14.6666 8.00016 14.6666C11.682 14.6666 14.6668 11.6818 14.6668 7.99998Z' fill='%23E2231B' stroke='%23E2231B' stroke-width='1.5'/%3E%3Cpath d='M5.3335 8.49998C5.3335 8.49998 6.40016 9.10831 6.9335 9.99998C6.9335 9.99998 8.5335 6.49998 10.6668 5.33331' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 16px 16px;
+}
+
+.la-wysiwyg ol {
+	@apply m-0 list-decimal pl-7;
+}
+
+.la-wysiwyg ol li {
+	@apply pl-[10px];
+}
+
+.la-wysiwyg ol li + li {
+	@apply mt-3;
+}
+
+.la-wysiwyg ol li::marker {
+	@apply text-brand-1;
+}
+
+.la-wysiwyg :where(figure, .wp-block-image) {
+	@apply mx-auto;
+}
+
+.la-wysiwyg :where(img, .wp-block-image img) {
+	@apply block h-auto w-full max-w-full rounded-lg bg-gray-200;
+}
+
+.la-wysiwyg figcaption {
+	@apply body-xs-400 mt-3 text-center text-gray-500;
+}
+
+.la-wysiwyg :where(blockquote, .wp-block-quote, .wp-block-pullquote) {
+	@apply m-0 border-l-4 border-gray-200 bg-transparent py-0 pr-0 pl-5;
+}
+
+.la-wysiwyg :where(blockquote, .wp-block-quote, .wp-block-pullquote) p {
+	@apply quote-copy-500 text-black;
+}
+
+.la-wysiwyg :where(blockquote, .wp-block-quote, .wp-block-pullquote) cite {
+	@apply body-sm-400 mt-3 block text-gray-500;
+}
+
+.la-wysiwyg :where(.aligncenter, .has-text-align-center) {
+	@apply text-center;
+}
+
+.la-wysiwyg .aligncenter {
+	@apply mx-auto;
+}
+
+.la-wysiwyg .alignleft {
+	@apply mr-auto;
+}
+
+.la-wysiwyg .alignright {
+	@apply ml-auto;
+}
+
+.la-wysiwyg hr {
+	@apply my-10 border-t border-gray-200;
+	border: 0;
+}
+
+.la-button-icon {
+        @apply block h-4 w-4 shrink-0 fill-none stroke-current;
+}
+
+.la-button-primary-light:disabled,
+.la-button-primary-light-icon-right:disabled,
+.la-button-primary-light-icon-left:disabled,
+.la-button-secondary-light:disabled,
+.la-button-primary-dark:disabled,
+.la-button-primary-dark-icon-right:disabled,
+.la-button-primary-dark-icon-left:disabled,
+.la-button-secondary-dark:disabled {
+	@apply border-disabled-border bg-disabled-surface text-disabled-ink cursor-not-allowed shadow-none;
+}
+
+.la-button-primary-light {
+	@apply bg-brand-1 font-display shadow-la-shadow-1 inline-flex items-center justify-center rounded-xl border border-transparent px-4 py-2.5 text-sm leading-5 font-semibold tracking-normal whitespace-nowrap text-white transition-[background-color,border-color,color,box-shadow] duration-200;
+}
+
+.la-button-primary-light:hover {
+	@apply bg-brand-3 shadow-la-shadow-1 border-transparent text-white;
+}
+
+.la-button-primary-light:focus,
+.la-button-primary-light:focus-visible {
+	@apply bg-brand-3 shadow-la-shadow-1 border-white text-white outline-none;
+}
+
+.la-button-primary-light:active {
+	@apply bg-brand-1 shadow-la-shadow-1 border-transparent text-white;
+}
+
+.la-button-primary-light-icon-right,
+.la-button-primary-light-icon-left {
+	@apply bg-brand-1 font-display shadow-la-shadow-2 inline-flex items-center justify-center gap-2 rounded-xl border border-transparent px-8 py-4 text-sm leading-5 font-semibold tracking-normal whitespace-nowrap text-white transition-[background-color,border-color,color,box-shadow] duration-200;
+}
+
+.la-button-primary-light-icon-right:hover,
+.la-button-primary-light-icon-left:hover {
+	@apply bg-brand-3 shadow-la-shadow-3 border-transparent text-white;
+}
+
+.la-button-primary-light-icon-right:focus,
+.la-button-primary-light-icon-right:focus-visible,
+.la-button-primary-light-icon-left:focus,
+.la-button-primary-light-icon-left:focus-visible {
+	@apply bg-brand-3 shadow-la-shadow-3 border-white text-white outline-none;
+}
+
+.la-button-primary-light-icon-right:active,
+.la-button-primary-light-icon-left:active {
+	@apply bg-brand-1 shadow-la-shadow-2 border-transparent text-white;
+}
+
+.la-button-secondary-light {
+	@apply font-display shadow-la-shadow-1 inline-flex items-center justify-center rounded-xl border border-gray-200 bg-gray-50 px-8 py-4 text-sm leading-5 font-semibold tracking-normal whitespace-nowrap text-black transition-[background-color,border-color,color,box-shadow] duration-200;
+}
+
+.la-button-secondary-light:hover {
+	@apply border-brand-1 bg-brand-1 shadow-la-shadow-1 text-white;
+}
+
+.la-button-secondary-light:focus,
+.la-button-secondary-light:focus-visible {
+	@apply bg-brand-1 shadow-la-shadow-1 border-white text-white outline-none;
+}
+
+.la-button-secondary-light:active {
+	@apply shadow-la-shadow-1 border-gray-200 bg-gray-50 text-black;
+}
+
+.la-button-primary-dark {
+	@apply bg-brand-1 font-display shadow-la-shadow-1 inline-flex items-center justify-center rounded-xl border border-transparent px-4 py-2.5 text-sm leading-5 font-semibold tracking-normal whitespace-nowrap text-white transition-[background-color,border-color,color,box-shadow] duration-200;
+}
+
+.la-button-primary-dark:hover {
+	@apply bg-brand-2 shadow-la-shadow-1 border-transparent text-black;
+}
+
+.la-button-primary-dark:focus,
+.la-button-primary-dark:focus-visible {
+	@apply bg-brand-2 shadow-la-shadow-1 border-black text-black outline-none;
+}
+
+.la-button-primary-dark:active {
+	@apply bg-brand-1 shadow-la-shadow-1 border-transparent text-white;
+}
+
+.la-button-primary-dark-icon-right,
+.la-button-primary-dark-icon-left {
+	@apply bg-brand-1 font-display shadow-la-shadow-2 inline-flex items-center justify-center gap-2 rounded-xl border border-transparent px-8 py-4 text-sm leading-5 font-semibold tracking-normal whitespace-nowrap text-white transition-[background-color,border-color,color,box-shadow] duration-200;
+}
+
+.la-button-primary-dark-icon-right:hover,
+.la-button-primary-dark-icon-left:hover {
+	@apply bg-brand-2 shadow-la-shadow-3 border-transparent text-black;
+}
+
+.la-button-primary-dark-icon-right:focus,
+.la-button-primary-dark-icon-right:focus-visible,
+.la-button-primary-dark-icon-left:focus,
+.la-button-primary-dark-icon-left:focus-visible {
+	@apply bg-brand-2 shadow-la-shadow-3 border-black text-black outline-none;
+}
+
+.la-button-primary-dark-icon-right:active,
+.la-button-primary-dark-icon-left:active {
+	@apply bg-brand-1 shadow-la-shadow-2 border-transparent text-white;
+}
+
+.la-button-secondary-dark {
+	@apply font-display shadow-la-shadow-1 inline-flex items-center justify-center rounded-xl border border-gray-200 bg-gray-50 px-8 py-4 text-sm leading-5 font-semibold tracking-normal whitespace-nowrap text-black transition-[background-color,border-color,color,box-shadow] duration-200;
+}
+
+.la-button-secondary-dark:hover {
+	@apply border-brand-1 bg-brand-1 shadow-la-shadow-1 text-white;
+}
+
+.la-button-secondary-dark:focus,
+.la-button-secondary-dark:focus-visible {
+	@apply shadow-la-shadow-1 border-gray-200 bg-gray-50 text-black outline-none;
+}
+
+.la-button-secondary-dark:active {
+	@apply bg-brand-1 shadow-la-shadow-1 border-white text-white;
+}
+
+.la-core-feature-stage {
+        @apply border-panel-border-soft relative overflow-hidden rounded-lg border bg-white;
+	isolation: isolate;
+	transform: translate3d(0, 0, 0);
+	will-change: box-shadow, border-color;
+	transition:
+		box-shadow 180ms linear,
+		border-color 180ms linear;
+}
+
+.la-core-feature-shell {
+	@apply bg-transparent;
+	will-change: opacity, transform, box-shadow;
+	transition:
+		opacity 420ms cubic-bezier(0.22, 1, 0.36, 1),
+		transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
+		box-shadow 180ms linear,
+		filter 280ms linear;
+}
+
+.la-core-feature-shell--large {
+	@apply shadow-core-feature-large;
+}
+
+.la-core-feature-shell--small {
+	@apply shadow-core-feature-small;
+}
+
+.la-core-feature-glow {
+	@apply pointer-events-none absolute;
+}
+
+.la-core-feature-glow--top {
+	background-image: var(--background-image-core-feature-glow-top);
+}
+
+.la-core-feature-glow--right {
+	background-image: var(--background-image-core-feature-glow-right);
+}
+
+.la-core-feature-glow--bottom {
+	background-image: var(--background-image-core-feature-glow-bottom);
+}
+
+.la-core-feature-glow--left {
+	background-image: var(--background-image-core-feature-glow-left);
+}
+
+.la-home-cta-section {
+	@apply border-ink-faint border-t py-10 text-white md:py-10 lg:py-20;
+	background-image:
+		var(--la-cta-background-image), var(--background-image-gradient-1);
+	background-size: cover, cover;
+	background-repeat: repeat, no-repeat;
+	background-position:
+		0 0,
+		center;
+}
+
+.la-core-feature-clip {
+	isolation: isolate;
+}
+
+.la-core-feature-clip--r4 {
+	clip-path: inset(0 round 0);
+}
+
+.la-core-feature-motion {
+	position: relative;
+	min-height: 100%;
+	transform: translate3d(0, 0, 0);
+	transform-origin: 50% 100%;
+	will-change: transform;
+	backface-visibility: hidden;
+}
+
+.la-core-feature-img {
+        @apply block object-cover object-center;
+}
+
+.la-core-feature-img.la-core-feature-img--photo {
+	transform: translate3d(0, 0, 0) scale(1.026);
+	transform-origin: center;
+	backface-visibility: hidden;
+}
+
+.la-core-feature-img.la-core-feature-img--hug {
+	object-position: center 22%;
+}
+
+.la-core-feature-img.la-core-feature-img--portrait {
+	object-position: 88% center;
+}
+
+.la-core-feature-motion--primary {
+	animation: la-core-feature-pulse 12s ease-in-out infinite;
+}
+
+.la-core-feature-motion--secondary {
+	animation: la-core-feature-float 10s ease-in-out infinite;
+}
+
+.la-core-feature-shell--hidden {
+	@apply shadow-none;
+	opacity: 0.18;
+	transform: translate3d(0, 10px, 0) scale(0.982);
+	filter: saturate(0.62) brightness(1.04);
+}
+
+.la-core-feature-shell--visible {
+	opacity: 1;
+	transform: translate3d(0, 0, 0) scale(1);
+	filter: none;
+}
+
+.la-accordion-trigger {
+	@apply cursor-pointer;
+}
+
+.la-accordion-icon {
+	@apply h-4 w-4 cursor-pointer;
+}
+
+.la-site-brand {
+	@apply inline-flex min-w-0 items-center gap-3 outline-none focus:outline-none focus-visible:outline-none;
+}
+
+.la-site-brand-mark {
+	@apply inline-flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-2xl;
+}
+
+.la-site-brand-copy {
+	@apply flex min-w-0 flex-col gap-1;
+}
+
+.la-site-brand-title {
+	@apply body-base-600 text-footer-title font-bold;
+}
+
+.la-site-brand-divider {
+	@apply bg-footer-divider hidden h-px w-12 lg:block;
+}
+
+.la-site-brand-subtitle {
+	@apply body-base-400 text-footer-body;
+}
+
+@keyframes la-core-feature-float {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.012);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes la-core-feature-pulse {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.018);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes la-dot-pulse {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.25;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+/**
+ * Add Tailwind Typography.
+ */
+@import "./tailwind/tailwind-typography.css";
+
+/**
+ * Add Tailwind’s utility classes and any utility classes registered by
+ * plugins, then add custom utility classes.
+ */
+@import "tailwindcss/utilities";
+@import "./tailwind/custom/utilities.css";
+
+/**
+ * Add styles exclusively for the WordPress editor.
+ */
+@if $target == editor {
+	@import "./tailwind/tailwind-editor.css";
+}

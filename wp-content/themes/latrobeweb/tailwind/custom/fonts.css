@@ -1,0 +1,6 @@
+/**
+ * Custom `@font-face` rules
+ *
+ * Fonts are enqueued from `functions.php` so they load correctly on both the
+ * frontend and in the editor.
+ */
