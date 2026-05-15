@@ -6,7 +6,7 @@
 *.min.js
 
 # Ignore generated CSS files:
-style.css
+# style.css
 style-editor.css
 style-editor-extra.css
 tailwind-intellisense.css

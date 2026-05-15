@@ -29,7 +29,7 @@ $icon_closed_tablet = 'M4.21967 6.21967C4.51256 5.92678 4.98744 5.92678 5.28033 
 		?>
 		<?php $categories = isset( $item['categories'] ) && is_array( $item['categories'] ) ? implode( ' ', $item['categories'] ) : ''; ?>
 		<div class="border-b border-gray-100 last:border-b-0" data-accordion-item<?php echo $categories ? ' data-faq-categories="' . esc_attr( $categories ) . '"' : ''; ?>>
-			<button type="button" class="la-accordion-trigger group relative flex w-full items-center justify-start px-5 py-5 text-left md:px-5 md:py-5 lg:px-6 lg:py-5" aria-expanded="<?php echo $is_open ? 'true' : 'false'; ?>" data-accordion-trigger>
+			<button type="button" class="la-accordion-trigger group relative flex w-full items-center justify-start px-5 py-5 text-left md:px-6 md:py-5 lg:px-6 lg:py-5" aria-expanded="<?php echo $is_open ? 'true' : 'false'; ?>" data-accordion-trigger>
 				<span class="body-base-500 text-left text-black group-hover:underline lg:font-medium"><?php echo esc_html( $item['title'] ?? '' ); ?></span>
 				<svg class="la-accordion-icon absolute right-6 top-1/2 -translate-y-1/2 shrink-0 text-black transition-all duration-200 md:hidden lg:block" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path data-accordion-icon-desktop fill-rule="evenodd" clip-rule="evenodd" d="<?php echo esc_attr( $is_open ? $icon_open_desktop : $icon_closed_desktop ); ?>" fill="currentColor"/></svg>
 				<?php if ( $is_open ) : ?>

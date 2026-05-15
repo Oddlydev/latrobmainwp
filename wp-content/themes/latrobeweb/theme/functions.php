@@ -280,15 +280,15 @@ if ( ! function_exists( 'latrobeweb_render_section_header' ) ) :
 		$lead_class    = $args['lead_class'] ?? '';
 		$centered      = ! empty( $args['centered'] );
 		?>
-		<div class="la-section-heading <?php echo $centered ? 'la-section-heading--center' : 'la-section-heading--left'; ?> <?php echo esc_attr( (string) $class_name ); ?>">
+		<div class="<?php echo esc_attr( trim( 'space-y-2 ' . ( $centered ? 'mx-auto text-center' : 'text-left' ) . ' ' . (string) $class_name ) ); ?>">
 			<?php if ( $eyebrow ) : ?>
 				<p class="eyebrow <?php echo esc_attr( (string) $eyebrow_class ); ?>"><?php echo esc_html( (string) $eyebrow ); ?></p>
 			<?php endif; ?>
 			<?php if ( $title ) : ?>
-				<h2 class="la-section-title <?php echo esc_attr( (string) $title_class ); ?>"><?php echo esc_html( (string) $title ); ?></h2>
+				<h2 class="<?php echo esc_attr( trim( 'font-display text-[1.875rem] leading-[110%] font-black tracking-tighter text-black md:font-bold md:tracking-normal lg:text-[2.25rem] lg:leading-[110%] lg:font-bold ' . (string) $title_class ) ); ?>"><?php echo esc_html( (string) $title ); ?></h2>
 			<?php endif; ?>
 			<?php if ( $lead ) : ?>
-				<p class="la-section-lead <?php echo esc_attr( (string) $lead_class ); ?>"><?php echo esc_html( (string) $lead ); ?></p>
+				<p class="<?php echo esc_attr( trim( 'font-sans text-base leading-6 font-normal tracking-normal text-gray-500 ' . (string) $lead_class ) ); ?>"><?php echo esc_html( (string) $lead ); ?></p>
 			<?php endif; ?>
 		</div>
 		<?php
@@ -687,7 +687,7 @@ if ( ! function_exists( 'latrobeweb_site_brand' ) ) :
 			<?php if ( $url ) : ?>
 				href="<?php echo esc_url( $url ); ?>"
 			<?php endif; ?>
-			class="<?php echo esc_attr( trim( 'la-site-brand ' . $class_name ) ); ?>"
+			class="<?php echo esc_attr( trim( 'la-site-brand flex items-center gap-3 ' . $class_name ) ); ?>"
 		>
 			<img
 				src="<?php echo esc_url( latrobeweb_asset_uri( 'images/logo-light.svg' ) ); ?>"

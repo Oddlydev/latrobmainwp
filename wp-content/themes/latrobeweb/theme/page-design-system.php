@@ -110,8 +110,8 @@ $svg_allowed = latrobeweb_get_svg_allowed();
 ?>
 
 <main class="mx-auto flex w-full flex-col space-y-16 px-6 py-10 sm:max-w-[680px] sm:px-0 sm:py-14 lg:max-w-[1295px]">
-	<section class="la-hero">
-		<div class="la-hero-inner">
+	<section class="overflow-hidden rounded-4xl bg-gradient-1 text-white shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
+		<div class="grid gap-8 px-6 py-8 sm:px-10 sm:py-10 lg:grid-cols-[minmax(0,1.3fr)_minmax(260px,0.7fr)] lg:items-end">
 			<div class="space-y-3">
 				<p class="body-xs-600 inline-flex rounded-full bg-inverse-10 px-3 py-1 uppercase tracking-[0.08em] text-inverse-80">UI Kit</p>
 				<h1 class="text-white"><?php the_title(); ?></h1>
@@ -119,16 +119,16 @@ $svg_allowed = latrobeweb_get_svg_allowed();
 		</div>
 	</section>
 
-	<section class="la-section">
+	<section class="space-y-6">
 		<h2 class="text-black">Colors</h2>
-		<div class="la-purple-wrap space-y-6">
+		<div class="space-y-6 rounded-xl border-2 border-dashed border-violet-400 p-5">
 			<?php foreach ( $color_groups as $group ) : ?>
 				<div class="space-y-4">
 					<h4 class="text-black"><?php echo esc_html( $group['label'] ); ?></h4>
 					<div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
 						<?php foreach ( $group['items'] as $item ) : ?>
-							<div class="la-swatch">
-								<div class="la-swatch-chip <?php echo esc_attr( $item['class_name'] ); ?>"></div>
+							<div class="overflow-hidden rounded-[1.25rem] border border-slate-200 bg-white shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
+								<div class="h-20 w-full <?php echo esc_attr( $item['class_name'] ); ?>"></div>
 								<div class="flex items-center justify-between gap-3 p-4">
 									<span class="font-semibold text-black"><?php echo esc_html( $item['name'] ); ?></span>
 									<span class="font-mono text-xs text-gray-400"><?php echo esc_html( $item['value'] ); ?></span>
@@ -141,8 +141,8 @@ $svg_allowed = latrobeweb_get_svg_allowed();
 		</div>
 	</section>
 
-	<section class="la-section">
-		<div class="la-purple-wrap overflow-hidden bg-white shadow-card">
+	<section class="space-y-6">
+		<div class="overflow-hidden rounded-xl border-2 border-dashed border-violet-400 bg-white p-5 shadow-card">
 			<div class="flex items-start justify-between gap-6 bg-black px-6 py-5 text-white lg:px-8">
 				<div class="space-y-1">
 					<p class="text-xs font-medium leading-5 text-inverse-80">UI KIT for La Trobe University Digital PCAT Web App &amp; Web</p>
@@ -177,9 +177,9 @@ $svg_allowed = latrobeweb_get_svg_allowed();
 		</div>
 	</section>
 
-	<section class="la-section">
+	<section class="space-y-6">
 		<h2 class="text-black">Shadows</h2>
-		<div class="la-purple-wrap">
+		<div class="rounded-xl border-2 border-dashed border-violet-400 p-5">
 					<div class="overflow-hidden rounded-4xl border border-gray-200 bg-white">
 				<div class="grid grid-cols-[160px_minmax(0,1fr)] border-b border-gray-200 bg-slate-50 px-8 py-5 text-sm font-semibold text-slate-500">
 					<div>Token</div>
@@ -199,9 +199,9 @@ $svg_allowed = latrobeweb_get_svg_allowed();
 		</div>
 	</section>
 
-	<section class="la-section">
+	<section class="space-y-6">
 		<h2 class="text-black">Iconography</h2>
-		<div class="la-purple-wrap">
+		<div class="rounded-xl border-2 border-dashed border-violet-400 p-5">
 			<div class="space-y-8">
 				<div class="flex flex-wrap gap-5">
 					<?php foreach ( $large_icons as $icon ) : ?>
@@ -221,9 +221,9 @@ $svg_allowed = latrobeweb_get_svg_allowed();
 		</div>
 	</section>
 
-	<section class="la-section">
+	<section class="space-y-6">
 		<h2 class="text-black">Buttons</h2>
-		<div class="la-purple-wrap space-y-6">
+		<div class="space-y-6 rounded-xl border-2 border-dashed border-violet-400 p-5">
 				<div class="overflow-hidden rounded-3xl border border-dashed border-violet-300 bg-white p-5 sm:p-7">
 				<p class="body-sm-600 mb-6 text-gray-600">Light BG</p>
 				<div class="grid gap-8 sm:grid-cols-[260px_minmax(0,1fr)] sm:items-center">
@@ -253,9 +253,9 @@ $svg_allowed = latrobeweb_get_svg_allowed();
 		</div>
 	</section>
 
-	<section class="la-section">
+	<section class="space-y-6">
 		<h2 class="text-black">Chips</h2>
-		<div class="la-purple-wrap space-y-6">
+		<div class="space-y-6 rounded-xl border-2 border-dashed border-violet-400 p-5">
 			<div class="rounded-3xl border border-dashed border-violet-300 bg-white p-5 sm:p-7">
 			<?php
 				latrobeweb_component(
@@ -270,14 +270,14 @@ $svg_allowed = latrobeweb_get_svg_allowed();
 		</div>
 	</section>
 
-	<section class="la-section">
+	<section class="space-y-6">
 		<h2 class="text-black">Cards</h2>
-		<div class="la-purple-wrap">
+		<div class="rounded-xl border-2 border-dashed border-violet-400 p-5">
 			<div class="grid gap-8 md:grid-cols-2">
 				<div class="space-y-5">
-                                        <h4 class="font-display text-center text-2xl font-bold tracking-tight text-gray-500">Card Type 1</h4>
-                                        <article class="flex translate-y-0 items-center gap-5 rounded-2xl border border-gray-200 bg-white px-5 py-5 transition-[transform,box-shadow,background-color] duration-200 ease-out hover:-translate-y-1 hover:shadow-card-brand-inset">
-                                                <div class="bg-red-light text-la-red-1 flex h-12 w-12 items-center justify-center rounded-xl"><?php echo wp_kses( $large_icons[0], $svg_allowed ); ?></div>
+					<h4 class="font-display text-center text-2xl font-bold tracking-tight text-gray-500">Card Type 1</h4>
+					<article class="flex translate-y-0 items-center gap-5 rounded-2xl border border-gray-200 bg-white px-5 py-5 transition-[transform,box-shadow,background-color] duration-200 ease-out hover:-translate-y-1 hover:shadow-card-brand-inset">
+						<div class="bg-red-light text-la-red-1 flex h-12 w-12 items-center justify-center rounded-xl"><?php echo wp_kses( $large_icons[0], $svg_allowed ); ?></div>
 						<div>
 							<p class="body-base-600 text-black">Real-time</p>
 							<p class="body-base-400 text-gray-500">Assessment documentation</p>
@@ -285,39 +285,39 @@ $svg_allowed = latrobeweb_get_svg_allowed();
 					</article>
 				</div>
 				<div class="space-y-5">
-                                        <h4 class="font-display text-center text-2xl font-bold tracking-tight text-gray-500">Card Type 2</h4>
-                                        <article class="bg-surface-card-soft flex translate-y-0 flex-col rounded-2xl border border-gray-200 p-6 transition-[transform,box-shadow,background-color] duration-200 ease-out hover:-translate-y-1 hover:shadow-la-shadow-3">
-                                                <div class="bg-red-light text-la-red-1 mb-4 flex h-12 w-12 items-center justify-center rounded-xl"><?php echo wp_kses( $large_icons[11], $svg_allowed ); ?></div>
+					<h4 class="font-display text-center text-2xl font-bold tracking-tight text-gray-500">Card Type 2</h4>
+					<article class="bg-surface-card-soft flex translate-y-0 flex-col rounded-2xl border border-gray-200 p-6 transition-[transform,box-shadow,background-color] duration-200 ease-out hover:-translate-y-1 hover:shadow-la-shadow-3">
+						<div class="bg-red-light text-la-red-1 mb-4 flex h-12 w-12 items-center justify-center rounded-xl"><?php echo wp_kses( $large_icons[11], $svg_allowed ); ?></div>
 						<h3 class="body-base-600 text-black">Research Objective</h3>
 						<p class="body-base-400 mt-2 text-gray-500">Develop and validate an AI-powered screening tool that identifies aged care residents with unmet palliative care needs earlier and more accurately than current practice.</p>
 					</article>
 				</div>
 				<div class="space-y-5">
-                                        <h4 class="font-display text-center text-2xl font-bold tracking-tight text-gray-500">Card Type 3</h4>
-                                        <article class="group flex translate-y-0 flex-col rounded-2xl border border-gray-200 bg-white p-6 transition-[transform,box-shadow,background-color] duration-200 ease-out hover:-translate-y-1 hover:shadow-la-shadow-4">
-                                                <div class="bg-red-light text-la-red-1 mb-3.5 flex h-12 w-12 items-center justify-center rounded-xl"><?php echo wp_kses( $large_icons[4], $svg_allowed ); ?></div>
+					<h4 class="font-display text-center text-2xl font-bold tracking-tight text-gray-500">Card Type 3</h4>
+					<article class="group flex translate-y-0 flex-col rounded-2xl border border-gray-200 bg-white p-6 transition-[transform,box-shadow,background-color] duration-200 ease-out hover:-translate-y-1 hover:shadow-la-shadow-4">
+						<div class="bg-red-light text-la-red-1 mb-3.5 flex h-12 w-12 items-center justify-center rounded-xl"><?php echo wp_kses( $large_icons[4], $svg_allowed ); ?></div>
 						<h3 class="body-base-600 text-black group-hover:underline group-hover:decoration-brand-1 group-hover:[text-decoration-thickness:13.5%] group-hover:[text-underline-offset:25%]">Research-Validated Assessments</h3>
 						<p class="body-base-400 mt-3.5 text-gray-500 leading-[26px] md:text-lg md:leading-6 lg:text-base lg:leading-6">Complete structured palliative care assessments built on peer-reviewed methodology. Forms are standardised, auto-timestamped, and designed so no critical clinical indicator is ever overlooked.</p>
 					</article>
 				</div>
 				<div class="space-y-5">
-                                        <h4 class="font-display text-center text-2xl font-bold tracking-tight text-gray-500">Team Card</h4>
-                                        <article class="translate-y-0 rounded-2xl border border-gray-200 bg-white px-6 py-6 transition-[transform,box-shadow,background-color] duration-200 ease-out hover:bg-surface-card-hover hover:shadow-la-shadow-1">
-                                                <div class="flex flex-col gap-2">
-                                                        <p class="eyebrow text-brand-1">PRINCIPAL INVESTIGATOR</p>
-                                                        <p class="body-base-600 font-bold text-black">Prof. Hanan Khalil</p>
+					<h4 class="font-display text-center text-2xl font-bold tracking-tight text-gray-500">Team Card</h4>
+					<article class="translate-y-0 rounded-2xl border border-gray-200 bg-white px-6 py-6 transition-[transform,box-shadow,background-color] duration-200 ease-out hover:bg-surface-card-hover hover:shadow-la-shadow-1">
+						<div class="flex flex-col gap-2">
+							<p class="eyebrow text-brand-1">PRINCIPAL INVESTIGATOR</p>
+							<p class="body-base-600 font-bold text-black">Prof. Hanan Khalil</p>
 						</div>
 						<p class="body-base-400 mt-3 text-gray-500">Lead researcher and grant recipient. Professor in the School of Psychology and Public Health, with expertise in evidence synthesis, aged care, and health services research.</p>
 						<p class="body-sm-400 mt-4 border-l-2 border-brand-1 pl-4 text-base leading-6 text-gray-500 md:text-base md:leading-6 lg:text-sm lg:leading-5">La Trobe University - School of Psychology and Public Health</p>
 					</article>
 				</div>
 				<div class="space-y-5">
-                                        <h4 class="font-display text-center text-2xl font-bold tracking-tight text-gray-500">Card Type 4</h4>
-                                        <article class="group flex w-full min-w-0 translate-y-0 items-center gap-4 rounded-2xl border border-gray-200 bg-white px-4 py-4 transition-[transform,box-shadow,background-color] duration-200 ease-out hover:-translate-y-1 hover:shadow-card-spotlight">
-                                                <div class="bg-red-light text-la-red-1 flex h-12 w-12 items-center justify-center rounded-xl"><?php echo wp_kses( $small_icons[0], $svg_allowed ); ?></div>
+					<h4 class="font-display text-center text-2xl font-bold tracking-tight text-gray-500">Card Type 4</h4>
+					<article class="group flex w-full min-w-0 translate-y-0 items-center gap-4 rounded-2xl border border-gray-200 bg-white px-4 py-4 transition-[transform,box-shadow,background-color] duration-200 ease-out hover:-translate-y-1 hover:shadow-card-spotlight">
+						<div class="bg-red-light text-la-red-1 flex h-12 w-12 items-center justify-center rounded-xl"><?php echo wp_kses( $small_icons[0], $svg_allowed ); ?></div>
 						<div class="space-y-1">
 							<p class="eyebrow text-gray-500">EMAIL</p>
-                                                        <p class="body-base-500 text-black group-hover:text-brand-1 group-hover:underline group-hover:[text-decoration-thickness:8%] group-hover:[text-underline-offset:25%]">pcat@latrobe.edu.au</p>
+							<p class="body-base-500 text-black group-hover:text-brand-1 group-hover:underline group-hover:[text-decoration-thickness:8%] group-hover:[text-underline-offset:25%]">pcat@latrobe.edu.au</p>
 						</div>
 					</article>
 				</div>
@@ -325,30 +325,30 @@ $svg_allowed = latrobeweb_get_svg_allowed();
 		</div>
 	</section>
 
-	<section class="la-section">
+	<section class="space-y-6">
 		<h2 class="text-black">Accordion</h2>
-		<div class="la-purple-wrap p-6 sm:p-8">
+		<div class="rounded-xl border-2 border-dashed border-violet-400 p-6 sm:p-8">
 			<?php latrobeweb_component( 'accordion', array( 'items' => $accordion_items, 'default_open' => 0 ) ); ?>
 		</div>
 	</section>
 
-	<section class="la-section">
+	<section class="space-y-6">
 		<h2 class="text-black">Footer</h2>
-		<div class="la-purple-wrap">
-                        <footer class="bg-gradient-1 mt-0 border-t border-gray-200">
+		<div class="rounded-xl border-2 border-dashed border-violet-400 p-5">
+			<footer class="bg-gradient-1 mt-0 border-t border-gray-200">
 				<div class="px-6 py-12 lg:px-12 lg:py-12">
 					<div class="flex flex-col gap-8 md:gap-8 lg:gap-8">
 						<div class="flex flex-col items-center gap-10 text-center md:gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-5 lg:text-left">
 							<?php latrobeweb_site_brand( array( 'subtitle' => 'PCAT Research Programme', 'show_divider' => false ) ); ?>
-							<nav class="flex w-full flex-col items-center gap-y-4 md:w-auto md:flex-row md:flex-wrap md:justify-center md:gap-x-5 md:gap-y-3 lg:justify-end lg:gap-x-6" aria-label="<?php esc_attr_e( 'Footer Menu Preview', 'latrobeweb' ); ?>">
+							<nav class="flex w-full flex-col items-center gap-y-4 md:w-auto md:flex-row md:flex-wrap md:justify-center md:gap-x-5 md:gap-y-3 md:pb-3 lg:pb-0 lg:justify-end lg:gap-x-6" aria-label="<?php esc_attr_e( 'Footer Menu Preview', 'latrobeweb' ); ?>">
 								<?php foreach ( $footer_links as $item ) : ?>
-                                                                        <a class="body-base-400 text-footer-link inline-block w-full border-b border-transparent py-0 text-center whitespace-nowrap transition-colors duration-200 hover:border-brand-1 md:w-auto lg:body-base-500" href="<?php echo esc_url( $item['url'] ); ?>"><?php echo esc_html( $item['label'] ); ?></a>
+									<a class="body-base-400 text-footer-link inline-block w-full border-b border-transparent py-0 text-center whitespace-nowrap transition-colors duration-200 hover:border-brand-1 md:w-auto lg:body-base-500" href="<?php echo esc_url( $item['url'] ); ?>"><?php echo esc_html( $item['label'] ); ?></a>
 								<?php endforeach; ?>
 							</nav>
 						</div>
 						<div class="flex flex-col gap-4 border-t border-footer-divider-soft pt-6 text-center lg:flex-row lg:items-center lg:justify-between lg:gap-3 lg:pt-8 lg:text-left">
-                                                        <p class="body-base-400 text-footer-body lg:body-base-500">&copy; <?php echo esc_html( wp_date( 'Y' ) ); ?> La Trobe University - PCAT - Palliative Care Assessment Tool</p>
-                                                        <p class="body-base-400 text-footer-built lg:body-base-500"><?php esc_html_e( 'Built by', 'latrobeweb' ); ?> <a href="https://oddly.global/" target="_blank" rel="noopener noreferrer" class="body-base-600 text-footer-body inline-block border-b border-transparent transition-colors duration-200 hover:border-brand-1">ODDLY</a></p>
+							<p class="body-base-400 text-footer-body lg:body-base-500"><?php echo esc_html( '© ' . wp_date( 'Y' ) . ' La Trobe University - PCAT - Palliative Care Assessment Tool' ); ?></p>
+							<p class="font-sans text-base leading-6 font-normal tracking-normal text-[rgba(250,250,252,0.50)]"><?php esc_html_e( 'Built by', 'latrobeweb' ); ?> <a href="https://oddly.global/" target="_blank" rel="noopener noreferrer" class="inline-block border-b border-transparent font-sans text-base leading-6 font-semibold tracking-normal text-[rgba(250,250,252,0.70)] transition-colors duration-200 hover:border-brand-1">ODDLY</a></p>
 						</div>
 					</div>
 				</div>

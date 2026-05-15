@@ -187,7 +187,7 @@ $faq_items = array(
 
 <main class="overflow-hidden bg-gray-50 lg:bg-white">
 	<section id="top" class="scroll-mt-24">
-		<div class="la-home-hero-shell">
+		<div class="relative overflow-hidden border border-gray-200 bg-white text-black shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
 			<img
 				src="<?php echo esc_url( latrobeweb_asset_uri( 'images/hero-images/hero-light-1.png' ) ); ?>"
 				data-random-hero
@@ -196,20 +196,20 @@ $faq_items = array(
 				data-image-template="<?php echo esc_attr( latrobeweb_asset_uri( 'images/hero-images/hero-light-%d.png' ) ); ?>"
 				alt=""
 				aria-hidden="true"
-				class="la-home-hero-image-desktop absolute hidden lg:block"
+				class="absolute top-[-3.499px] left-[-2.003px] hidden h-[100.42%] w-[100.168%] max-w-none object-cover object-[78%_center] lg:block"
 			/>
-			<div aria-hidden="true" class="la-home-hero-accent-right"></div>
-			<div aria-hidden="true" class="la-home-hero-accent-left"></div>
-			<div aria-hidden="true" class="la-home-hero-wash"></div>
-			<div aria-hidden="true" class="la-home-hero-top-fade"></div>
-                        <div class="relative z-10 px-6 pt-10 pb-0 md:px-10 md:pt-10 md:pb-0 lg:max-w-[616px] lg:pr-10 lg:pt-[11.0625rem] lg:pb-[11.0625rem] lg:pl-[9.375rem]">
+			<div aria-hidden="true" class="pointer-events-none absolute top-1/2 right-[-10%] hidden h-[78%] w-[52%] -translate-y-1/2 rounded-full blur-[64px] [background:rgba(233,34,60,0.05)] lg:block"></div>
+			<div aria-hidden="true" class="pointer-events-none absolute top-[18%] left-[-8%] hidden h-[44%] w-[42%] rounded-full blur-[64px] [background:rgba(233,34,60,0.03)] lg:block"></div>
+			<div aria-hidden="true" class="absolute inset-y-0 left-0 hidden w-full bg-[linear-gradient(90deg,rgba(247,247,247,0.96)_0%,rgba(247,247,247,0.92)_38%,rgba(247,247,247,0.82)_54%,rgba(247,247,247,0.44)_70%,rgba(247,247,247,0)_100%)] lg:block lg:w-[60%]"></div>
+			<div aria-hidden="true" class="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white/35 to-transparent md:hidden"></div>
+			<div class="relative z-10 px-6 pt-10 pb-0 md:px-10 md:pt-10 md:pb-0 lg:max-w-[616px] lg:pr-10 lg:pt-[11.0625rem] lg:pb-[11.0625rem] lg:pl-[9.375rem]">
 				<div class="w-full">
 					<p class="body-xs-500 md:body-base-500 inline-flex max-w-full items-center gap-2 whitespace-normal rounded-full border border-gray-300 bg-white px-4 py-2 text-black shadow-sm">
-						<span class="la-hero-status-dot h-2.5 w-2.5 rounded-full bg-green-500"></span>
+						<span class="h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse"></span>
 						<?php echo esc_html( get_field( 'home_hero_section_label_text' ) ); ?>
 					</p>
 					<div class="mt-5 space-y-4 md:mt-5 md:space-y-5 lg:mt-12 lg:space-y-6">
-						<h1 class="la-home-hero-title">
+						<h1 class="font-display text-4xl leading-[110%] font-bold tracking-normal text-black md:font-black lg:text-[60px] lg:font-black">
 							<span class="block whitespace-nowrap"><?php echo esc_html( get_field( 'home_hero_section_title' ) ); ?></span>
 							<span class="mt-1 block whitespace-nowrap text-brand-1 md:mt-0 md:inline lg:block"><?php echo esc_html( get_field( 'home_hero_section_title_highlighted_text' ) ); ?></span>
 						</h1>
@@ -218,7 +218,7 @@ $faq_items = array(
 						</p>
 					</div>
 				</div>
-				<div class="la-home-hero-cta">
+				<div class="mt-5 flex flex-wrap gap-4 pb-5 md:pb-7 lg:mt-12 lg:pb-0">
 					<?php
 					latrobeweb_component(
 						'button',
@@ -226,7 +226,7 @@ $faq_items = array(
 							'href'          => get_field( 'home_hero_section_button_one_link' ),
 							'label'         => 'Access PCAT Tool',
 							'variant'       => 'la-button-primary-light-icon-right',
-							'class_name'    => 'la-button-home',
+							'class_name'    => 'px-5 py-3 lg:px-8 lg:py-4',
 							'icon'          => latrobeweb_get_icon_markup( 'arrow' ),
 							'icon_position' => 'after',
 						)
@@ -237,7 +237,7 @@ $faq_items = array(
 							'href'       => get_field( 'home_hero_section_button_two_link' ),
 							'label'      => 'Learn more',
 							'variant'    => 'la-button-secondary-light',
-							'class_name' => 'la-button-home',
+							'class_name' => 'px-5 py-3 lg:px-8 lg:py-4',
 						)
 					);
 					?>
@@ -268,7 +268,7 @@ $faq_items = array(
 				/>
 			</div>
 			<div class="relative bg-brand-3 p-3.5 md:p-5 lg:p-7">
-                                <div class="grid gap-3 md:inline-grid md:w-full md:grid-cols-2 md:grid-rows-2 md:gap-3 lg:gap-5 xl:grid-cols-4 xl:grid-rows-1">
+				<div class="grid gap-3 md:inline-grid md:w-full md:grid-cols-2 md:grid-rows-2 md:gap-3 lg:gap-5 xl:grid-cols-4 xl:grid-rows-1">
 					<?php foreach ( $hero_highlights as $item ) : ?>
 						<?php latrobeweb_component( 'card', array( 'variant' => 'type-1', 'icon' => latrobeweb_get_icon_markup( $item['icon'] ), 'title' => $item['title'], 'description' => $item['description'] ) ); ?>
 					<?php endforeach; ?>
@@ -290,22 +290,22 @@ $faq_items = array(
 			)
 		);
 		?>
-                <div class="grid gap-5 md:gap-7 lg:grid-cols-2 lg:gap-12">
-                        <div class="space-y-7">
+		<div class="grid gap-5 md:gap-7 lg:grid-cols-2 lg:gap-12">
+			<div class="space-y-7">
 				<p class="body-base-400 max-w-[695px] text-gray-700 md:text-gray-500"><?php echo esc_html( get_field( 'home_intro_section_description' ) ); ?></p>
 				<div class="rounded-xl border border-red-200 bg-transparent p-6 lg:bg-white">
 					<p class="body-base-600 text-lg text-black lg:text-xl lg:leading-7"><?php echo esc_html( get_field( 'home_intro_section_highlight_text' ) ); ?></p>
 				</div>
 			</div>
 			<div class="overflow-hidden rounded-[1.25rem] border border-gray-300 bg-surface-card-soft shadow-none backdrop-blur-[2px]">
-                                <div class="grid grid-cols-[132px_minmax(0,1fr)] items-center gap-9 px-5 py-6 md:grid-cols-[180px_minmax(0,1fr)] lg:grid-cols-[auto_minmax(0,1fr)] lg:px-8 lg:py-10"><p class="body-base-600 text-lg leading-7 tracking-tighter text-gray-600 uppercase">Project title</p><p class="body-base-400 w-full justify-self-end text-right text-black md:text-xl md:leading-8">PCAT for Aged Care</p></div>
-                                <div class="grid grid-cols-[132px_minmax(0,1fr)] items-center gap-9 border-t border-gray-200 px-5 py-6 md:grid-cols-[180px_minmax(0,1fr)] lg:grid-cols-[auto_minmax(0,1fr)] lg:px-8 lg:py-10"><p class="body-base-600 text-lg leading-7 tracking-tighter text-gray-600 uppercase">Funding</p><p class="body-base-400 w-full justify-self-end text-right text-black md:text-xl md:leading-8">The Aged Care Research and Industry Innovation Australia fund (ARIIA)</p></div>
-                                <div class="grid grid-cols-[132px_minmax(0,1fr)] items-center gap-9 border-t border-gray-200 px-5 py-6 md:grid-cols-[180px_minmax(0,1fr)] lg:grid-cols-[auto_minmax(0,1fr)] lg:px-8 lg:py-10"><p class="body-base-600 text-lg leading-7 tracking-tighter text-gray-600 uppercase">Institution</p><p class="body-base-400 w-full justify-self-end text-right text-black md:text-xl md:leading-8">La Trobe University</p></div>
+				<div class="grid grid-cols-[132px_minmax(0,1fr)] items-center gap-9 px-5 py-6 md:grid-cols-[180px_minmax(0,1fr)] lg:grid-cols-[auto_minmax(0,1fr)] lg:px-8 lg:py-10"><p class="body-base-600 text-lg leading-7 tracking-tighter text-gray-600 uppercase">Project title</p><p class="body-base-400 w-full justify-self-end text-right text-black md:text-xl md:leading-8">PCAT for Aged Care</p></div>
+				<div class="grid grid-cols-[132px_minmax(0,1fr)] items-center gap-9 border-t border-gray-200 px-5 py-6 md:grid-cols-[180px_minmax(0,1fr)] lg:grid-cols-[auto_minmax(0,1fr)] lg:px-8 lg:py-10"><p class="body-base-600 text-lg leading-7 tracking-tighter text-gray-600 uppercase">Funding</p><p class="body-base-400 w-full justify-self-end text-right text-black md:text-xl md:leading-8">The Aged Care Research and Industry Innovation Australia fund (ARIIA)</p></div>
+				<div class="grid grid-cols-[132px_minmax(0,1fr)] items-center gap-9 border-t border-gray-200 px-5 py-6 md:grid-cols-[180px_minmax(0,1fr)] lg:grid-cols-[auto_minmax(0,1fr)] lg:px-8 lg:py-10"><p class="body-base-600 text-lg leading-7 tracking-tighter text-gray-600 uppercase">Institution</p><p class="body-base-400 w-full justify-self-end text-right text-black md:text-xl md:leading-8">La Trobe University</p></div>
 			</div>
 		</div>
 	</section>
 
-	<section class="border-b border-ink-faint pt-5 pb-0 md:pt-7 md:pb-10 lg:pt-12 lg:pb-20">
+	<section class="border-b border-ink-faint pt-5 pb-10 md:pt-7 lg:pt-12 lg:pb-20">
 		<div class="mx-auto w-full px-6 sm:max-w-[680px] sm:px-0 lg:max-w-[1295px]">
 			<div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
 				<?php foreach ( $about_feature_cards as $item ) : ?>
@@ -347,7 +347,7 @@ $faq_items = array(
 		</div>
 	</section>
 
-	<section class="border-b border-ink-faint pb-0 md:pb-20">
+	<section class="border-b border-ink-faint pb-10 md:pb-20">
 		<div class="mx-auto w-full px-6 sm:max-w-[680px] sm:px-0 lg:max-w-[1295px]">
 			<div class="grid gap-5 md:grid-cols-2 lg:gap-6 xl:grid-cols-3">
 				<?php foreach ( $how_it_works_cards as $item ) : ?>
@@ -361,16 +361,16 @@ $faq_items = array(
 		<div class="mx-auto w-full px-6 sm:max-w-[680px] sm:px-0 lg:max-w-[1295px]">
 			<span id="how-it-works" class="block scroll-mt-4" aria-hidden="true"></span>
 			<div class="relative overflow-hidden" data-how-it-works data-how-marker-ratio="0.72">
-				<?php latrobeweb_render_section_header( array( 'eyebrow' => 'How It Works', 'title' => 'From login to care record in minutes', 'eyebrow_class' => 'text-brand-1', 'centered' => true, 'class_name' => 'relative z-10 mb-5 sm:mb-7 lg:mb-12' ) ); ?>
+				<?php latrobeweb_render_section_header( array( 'eyebrow' => 'How It Works', 'title' => 'From login to care record in minutes', 'eyebrow_class' => 'text-brand-1', 'centered' => false, 'class_name' => 'relative z-10 mb-5 sm:mb-7 lg:mx-auto lg:mb-12 lg:text-center' ) ); ?>
 				<div class="relative z-10">
-					<div class="la-how-track absolute top-6 bottom-6 left-6 w-0.5 rounded-full bg-red-100 md:top-5 md:bottom-5 md:left-5 lg:left-1/2 lg:top-6 lg:bottom-6 lg:w-1 lg:-translate-x-1/2" data-how-it-works-track aria-hidden="true">
+					<div class="la-how-track absolute top-6 bottom-6 left-6 w-0.5 rounded-full bg-red-100 md:top-5 md:bottom-5 md:left-[30px] lg:left-1/2 lg:top-0 lg:bottom-0 lg:w-1 lg:-translate-x-1/2" data-how-it-works-track aria-hidden="true">
 						<div class="la-how-track-fill w-full rounded-full bg-brand-1 transition-[height] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-[height]" data-how-it-works-fill></div>
 					</div>
 					<div class="space-y-10 md:space-y-10 lg:space-y-16">
 						<?php foreach ( $steps as $index => $step ) : ?>
 							<?php $is_left = 'left' === $step['side']; ?>
-							<div class="la-how-step-row relative grid grid-cols-[auto_1fr] items-center gap-x-5 lg:mx-auto lg:w-fit lg:grid-cols-[462px_168px_462px] lg:items-center lg:gap-0" data-how-it-works-step-row data-how-step-side="<?php echo $is_left ? 'left' : 'right'; ?>">
-								<div class="la-how-step-marker z-20 col-start-1 row-start-1 flex h-12 w-12 items-center justify-center rounded-full border-2 border-brand-1 bg-white text-brand-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] [&_svg]:h-6 [&_svg]:w-6 md:h-10 md:w-10 md:[&_svg]:h-5 md:[&_svg]:w-5 lg:absolute lg:left-1/2 lg:top-1/2 lg:h-14 lg:w-14 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:border-[3px] lg:[&_svg]:h-[26px] lg:[&_svg]:w-[26px]" data-how-it-works-step>
+							<div class="la-how-step-row relative grid grid-cols-[auto_1fr] items-center gap-x-5 <?php echo $index === count( $steps ) - 1 ? 'md:pb-5' : ''; ?> lg:mx-auto lg:w-fit lg:grid-cols-[462px_56px_462px] lg:items-center lg:gap-14 lg:pb-0" data-how-it-works-step-row data-how-step-side="<?php echo $is_left ? 'left' : 'right'; ?>">
+								<div class="la-how-step-marker z-20 col-start-1 row-start-1 flex h-12 w-12 items-center justify-center rounded-full border-2 border-brand-1 bg-white text-brand-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] [&_svg]:h-6 [&_svg]:w-6 md:h-[60px] md:w-[60px] md:border-[3px] md:[&_svg]:h-[25.7px] md:[&_svg]:w-[25.7px] lg:absolute lg:left-1/2 lg:top-1/2 lg:h-14 lg:w-14 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:border-[3px] lg:[&_svg]:h-[26px] lg:[&_svg]:w-[26px]" data-how-it-works-step>
 									<?php echo wp_kses( latrobeweb_get_icon_markup( $step['icon'] ), latrobeweb_get_svg_allowed() ); ?>
 								</div>
 								<article class="la-how-step-card col-start-2 row-start-1 min-w-0 w-full rounded-lg px-0 py-0 text-left transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform lg:py-5 <?php echo $is_left ? 'lg:col-start-1 lg:pl-5 lg:pr-0 lg:text-right' : 'lg:col-start-3 lg:pl-0 lg:pr-5 lg:text-left'; ?>">
@@ -392,7 +392,7 @@ $faq_items = array(
 		<span id="team" class="block scroll-mt-4" aria-hidden="true"></span>
 		<div class="mx-auto w-full px-6 sm:max-w-[680px] sm:px-0 lg:max-w-[1295px]">
 			<?php latrobeweb_render_section_header( array( 'eyebrow' => 'Research team', 'title' => 'The people behind PCAT', 'eyebrow_class' => 'text-brand-1', 'title_class' => 'mb-0 max-w-[600px]', 'class_name' => 'max-w-2xl' ) ); ?>
-                        <div class="mt-5 grid gap-5 md:mt-7 md:grid-cols-2 md:gap-x-5 md:gap-y-5 lg:mt-12 lg:gap-6 xl:grid-cols-3">
+			<div class="mt-5 grid gap-5 md:mt-7 md:grid-cols-2 md:gap-x-5 md:gap-y-5 lg:mt-12 lg:gap-6 xl:grid-cols-3">
 				<?php foreach ( $team_members as $member ) : ?>
 					<?php latrobeweb_component( 'card', array( 'variant' => 'team', 'eyebrow' => $member['eyebrow'], 'title' => $member['title'], 'description' => $member['description'], 'footer' => $member['footer'] ) ); ?>
 				<?php endforeach; ?>
@@ -402,15 +402,19 @@ $faq_items = array(
 
 	<section class="border-t border-slate-200 border-b py-10 md:py-10 lg:py-20">
 		<div class="mx-auto w-full px-6 sm:max-w-[680px] sm:px-0 lg:max-w-[1295px]">
-			<?php latrobeweb_render_section_header( array( 'eyebrow' => 'Funding & Governance', 'title' => 'Supported by', 'lead' => 'PCAT is supported by La Trobe University, Aged Care Research and Industry Innovation Australia (ARIIA) and Monash Health.', 'eyebrow_class' => 'text-red-600', 'lead_class' => 'mx-auto mt-4 max-w-[550px] text-center', 'centered' => true, 'class_name' => 'max-w-5xl' ) ); ?>
-                        <div class="mt-5 grid gap-5 md:mt-7 md:grid-cols-2 md:gap-5 lg:mt-12 lg:gap-6 xl:grid-cols-3">
-                                <?php foreach ( $support_cards as $item ) : ?>
-                                        <article class="group bg-surface-card-hover flex flex-col items-center gap-0 rounded-2xl border border-gray-200 py-[47px] text-center">
-                                                <div class="flex h-20 items-center justify-center pb-[30px]">
-                                                        <img src="<?php echo esc_url( $item['logo'] ); ?>" alt="<?php echo esc_attr( $item['alt'] ); ?>" class="w-auto transition-transform duration-300 ease-out group-hover:scale-105" />
-                                                </div>
-                                                <p class="body-base-500 text-center uppercase text-gray-500"><?php echo esc_html( $item['label'] ); ?></p>
-                                        </article>
+			<div class="mx-auto max-w-5xl text-center">
+				<p class="eyebrow text-red-600">Funding &amp; Governance</p>
+				<h2 class="mt-2 font-display text-[1.875rem] leading-[110%] font-black tracking-tighter text-black md:font-bold md:tracking-normal lg:text-[2.25rem] lg:leading-[110%] lg:font-bold">Supported by</h2>
+				<p class="mx-auto mt-4 max-w-[550px] font-sans text-base leading-6 font-normal tracking-normal text-gray-500">PCAT is supported by La Trobe University, Aged Care Research and Industry Innovation Australia (ARIIA) and Monash Health.</p>
+			</div>
+			<div class="mt-5 grid gap-5 md:mt-7 md:grid-cols-2 md:gap-5 lg:mt-12 lg:gap-6 xl:grid-cols-3">
+				<?php foreach ( $support_cards as $item ) : ?>
+					<article class="group bg-surface-card-hover flex flex-col items-center gap-0 rounded-2xl border border-gray-200 py-[47px] text-center">
+						<div class="flex h-20 items-center justify-center pb-[30px]">
+							<img src="<?php echo esc_url( $item['logo'] ); ?>" alt="<?php echo esc_attr( $item['alt'] ); ?>" class="w-auto transition-transform duration-300 ease-out group-hover:scale-105" />
+						</div>
+						<p class="body-base-500 text-center uppercase text-gray-500"><?php echo esc_html( $item['label'] ); ?></p>
+					</article>
 				<?php endforeach; ?>
 			</div>
 		</div>
@@ -421,7 +425,7 @@ $faq_items = array(
 		<div class="la-home-faq-stack space-y-5 md:space-y-7 lg:space-y-12">
 			<?php latrobeweb_render_section_header( array( 'eyebrow' => 'FAQ', 'title' => 'Common Questions', 'lead' => 'Everything you need to know before logging in.', 'eyebrow_class' => 'text-red-600', 'lead_class' => 'mx-auto mt-4 max-w-4xl text-center', 'centered' => true, 'class_name' => 'max-w-5xl' ) ); ?>
 			<div class="w-full" data-faq-shell>
-				<div class="mb-6 flex w-full items-center gap-1 overflow-hidden p-1.5 max-lg:px-0 md:mb-7 lg:mx-auto lg:mb-6 lg:max-w-[1220px] lg:p-0" data-faq-filters>
+				<div class="mb-6 flex w-full items-center gap-1 overflow-hidden p-1.5 max-lg:px-0 md:mb-5 lg:mx-auto lg:mb-6 lg:max-w-[1220px] lg:p-0" data-faq-filters>
 					<button type="button" class="inline-flex h-11 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-transparent bg-transparent text-black transition-opacity duration-150 hover:opacity-70 disabled:pointer-events-none disabled:m-0 disabled:w-0 disabled:min-w-0 disabled:overflow-hidden disabled:border-0 disabled:p-0 disabled:opacity-0 lg:w-7" data-faq-filter-prev aria-label="<?php esc_attr_e( 'Show previous FAQ categories', 'latrobeweb' ); ?>">
 						<span class="rotate-180">
 							<?php echo wp_kses( latrobeweb_get_icon_markup( 'chevron-right-small' ), latrobeweb_get_svg_allowed() ); ?>
@@ -487,7 +491,7 @@ $faq_items = array(
 						'href'          => get_field( 'home_cta_section_button_link' ),
 						'label'         => 'Log in to PCAT',
 						'variant'       => 'la-button-primary-dark-icon-left',
-						'class_name'    => 'la-button-home',
+						'class_name'    => 'px-5 py-3 lg:px-8 lg:py-4',
 						'icon'          => latrobeweb_get_icon_markup( 'lock-small' ),
 						'icon_position' => 'before',
 						'target'        => '_blank',
@@ -502,16 +506,24 @@ $faq_items = array(
 	<section class="mx-auto w-full px-6 py-10 sm:max-w-[680px] sm:px-0 md:py-10 lg:max-w-[1295px] lg:py-20">
 		<span id="contact" class="block scroll-mt-4" aria-hidden="true"></span>
 		<div class="space-y-5 md:space-y-7 lg:space-y-12">
-			<?php latrobeweb_render_section_header( array( 'eyebrow' => get_field( 'home_contact_section_label_text' ), 'title' => get_field( 'home_contact_section_title' ), 'lead' => get_field( 'home_contact_section_description' ), 'eyebrow_class' => 'text-red-600', 'lead_class' => 'max-w-[600px] pt-4', 'class_name' => 'max-w-[695px]' ) ); ?>
-                        <div class="grid gap-5 md:gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.95fr)] lg:items-start lg:gap-12">
+			<div class="max-w-[695px] text-left">
+				<p class="eyebrow text-red-600"><?php echo esc_html( get_field( 'home_contact_section_label_text' ) ); ?></p>
+				<h2 class="mt-2 font-display text-[1.875rem] leading-[110%] font-black tracking-tighter text-black md:font-bold md:tracking-normal lg:text-[2.25rem] lg:leading-[110%] lg:font-bold"><?php echo esc_html( get_field( 'home_contact_section_title' ) ); ?></h2>
+				<p class="mt-4 max-w-[600px] font-sans text-base leading-6 font-normal tracking-normal text-gray-500"><?php echo esc_html( get_field( 'home_contact_section_description' ) ); ?></p>
+			</div>
+			<div class="grid gap-5 md:gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.95fr)] lg:items-start lg:gap-12">
 				<div class="space-y-4 md:space-y-4 lg:space-y-5">
 					<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Email', 'value' => 'pcat@latrobe.edu.au', 'icon' => latrobeweb_get_icon_markup( 'mail' ), 'href' => 'mailto:pcat@latrobe.edu.au' ) ); ?>
 					<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Institution', 'value' => 'latrobe.edu.au', 'icon' => latrobeweb_get_icon_markup( 'globe' ) ) ); ?>
 					<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Location', 'value' => 'Melbourne, Victoria', 'icon' => latrobeweb_get_icon_markup( 'pin' ) ) ); ?>
 				</div>
-                                <article class="self-start w-full rounded-xl border border-red-200 bg-white px-6 py-6 shadow-none lg:w-[623px]">
-                                        <div class="flex items-center gap-3">
-                                                <div class="text-brand-1 flex h-6 w-6 shrink-0 items-center justify-center"><?php latrobeweb_render_icon( 'shield' ); ?></div>
+				<article class="self-start w-full rounded-xl border border-red-200 bg-white px-6 py-6 shadow-none lg:w-[623px]">
+					<div class="flex items-center gap-3">
+						<div class="flex shrink-0 items-center justify-center">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M12.5157 2.17029C12.2265 1.89636 11.7735 1.89636 11.4843 2.17029C9.46752 4.08026 6.74624 5.25059 3.75 5.25059C3.70233 5.25059 3.65473 5.2503 3.60721 5.24971C3.27984 5.24564 2.98767 5.45439 2.88541 5.7654C2.47287 7.02016 2.25 8.36012 2.25 9.75064C2.25 15.6927 6.31406 20.6836 11.8131 22.0989C11.9357 22.1305 12.0643 22.1305 12.1869 22.0989C17.6859 20.6836 21.75 15.6927 21.75 9.75064C21.75 8.36012 21.5271 7.02016 21.1146 5.7654C21.0123 5.45439 20.7202 5.24564 20.3928 5.24971C20.3453 5.2503 20.2977 5.25059 20.25 5.25059C17.2538 5.25059 14.5325 4.08026 12.5157 2.17029ZM15.6103 10.1864C15.8511 9.84936 15.773 9.38095 15.4359 9.14019C15.0989 8.89943 14.6305 8.9775 14.3897 9.31456L11.1543 13.8441L9.53033 12.2202C9.23744 11.9273 8.76256 11.9273 8.46967 12.2202C8.17678 12.5131 8.17678 12.9879 8.46967 13.2808L10.7197 15.5308C10.8756 15.6867 11.0921 15.7661 11.3119 15.7479C11.5316 15.7297 11.7322 15.6158 11.8603 15.4364L15.6103 10.1864Z" fill="#E2231B"/>
+							</svg>
+						</div>
 						<h4 class="font-display text-xl font-bold uppercase leading-7 tracking-tighter text-black md:text-xl md:leading-8 lg:text-2xl lg:leading-8"><?php echo esc_html( get_field( 'home_contact_section_governance_title' ) ); ?></h4>
 					</div>
 					<p class="body-base-500 mt-5 text-lg leading-7 text-black lg:mt-8 lg:text-xl lg:leading-7"><?php echo esc_html( get_field( 'home_contact_section_governance_description' ) ); ?></p>
