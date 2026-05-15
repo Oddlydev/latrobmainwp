@@ -358,25 +358,34 @@ $faq_items = array(
 	</section>
 
 	<section class="la-how-it-works-section pt-10 pb-0 md:py-10 lg:py-20">
-		<div class="mx-auto w-full px-6 sm:max-w-[680px] sm:px-0 lg:max-w-[1295px]">
+		<div class="mx-auto w-full lg:max-w-[1295px]">
 			<span id="how-it-works" class="block scroll-mt-4" aria-hidden="true"></span>
 			<div class="relative overflow-hidden" data-how-it-works data-how-marker-ratio="0.72">
-				<?php latrobeweb_render_section_header( array( 'eyebrow' => 'How It Works', 'title' => 'From login to care record in minutes', 'eyebrow_class' => 'text-brand-1', 'centered' => false, 'class_name' => 'relative z-10 mb-5 sm:mb-7 lg:mx-auto lg:mb-12 lg:text-center' ) ); ?>
+				<?php latrobeweb_render_section_header( array( 'eyebrow' => 'How It Works', 'title' => 'From login to care record in minutes', 'eyebrow_class' => 'text-brand-1', 'centered' => false, 'class_name' => 'relative z-10 mx-6 mb-[5px] sm:mx-auto sm:mb-7 sm:max-w-[680px] lg:mx-auto lg:mb-12 lg:max-w-none lg:text-center' ) ); ?>
 				<div class="relative z-10">
-					<div class="la-how-track absolute top-6 bottom-6 left-6 w-0.5 rounded-full bg-red-100 md:top-5 md:bottom-5 md:left-[30px] lg:left-1/2 lg:top-0 lg:bottom-0 lg:w-1 lg:-translate-x-1/2" data-how-it-works-track aria-hidden="true">
+					<div class="la-how-track absolute top-0 bottom-6 left-6 w-0.5 rounded-full bg-red-100 md:top-5 md:bottom-5 md:left-[30px] lg:left-1/2 lg:top-0 lg:bottom-0 lg:w-1 lg:-translate-x-1/2" data-how-it-works-track aria-hidden="true">
 						<div class="la-how-track-fill w-full rounded-full bg-brand-1 transition-[height] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-[height]" data-how-it-works-fill></div>
 					</div>
-					<div class="space-y-10 md:space-y-10 lg:space-y-16">
+					<div class="space-y-[10px] md:space-y-10 lg:space-y-16">
 						<?php foreach ( $steps as $index => $step ) : ?>
 							<?php $is_left = 'left' === $step['side']; ?>
-							<div class="la-how-step-row relative grid grid-cols-[auto_1fr] items-center gap-x-5 <?php echo $index === count( $steps ) - 1 ? 'md:pb-5' : ''; ?> lg:mx-auto lg:w-fit lg:grid-cols-[462px_56px_462px] lg:items-center lg:gap-14 lg:pb-0" data-how-it-works-step-row data-how-step-side="<?php echo $is_left ? 'left' : 'right'; ?>">
+							<?php
+							$title_width_class = 'max-w-none';
+
+							if ( in_array( $step['id'], array( 's3', 's4', 's6' ), true ) ) {
+								$title_width_class = 'max-w-[165px]';
+							} elseif ( 's5' === $step['id'] ) {
+								$title_width_class = 'max-w-[175px]';
+							}
+							?>
+							<div class="la-how-step-row relative mx-6 grid grid-cols-[auto_1fr] items-center gap-x-5 sm:mx-auto sm:max-w-[680px] <?php echo $index === count( $steps ) - 1 ? 'md:pb-5' : ''; ?> lg:mx-auto lg:w-fit lg:max-w-none lg:grid-cols-[462px_56px_462px] lg:items-center lg:gap-14 lg:pb-0" data-how-it-works-step-row data-how-step-side="<?php echo $is_left ? 'left' : 'right'; ?>">
 								<div class="la-how-step-marker z-20 col-start-1 row-start-1 flex h-12 w-12 items-center justify-center rounded-full border-2 border-brand-1 bg-white text-brand-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] [&_svg]:h-6 [&_svg]:w-6 md:h-[60px] md:w-[60px] md:border-[3px] md:[&_svg]:h-[25.7px] md:[&_svg]:w-[25.7px] lg:absolute lg:left-1/2 lg:top-1/2 lg:h-14 lg:w-14 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:border-[3px] lg:[&_svg]:h-[26px] lg:[&_svg]:w-[26px]" data-how-it-works-step>
 									<?php echo wp_kses( latrobeweb_get_icon_markup( $step['icon'] ), latrobeweb_get_svg_allowed() ); ?>
 								</div>
 								<article class="la-how-step-card col-start-2 row-start-1 min-w-0 w-full rounded-lg px-0 py-0 text-left transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform lg:py-5 <?php echo $is_left ? 'lg:col-start-1 lg:pl-5 lg:pr-0 lg:text-right' : 'lg:col-start-3 lg:pl-0 lg:pr-5 lg:text-left'; ?>">
 									<div class="flex w-full items-baseline gap-3 font-display text-black lg:inline-grid lg:w-auto lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-x-3 <?php echo $is_left ? 'lg:ml-auto lg:text-right' : 'lg:text-left'; ?>">
 										<span class="shrink-0 text-right font-display text-xl font-light leading-7 tracking-tighter text-gray-500"><?php echo esc_html( $step['number'] ); ?></span>
-										<h4 class="font-display text-xl font-bold leading-7 tracking-tighter text-black md:text-xl md:leading-8 lg:text-2xl lg:leading-8"><?php echo esc_html( $step['title'] ); ?></h4>
+										<h4 class="<?php echo esc_attr( $title_width_class ); ?> font-display text-xl font-bold leading-7 tracking-tighter text-black sm:max-w-none md:text-xl md:leading-8 lg:text-2xl lg:leading-8"><?php echo esc_html( $step['title'] ); ?></h4>
 									</div>
 									<p class="mt-3 font-display text-lg font-normal leading-6 tracking-normal text-gray-500 <?php echo $is_left ? 'lg:ml-auto' : ''; ?>"><?php echo esc_html( $step['description'] ); ?></p>
 								</article>
