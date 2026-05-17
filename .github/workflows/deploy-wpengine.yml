@@ -24,4 +24,4 @@ jobs:
           SRC_PATH: "wp-content/themes/latrobeweb/"
           REMOTE_PATH: "wp-content/themes/latrobeweb/"
           PHP_LINT: false
-          CACHE_CLEAR: true
+          CACHE_CLEAR: true 
