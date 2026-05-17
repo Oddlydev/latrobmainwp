@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -18,4 +21,7 @@ jobs:
         with:
           WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
           WPE_ENV: pactlatrobedev
-          REMOTE_PATH: ""
+          SRC_PATH: "wp-content/themes/latrobeweb/"
+          REMOTE_PATH: "wp-content/themes/latrobeweb/"
+          PHP_LINT: false
+          CACHE_CLEAR: true
