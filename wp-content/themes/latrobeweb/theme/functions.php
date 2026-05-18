@@ -68,6 +68,49 @@ if ( ! function_exists( 'latrobeweb_asset_version' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'latrobeweb_get_asset_url' ) ) :
+	/**
+	 * Returns the first available asset URL from a list of relative paths.
+	 *
+	 * This keeps front-end assets resilient when the theme is deployed from
+	 * slightly different directory layouts across environments.
+	 *
+	 * @param string[] $relative_paths Candidate paths relative to the theme directory.
+	 * @return string
+	 */
+	function latrobeweb_get_asset_url( $relative_paths ) {
+		foreach ( $relative_paths as $relative_path ) {
+			$file_path = get_template_directory() . '/' . ltrim( $relative_path, '/' );
+
+			if ( file_exists( $file_path ) ) {
+				return get_template_directory_uri() . '/' . ltrim( $relative_path, '/' );
+			}
+		}
+
+		return get_template_directory_uri() . '/' . ltrim( (string) $relative_paths[0], '/' );
+	}
+endif;
+
+if ( ! function_exists( 'latrobeweb_get_asset_version' ) ) :
+	/**
+	 * Returns the first available asset version from a list of relative paths.
+	 *
+	 * @param string[] $relative_paths Candidate paths relative to the theme directory.
+	 * @return string
+	 */
+	function latrobeweb_get_asset_version( $relative_paths ) {
+		foreach ( $relative_paths as $relative_path ) {
+			$file_path = get_template_directory() . '/' . ltrim( $relative_path, '/' );
+
+			if ( file_exists( $file_path ) ) {
+				return (string) filemtime( $file_path );
+			}
+		}
+
+		return LATROBEWEB_VERSION;
+	}
+endif;
+
 if ( ! function_exists( 'latrobeweb_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -733,9 +776,23 @@ add_action( 'widgets_init', 'latrobeweb_widgets_init' );
  * Enqueue scripts and styles.
  */
 function latrobeweb_scripts() {
+	$style_paths  = array( 'style.css', 'theme/style.css' );
+	$script_paths = array( 'js/script.min.js', 'theme/js/script.min.js' );
+
 	wp_enqueue_style( 'latrobeweb-fonts', LATROBEWEB_FONT_URL, array(), null );
-	wp_enqueue_style( 'latrobeweb-style', get_stylesheet_uri(), array(), latrobeweb_asset_version( 'style.css' ) );
-	wp_enqueue_script( 'latrobeweb-script', get_template_directory_uri() . '/js/script.min.js', array(), latrobeweb_asset_version( 'js/script.min.js' ), true );
+	wp_enqueue_style(
+		'latrobeweb-style',
+		latrobeweb_get_asset_url( $style_paths ),
+		array(),
+		latrobeweb_get_asset_version( $style_paths )
+	);
+	wp_enqueue_script(
+		'latrobeweb-script',
+		latrobeweb_get_asset_url( $script_paths ),
+		array(),
+		latrobeweb_get_asset_version( $script_paths ),
+		true
+	);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -748,6 +805,7 @@ add_action( 'wp_enqueue_scripts', 'latrobeweb_scripts' );
  */
 function latrobeweb_enqueue_block_editor_script() {
 	$current_screen = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
+	$editor_script_paths = array( 'js/block-editor.min.js', 'theme/js/block-editor.min.js' );
 
 	if (
 		$current_screen &&
@@ -756,12 +814,12 @@ function latrobeweb_enqueue_block_editor_script() {
 	) {
 		wp_enqueue_script(
 			'latrobeweb-editor',
-			get_template_directory_uri() . '/js/block-editor.min.js',
+			latrobeweb_get_asset_url( $editor_script_paths ),
 			array(
 				'wp-blocks',
 				'wp-edit-post',
 			),
-			latrobeweb_asset_version( 'js/block-editor.min.js' ),
+			latrobeweb_get_asset_version( $editor_script_paths ),
 			true
 		);
 		wp_add_inline_script( 'latrobeweb-editor', "tailwindTypographyClasses = '" . esc_attr( LATROBEWEB_TYPOGRAPHY_CLASSES ) . "'.split(' ');", 'before' );
