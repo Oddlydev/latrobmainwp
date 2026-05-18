@@ -4,6 +4,7 @@
 
 # Ignore generated JavaScript files:
 *.min.js
+!theme/js/*.min.js
 
 # Ignore generated CSS files:
 # style.css
