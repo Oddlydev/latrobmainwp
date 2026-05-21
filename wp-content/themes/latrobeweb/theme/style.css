@@ -1880,6 +1880,9 @@ h6 {
 .top-1\/2 {
   top: calc(1 / 2 * 100%);
 }
+.top-5 {
+  top: calc(var(--spacing) * 5);
+}
 .top-\[-3\.499px\] {
   top: -3.499px;
 }
@@ -1897,6 +1900,9 @@ h6 {
 }
 .bottom-0 {
   bottom: calc(var(--spacing) * 0);
+}
+.bottom-5 {
+  bottom: calc(var(--spacing) * 5);
 }
 .bottom-6 {
   bottom: calc(var(--spacing) * 6);
