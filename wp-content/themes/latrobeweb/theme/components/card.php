@@ -88,7 +88,7 @@ if ( 'contact' === $variant ) :
 			<?php if ( $href ) : ?>
 				<a href="<?php echo esc_url( $href ); ?>" class="body-base-500 text-black group-hover:text-brand-1 group-hover:underline group-hover:decoration-solid group-hover:[text-decoration-skip-ink:none] group-hover:[text-decoration-thickness:8%] group-hover:[text-underline-offset:25%] group-hover:[text-underline-position:from-font]"><?php echo esc_html( $value ); ?></a>
 			<?php else : ?>
-				<p class="body-base-500 text-black"><?php echo esc_html( $value ); ?></p>
+				<p class="body-base-500 text-black group-hover:text-brand-1 group-hover:underline group-hover:decoration-solid group-hover:[text-decoration-skip-ink:none] group-hover:[text-decoration-thickness:8%] group-hover:[text-underline-offset:25%] group-hover:[text-underline-position:from-font]"><?php echo esc_html( $value ); ?></p>
 			<?php endif; ?>
 		</div>
 	</article>
