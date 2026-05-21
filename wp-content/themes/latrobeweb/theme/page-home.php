@@ -373,6 +373,7 @@ $faq_items = array(
 							<?php $is_left = 'left' === $step['side']; ?>
 							<?php
 							$title_width_class = 'max-w-none';
+							$description_width_class = 'lg:max-w-[250px]';
 
 							if ( in_array( $step['id'], array( 's3', 's4' ), true ) ) {
 								$title_width_class = 'max-w-[165px]';
@@ -380,6 +381,18 @@ $faq_items = array(
 								$title_width_class = 'max-w-[220px] md:max-w-[175px]';
 							} elseif ( 's6' === $step['id'] ) {
 								$title_width_class = 'max-w-[220px] md:max-w-none';
+							}
+
+							if ( 's1' === $step['id'] ) {
+								$description_width_class = 'lg:max-w-[230px]';
+							} elseif ( in_array( $step['id'], array( 's2', 's3' ), true ) ) {
+								$description_width_class = 'lg:max-w-[260px]';
+							} elseif ( 's4' === $step['id'] ) {
+								$description_width_class = 'lg:max-w-[248px]';
+							} elseif ( 's5' === $step['id'] ) {
+								$description_width_class = 'lg:max-w-[240px]';
+							} elseif ( 's6' === $step['id'] ) {
+								$description_width_class = 'lg:max-w-[274px]';
 							}
 							?>
 							<div class="la-how-step-row relative grid grid-cols-[auto_1fr] items-start gap-x-5 <?php echo $index === count( $steps ) - 1 ? 'pb-5' : ''; ?> lg:mx-auto lg:w-fit lg:max-w-none lg:grid-cols-[320px_56px_320px] lg:items-center lg:gap-x-0 lg:gap-y-0 lg:pb-0" data-how-it-works-step-row data-how-step-side="<?php echo $is_left ? 'left' : 'right'; ?>">
@@ -391,7 +404,7 @@ $faq_items = array(
 										<span class="shrink-0 text-right font-display text-xl font-light leading-7 tracking-tighter text-gray-500"><?php echo esc_html( $step['number'] ); ?></span>
 										<h4 class="<?php echo esc_attr( $title_width_class ); ?> font-display text-xl font-bold leading-7 tracking-tighter text-black sm:max-w-none md:text-xl md:leading-8 lg:max-w-[260px] lg:text-2xl lg:leading-8"><?php echo esc_html( $step['title'] ); ?></h4>
 									</div>
-									<p class="mt-3 font-display text-lg font-normal leading-6 tracking-normal text-gray-500 lg:mt-[5px] lg:max-w-[302px] <?php echo $is_left ? 'lg:ml-auto' : ''; ?>"><?php echo esc_html( $step['description'] ); ?></p>
+									<p class="mt-3 font-display text-lg font-normal leading-6 tracking-normal text-gray-500 lg:mt-[5px] lg:text-base lg:leading-6 <?php echo esc_attr( $description_width_class ); ?> <?php echo $is_left ? 'lg:ml-auto' : ''; ?>"><?php echo esc_html( $step['description'] ); ?></p>
 								</article>
 							</div>
 						<?php endforeach; ?>

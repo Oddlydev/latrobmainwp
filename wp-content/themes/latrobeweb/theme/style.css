@@ -4901,8 +4901,33 @@ h6 {
   }
 }
 @media (width >= 64rem) {
+  .lg\:max-w-\[230px\] {
+    max-width: 230px;
+  }
+}
+@media (width >= 64rem) {
+  .lg\:max-w-\[240px\] {
+    max-width: 240px;
+  }
+}
+@media (width >= 64rem) {
+  .lg\:max-w-\[248px\] {
+    max-width: 248px;
+  }
+}
+@media (width >= 64rem) {
+  .lg\:max-w-\[250px\] {
+    max-width: 250px;
+  }
+}
+@media (width >= 64rem) {
   .lg\:max-w-\[260px\] {
     max-width: 260px;
+  }
+}
+@media (width >= 64rem) {
+  .lg\:max-w-\[274px\] {
+    max-width: 274px;
   }
 }
 @media (width >= 64rem) {
