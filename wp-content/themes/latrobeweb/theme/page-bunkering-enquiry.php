@@ -7,6 +7,8 @@
  */
 
 get_header();
+
+$contact_form_shortcode = '[contact-form-7 id="75c4d43" title="Contact form 1"]';
 ?>
 
 <main class="la-bunker-page">
@@ -17,14 +19,7 @@ get_header();
 				the_post();
 				?>
 				<div class="la-bunker-page__content">
-					<?php if ( trim( (string) get_the_content() ) !== '' ) : ?>
-						<?php the_content(); ?>
-					<?php else : ?>
-						<div class="la-bunker-empty-state">
-							<h1><?php esc_html_e( 'Bunkering Enquiry', 'latrobeweb' ); ?></h1>
-							<p><?php esc_html_e( '[contact-form-7 id="75c4d43" title="Contact form 1"]', 'latrobeweb' ); ?></p>
-						</div>
-					<?php endif; ?>
+					<?php echo do_shortcode( $contact_form_shortcode ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</div>
 				<?php
 			endwhile;
