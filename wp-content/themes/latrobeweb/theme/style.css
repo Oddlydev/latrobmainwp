@@ -608,7 +608,7 @@ h6 {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.2;
+  opacity: 0.12;
   background: url("./assets/images/how-it-works-mobile.png") 100px 100px
 		repeat;
 }
@@ -618,6 +618,7 @@ h6 {
 }
 @media (min-width: 768px) {
   .la-how-it-works-section::before {
+    opacity: 0.2;
     background-image: url("./assets/images/how-it-works-tablet.png");
   }
 }
