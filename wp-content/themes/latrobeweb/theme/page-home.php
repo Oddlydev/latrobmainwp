@@ -374,10 +374,12 @@ $faq_items = array(
 							<?php
 							$title_width_class = 'max-w-none';
 
-							if ( in_array( $step['id'], array( 's3', 's4', 's6' ), true ) ) {
+							if ( in_array( $step['id'], array( 's3', 's4' ), true ) ) {
 								$title_width_class = 'max-w-[165px]';
 							} elseif ( 's5' === $step['id'] ) {
-								$title_width_class = 'max-w-[175px]';
+								$title_width_class = 'max-w-[220px] md:max-w-[175px]';
+							} elseif ( 's6' === $step['id'] ) {
+								$title_width_class = 'max-w-[220px] md:max-w-none';
 							}
 							?>
 							<div class="la-how-step-row relative grid grid-cols-[auto_1fr] items-start gap-x-5 <?php echo $index === count( $steps ) - 1 ? 'pb-5' : ''; ?> lg:mx-auto lg:w-fit lg:max-w-none lg:grid-cols-[462px_56px_462px] lg:items-center lg:gap-14 lg:pb-0" data-how-it-works-step-row data-how-step-side="<?php echo $is_left ? 'left' : 'right'; ?>">

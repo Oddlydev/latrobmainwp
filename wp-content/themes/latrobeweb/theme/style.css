@@ -2652,6 +2652,9 @@ h6 {
 .max-w-\[210px\] {
   max-width: 210px;
 }
+.max-w-\[220px\] {
+  max-width: 220px;
+}
 .max-w-\[540px\] {
   max-width: 540px;
 }
@@ -4308,6 +4311,11 @@ h6 {
   }
 }
 @media (width >= 48rem) {
+  .md\:max-w-\[175px\] {
+    max-width: 175px;
+  }
+}
+@media (width >= 48rem) {
   .md\:max-w-\[290px\] {
     max-width: 290px;
   }
@@ -4325,6 +4333,11 @@ h6 {
 @media (width >= 48rem) {
   .md\:max-w-full {
     max-width: 100%;
+  }
+}
+@media (width >= 48rem) {
+  .md\:max-w-none {
+    max-width: none;
   }
 }
 @media (width >= 48rem) {
