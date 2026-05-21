@@ -13,7 +13,7 @@
 		<div class="px-6 py-12 lg:mx-auto lg:px-12 lg:py-12">
 			<div class="flex flex-col gap-8 md:gap-8 lg:gap-8">
 				<div class="flex flex-col items-center gap-10 text-center md:gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-5 lg:text-left">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="la-site-brand inline-flex items-center gap-3 self-center text-left lg:self-auto">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="la-site-brand inline-flex items-center gap-3 justify-center text-left lg:self-auto">
 						<img
 							src="<?php echo esc_url( latrobeweb_asset_uri( 'images/logo-light.svg' ) ); ?>"
 							alt="La Trobe University"
