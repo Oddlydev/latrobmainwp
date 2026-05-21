@@ -349,6 +349,8 @@ h6 {
 
 .la-home-hero-image-blend {
 	height: 7.5rem;
+	width: 122%;
+	left: -11%;
 	background: linear-gradient(
 		180deg,
 		rgba(255, 255, 255, 0.92) 0%,
@@ -356,17 +358,22 @@ h6 {
 		rgba(255, 255, 255, 0.24) 62%,
 		rgba(255, 255, 255, 0) 100%
 	);
-	transform: translateY(-0.45rem);
+	transform: translateY(-0.6rem) rotate(-6deg);
+	transform-origin: top left;
 }
 
 .la-home-hero-image-blend-mobile {
 	height: 6.5rem;
-	transform: translateY(-0.375rem);
+	width: 126%;
+	left: -13%;
+	transform: translateY(-0.5rem) rotate(-7deg);
 }
 
 .la-home-hero-image-blend-tablet {
 	height: 7.5rem;
-	transform: translateY(-0.45rem);
+	width: 123%;
+	left: -11.5%;
+	transform: translateY(-0.6rem) rotate(-6deg);
 }
 
 .la-home-hero-image-accent {
