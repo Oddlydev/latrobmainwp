@@ -1916,6 +1916,9 @@ h6 {
 .left-\[-8\%\] {
   left: -8%;
 }
+.left-\[22px\] {
+  left: 22px;
+}
 .z-0 {
   z-index: 0;
 }
@@ -2571,6 +2574,9 @@ h6 {
 .w-0\.5 {
   width: calc(var(--spacing) * 0.5);
 }
+.w-1 {
+  width: calc(var(--spacing) * 1);
+}
 .w-2 {
   width: calc(var(--spacing) * 2);
 }
@@ -2837,6 +2843,11 @@ h6 {
   --tw-space-y-reverse: 0;
   margin-block-start: calc(calc(var(--spacing) * 8) * var(--tw-space-y-reverse));
   margin-block-end: calc(calc(var(--spacing) * 8) * calc(1 - var(--tw-space-y-reverse)));
+}
+:where(.space-y-10 > :not(:last-child)) {
+  --tw-space-y-reverse: 0;
+  margin-block-start: calc(calc(var(--spacing) * 10) * var(--tw-space-y-reverse));
+  margin-block-end: calc(calc(var(--spacing) * 10) * calc(1 - var(--tw-space-y-reverse)));
 }
 :where(.space-y-16 > :not(:last-child)) {
   --tw-space-y-reverse: 0;
