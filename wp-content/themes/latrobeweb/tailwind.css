@@ -342,6 +342,24 @@ h6 {
 	margin-top: -0.375rem;
 }
 
+.la-home-hero-image-mobile-shell::before,
+.la-home-hero-image-tablet-shell::before {
+	content: "";
+	pointer-events: none;
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	background:
+		radial-gradient(72% 58% at 68% 34%, rgba(233, 34, 60, 0.08) 0%, rgba(233, 34, 60, 0.04) 38%, rgba(233, 34, 60, 0) 100%),
+		radial-gradient(54% 46% at 30% 72%, rgba(233, 34, 60, 0.04) 0%, rgba(233, 34, 60, 0) 100%);
+}
+
+.la-home-hero-image-tablet-shell::before {
+	background:
+		radial-gradient(68% 56% at 66% 30%, rgba(233, 34, 60, 0.08) 0%, rgba(233, 34, 60, 0.04) 42%, rgba(233, 34, 60, 0) 100%),
+		radial-gradient(50% 44% at 28% 70%, rgba(233, 34, 60, 0.03) 0%, rgba(233, 34, 60, 0) 100%);
+}
+
 .la-home-hero-image-blend,
 .la-home-hero-image-accent {
 	@apply pointer-events-none absolute inset-x-0 top-0 z-[1];
@@ -357,16 +375,19 @@ h6 {
 		rgba(255, 255, 255, 0) 100%
 	);
 	transform: translateY(-0.45rem);
+	clip-path: polygon(0 0, 100% 0, 100% 82%, 88% 79%, 72% 70%, 55% 61%, 38% 58%, 22% 60%, 10% 56%, 0 54%);
 }
 
 .la-home-hero-image-blend-mobile {
 	height: 6.5rem;
 	transform: translateY(-0.375rem);
+	clip-path: polygon(0 0, 100% 0, 100% 86%, 88% 82%, 72% 73%, 56% 63%, 40% 60%, 24% 61%, 10% 57%, 0 55%);
 }
 
 .la-home-hero-image-blend-tablet {
 	height: 7.5rem;
 	transform: translateY(-0.45rem);
+	clip-path: polygon(0 0, 100% 0, 100% 82%, 88% 79%, 72% 70%, 55% 61%, 38% 58%, 22% 60%, 10% 56%, 0 54%);
 }
 
 .la-home-hero-image-accent {
