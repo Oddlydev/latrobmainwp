@@ -813,14 +813,17 @@ h6 {
   z-index: 1;
 }
 .la-home-hero-image-blend {
-  height: 100%;
+  height: 11rem;
   background: linear-gradient(4deg, rgba(255, 255, 255, 0) 51.04%, rgba(255, 255, 255, 0.7) 62.98%, var(--color-white) 66%);
+  transform: translateY(-1rem);
 }
 .la-home-hero-image-blend-mobile {
-  height: 100%;
+  height: 8.75rem;
+  transform: translateY(-0.875rem);
 }
 .la-home-hero-image-blend-tablet {
-  height: 100%;
+  height: 11rem;
+  transform: translateY(-1rem);
 }
 .la-home-hero-image-accent {
   left: 50%;
