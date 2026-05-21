@@ -3935,6 +3935,21 @@ h6 {
   }
 }
 @media (hover: hover) {
+  .hover\:decoration-solid:hover {
+    text-decoration-style: solid;
+  }
+}
+@media (hover: hover) {
+  .hover\:\[text-decoration-thickness\:8\%\]:hover {
+    text-decoration-thickness: 8%;
+  }
+}
+@media (hover: hover) {
+  .hover\:\[text-underline-offset\:25\%\]:hover {
+    text-underline-offset: 25%;
+  }
+}
+@media (hover: hover) {
   .hover\:opacity-70:hover {
     opacity: 70%;
   }
@@ -3973,6 +3988,16 @@ h6 {
   .hover\:shadow-la-shadow-4:hover {
     --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgba(0, 0, 0, 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgba(0, 0, 0, 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+}
+@media (hover: hover) {
+  .hover\:\[text-decoration-skip-ink\:none\]:hover {
+    text-decoration-skip-ink: none;
+  }
+}
+@media (hover: hover) {
+  .hover\:\[text-underline-position\:from-font\]:hover {
+    text-underline-position: from-font;
   }
 }
 .active\:border-brand-1:active {

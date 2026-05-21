@@ -86,9 +86,9 @@ if ( 'contact' === $variant ) :
 		<div>
 			<p class="eyebrow text-gray-500"><?php echo esc_html( $label ); ?></p>
 			<?php if ( $href ) : ?>
-				<a href="<?php echo esc_url( $href ); ?>" class="body-base-500 text-brand-1 underline decoration-solid [text-decoration-skip-ink:none] [text-decoration-thickness:8%] [text-underline-offset:25%] [text-underline-position:from-font]"><?php echo esc_html( $value ); ?></a>
+				<a href="<?php echo esc_url( $href ); ?>" class="body-base-500 text-black hover:text-brand-1 hover:underline hover:decoration-solid hover:[text-decoration-skip-ink:none] hover:[text-decoration-thickness:8%] hover:[text-underline-offset:25%] hover:[text-underline-position:from-font]"><?php echo esc_html( $value ); ?></a>
 			<?php else : ?>
-				<p class="body-base-500 text-brand-1 underline decoration-solid [text-decoration-skip-ink:none] [text-decoration-thickness:8%] [text-underline-offset:25%] [text-underline-position:from-font]"><?php echo esc_html( $value ); ?></p>
+				<p class="body-base-500 text-black"><?php echo esc_html( $value ); ?></p>
 			<?php endif; ?>
 		</div>
 	</article>
