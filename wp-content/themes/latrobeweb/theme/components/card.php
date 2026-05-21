@@ -81,12 +81,12 @@ endif;
 
 if ( 'contact' === $variant ) :
 	?>
-        <article class="<?php echo esc_attr( trim( 'flex translate-y-0 items-center gap-4 rounded-2xl border border-gray-200 bg-white px-4 py-4 shadow-none transition-[border-color,box-shadow,transform] duration-200 ease-out hover:-translate-y-px hover:border-contact-hover-border hover:shadow-contact-hover ' . $class_name ) ); ?>">
+        <article class="<?php echo esc_attr( trim( 'group flex translate-y-0 items-center gap-4 rounded-2xl border border-gray-200 bg-white px-4 py-4 shadow-none transition-[border-color,box-shadow,transform] duration-200 ease-out hover:-translate-y-px hover:border-contact-hover-border hover:shadow-contact-hover ' . $class_name ) ); ?>">
                 <div class="bg-contact-icon-surface text-brand-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"><?php echo wp_kses( $icon, latrobeweb_get_svg_allowed() ); ?></div>
 		<div>
 			<p class="eyebrow text-gray-500"><?php echo esc_html( $label ); ?></p>
 			<?php if ( $href ) : ?>
-				<a href="<?php echo esc_url( $href ); ?>" class="body-base-500 text-black hover:text-brand-1 hover:underline hover:decoration-solid hover:[text-decoration-skip-ink:none] hover:[text-decoration-thickness:8%] hover:[text-underline-offset:25%] hover:[text-underline-position:from-font]"><?php echo esc_html( $value ); ?></a>
+				<a href="<?php echo esc_url( $href ); ?>" class="body-base-500 text-black group-hover:text-brand-1 group-hover:underline group-hover:decoration-solid group-hover:[text-decoration-skip-ink:none] group-hover:[text-decoration-thickness:8%] group-hover:[text-underline-offset:25%] group-hover:[text-underline-position:from-font]"><?php echo esc_html( $value ); ?></a>
 			<?php else : ?>
 				<p class="body-base-500 text-black"><?php echo esc_html( $value ); ?></p>
 			<?php endif; ?>
