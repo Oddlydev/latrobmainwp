@@ -4263,6 +4263,11 @@ h6 {
   }
 }
 @media (width >= 48rem) {
+  .md\:max-w-\[320px\] {
+    max-width: 320px;
+  }
+}
+@media (width >= 48rem) {
   .md\:max-w-full {
     max-width: 100%;
   }
@@ -4699,6 +4704,11 @@ h6 {
 @media (width >= 64rem) {
   .lg\:flex {
     display: flex;
+  }
+}
+@media (width >= 64rem) {
+  .lg\:grid {
+    display: grid;
   }
 }
 @media (width >= 64rem) {
