@@ -336,6 +336,56 @@ h6 {
 	@apply absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white/35 to-transparent md:hidden lg:hidden;
 }
 
+.la-home-hero-image-mobile-shell,
+.la-home-hero-image-tablet-shell {
+	@apply relative overflow-hidden;
+}
+
+.la-home-hero-image-blend,
+.la-home-hero-image-accent {
+	@apply pointer-events-none absolute inset-x-0 top-0 z-[1];
+}
+
+.la-home-hero-image-blend {
+	height: 10rem;
+	background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.94) 28%, rgba(255, 255, 255, 0.7) 52%, rgba(255, 255, 255, 0.28) 76%, rgba(255, 255, 255, 0) 100%);
+}
+
+.la-home-hero-image-accent {
+	left: 50%;
+	border-radius: 16009193px;
+	background: rgba(233, 34, 60, 0.05);
+	filter: blur(30.535140991210938px);
+	transform: translateX(-50%);
+}
+
+.la-home-hero-image-accent-mobile {
+	top: 0.75rem;
+	height: 15.5rem;
+	width: 15.5rem;
+	opacity: 0.8;
+}
+
+.la-home-hero-image-accent-tablet {
+	top: 2.5rem;
+	height: 23.8556rem;
+	width: 23.8556rem;
+}
+
+.la-home-hero-image-tablet-shell::after {
+	content: "";
+	pointer-events: none;
+	position: absolute;
+	top: 8.75rem;
+	left: 4rem;
+	z-index: 1;
+	height: 17.8917rem;
+	width: 17.8917rem;
+	border-radius: 16009193px;
+	background: rgba(233, 34, 60, 0.03);
+	filter: blur(30.535140991210938px);
+}
+
 .la-home-hero-title {
 	@apply font-display text-4xl font-bold leading-[110%] tracking-normal text-black md:font-black lg:text-[60px] lg:font-black;
 }

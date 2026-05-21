@@ -242,20 +242,24 @@ $faq_items = array(
 					?>
 				</div>
 			</div>
-			<div class="relative overflow-hidden md:hidden">
+			<div class="la-home-hero-image-mobile-shell relative overflow-hidden md:hidden">
+				<div aria-hidden="true" class="la-home-hero-image-blend la-home-hero-image-blend-mobile"></div>
+				<div aria-hidden="true" class="la-home-hero-image-accent la-home-hero-image-accent-mobile"></div>
 				<img
 					src="<?php echo esc_url( latrobeweb_asset_uri( sprintf( 'images/hero-images/mobile/hero-light-%d.png', $hero_image_index ) ) ); ?>"
 					alt=""
 					aria-hidden="true"
-					class="block h-auto w-full object-cover object-center"
+					class="la-home-hero-image-mobile block h-auto w-full object-cover object-center"
 				/>
 			</div>
-			<div class="relative hidden overflow-hidden md:block lg:hidden">
+			<div class="la-home-hero-image-tablet-shell relative hidden overflow-hidden md:block lg:hidden">
+				<div aria-hidden="true" class="la-home-hero-image-blend la-home-hero-image-blend-tablet"></div>
+				<div aria-hidden="true" class="la-home-hero-image-accent la-home-hero-image-accent-tablet"></div>
 				<img
 					src="<?php echo esc_url( latrobeweb_asset_uri( sprintf( 'images/hero-images/tablet/hero-ligh-tab-%d.png', $hero_image_index ) ) ); ?>"
 					alt=""
 					aria-hidden="true"
-					class="block h-auto w-full object-cover object-center"
+					class="la-home-hero-image-tablet block h-auto w-full object-cover object-center"
 				/>
 			</div>
 			<div class="relative bg-brand-3 p-3.5 md:p-5 lg:p-7">
