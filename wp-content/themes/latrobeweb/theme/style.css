@@ -616,6 +616,16 @@ h6 {
   position: relative;
   z-index: 1;
 }
+@media (max-width: 767px) {
+  .la-how-it-works-section::before {
+    opacity: 0.05;
+    background-image: url("./assets/images/how-it-works-tablet.png");
+    background-position: center top;
+    background-repeat: repeat;
+    background-size: 620px auto;
+    filter: saturate(0.6) brightness(1.08) contrast(0.55);
+  }
+}
 @media (min-width: 768px) {
   .la-how-it-works-section::before {
     background-image: url("./assets/images/how-it-works-tablet.png");
