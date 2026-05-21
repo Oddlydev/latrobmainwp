@@ -4222,6 +4222,11 @@ h6 {
   }
 }
 @media (width >= 48rem) {
+  .md\:mt-\[2px\] {
+    margin-top: 2px;
+  }
+}
+@media (width >= 48rem) {
   .md\:mb-5 {
     margin-bottom: calc(var(--spacing) * 5);
   }
@@ -4407,6 +4412,11 @@ h6 {
 @media (width >= 48rem) {
   .md\:gap-y-5 {
     row-gap: calc(var(--spacing) * 5);
+  }
+}
+@media (width >= 48rem) {
+  .md\:self-start {
+    align-self: flex-start;
   }
 }
 @media (width >= 48rem) {
@@ -4683,6 +4693,11 @@ h6 {
 @media (width >= 64rem) {
   .lg\:mx-auto {
     margin-inline: auto;
+  }
+}
+@media (width >= 64rem) {
+  .lg\:mt-0 {
+    margin-top: calc(var(--spacing) * 0);
   }
 }
 @media (width >= 64rem) {
