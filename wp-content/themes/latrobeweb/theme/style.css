@@ -2616,6 +2616,9 @@ h6 {
 .w-\[100\.168\%\] {
   width: 100.168%;
 }
+.w-\[228px\] {
+  width: 228px;
+}
 .w-auto {
   width: auto;
 }
@@ -4279,6 +4282,11 @@ h6 {
   }
 }
 @media (width >= 48rem) {
+  .md\:max-w-\[440px\] {
+    max-width: 440px;
+  }
+}
+@media (width >= 48rem) {
   .md\:max-w-full {
     max-width: 100%;
   }
@@ -4480,6 +4488,11 @@ h6 {
 @media (width >= 48rem) {
   .md\:pl-5 {
     padding-left: calc(var(--spacing) * 5);
+  }
+}
+@media (width >= 48rem) {
+  .md\:text-right {
+    text-align: right;
   }
 }
 @media (width >= 48rem) {
