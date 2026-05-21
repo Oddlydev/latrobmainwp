@@ -229,6 +229,8 @@ $faq_items = array(
 							'class_name'    => 'px-5 py-3 lg:px-8 lg:py-4',
 							'icon'          => latrobeweb_get_icon_markup( 'arrow' ),
 							'icon_position' => 'after',
+							'target'        => '_blank',
+							'rel'           => 'noreferrer',
 						)
 					);
 					latrobeweb_component(
