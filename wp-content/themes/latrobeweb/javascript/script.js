@@ -543,9 +543,6 @@ function initCf7MultiStepForms() {
 			return;
 		}
 
-		const nonStepFields = Array.from(
-			form.querySelectorAll('input[type="hidden"], input[name="_wpcf7_unit_tag"]'),
-		);
 		let currentStepIndex = Math.max(
 			0,
 			steps.findIndex((step) => step.classList.contains("is-active")),
@@ -575,10 +572,6 @@ function initCf7MultiStepForms() {
 				step.classList.toggle("is-active", isActive);
 				step.hidden = !isActive;
 				step.setAttribute("aria-hidden", isActive ? "false" : "true");
-
-				getStepFields(step).forEach((field) => {
-					field.disabled = !isActive;
-				});
 
 				step.querySelectorAll('button, input[type="submit"]').forEach((button) => {
 					button.disabled = !isActive;
@@ -625,22 +618,6 @@ function initCf7MultiStepForms() {
 			return true;
 		}
 
-		function enableAllStepFields() {
-			steps.forEach((step) => {
-				getStepFields(step).forEach((field) => {
-					field.disabled = false;
-				});
-
-				step.querySelectorAll('button, input[type="submit"]').forEach((button) => {
-					button.disabled = false;
-				});
-			});
-
-			nonStepFields.forEach((field) => {
-				field.disabled = false;
-			});
-		}
-
 		shell.addEventListener("click", (event) => {
 			const nextButton = event.target.closest("[data-form-next]");
 			const prevButton = event.target.closest("[data-form-prev]");
@@ -681,13 +658,7 @@ function initCf7MultiStepForms() {
 			clearFieldError(field);
 		});
 
-		form.addEventListener("submit", () => {
-			enableAllStepFields();
-		});
-
 		cf7Wrapper.addEventListener("wpcf7invalid", () => {
-			enableAllStepFields();
-
 			const invalidField = form.querySelector(".wpcf7-not-valid");
 			if (!invalidField) {
 				return;
