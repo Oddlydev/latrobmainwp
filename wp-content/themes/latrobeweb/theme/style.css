@@ -812,8 +812,8 @@ h6 {
   z-index: 1;
 }
 .la-home-hero-image-blend {
-  height: 10rem;
-  background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.94) 28%, rgba(255, 255, 255, 0.7) 52%, rgba(255, 255, 255, 0.28) 76%, rgba(255, 255, 255, 0) 100%);
+  height: 6.75rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.74) 24%, rgba(255, 244, 246, 0.44) 48%, rgba(255, 244, 246, 0.16) 68%, rgba(255, 255, 255, 0) 100%);
 }
 .la-home-hero-image-accent {
   left: 50%;
@@ -823,27 +823,28 @@ h6 {
   transform: translateX(-50%);
 }
 .la-home-hero-image-accent-mobile {
-  top: 0.75rem;
-  height: 15.5rem;
-  width: 15.5rem;
-  opacity: 0.8;
+  top: 1.25rem;
+  height: 13.5rem;
+  width: 13.5rem;
+  opacity: 0.95;
 }
 .la-home-hero-image-accent-tablet {
-  top: 2.5rem;
-  height: 23.8556rem;
-  width: 23.8556rem;
+  top: 1.75rem;
+  height: 20rem;
+  width: 20rem;
+  opacity: 0.92;
 }
 .la-home-hero-image-tablet-shell::after {
   content: "";
   pointer-events: none;
   position: absolute;
-  top: 8.75rem;
-  left: 4rem;
+  top: 7rem;
+  left: 4.5rem;
   z-index: 1;
-  height: 17.8917rem;
-  width: 17.8917rem;
+  height: 15rem;
+  width: 15rem;
   border-radius: 16009193px;
-  background: rgba(233, 34, 60, 0.03);
+  background: rgba(233, 34, 60, 0.04);
   filter: blur(30.535140991210938px);
 }
 .la-home-hero-title {
