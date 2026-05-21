@@ -2480,6 +2480,9 @@ h6 {
 .mb-\[5px\] {
   margin-bottom: 5px;
 }
+.ml-auto {
+  margin-left: auto;
+}
 .box-border {
   box-sizing: border-box;
 }
@@ -2636,6 +2639,9 @@ h6 {
 }
 .max-w-\[175px\] {
   max-width: 175px;
+}
+.max-w-\[210px\] {
+  max-width: 210px;
 }
 .max-w-\[540px\] {
   max-width: 540px;
@@ -4260,6 +4266,11 @@ h6 {
 @media (width >= 48rem) {
   .md\:w-full {
     width: 100%;
+  }
+}
+@media (width >= 48rem) {
+  .md\:max-w-\[290px\] {
+    max-width: 290px;
   }
 }
 @media (width >= 48rem) {
