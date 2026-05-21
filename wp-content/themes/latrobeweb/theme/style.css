@@ -814,23 +814,7 @@ h6 {
 }
 .la-home-hero-image-blend {
   height: 10rem;
-  width: 122%;
-  left: -11%;
   background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.94) 28%, rgba(255, 255, 255, 0.7) 52%, rgba(255, 255, 255, 0.28) 76%, rgba(255, 255, 255, 0) 100%);
-  transform: translateY(-0.6rem) rotate(-6deg);
-  transform-origin: top left;
-}
-.la-home-hero-image-blend-mobile {
-  height: 6.5rem;
-  width: 126%;
-  left: -13%;
-  transform: translateY(-0.5rem) rotate(-7deg);
-}
-.la-home-hero-image-blend-tablet {
-  height: 7.5rem;
-  width: 123%;
-  left: -11.5%;
-  transform: translateY(-0.6rem) rotate(-6deg);
 }
 .la-home-hero-image-accent {
   left: 50%;
