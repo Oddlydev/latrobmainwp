@@ -3597,6 +3597,18 @@ h6 {
 .no-underline {
   text-decoration-line: none;
 }
+.underline {
+  text-decoration-line: underline;
+}
+.decoration-solid {
+  text-decoration-style: solid;
+}
+.\[text-decoration-thickness\:8\%\] {
+  text-decoration-thickness: 8%;
+}
+.\[text-underline-offset\:25\%\] {
+  text-underline-offset: 25%;
+}
 .underline-offset-2 {
   text-underline-offset: 2px;
 }
@@ -3796,6 +3808,12 @@ h6 {
 .\[scrollbar-width\:none\] {
   scrollbar-width: none;
 }
+.\[text-decoration-skip-ink\:none\] {
+  text-decoration-skip-ink: none;
+}
+.\[text-underline-position\:from-font\] {
+  text-underline-position: from-font;
+}
 @media (hover: hover) {
   .group-hover\:scale-105:is(:where(.group):hover *) {
     --tw-scale-x: 105%;
@@ -3867,6 +3885,11 @@ h6 {
   }
 }
 @media (hover: hover) {
+  .hover\:rounded-2xl:hover {
+    border-radius: var(--radius-2xl);
+  }
+}
+@media (hover: hover) {
   .hover\:border-brand-1:hover {
     border-color: var(--color-brand-1);
   }
@@ -3877,6 +3900,11 @@ h6 {
   }
 }
 @media (hover: hover) {
+  .hover\:border-gray-200:hover {
+    border-color: var(--color-gray-200);
+  }
+}
+@media (hover: hover) {
   .hover\:bg-surface-card-hover:hover {
     background-color: var(--color-surface-card-hover);
   }
@@ -3884,6 +3912,11 @@ h6 {
 @media (hover: hover) {
   .hover\:bg-transparent:hover {
     background-color: transparent;
+  }
+}
+@media (hover: hover) {
+  .hover\:bg-white:hover {
+    background-color: var(--color-white);
   }
 }
 @media (hover: hover) {
