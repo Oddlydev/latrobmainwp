@@ -359,11 +359,11 @@ $faq_items = array(
 		</div>
 	</section>
 
-	<section class="la-how-it-works-section pt-10 pb-0 md:py-10 lg:py-20">
+	<section class="la-how-it-works-section py-10 lg:py-20">
 		<div class="mx-auto w-full lg:max-w-[1295px]">
 			<span id="how-it-works" class="block scroll-mt-4" aria-hidden="true"></span>
 			<div class="relative overflow-hidden" data-how-it-works data-how-marker-ratio="0.72">
-				<?php latrobeweb_render_section_header( array( 'eyebrow' => 'How It Works', 'title' => 'From login to care record in minutes', 'eyebrow_class' => 'text-brand-1', 'centered' => false, 'class_name' => 'relative z-10 mx-6 mb-[5px] sm:mx-auto sm:mb-7 sm:max-w-[680px] lg:mx-auto lg:mb-12 lg:max-w-none lg:text-center' ) ); ?>
+				<?php latrobeweb_render_section_header( array( 'eyebrow' => 'How It Works', 'title' => 'From login to care record in minutes', 'eyebrow_class' => 'text-brand-1', 'centered' => false, 'class_name' => 'relative z-10 mx-6 mb-5 sm:mx-auto sm:mb-7 sm:max-w-[680px] lg:mx-auto lg:mb-12 lg:max-w-none lg:text-center' ) ); ?>
 				<div class="relative z-10 mx-6 sm:mx-auto sm:max-w-[680px] lg:mx-auto lg:max-w-none">
 					<div class="la-how-track absolute top-5 bottom-5 left-[22px] w-1 rounded-full bg-red-100 md:top-0 md:bottom-0 md:left-[28px] lg:left-1/2 lg:top-0 lg:bottom-0 lg:w-1 lg:-translate-x-1/2" data-how-it-works-track aria-hidden="true">
 						<div class="la-how-track-fill w-full rounded-full bg-brand-1 transition-[height] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-[height]" data-how-it-works-fill></div>
