@@ -364,7 +364,7 @@ $faq_items = array(
 			<span id="how-it-works" class="block scroll-mt-4" aria-hidden="true"></span>
 			<div class="relative overflow-hidden" data-how-it-works data-how-marker-ratio="0.72">
 				<?php latrobeweb_render_section_header( array( 'eyebrow' => 'How It Works', 'title' => 'From login to care record in minutes', 'eyebrow_class' => 'text-brand-1', 'centered' => false, 'class_name' => 'relative z-10 mx-6 mb-[5px] sm:mx-auto sm:mb-7 sm:max-w-[680px] lg:mx-auto lg:mb-12 lg:max-w-none lg:text-center' ) ); ?>
-				<div class="relative z-10">
+				<div class="relative z-10 mx-6 sm:mx-auto sm:max-w-[680px] lg:mx-auto lg:max-w-none">
 					<div class="la-how-track absolute top-0 bottom-6 left-6 w-0.5 rounded-full bg-red-100 md:top-5 md:bottom-5 md:left-[30px] lg:left-1/2 lg:top-0 lg:bottom-0 lg:w-1 lg:-translate-x-1/2" data-how-it-works-track aria-hidden="true">
 						<div class="la-how-track-fill w-full rounded-full bg-brand-1 transition-[height] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-[height]" data-how-it-works-fill></div>
 					</div>
@@ -380,7 +380,7 @@ $faq_items = array(
 								$title_width_class = 'max-w-[175px]';
 							}
 							?>
-							<div class="la-how-step-row relative mx-6 grid grid-cols-[auto_1fr] items-center gap-x-5 sm:mx-auto sm:max-w-[680px] <?php echo $index === count( $steps ) - 1 ? 'md:pb-5' : ''; ?> lg:mx-auto lg:w-fit lg:max-w-none lg:grid-cols-[462px_56px_462px] lg:items-center lg:gap-14 lg:pb-0" data-how-it-works-step-row data-how-step-side="<?php echo $is_left ? 'left' : 'right'; ?>">
+							<div class="la-how-step-row relative grid grid-cols-[auto_1fr] items-center gap-x-5 <?php echo $index === count( $steps ) - 1 ? 'md:pb-5' : ''; ?> lg:mx-auto lg:w-fit lg:max-w-none lg:grid-cols-[462px_56px_462px] lg:items-center lg:gap-14 lg:pb-0" data-how-it-works-step-row data-how-step-side="<?php echo $is_left ? 'left' : 'right'; ?>">
 								<div class="la-how-step-marker z-20 col-start-1 row-start-1 flex h-12 w-12 items-center justify-center rounded-full border-2 border-brand-1 bg-white text-brand-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] [&_svg]:h-6 [&_svg]:w-6 md:h-[60px] md:w-[60px] md:border-[3px] md:[&_svg]:h-[25.7px] md:[&_svg]:w-[25.7px] lg:absolute lg:left-1/2 lg:top-1/2 lg:h-14 lg:w-14 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:border-[3px] lg:[&_svg]:h-[26px] lg:[&_svg]:w-[26px]" data-how-it-works-step>
 									<?php echo wp_kses( latrobeweb_get_icon_markup( $step['icon'] ), latrobeweb_get_svg_allowed() ); ?>
 								</div>
