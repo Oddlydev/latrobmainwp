@@ -50,7 +50,7 @@
 }
 
 @utility eyebrow {
-        @apply font-dlig tracking-[0.8px] font-sans text-base leading-6 font-semibold uppercase;
+	@apply font-dlig font-sans text-base leading-6 font-semibold tracking-[0.8px] uppercase;
 }
 
 @utility body-base-600 {
@@ -122,19 +122,19 @@ a {
 }
 
 h1 {
-        @apply font-display text-[2.25rem] leading-[110%] lg:text-[3.75rem] lg:leading-[110%] font-black tracking-normal text-black;
+	@apply font-display text-[2.25rem] leading-[110%] font-black tracking-normal text-black lg:text-[3.75rem] lg:leading-[110%];
 }
 
 h2 {
-        @apply font-display text-[1.875rem] leading-[110%] lg:text-[2.25rem] lg:leading-[110%] font-bold tracking-normal text-black;
+	@apply font-display text-[1.875rem] leading-[110%] font-bold tracking-normal text-black lg:text-[2.25rem] lg:leading-[110%];
 }
 
 h3 {
-        @apply font-display text-[1.5rem] leading-9 tracking-[-0.8px] lg:text-[1.875rem] lg:leading-9 font-black text-black;
+	@apply font-display text-[1.5rem] leading-9 font-black tracking-[-0.8px] text-black lg:text-[1.875rem] lg:leading-9;
 }
 
 h4 {
-        @apply font-display tracking-[-0.8px] text-xl leading-8 font-bold text-black lg:text-2xl;
+	@apply font-display text-xl leading-8 font-bold tracking-[-0.8px] text-black lg:text-2xl;
 }
 
 h5,
@@ -212,7 +212,7 @@ h6 {
 }
 
 .la-section-title {
-        @apply font-display text-[1.875rem] leading-[110%] lg:text-[2.25rem] lg:leading-[110%] font-black tracking-tighter text-black md:font-bold md:tracking-normal lg:font-bold;
+	@apply font-display text-[1.875rem] leading-[110%] font-black tracking-tighter text-black md:font-bold md:tracking-normal lg:text-[2.25rem] lg:leading-[110%] lg:font-bold;
 }
 
 .la-section-lead {
@@ -253,7 +253,7 @@ h6 {
 }
 
 .la-swatch {
-        @apply rounded-[1.25rem] shadow-soft overflow-hidden border border-slate-200 bg-white;
+	@apply shadow-soft overflow-hidden rounded-[1.25rem] border border-slate-200 bg-white;
 }
 
 .la-swatch-chip {
@@ -266,7 +266,7 @@ h6 {
 
 .la-chip:hover,
 .la-chip--hover {
-        @apply border-brand-1 text-brand-1 bg-transparent;
+	@apply border-brand-1 text-brand-1 bg-transparent;
 }
 
 .la-chip:hover .la-chip-count,
@@ -309,8 +309,8 @@ h6 {
 }
 
 .la-home-hero-accent-right {
-        @apply pointer-events-none absolute top-1/2 right-[-10%] hidden h-[78%] w-[52%] -translate-y-1/2 rounded-[33554400px] lg:block;
-        background: rgba(233, 34, 60, 0.05);
+	@apply pointer-events-none absolute top-1/2 right-[-10%] hidden h-[78%] w-[52%] -translate-y-1/2 rounded-[33554400px] lg:block;
+	background: rgba(233, 34, 60, 0.05);
 	filter: blur(64px);
 }
 
@@ -349,7 +349,13 @@ h6 {
 
 .la-home-hero-image-blend {
 	height: 7.5rem;
-	background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.74) 28%, rgba(255, 255, 255, 0.24) 62%, rgba(255, 255, 255, 0) 100%);
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0.92) 0%,
+		rgba(255, 255, 255, 0.74) 28%,
+		rgba(255, 255, 255, 0.24) 62%,
+		rgba(255, 255, 255, 0) 100%
+	);
 	transform: translateY(-0.45rem);
 }
 
@@ -400,7 +406,7 @@ h6 {
 }
 
 .la-home-hero-title {
-	@apply font-display text-4xl font-bold leading-[110%] tracking-normal text-black md:font-black lg:text-[60px] lg:font-black;
+	@apply font-display text-4xl leading-[110%] font-bold tracking-normal text-black md:font-black lg:text-[60px] lg:font-black;
 }
 
 .la-home-hero-cta {
@@ -408,7 +414,7 @@ h6 {
 }
 
 .la-card-grid-4 {
-        @apply grid gap-5 md:grid-cols-2 md:gap-5 lg:grid-cols-4 lg:gap-6;
+	@apply grid gap-5 md:grid-cols-2 md:gap-5 lg:grid-cols-4 lg:gap-6;
 }
 
 .la-card-grid-3 {
@@ -416,7 +422,7 @@ h6 {
 }
 
 .la-how-track-fill {
-        height: 0;
+	height: 0;
 }
 
 .la-how-step-row[data-filled="true"] .la-how-step-card {
@@ -612,7 +618,7 @@ h6 {
 }
 
 .la-button-icon {
-        @apply block h-4 w-4 shrink-0 fill-none stroke-current;
+	@apply block h-4 w-4 shrink-0 fill-none stroke-current;
 }
 
 .la-button-primary-light:disabled,
@@ -739,7 +745,7 @@ h6 {
 }
 
 .la-core-feature-stage {
-        @apply border-panel-border-soft relative overflow-hidden rounded-lg border bg-white;
+	@apply border-panel-border-soft relative overflow-hidden rounded-lg border bg-white;
 	isolation: isolate;
 	transform: translate3d(0, 0, 0);
 	will-change: box-shadow, border-color;
@@ -815,7 +821,7 @@ h6 {
 }
 
 .la-core-feature-img {
-        @apply block object-cover object-center;
+	@apply block object-cover object-center;
 }
 
 .la-core-feature-img.la-core-feature-img--photo {
