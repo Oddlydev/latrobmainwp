@@ -9,6 +9,7 @@
 get_header();
 
 $hero_image_count = 5;
+$hero_image_index = wp_rand( 1, $hero_image_count );
 
 
 $hero_highlights = array(
@@ -189,11 +190,7 @@ $faq_items = array(
 	<section id="top" class="scroll-mt-24">
 		<div class="relative overflow-hidden border border-gray-200 bg-white text-black shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
 			<img
-				src="<?php echo esc_url( latrobeweb_asset_uri( 'images/hero-images/hero-light-1.png' ) ); ?>"
-				data-random-hero
-				data-storage-key="latrobeweb-home-hero-desktop"
-				data-image-count="<?php echo esc_attr( $hero_image_count ); ?>"
-				data-image-template="<?php echo esc_attr( latrobeweb_asset_uri( 'images/hero-images/hero-light-%d.png' ) ); ?>"
+				src="<?php echo esc_url( latrobeweb_asset_uri( sprintf( 'images/hero-images/hero-light-%d.png', $hero_image_index ) ) ); ?>"
 				alt=""
 				aria-hidden="true"
 				class="absolute top-[-3.499px] left-[-2.003px] hidden h-[100.42%] w-[100.168%] max-w-none object-cover object-[78%_center] lg:block"
@@ -247,11 +244,7 @@ $faq_items = array(
 			</div>
 			<div class="relative overflow-hidden md:hidden">
 				<img
-					src="<?php echo esc_url( latrobeweb_asset_uri( 'images/hero-images/mobile/hero-light-1.png' ) ); ?>"
-					data-random-hero
-					data-storage-key="latrobeweb-home-hero-mobile"
-					data-image-count="<?php echo esc_attr( $hero_image_count ); ?>"
-					data-image-template="<?php echo esc_attr( latrobeweb_asset_uri( 'images/hero-images/mobile/hero-light-%d.png' ) ); ?>"
+					src="<?php echo esc_url( latrobeweb_asset_uri( sprintf( 'images/hero-images/mobile/hero-light-%d.png', $hero_image_index ) ) ); ?>"
 					alt=""
 					aria-hidden="true"
 					class="block h-auto w-full object-cover object-center"
@@ -259,11 +252,7 @@ $faq_items = array(
 			</div>
 			<div class="relative hidden overflow-hidden md:block lg:hidden">
 				<img
-					src="<?php echo esc_url( latrobeweb_asset_uri( 'images/hero-images/tablet/hero-ligh-tab-1.png' ) ); ?>"
-					data-random-hero
-					data-storage-key="latrobeweb-home-hero-tablet"
-					data-image-count="<?php echo esc_attr( $hero_image_count ); ?>"
-					data-image-template="<?php echo esc_attr( latrobeweb_asset_uri( 'images/hero-images/tablet/hero-ligh-tab-%d.png' ) ); ?>"
+					src="<?php echo esc_url( latrobeweb_asset_uri( sprintf( 'images/hero-images/tablet/hero-ligh-tab-%d.png', $hero_image_index ) ) ); ?>"
 					alt=""
 					aria-hidden="true"
 					class="block h-auto w-full object-cover object-center"
@@ -565,34 +554,6 @@ $faq_items = array(
 		</div>
 	</section>
 </main>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-	const heroImages = document.querySelectorAll('[data-random-hero]');
-
-	heroImages.forEach(function (image) {
-		const storageKey = image.getAttribute('data-storage-key');
-		const template = image.getAttribute('data-image-template');
-		const imageCount = Number.parseInt(image.getAttribute('data-image-count') || '0', 10);
-
-		if (!storageKey || !template || imageCount < 1) {
-			return;
-		}
-
-		const previousIndex = Number.parseInt(window.localStorage.getItem(storageKey) || '', 10);
-		let nextIndex = 1;
-
-		if (imageCount > 1) {
-			do {
-				nextIndex = Math.floor(Math.random() * imageCount) + 1;
-			} while (nextIndex === previousIndex);
-		}
-
-		image.src = template.replace('%d', String(nextIndex));
-		window.localStorage.setItem(storageKey, String(nextIndex));
-	});
-});
-</script>
 
 <?php
 get_footer();
