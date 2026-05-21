@@ -819,7 +819,7 @@ h6 {
 .la-home-hero-image-accent {
   left: 50%;
   border-radius: 16009193px;
-  background: rgba(233, 34, 60, 0.03);
+  background: rgba(233, 34, 60, 0.05);
   filter: blur(30.535140991210938px);
   transform: translateX(-50%);
 }
@@ -827,7 +827,7 @@ h6 {
   top: 0.75rem;
   height: 15.5rem;
   width: 15.5rem;
-  opacity: 0.8;
+  opacity: 1;
 }
 .la-home-hero-image-accent-tablet {
   top: 2.5rem;
