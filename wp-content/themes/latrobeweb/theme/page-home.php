@@ -186,15 +186,42 @@ $faq_items = array(
 );
 ?>
 
+<style>
+	.la-home-hero-media {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.la-home-hero-media-img {
+		display: block;
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+		object-position: center center;
+	}
+
+	@media (min-width: 1024px) {
+		.la-home-hero-media {
+			position: absolute;
+			inset: 0;
+			z-index: 0;
+		}
+
+		.la-home-hero-media-img {
+			position: absolute;
+			top: -3.499px;
+			left: -2.003px;
+			width: 100.168%;
+			height: 100.42%;
+			max-width: none;
+			object-position: 78% center;
+		}
+	}
+</style>
+
 <main class="overflow-hidden bg-gray-50 lg:bg-white">
 	<section id="top" class="scroll-mt-24">
 		<div class="relative overflow-hidden border border-gray-200 bg-white text-black shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
-			<img
-				src="<?php echo esc_url( latrobeweb_asset_uri( sprintf( 'images/hero-images/hero-light-%d.png', $hero_image_index ) ) ); ?>"
-				alt=""
-				aria-hidden="true"
-				class="absolute top-[-3.499px] left-[-2.003px] hidden h-[100.42%] w-[100.168%] max-w-none object-cover object-[78%_center] lg:block"
-			/>
 			<div aria-hidden="true" class="pointer-events-none absolute top-1/2 right-[-10%] hidden h-[78%] w-[52%] -translate-y-1/2 rounded-full blur-[64px] [background:rgba(233,34,60,0.05)] lg:block"></div>
 			<div aria-hidden="true" class="pointer-events-none absolute top-[18%] left-[-8%] hidden h-[44%] w-[42%] rounded-full blur-[64px] [background:rgba(233,34,60,0.03)] lg:block"></div>
 			<div aria-hidden="true" class="absolute inset-y-0 left-0 hidden w-full bg-[linear-gradient(90deg,rgba(247,247,247,0.96)_0%,rgba(247,247,247,0.92)_38%,rgba(247,247,247,0.82)_54%,rgba(247,247,247,0.44)_70%,rgba(247,247,247,0)_100%)] lg:block lg:w-[60%]"></div>
@@ -242,22 +269,15 @@ $faq_items = array(
 					?>
 				</div>
 			</div>
-			<div class="relative overflow-hidden md:hidden">
+			<picture class="la-home-hero-media" aria-hidden="true">
+				<source media="(min-width: 1024px)" srcset="<?php echo esc_attr( latrobeweb_asset_uri( sprintf( 'images/hero-images/hero-light-%d.png', $hero_image_index ) ) ); ?>" />
+				<source media="(min-width: 768px)" srcset="<?php echo esc_attr( latrobeweb_asset_uri( sprintf( 'images/hero-images/tablet/hero-ligh-tab-%d.png', $hero_image_index ) ) ); ?>" />
 				<img
 					src="<?php echo esc_url( latrobeweb_asset_uri( sprintf( 'images/hero-images/mobile/hero-light-%d.png', $hero_image_index ) ) ); ?>"
 					alt=""
-					aria-hidden="true"
-					class="block h-auto w-full object-cover object-center"
+					class="la-home-hero-media-img"
 				/>
-			</div>
-			<div class="relative hidden overflow-hidden md:block lg:hidden">
-				<img
-					src="<?php echo esc_url( latrobeweb_asset_uri( sprintf( 'images/hero-images/tablet/hero-ligh-tab-%d.png', $hero_image_index ) ) ); ?>"
-					alt=""
-					aria-hidden="true"
-					class="block h-auto w-full object-cover object-center"
-				/>
-			</div>
+			</picture>
 			<div class="relative bg-brand-3 p-3.5 md:p-5 lg:p-7">
 				<div class="grid gap-3 md:inline-grid md:w-full md:grid-cols-2 md:grid-rows-2 md:gap-3 lg:gap-5 xl:grid-cols-4 xl:grid-rows-1">
 					<?php foreach ( $hero_highlights as $item ) : ?>
