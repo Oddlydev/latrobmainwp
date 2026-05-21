@@ -3370,6 +3370,9 @@ h6 {
 .font-sans {
   font-family: var(--font-sans);
 }
+.\[font-feature-settings\:\'dlig\'_on\] {
+  font-feature-settings: 'dlig' on;
+}
 .font-dlig {
   font-feature-settings: "dlig" on;
 }
@@ -3489,6 +3492,10 @@ h6 {
 .tracking-\[0\.08em\] {
   --tw-tracking: 0.08em;
   letter-spacing: 0.08em;
+}
+.tracking-\[0\.8px\] {
+  --tw-tracking: 0.8px;
+  letter-spacing: 0.8px;
 }
 .tracking-normal {
   --tw-tracking: var(--tracking-normal);
@@ -3843,6 +3850,11 @@ h6 {
   }
 }
 @media (hover: hover) {
+  .group-hover\:decoration-solid:is(:where(.group):hover *) {
+    text-decoration-style: solid;
+  }
+}
+@media (hover: hover) {
   .group-hover\:\[text-decoration-thickness\:8\%\]:is(:where(.group):hover *) {
     text-decoration-thickness: 8%;
   }
@@ -3855,6 +3867,16 @@ h6 {
 @media (hover: hover) {
   .group-hover\:\[text-underline-offset\:25\%\]:is(:where(.group):hover *) {
     text-underline-offset: 25%;
+  }
+}
+@media (hover: hover) {
+  .group-hover\:\[text-decoration-skip-ink\:none\]:is(:where(.group):hover *) {
+    text-decoration-skip-ink: none;
+  }
+}
+@media (hover: hover) {
+  .group-hover\:\[text-underline-position\:from-font\]:is(:where(.group):hover *) {
+    text-underline-position: from-font;
   }
 }
 .last\:border-r-0:last-child {
