@@ -339,7 +339,7 @@ $svg_allowed = latrobeweb_get_svg_allowed();
 				<div class="px-6 py-12 lg:px-12 lg:py-12">
 					<div class="flex flex-col gap-8 md:gap-8 lg:gap-8">
 						<div class="flex flex-col items-center gap-10 text-center md:gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-5 lg:text-left">
-							<?php latrobeweb_site_brand( array( 'subtitle' => 'PCAT Research Programme', 'show_divider' => false ) ); ?>
+							<?php latrobeweb_site_brand( array( 'subtitle' => 'PCAT Research Programme', 'show_divider' => false, 'class_name' => 'self-start text-left lg:self-auto' ) ); ?>
 							<nav class="flex w-full flex-col items-center gap-y-4 md:w-auto md:flex-row md:flex-wrap md:justify-center md:gap-x-5 md:gap-y-3 md:pb-3 lg:pb-0 lg:justify-end lg:gap-x-6" aria-label="<?php esc_attr_e( 'Footer Menu Preview', 'latrobeweb' ); ?>">
 								<?php foreach ( $footer_links as $item ) : ?>
 									<a class="body-base-400 text-footer-link inline-block w-full border-b border-transparent py-0 text-center whitespace-nowrap transition-colors duration-200 hover:border-brand-1 md:w-auto lg:body-base-500" href="<?php echo esc_url( $item['url'] ); ?>"><?php echo esc_html( $item['label'] ); ?></a>

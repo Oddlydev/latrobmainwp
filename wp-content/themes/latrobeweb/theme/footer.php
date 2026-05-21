@@ -5,7 +5,6 @@
  * @package latrobeweb
  */
 
-$footer_links = latrobeweb_get_footer_menu_items();
 ?>
 
 	</div><!-- #content -->
@@ -14,14 +13,35 @@ $footer_links = latrobeweb_get_footer_menu_items();
 		<div class="px-6 py-12 lg:mx-auto lg:px-12 lg:py-12">
 			<div class="flex flex-col gap-8 md:gap-8 lg:gap-8">
 				<div class="flex flex-col items-center gap-10 text-center md:gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-5 lg:text-left">
-					<?php latrobeweb_site_brand( array( 'title' => 'La Trobe University', 'subtitle' => 'PCAT Research Programme', 'show_divider' => false, 'logo_width_class' => 'w-[69px]' ) ); ?>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="la-site-brand flex w-full items-start justify-start gap-3 self-start text-left md:w-full md:items-start md:justify-start lg:w-auto lg:self-auto lg:items-center">
+						<img
+							src="<?php echo esc_url( latrobeweb_asset_uri( 'images/logo-light.svg' ) ); ?>"
+							alt="La Trobe University"
+							class="h-auto shrink-0 w-[69px]"
+						/>
+						<div class="flex flex-col text-left">
+							<p class="font-display text-base font-semibold leading-4 text-zinc-50">
+								<?php echo esc_html( 'La Trobe University' ); ?>
+							</p>
+							<p class="font-display mt-1 text-xs font-medium leading-4 uppercase tracking-wide text-gray-400">
+								<?php echo esc_html( 'PCAT Research Programme' ); ?>
+							</p>
+						</div>
+					</a>
 
-					<nav class="flex w-full flex-col items-center gap-y-4 md:w-auto md:flex-row md:flex-wrap md:justify-center md:gap-x-5 md:gap-y-3 md:pb-3 lg:pb-0 lg:justify-end lg:gap-x-6" aria-label="<?php esc_attr_e( 'Footer Menu', 'latrobeweb' ); ?>">
-						<?php foreach ( $footer_links as $item ) : ?>
-							<a class="body-base-400 text-footer-link inline-block w-full border-b border-transparent py-0 text-center whitespace-nowrap transition-colors duration-200 hover:border-brand-1 md:w-auto lg:body-base-500 lg:text-zinc-200" href="<?php echo esc_url( $item['url'] ); ?>">
-								<?php echo esc_html( $item['label'] ); ?>
-							</a>
-						<?php endforeach; ?>
+					<nav class="w-full md:w-auto" aria-label="<?php esc_attr_e( 'Footer Menu', 'latrobeweb' ); ?>">
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-2',
+								'container'      => false,
+								'menu_class'     => 'flex w-full flex-col items-center gap-y-4 md:w-auto md:flex-row md:flex-wrap md:justify-center md:gap-x-5 md:gap-y-3 md:pb-3 lg:pb-0 lg:justify-end lg:gap-x-6',
+								'fallback_cb'    => false,
+								'link_before'    => '<span class="body-base-400 text-footer-link inline-block w-full border-b border-transparent py-0 text-center whitespace-nowrap transition-colors duration-200 hover:border-brand-1 md:w-auto lg:body-base-500 lg:text-zinc-200">',
+								'link_after'     => '</span>',
+							)
+						);
+						?>
 					</nav>
 				</div>
 

@@ -1952,6 +1952,34 @@ h6 {
 .row-start-1 {
   grid-row-start: 1;
 }
+.container {
+  width: 100%;
+}
+@media (width >= 40rem) {
+  .container {
+    max-width: 40rem;
+  }
+}
+@media (width >= 48rem) {
+  .container {
+    max-width: 48rem;
+  }
+}
+@media (width >= 64rem) {
+  .container {
+    max-width: 64rem;
+  }
+}
+@media (width >= 80rem) {
+  .container {
+    max-width: 80rem;
+  }
+}
+@media (width >= 96rem) {
+  .container {
+    max-width: 96rem;
+  }
+}
 .m-0 {
   margin: calc(var(--spacing) * 0);
 }
@@ -4174,8 +4202,18 @@ h6 {
   }
 }
 @media (width >= 48rem) {
+  .md\:items-start {
+    align-items: flex-start;
+  }
+}
+@media (width >= 48rem) {
   .md\:justify-center {
     justify-content: center;
+  }
+}
+@media (width >= 48rem) {
+  .md\:justify-start {
+    justify-content: flex-start;
   }
 }
 @media (width >= 48rem) {
@@ -4807,6 +4845,11 @@ h6 {
 @media (width >= 64rem) {
   .lg\:gap-x-6 {
     column-gap: calc(var(--spacing) * 6);
+  }
+}
+@media (width >= 64rem) {
+  .lg\:self-auto {
+    align-self: auto;
   }
 }
 @media (width >= 64rem) {
