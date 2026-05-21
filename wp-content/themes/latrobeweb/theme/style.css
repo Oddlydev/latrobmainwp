@@ -813,8 +813,23 @@ h6 {
   z-index: 1;
 }
 .la-home-hero-image-blend {
-  height: 10rem;
-  background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.94) 28%, rgba(255, 255, 255, 0.7) 52%, rgba(255, 255, 255, 0.28) 76%, rgba(255, 255, 255, 0) 100%);
+  height: 7.5rem;
+  background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0.92) 0%,
+		rgba(255, 255, 255, 0.74) 28%,
+		rgba(255, 255, 255, 0.24) 62%,
+		rgba(255, 255, 255, 0) 100%
+	);
+  transform: translateY(-0.45rem);
+}
+.la-home-hero-image-blend-mobile {
+  height: 6.5rem;
+  transform: translateY(-0.375rem);
+}
+.la-home-hero-image-blend-tablet {
+  height: 7.5rem;
+  transform: translateY(-0.45rem);
 }
 .la-home-hero-image-accent {
   left: 50%;
@@ -824,27 +839,28 @@ h6 {
   transform: translateX(-50%);
 }
 .la-home-hero-image-accent-mobile {
-  top: 0.75rem;
-  height: 15.5rem;
-  width: 15.5rem;
+  top: 1rem;
+  height: 11.5rem;
+  width: 11.5rem;
   opacity: 1;
 }
 .la-home-hero-image-accent-tablet {
-  top: 2.5rem;
-  height: 23.8556rem;
-  width: 23.8556rem;
+  top: 1.5rem;
+  height: 23.8555625rem;
+  width: 23.8555625rem;
+  opacity: 1;
 }
 .la-home-hero-image-tablet-shell::after {
   content: "";
   pointer-events: none;
   position: absolute;
-  top: 8.75rem;
-  left: 4rem;
+  top: 5rem;
+  left: 3.5rem;
   z-index: 1;
-  height: 17.8917rem;
-  width: 17.8917rem;
+  height: 14.90975rem;
+  width: 14.90975rem;
   border-radius: 16009193px;
-  background: rgba(233, 34, 60, 0.03);
+  background: rgba(233, 34, 60, 0.02);
   filter: blur(30.535140991210938px);
 }
 .la-home-hero-title {
@@ -5365,6 +5381,219 @@ h6 {
 }
 .active\:\[\&\>\.la-chip-count\]\:text-brand-2:active > .la-chip-count {
   color: var(--color-brand-2);
+}
+.la-bunker-page {
+  background: #1e1e1e;
+}
+.la-bunker-page__section {
+  padding: 2.5rem 1rem;
+}
+.la-bunker-page__container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 94rem;
+}
+.la-bunker-page__content > * {
+  max-width: none;
+}
+.la-bunker-empty-state {
+  border-radius: 1.5rem;
+  background: #f5f0e6;
+  padding: 2rem;
+  text-align: center;
+}
+.la-bunker-empty-state p {
+  margin-top: 1rem;
+  color: var(--color-gray-600);
+}
+.la-bunker-form-shell {
+  border-radius: 1.5rem;
+  background: #f5f0e6;
+  padding: 1.75rem 1rem;
+}
+.la-bunker-form {
+  position: relative;
+  overflow: hidden;
+}
+.la-bunker-step[hidden] {
+  display: none !important;
+}
+.la-bunker-step__eyebrow {
+  margin: 0 0 2rem;
+  max-width: 34rem;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #111827;
+}
+.la-bunker-step__title {
+  margin: 0 0 2rem;
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #111827;
+}
+.la-bunker-fields {
+  display: grid;
+  gap: 1.25rem;
+}
+.la-bunker-field label, .la-bunker-field > span > label {
+  display: block;
+}
+.la-bunker-field__label {
+  margin-bottom: 0.75rem;
+  display: block;
+  font-size: 0.8125rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #1f2937;
+}
+.la-bunker-form .wpcf7-form-control-wrap {
+  display: block;
+}
+.la-bunker-form input[type="text"], .la-bunker-form input[type="email"], .la-bunker-form input[type="tel"], .la-bunker-form input[type="number"], .la-bunker-form select, .la-bunker-form textarea {
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 0.875rem;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 1rem 1rem;
+  font-size: 1.375rem;
+  line-height: 1.3;
+  color: #111827;
+  outline: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+.la-bunker-form textarea {
+  min-height: 20rem;
+  resize: vertical;
+}
+.la-bunker-form select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #d06f2a 50%), linear-gradient(135deg, #d06f2a 50%, transparent 50%);
+  background-position: calc(100% - 1.5rem) calc(50% - 0.15rem), calc(100% - 1rem) calc(50% - 0.15rem);
+  background-size: 0.5rem 0.5rem, 0.5rem 0.5rem;
+  background-repeat: no-repeat;
+  padding-right: 3.5rem;
+}
+.la-bunker-form input::placeholder, .la-bunker-form textarea::placeholder {
+  color: #8b909a;
+}
+.la-bunker-form input:focus, .la-bunker-form select:focus, .la-bunker-form textarea:focus {
+  border-color: #c45a11;
+  box-shadow: 0 0 0 3px rgba(196, 90, 17, 0.14);
+  background: #fff;
+}
+.la-bunker-form .la-field-error input, .la-bunker-form .la-field-error select, .la-bunker-form .la-field-error textarea, .la-bunker-form .wpcf7-not-valid {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+.la-bunker-step__footer {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.la-bunker-step__note {
+  margin: 0;
+  max-width: 26rem;
+  font-size: 1rem;
+  line-height: 1.45;
+  font-weight: 500;
+  color: #1f2937;
+}
+.la-bunker-step__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.875rem;
+}
+.la-bunker-button, .la-bunker-form input.wpcf7-submit {
+  display: inline-flex;
+  min-width: 8.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  padding: 0.95rem 1.5rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+.la-bunker-button--primary, .la-bunker-form input.wpcf7-submit {
+  border-color: #b45309;
+  background: #b45309;
+  color: #fff;
+}
+.la-bunker-button--primary:hover, .la-bunker-form input.wpcf7-submit:hover {
+  border-color: #92400e;
+  background: #92400e;
+}
+.la-bunker-button--secondary {
+  background: transparent;
+  color: #4b5563;
+}
+.la-bunker-button--secondary:hover {
+  border-color: #9ca3af;
+  color: #111827;
+}
+.la-bunker-form .wpcf7-spinner {
+  margin: 0.5rem 0 0;
+}
+.la-bunker-form .wpcf7-response-output {
+  margin: 1.5rem 0 0;
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.la-bunker-form .wpcf7-not-valid-tip {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  .la-bunker-page__section {
+    padding: 3rem 1.5rem;
+  }
+  .la-bunker-form-shell {
+    padding: 2.25rem 2rem;
+  }
+  .la-bunker-step__footer {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1024px) {
+  .la-bunker-page__section {
+    padding: 3rem 2rem;
+  }
+  .la-bunker-form-shell {
+    padding: 3rem;
+  }
+  .la-bunker-step__eyebrow {
+    margin-bottom: 3rem;
+    font-size: 3.25rem;
+  }
+  .la-bunker-step__title {
+    margin-bottom: 3rem;
+    font-size: 2rem;
+  }
+  .la-bunker-fields {
+    gap: 1.5rem;
+  }
+  .la-bunker-form textarea {
+    min-height: 24rem;
+  }
 }
 @property --tw-duration {
   syntax: "*";

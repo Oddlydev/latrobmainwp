@@ -533,6 +533,182 @@ function initHowItWorksTimelines() {
 	});
 }
 
+function initCf7MultiStepForms() {
+	document.querySelectorAll("[data-cf7-multistep]").forEach((shell) => {
+		const form = shell.closest(".wpcf7-form");
+		const cf7Wrapper = shell.closest(".wpcf7");
+		const steps = Array.from(shell.querySelectorAll("[data-form-step]"));
+
+		if (!form || !cf7Wrapper || steps.length < 2) {
+			return;
+		}
+
+		const nonStepFields = Array.from(
+			form.querySelectorAll('input[type="hidden"], input[name="_wpcf7_unit_tag"]'),
+		);
+		let currentStepIndex = Math.max(
+			0,
+			steps.findIndex((step) => step.classList.contains("is-active")),
+		);
+
+		function getStepFields(step) {
+			return Array.from(
+				step.querySelectorAll(
+					'input:not([type="hidden"]):not([type="button"]):not([type="submit"]), select, textarea',
+				),
+			);
+		}
+
+		function clearFieldError(field) {
+			const control = field.closest(".wpcf7-form-control-wrap") || field;
+			control.classList.remove("la-field-error");
+		}
+
+		function markFieldError(field) {
+			const control = field.closest(".wpcf7-form-control-wrap") || field;
+			control.classList.add("la-field-error");
+		}
+
+		function syncStepAvailability() {
+			steps.forEach((step, index) => {
+				const isActive = index === currentStepIndex;
+				step.classList.toggle("is-active", isActive);
+				step.hidden = !isActive;
+				step.setAttribute("aria-hidden", isActive ? "false" : "true");
+
+				getStepFields(step).forEach((field) => {
+					field.disabled = !isActive;
+				});
+
+				step.querySelectorAll('button, input[type="submit"]').forEach((button) => {
+					button.disabled = !isActive;
+				});
+			});
+		}
+
+		function showStep(nextIndex) {
+			currentStepIndex = Math.max(0, Math.min(nextIndex, steps.length - 1));
+			syncStepAvailability();
+			shell.dataset.currentStep = String(currentStepIndex + 1);
+			const activeStep = steps[currentStepIndex];
+			const heading = activeStep.querySelector("[data-step-heading]");
+
+			if (heading) {
+				heading.scrollIntoView({ behavior: "smooth", block: "nearest" });
+			}
+		}
+
+		function validateStep(step) {
+			const fields = getStepFields(step);
+			let firstInvalidField = null;
+
+			fields.forEach((field) => {
+				clearFieldError(field);
+
+				if (field.checkValidity()) {
+					return;
+				}
+
+				if (!firstInvalidField) {
+					firstInvalidField = field;
+				}
+
+				markFieldError(field);
+				field.reportValidity();
+			});
+
+			if (firstInvalidField) {
+				firstInvalidField.focus({ preventScroll: true });
+				return false;
+			}
+
+			return true;
+		}
+
+		function enableAllStepFields() {
+			steps.forEach((step) => {
+				getStepFields(step).forEach((field) => {
+					field.disabled = false;
+				});
+
+				step.querySelectorAll('button, input[type="submit"]').forEach((button) => {
+					button.disabled = false;
+				});
+			});
+
+			nonStepFields.forEach((field) => {
+				field.disabled = false;
+			});
+		}
+
+		shell.addEventListener("click", (event) => {
+			const nextButton = event.target.closest("[data-form-next]");
+			const prevButton = event.target.closest("[data-form-prev]");
+
+			if (nextButton) {
+				event.preventDefault();
+
+				if (validateStep(steps[currentStepIndex])) {
+					showStep(currentStepIndex + 1);
+				}
+
+				return;
+			}
+
+			if (prevButton) {
+				event.preventDefault();
+				showStep(currentStepIndex - 1);
+			}
+		});
+
+		form.addEventListener("input", (event) => {
+			const field = event.target;
+
+			if (!(field instanceof Element)) {
+				return;
+			}
+
+			clearFieldError(field);
+		});
+
+		form.addEventListener("change", (event) => {
+			const field = event.target;
+
+			if (!(field instanceof Element)) {
+				return;
+			}
+
+			clearFieldError(field);
+		});
+
+		form.addEventListener("submit", () => {
+			enableAllStepFields();
+		});
+
+		cf7Wrapper.addEventListener("wpcf7invalid", () => {
+			enableAllStepFields();
+
+			const invalidField = form.querySelector(".wpcf7-not-valid");
+			if (!invalidField) {
+				return;
+			}
+
+			const targetStepIndex = steps.findIndex((step) => step.contains(invalidField));
+			if (targetStepIndex >= 0) {
+				showStep(targetStepIndex);
+				markFieldError(invalidField);
+			}
+		});
+
+		cf7Wrapper.addEventListener("wpcf7mailsent", () => {
+			form.reset();
+			showStep(0);
+		});
+
+		showStep(currentStepIndex);
+	});
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 	initMobileMenu();
 	initAccordions();
@@ -540,4 +716,5 @@ document.addEventListener("DOMContentLoaded", () => {
 	initFaqFilters();
 	initCoreFeatureGallery();
 	initHowItWorksTimelines();
+	initCf7MultiStepForms();
 });
