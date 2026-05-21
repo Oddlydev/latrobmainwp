@@ -68,7 +68,7 @@ endif;
 
 if ( 'type-4' === $variant ) :
 	?>
-        <article class="<?php echo esc_attr( trim( 'group flex w-full min-w-0 translate-y-0 items-center gap-4 rounded-2xl border border-gray-200 bg-white px-4 py-4 transition-[transform,box-shadow,background-color] duration-200 ease-out hover:-translate-y-1 hover:rounded-2xl hover:border-gray-200 hover:bg-white hover:shadow-card-brand-inset ' . $class_name ) ); ?>">
+        <article class="<?php echo esc_attr( trim( 'group flex w-full min-w-0 translate-y-0 items-center gap-4 rounded-2xl border border-gray-200 bg-white px-4 py-4 shadow-none transition-[border-color,box-shadow,transform,background-color] duration-200 ease-out hover:-translate-y-px hover:rounded-2xl hover:border-gray-200 hover:bg-white hover:shadow-card-brand-inset ' . $class_name ) ); ?>">
                 <div class="bg-red-light text-la-red-1 flex h-12 w-12 items-center justify-center rounded-xl"><?php echo wp_kses( $icon, latrobeweb_get_svg_allowed() ); ?></div>
                 <div class="space-y-1">
                         <p class="eyebrow text-gray-500"><?php echo esc_html( $eyebrow ); ?></p>
@@ -88,7 +88,7 @@ if ( 'contact' === $variant ) :
 			<?php if ( $href ) : ?>
 				<a href="<?php echo esc_url( $href ); ?>" class="body-base-500 text-brand-1 underline decoration-solid [text-decoration-skip-ink:none] [text-decoration-thickness:8%] [text-underline-offset:25%] [text-underline-position:from-font]"><?php echo esc_html( $value ); ?></a>
 			<?php else : ?>
-				<p class="body-base-500 text-black"><?php echo esc_html( $value ); ?></p>
+				<p class="body-base-500 text-brand-1 underline decoration-solid [text-decoration-skip-ink:none] [text-decoration-thickness:8%] [text-underline-offset:25%] [text-underline-position:from-font]"><?php echo esc_html( $value ); ?></p>
 			<?php endif; ?>
 		</div>
 	</article>
