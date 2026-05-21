@@ -8,6 +8,9 @@
 
 get_header();
 
+$hero_image_count = 5;
+$hero_image_index = wp_rand( 1, $hero_image_count );
+
 
 $hero_highlights = array(
 	array( 'title' => 'Real-time', 'description' => 'Assessment documentation', 'icon' => 'clipboard' ),
@@ -187,7 +190,7 @@ $faq_items = array(
 	<section id="top" class="scroll-mt-24">
 		<div class="relative overflow-hidden border border-gray-200 bg-white text-black shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
 			<img
-				src="<?php echo esc_url( get_field( 'home_hero_section_desktop_image' ) ); ?>"
+				src="<?php echo esc_url( latrobeweb_asset_uri( sprintf( 'images/hero-images/hero-light-%d.png', $hero_image_index ) ) ); ?>"
 				alt=""
 				aria-hidden="true"
 				class="absolute top-[-3.499px] left-[-2.003px] hidden h-[100.42%] w-[100.168%] max-w-none object-cover object-[78%_center] lg:block"
@@ -243,7 +246,7 @@ $faq_items = array(
 				<div aria-hidden="true" class="la-home-hero-image-blend la-home-hero-image-blend-mobile"></div>
 				<div aria-hidden="true" class="la-home-hero-image-accent la-home-hero-image-accent-mobile"></div>
 				<img
-					src="<?php echo esc_url( get_field( 'home_hero_section_mobile_image' ) ); ?>"
+					src="<?php echo esc_url( latrobeweb_asset_uri( sprintf( 'images/hero-images/mobile/hero-light-%d.png', $hero_image_index ) ) ); ?>"
 					alt=""
 					aria-hidden="true"
 					class="la-home-hero-image-mobile block h-auto w-full object-cover object-center"
@@ -253,7 +256,7 @@ $faq_items = array(
 				<div aria-hidden="true" class="la-home-hero-image-blend la-home-hero-image-blend-tablet"></div>
 				<div aria-hidden="true" class="la-home-hero-image-accent la-home-hero-image-accent-tablet"></div>
 				<img
-					src="<?php echo esc_url( get_field( 'home_hero_section_tab_image' ) ); ?>"
+					src="<?php echo esc_url( latrobeweb_asset_uri( sprintf( 'images/hero-images/tablet/hero-ligh-tab-%d.png', $hero_image_index ) ) ); ?>"
 					alt=""
 					aria-hidden="true"
 					class="la-home-hero-image-tablet block h-auto w-full object-cover object-center"
