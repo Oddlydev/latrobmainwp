@@ -5188,6 +5188,11 @@ h6 {
   }
 }
 @media (width >= 64rem) {
+  .lg\:gap-x-14 {
+    column-gap: calc(var(--spacing) * 14);
+  }
+}
+@media (width >= 64rem) {
   .lg\:gap-y-0 {
     row-gap: calc(var(--spacing) * 0);
   }
