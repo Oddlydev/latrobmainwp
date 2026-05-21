@@ -391,7 +391,7 @@ $faq_items = array(
 										<span class="shrink-0 text-right font-display text-xl font-light leading-7 tracking-tighter text-gray-500"><?php echo esc_html( $step['number'] ); ?></span>
 										<h4 class="<?php echo esc_attr( $title_width_class ); ?> font-display text-xl font-bold leading-7 tracking-tighter text-black sm:max-w-none md:text-xl md:leading-8 lg:text-2xl lg:leading-8"><?php echo esc_html( $step['title'] ); ?></h4>
 									</div>
-									<p class="mt-3 -ml-[53px] font-display text-lg font-normal leading-6 tracking-normal text-gray-500 sm:ml-0 <?php echo $is_left ? 'lg:ml-auto' : ''; ?>"><?php echo esc_html( $step['description'] ); ?></p>
+									<p class="mt-3 font-display text-lg font-normal leading-6 tracking-normal text-gray-500 <?php echo $is_left ? 'lg:ml-auto' : ''; ?>"><?php echo esc_html( $step['description'] ); ?></p>
 								</article>
 							</div>
 						<?php endforeach; ?>
