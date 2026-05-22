@@ -259,24 +259,25 @@ function initFaqFilters() {
 			);
 		}
 
-		function syncChipScrollPadding() {
-			const prevInset = prevButton?.offsetWidth ?? 0;
+		function syncChipScrollPadding(activeChip = chips[getActiveChipIndex()] ?? chips[0]) {
 			const nextInset = nextButton?.offsetWidth ?? 0;
-			const activeChip = chips[getActiveChipIndex()] ?? chips[0];
 			const activeChipWidth = activeChip?.offsetWidth ?? 0;
 			const viewportCenter = scroller.clientWidth / 2;
 			const baseGap = 8;
-			const startPadding = Math.max(prevInset + baseGap, viewportCenter - activeChipWidth / 2);
 			const endPadding = Math.max(nextInset + baseGap, viewportCenter - activeChipWidth / 2);
 
-			tablist.style.paddingInlineStart = `${startPadding}px`;
-			tablist.style.paddingInlineEnd = `${endPadding}px`;
+			tablist.style.paddingInlineStart = "0px";
+			tablist.style.paddingInlineEnd = "0px";
+
+			const hasNaturalOverflow = tablist.scrollWidth > scroller.clientWidth + 4;
+
+			tablist.style.paddingInlineEnd = hasNaturalOverflow ? `${endPadding}px` : "0px";
 		}
 
 		function revealChip(chip) {
 			const chipIndex = chips.indexOf(chip);
 
-			syncChipScrollPadding();
+			syncChipScrollPadding(chip);
 
 			if (chipIndex === 0) {
 				scroller.scrollTo({
