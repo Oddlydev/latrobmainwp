@@ -1783,12 +1783,12 @@ h6 {
   --tw-shadow: 0 0 #0000;
   box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   opacity: 0.18;
-  transform: translate3d(0, 10px, 0) scale(0.982);
+  transform: translate3d(0, 10px, 0);
   filter: saturate(0.62) brightness(1.04);
 }
 .la-core-feature-shell--visible {
   opacity: 1;
-  transform: translate3d(0, 0, 0) scale(1);
+  transform: translate3d(0, 0, 0);
   filter: none;
 }
 .la-accordion-trigger {
