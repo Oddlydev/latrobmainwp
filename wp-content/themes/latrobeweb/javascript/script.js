@@ -260,10 +260,6 @@ function initFaqFilters() {
 
 		function revealChip(chip) {
 			const chipIndex = chips.indexOf(chip);
-			const chipLeft = chip.offsetLeft;
-			const chipRight = chip.offsetLeft + chip.offsetWidth;
-			const visibleLeft = scroller.scrollLeft;
-			const visibleRight = scroller.scrollLeft + scroller.clientWidth;
 
 			if (chipIndex === 0) {
 				scroller.scrollTo({
@@ -273,20 +269,13 @@ function initFaqFilters() {
 				return;
 			}
 
-			if (chipLeft < visibleLeft) {
-				scroller.scrollTo({
-					left: Math.max(0, chipLeft),
-					behavior: "smooth",
-				});
-				return;
-			}
+			const maxScrollLeft = Math.max(0, scroller.scrollWidth - scroller.clientWidth);
+			const targetLeft = chip.offsetLeft - (scroller.clientWidth - chip.offsetWidth) / 2;
 
-			if (chipRight > visibleRight) {
-				scroller.scrollTo({
-					left: Math.max(0, chipRight - scroller.clientWidth),
-					behavior: "smooth",
-				});
-			}
+			scroller.scrollTo({
+				left: Math.min(Math.max(0, targetLeft), maxScrollLeft),
+				behavior: "smooth",
+			});
 		}
 
 		function applyFilter(activeFilter) {
@@ -341,6 +330,7 @@ function initFaqFilters() {
 		chips.forEach((chip) => {
 			chip.addEventListener("click", () => {
 				applyFilter(chip.dataset.faqFilter ?? "all");
+				revealChip(chip);
 			});
 		});
 
