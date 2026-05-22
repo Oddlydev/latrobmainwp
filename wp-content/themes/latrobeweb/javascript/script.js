@@ -197,10 +197,7 @@ function initHeaderAnchorLinks() {
 				return;
 			}
 
-			if (
-				targetUrl.origin !== window.location.origin ||
-				targetUrl.pathname !== window.location.pathname
-			) {
+			if (targetUrl.origin !== window.location.origin) {
 				return;
 			}
 

@@ -205,7 +205,7 @@ if ( ! function_exists( 'latrobeweb_nav_menu_link_attributes' ) ) :
 	 * @return array
 	 */
 	function latrobeweb_nav_menu_link_attributes( $atts, $menu_item, $args, $depth ) {
-		unset( $menu_item, $depth );
+		unset( $depth );
 
 		if ( ! empty( $args->link_class ) ) {
 			$existing_class = $atts['class'] ?? '';
@@ -214,6 +214,22 @@ if ( ! function_exists( 'latrobeweb_nav_menu_link_attributes' ) ) :
 
 		if ( ! empty( $args->link_data_nav ) ) {
 			$atts['data-nav-link'] = 'true';
+		}
+
+		if ( ! empty( $atts['href'] ) && ( is_front_page() || is_home() ) ) {
+			$menu_href      = wp_parse_url( $atts['href'] );
+			$current_origin = wp_parse_url( home_url( '/' ) );
+			$menu_fragment  = $menu_href['fragment'] ?? '';
+			$menu_host      = $menu_href['host'] ?? ( $current_origin['host'] ?? '' );
+			$menu_scheme    = $menu_href['scheme'] ?? ( $current_origin['scheme'] ?? '' );
+
+			if (
+				$menu_fragment &&
+				$menu_host === ( $current_origin['host'] ?? '' ) &&
+				$menu_scheme === ( $current_origin['scheme'] ?? '' )
+			) {
+				$atts['href'] = '#' . $menu_fragment;
+			}
 		}
 
 		return $atts;
