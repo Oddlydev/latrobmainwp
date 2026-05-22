@@ -213,7 +213,7 @@ if ( ! function_exists( 'latrobeweb_nav_menu_link_attributes' ) ) :
 		}
 
 		if ( ! empty( $args->link_data_nav ) ) {
-			$atts['data-nav-link'] = '';
+			$atts['data-nav-link'] = 'true';
 		}
 
 		return $atts;

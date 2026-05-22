@@ -178,7 +178,11 @@ function initAccordions() {
 }
 
 function initHeaderAnchorLinks() {
-	document.querySelectorAll("[data-nav-link]").forEach((link) => {
+	document
+		.querySelectorAll(
+			'#masthead [data-nav-link], #masthead nav a[href*="#"]',
+		)
+		.forEach((link) => {
 		link.addEventListener("click", (event) => {
 			const href = link.getAttribute("href") || "";
 			let targetUrl;
