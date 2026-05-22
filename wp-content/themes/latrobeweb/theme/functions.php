@@ -194,39 +194,32 @@ if ( ! function_exists( 'latrobeweb_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'latrobeweb_setup' );
 
-if ( ! function_exists( 'latrobeweb_get_menu_items' ) ) :
+if ( ! function_exists( 'latrobeweb_nav_menu_link_attributes' ) ) :
 	/**
-	 * Returns top-level WordPress menu items for a menu location.
+	 * Adds optional link classes and attributes to wp_nav_menu() items.
 	 *
-	 * @param string $location Menu location key.
-	 * @return array<int, array{id:string,label:string,url:string}>
+	 * @param array    $atts Menu item link attributes.
+	 * @param WP_Post  $menu_item Menu item data object.
+	 * @param stdClass $args Arguments passed to wp_nav_menu().
+	 * @param int      $depth Menu depth.
+	 * @return array
 	 */
-	function latrobeweb_get_menu_items( $location ) {
-		$locations = get_nav_menu_locations();
-		$menu_id   = $locations[ $location ] ?? 0;
-		$items     = array();
+	function latrobeweb_nav_menu_link_attributes( $atts, $menu_item, $args, $depth ) {
+		unset( $menu_item, $depth );
 
-		if ( $menu_id ) {
-			$menu_items = wp_get_nav_menu_items( $menu_id );
-
-			if ( is_array( $menu_items ) ) {
-				foreach ( $menu_items as $menu_item ) {
-					if ( (int) $menu_item->menu_item_parent !== 0 ) {
-						continue;
-					}
-
-					$items[] = array(
-						'id'    => (string) $menu_item->ID,
-						'label' => (string) $menu_item->title,
-						'url'   => (string) $menu_item->url,
-					);
-				}
-			}
+		if ( ! empty( $args->link_class ) ) {
+			$existing_class = $atts['class'] ?? '';
+			$atts['class']  = trim( $existing_class . ' ' . $args->link_class );
 		}
 
-		return $items;
+		if ( ! empty( $args->link_data_nav ) ) {
+			$atts['data-nav-link'] = '';
+		}
+
+		return $atts;
 	}
 endif;
+add_filter( 'nav_menu_link_attributes', 'latrobeweb_nav_menu_link_attributes', 10, 4 );
 
 if ( ! function_exists( 'latrobeweb_format_article_date' ) ) :
 	/**
