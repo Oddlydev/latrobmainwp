@@ -825,8 +825,14 @@ h6 {
 	@apply block object-cover object-center;
 }
 
-.la-core-feature-img.la-core-feature-img--photo {
+.la-core-feature-img.la-core-feature-img--dashboard {
 	object-fit: contain;
+	transform: none;
+	transform-origin: center;
+	backface-visibility: hidden;
+}
+
+.la-core-feature-img.la-core-feature-img--photo {
 	transform: none;
 	transform-origin: center;
 	backface-visibility: hidden;
