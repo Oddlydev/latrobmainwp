@@ -458,7 +458,7 @@ $faq_items = array(
 						</span>
 					</button>
 					<div class="min-w-0 w-full flex-[1_0_0] overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:flex-auto lg:px-0" data-faq-filter-scroller>
-						<div class="flex min-w-max items-center gap-1 pr-10 lg:pr-8" role="tablist" aria-label="<?php esc_attr_e( 'FAQ categories', 'latrobeweb' ); ?>">
+						<div class="flex min-w-max items-center gap-1" role="tablist" aria-label="<?php esc_attr_e( 'FAQ categories', 'latrobeweb' ); ?>">
 							<?php
 							latrobeweb_component(
 								'chip',

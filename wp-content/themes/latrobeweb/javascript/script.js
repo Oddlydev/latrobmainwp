@@ -203,6 +203,7 @@ function initHeaderAnchorLinks() {
 function initFaqFilters() {
 	document.querySelectorAll("[data-faq-filters]").forEach((filterShell) => {
 		const scroller = filterShell.querySelector("[data-faq-filter-scroller]");
+		const tablist = scroller?.querySelector('[role="tablist"]');
 		const prevButton = filterShell.querySelector("[data-faq-filter-prev]");
 		const nextButton = filterShell.querySelector("[data-faq-filter-next]");
 		const chips = Array.from(filterShell.querySelectorAll("[data-faq-filter]"));
@@ -211,7 +212,7 @@ function initFaqFilters() {
 		const accordionApi = accordion?.latrobeAccordion;
 		const items = accordionApi?.getItems?.() ?? [];
 
-		if (!scroller || !chips.length || !accordion || !items.length) {
+		if (!scroller || !tablist || !chips.length || !accordion || !items.length) {
 			return;
 		}
 
@@ -258,8 +259,24 @@ function initFaqFilters() {
 			);
 		}
 
+		function syncChipScrollPadding() {
+			const prevInset = prevButton?.offsetWidth ?? 0;
+			const nextInset = nextButton?.offsetWidth ?? 0;
+			const activeChip = chips[getActiveChipIndex()] ?? chips[0];
+			const activeChipWidth = activeChip?.offsetWidth ?? 0;
+			const viewportCenter = scroller.clientWidth / 2;
+			const baseGap = 8;
+			const startPadding = Math.max(prevInset + baseGap, viewportCenter - activeChipWidth / 2);
+			const endPadding = Math.max(nextInset + baseGap, viewportCenter - activeChipWidth / 2);
+
+			tablist.style.paddingInlineStart = `${startPadding}px`;
+			tablist.style.paddingInlineEnd = `${endPadding}px`;
+		}
+
 		function revealChip(chip) {
 			const chipIndex = chips.indexOf(chip);
+
+			syncChipScrollPadding();
 
 			if (chipIndex === 0) {
 				scroller.scrollTo({
@@ -290,6 +307,8 @@ function initFaqFilters() {
 		}
 
 		function updateScrollButton() {
+			syncChipScrollPadding();
+
 			const hasOverflow = scroller.scrollWidth > scroller.clientWidth + 4;
 			const activeIndex = getActiveChipIndex();
 			const atStart = activeIndex <= 0;
@@ -343,6 +362,7 @@ function initFaqFilters() {
 
 		updateChipCounts();
 		applyFilter("all");
+		syncChipScrollPadding();
 		updateScrollButton();
 	});
 }
