@@ -321,6 +321,16 @@ $faq_items = array(
 					<div aria-hidden="true" class="la-core-feature-glow la-core-feature-glow--bottom inset-x-0 bottom-0 h-20"></div>
 					<div aria-hidden="true" class="la-core-feature-glow la-core-feature-glow--left inset-y-0 left-0 w-20"></div>
 					<?php foreach ( $core_feature_cards as $card ) : ?>
+						<?php
+						$card_motion_style = 'animation:none;';
+						$card_image_style  = 'transform:none;';
+
+						if ( 'photo' === $card['kind'] ) {
+							$card_image_style .= 'object-fit:cover;';
+						} else {
+							$card_image_style .= 'object-fit:contain;';
+						}
+						?>
 						<article class="absolute <?php echo esc_attr( $card['class'] ); ?>" style="left:<?php echo esc_attr( $card['left'] ); ?>%;top:<?php echo esc_attr( $card['top'] ); ?>%;width:<?php echo esc_attr( $card['width'] ); ?>%;height:<?php echo esc_attr( $card['height'] ); ?>%;">
 							<div
 								class="la-core-feature-shell <?php echo $card['primary'] ? 'la-core-feature-shell--visible' : 'la-core-feature-shell--hidden'; ?> relative h-full w-full overflow-hidden rounded-sm border-[5px] border-white bg-transparent <?php echo 'large' === $card['shadow'] ? 'la-core-feature-shell--large' : 'la-core-feature-shell--small'; ?>"
@@ -330,8 +340,8 @@ $faq_items = array(
 								data-primary="<?php echo $card['primary'] ? 'true' : 'false'; ?>"
 							>
 								<div class="la-core-feature-clip la-core-feature-clip--r4 relative h-full min-h-0 w-full min-w-0 overflow-hidden rounded-none">
-									<div class="la-core-feature-motion <?php echo $card['primary'] ? 'la-core-feature-motion--primary' : 'la-core-feature-motion--secondary'; ?> relative h-full w-full">
-										<img src="<?php echo esc_url( $card['src'] ); ?>" alt="<?php echo esc_attr( $card['alt'] ); ?>" class="la-core-feature-img <?php echo 'photo' === $card['kind'] ? 'la-core-feature-img--photo' : 'la-core-feature-img--dashboard'; ?> <?php echo isset( $card['image_class'] ) ? esc_attr( $card['image_class'] ) : ''; ?> pointer-events-none absolute inset-0 z-0 box-border h-full w-full max-w-none select-none object-cover object-center" draggable="false" />
+									<div class="la-core-feature-motion <?php echo $card['primary'] ? 'la-core-feature-motion--primary' : 'la-core-feature-motion--secondary'; ?> relative h-full w-full" style="<?php echo esc_attr( $card_motion_style ); ?>">
+										<img src="<?php echo esc_url( $card['src'] ); ?>" alt="<?php echo esc_attr( $card['alt'] ); ?>" class="la-core-feature-img <?php echo 'photo' === $card['kind'] ? 'la-core-feature-img--photo' : 'la-core-feature-img--dashboard'; ?> <?php echo isset( $card['image_class'] ) ? esc_attr( $card['image_class'] ) : ''; ?> pointer-events-none absolute inset-0 z-0 box-border h-full w-full max-w-none select-none object-cover object-center" style="<?php echo esc_attr( $card_image_style ); ?>" draggable="false" />
 									</div>
 								</div>
 							</div>
