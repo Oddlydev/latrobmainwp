@@ -3254,6 +3254,9 @@ h6 {
 .pr-5 {
   padding-right: calc(var(--spacing) * 5);
 }
+.pr-10 {
+  padding-right: calc(var(--spacing) * 10);
+}
 .pb-0 {
   padding-bottom: calc(var(--spacing) * 0);
 }
@@ -5025,6 +5028,11 @@ h6 {
 @media (width >= 64rem) {
   .lg\:pr-0 {
     padding-right: calc(var(--spacing) * 0);
+  }
+}
+@media (width >= 64rem) {
+  .lg\:pr-8 {
+    padding-right: calc(var(--spacing) * 8);
   }
 }
 @media (width >= 64rem) {
