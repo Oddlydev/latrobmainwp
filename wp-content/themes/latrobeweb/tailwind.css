@@ -805,6 +805,7 @@ h6 {
 
 .la-core-feature-clip {
 	isolation: isolate;
+	background-color: var(--color-white);
 }
 
 .la-core-feature-clip--r4 {
@@ -825,7 +826,8 @@ h6 {
 }
 
 .la-core-feature-img.la-core-feature-img--photo {
-	transform: translate3d(0, 0, 0) scale(1.026);
+	object-fit: contain;
+	transform: none;
 	transform-origin: center;
 	backface-visibility: hidden;
 }
@@ -839,11 +841,11 @@ h6 {
 }
 
 .la-core-feature-motion--primary {
-	animation: la-core-feature-pulse 12s ease-in-out infinite;
+	animation: none;
 }
 
 .la-core-feature-motion--secondary {
-	animation: la-core-feature-float 10s ease-in-out infinite;
+	animation: none;
 }
 
 .la-core-feature-shell--hidden {

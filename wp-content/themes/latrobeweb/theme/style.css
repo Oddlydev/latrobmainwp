@@ -1743,6 +1743,7 @@ h6 {
 }
 .la-core-feature-clip {
   isolation: isolate;
+  background-color: var(--color-white);
 }
 .la-core-feature-clip--r4 {
   clip-path: inset(0 round 0);
@@ -1761,7 +1762,8 @@ h6 {
   object-position: center;
 }
 .la-core-feature-img.la-core-feature-img--photo {
-  transform: translate3d(0, 0, 0) scale(1.026);
+  object-fit: contain;
+  transform: none;
   transform-origin: center;
   backface-visibility: hidden;
 }
@@ -1772,10 +1774,10 @@ h6 {
   object-position: 88% center;
 }
 .la-core-feature-motion--primary {
-  animation: la-core-feature-pulse 12s ease-in-out infinite;
+  animation: none;
 }
 .la-core-feature-motion--secondary {
-  animation: la-core-feature-float 10s ease-in-out infinite;
+  animation: none;
 }
 .la-core-feature-shell--hidden {
   --tw-shadow: 0 0 #0000;
@@ -3253,9 +3255,6 @@ h6 {
 }
 .pr-5 {
   padding-right: calc(var(--spacing) * 5);
-}
-.pr-10 {
-  padding-right: calc(var(--spacing) * 10);
 }
 .pb-0 {
   padding-bottom: calc(var(--spacing) * 0);
@@ -5028,11 +5027,6 @@ h6 {
 @media (width >= 64rem) {
   .lg\:pr-0 {
     padding-right: calc(var(--spacing) * 0);
-  }
-}
-@media (width >= 64rem) {
-  .lg\:pr-8 {
-    padding-right: calc(var(--spacing) * 8);
   }
 }
 @media (width >= 64rem) {
