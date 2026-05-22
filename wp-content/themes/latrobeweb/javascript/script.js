@@ -178,12 +178,16 @@ function initAccordions() {
 }
 
 function initHeaderAnchorLinks() {
-	document
-		.querySelectorAll(
-			'#masthead [data-nav-link], #masthead nav a[href*="#"]',
-		)
-		.forEach((link) => {
-		link.addEventListener("click", (event) => {
+	// Intercept header hash links before the browser performs a navigation.
+	document.addEventListener(
+		"click",
+		(event) => {
+			const link = event.target.closest('#masthead nav a[href*="#"]');
+
+			if (!link) {
+				return;
+			}
+
 			const href = link.getAttribute("href") || "";
 			let targetUrl;
 
@@ -193,11 +197,7 @@ function initHeaderAnchorLinks() {
 				return;
 			}
 
-			if (!targetUrl.hash) {
-				return;
-			}
-
-			if (targetUrl.origin !== window.location.origin) {
+			if (!targetUrl.hash || targetUrl.origin !== window.location.origin) {
 				return;
 			}
 
@@ -209,10 +209,12 @@ function initHeaderAnchorLinks() {
 			}
 
 			event.preventDefault();
+			event.stopPropagation();
 			window.history.pushState(null, "", `${window.location.pathname}${targetUrl.hash}`);
 			target.scrollIntoView({ behavior: "smooth", block: "start" });
-		});
-	});
+		},
+		true,
+	);
 }
 
 function initFaqFilters() {
