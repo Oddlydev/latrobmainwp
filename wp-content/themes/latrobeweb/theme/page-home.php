@@ -220,7 +220,7 @@ get_header();
 					<p class="eyebrow text-brand-1"><?php echo esc_html( get_field( 'home_how_it_works_section_label_text' ) ); ?></p>
 					<h2 class="mt-2 font-display text-[1.875rem] leading-[110%] font-black tracking-tighter text-black md:font-bold md:tracking-normal lg:text-[2.25rem] lg:leading-[110%] lg:font-bold"><?php echo esc_html( get_field( 'home_how_it_works_section_title' ) ); ?></h2>
 				</div>
-				<div class="relative z-10 mx-6 sm:mx-auto sm:max-w-[680px] lg:mx-auto lg:max-w-none">
+				<div class="relative z-10 mx-6 sm:mx-auto sm:max-w-[680px] lg:mx-auto lg:max-w-[860px] xl:max-w-none">
 					<div class="la-how-track absolute top-5 bottom-5 left-[22px] w-1 rounded-full bg-red-100 md:top-0 md:bottom-0 md:left-[28px] lg:left-1/2 lg:top-0 lg:bottom-0 lg:w-1 lg:-translate-x-1/2" data-how-it-works-track aria-hidden="true">
 						<div class="la-how-track-fill w-full rounded-full bg-brand-1 transition-[height] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-[height]" data-how-it-works-fill></div>
 					</div>
@@ -239,7 +239,7 @@ get_header();
 								? 'flex w-full items-baseline gap-3 font-display text-black lg:flex lg:w-full lg:max-w-[448px] lg:justify-end lg:gap-3 lg:ml-auto lg:text-right'
 								: 'flex w-full items-baseline gap-3 font-display text-black lg:inline-grid lg:w-full lg:max-w-[448px] lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-x-3 lg:text-left';
 							?>
-							<div class="la-how-step-row relative grid grid-cols-[auto_1fr] items-start gap-x-5 <?php echo $index === count( $how_it_works_items ) - 1 ? 'pb-5' : ''; ?> lg:mx-auto lg:w-fit lg:max-w-none lg:grid-cols-[462px_56px_462px] lg:items-center lg:gap-x-14 lg:gap-y-0 lg:pb-0" data-how-it-works-step-row data-how-step-side="<?php echo $is_left ? 'left' : 'right'; ?>">
+							<div class="la-how-step-row relative grid grid-cols-[auto_1fr] items-start gap-x-5 <?php echo $index === count( $how_it_works_items ) - 1 ? 'pb-5' : ''; ?> lg:mx-auto lg:w-full lg:max-w-[860px] lg:grid-cols-[minmax(0,1fr)_56px_minmax(0,1fr)] lg:items-center lg:gap-x-5 lg:gap-y-0 lg:pb-0 xl:w-fit xl:max-w-none xl:grid-cols-[462px_56px_462px] xl:gap-x-14" data-how-it-works-step-row data-how-step-side="<?php echo $is_left ? 'left' : 'right'; ?>">
 								<div class="la-how-step-marker z-20 col-start-1 row-start-1 flex h-12 w-12 items-center justify-center self-start mt-5 rounded-full border-2 border-brand-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:h-[60px] md:w-[60px] md:border-[3px] lg:absolute lg:left-1/2 lg:top-1/2 lg:mt-0 lg:h-14 lg:w-14 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:border-[3px] <?php echo esc_attr( $step_icon_class ); ?>" data-how-it-works-step data-has-icon="<?php echo $has_step_icon ? 'true' : 'false'; ?>">
 									<?php if ( ! empty( $step_red_icon ) ) : ?>
 										<img src="<?php echo esc_url( $step_red_icon ); ?>" alt="" class="la-how-step-icon la-how-step-icon--red h-6 w-6 object-contain md:h-[25.7px] md:w-[25.7px] lg:h-[26px] lg:w-[26px]" />
