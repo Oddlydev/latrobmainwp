@@ -435,12 +435,12 @@ $faq_items = array(
 				<p class="mx-auto mt-4 max-w-[550px] font-sans text-base leading-6 font-normal tracking-normal text-gray-500"><?php echo esc_html( get_field( 'home_partners_section_description' ) ); ?></p>
 			</div>
 			<div class="mt-5 grid gap-5 md:mt-7 md:grid-cols-2 md:gap-5 lg:mt-12 lg:gap-6 xl:grid-cols-3">
-				<?php foreach ( $support_cards as $item ) : ?>
+				<?php foreach ( (array) get_field( 'home_partners_details' ) as $index => $item ) : ?>
 					<article class="group bg-surface-card-hover flex flex-col items-center gap-0 rounded-2xl border border-gray-200 py-[47px] text-center">
 						<div class="flex h-20 items-center justify-center pb-[30px]">
-							<img src="<?php echo esc_url( $item['logo'] ); ?>" alt="<?php echo esc_attr( $item['alt'] ); ?>" class="w-auto transition-transform duration-300 ease-out group-hover:scale-105" />
+							<img src="<?php echo esc_url( $item['home_partner_logo'] ); ?>" alt="" class="w-auto transition-transform duration-300 ease-out group-hover:scale-105" />
 						</div>
-						<p class="body-base-500 text-center uppercase text-gray-500"><?php echo esc_html( $item['label'] ); ?></p>
+						<p class="body-base-500 text-center uppercase text-gray-500"><?php echo esc_html( $support_cards[ $index ]['label'] ); ?></p>
 					</article>
 				<?php endforeach; ?>
 			</div>
@@ -540,9 +540,9 @@ $faq_items = array(
 			</div>
 			<div class="grid gap-5 md:gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.95fr)] lg:items-start lg:gap-12">
 				<div class="space-y-4 md:space-y-4 lg:space-y-5">
-					<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Email', 'value' => 'pcat@latrobe.edu.au', 'icon' => latrobeweb_get_icon_markup( 'mail' ), 'href' => 'mailto:pcat@latrobe.edu.au' ) ); ?>
-					<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Institution', 'value' => 'latrobe.edu.au', 'icon' => latrobeweb_get_icon_markup( 'globe' ) ) ); ?>
-					<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Location', 'value' => 'Melbourne, Victoria', 'icon' => latrobeweb_get_icon_markup( 'pin' ) ) ); ?>
+					<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Email', 'value' => get_field( 'home_contact_section_email' ), 'icon' => latrobeweb_get_icon_markup( 'mail' ), 'href' => 'mailto:' . get_field( 'home_contact_section_email' ) ) ); ?>
+					<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Institution', 'value' => get_field( 'home_contact_section_institution' ), 'icon' => latrobeweb_get_icon_markup( 'globe' ) ) ); ?>
+					<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Location', 'value' => get_field( 'home_contact_section_location' ), 'icon' => latrobeweb_get_icon_markup( 'pin' ) ) ); ?>
 				</div>
 				<article class="self-start w-full rounded-xl border border-red-200 bg-white px-6 py-6 shadow-none lg:w-[623px]">
 					<div class="flex items-center gap-3">
