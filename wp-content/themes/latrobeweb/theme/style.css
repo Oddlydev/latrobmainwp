@@ -618,8 +618,19 @@ h6 {
 }
 .la-how-step-icon {
   display: block;
-  background-color: currentColor;
   flex-shrink: 0;
+}
+.la-how-step-marker {
+  position: relative;
+}
+.la-how-step-icon--white {
+  display: none;
+}
+.la-how-step-marker[data-filled="true"] .la-how-step-icon--red {
+  display: none;
+}
+.la-how-step-marker[data-filled="true"] .la-how-step-icon--white {
+  display: block;
 }
 @media (min-width: 768px) {
   .la-how-it-works-section::before {
