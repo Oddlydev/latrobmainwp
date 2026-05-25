@@ -675,13 +675,7 @@ h6 {
 }
 @media (min-width: 1024px) and (max-width: 1279.98px) {
   .la-home-hero-content {
-    padding-left: 6.5rem !important;
-    padding-right: 2.5rem !important;
-  }
-  .la-home-hero-desktop-image {
-    width: 54% !important;
-    object-fit: cover !important;
-    object-position: right center !important;
+    padding-left: 7.5rem !important;
   }
 }
 .la-swatch {
