@@ -527,13 +527,22 @@ function initHowItWorksTimelines() {
 			marker.dataset.filled = isFilled ? "true" : "false";
 			row.dataset.filled = isFilled ? "true" : "false";
 			marker.classList.toggle("border-red-100", isFilled);
-			marker.classList.toggle("bg-brand-1", isFilled);
-			marker.classList.toggle("text-white", isFilled);
 			marker.classList.toggle("border-brand-1", !isFilled);
-			marker.classList.toggle("bg-white", !isFilled && hasIcon);
-			marker.classList.toggle("text-brand-1", !isFilled && hasIcon);
-			marker.classList.toggle("bg-brand-1", !isFilled && !hasIcon);
-			marker.classList.toggle("text-white", !isFilled && !hasIcon);
+
+			if ( isFilled ) {
+				marker.classList.add("bg-brand-1", "text-white");
+				marker.classList.remove("bg-white", "text-brand-1");
+				return;
+			}
+
+			if ( hasIcon ) {
+				marker.classList.add("bg-white", "text-brand-1");
+				marker.classList.remove("bg-brand-1", "text-white");
+				return;
+			}
+
+			marker.classList.add("bg-brand-1", "text-white");
+			marker.classList.remove("bg-white", "text-brand-1");
 		}
 
 		function updateProgress() {
