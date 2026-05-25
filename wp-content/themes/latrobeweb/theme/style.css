@@ -689,6 +689,12 @@ h6 {
   background-color: var(--color-brand-2);
   color: var(--color-brand-1);
 }
+.la-chip.la-chip--active .la-chip-count,
+.la-chip[aria-pressed="true"] > .la-chip-count,
+.la-chip[aria-selected="true"] > .la-chip-count {
+  background-color: var(--color-brand-2);
+  color: var(--color-brand-1);
+}
 .la-hero-status-dot {
   animation: la-dot-pulse 1.1s ease-in-out infinite;
 }
