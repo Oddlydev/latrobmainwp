@@ -20,13 +20,13 @@ get_header();
 				src="<?php echo esc_url( $home_hero_image_row['home_hero_section_desktop_image'] ?? '' ); ?>"
 				alt=""
 				aria-hidden="true"
-				class="la-home-hero-desktop-image absolute inset-y-0 right-0 hidden h-full w-[58%] bg-white object-contain object-right lg:block xl:w-[60%] 2xl:w-[62%]"
+				class="la-home-hero-image-desktop absolute inset-y-0 right-0 hidden h-full w-[58%] bg-white object-contain object-right lg:block xl:w-[60%] 2xl:w-[62%]"
 			/>
 			<div aria-hidden="true" class="pointer-events-none absolute top-1/2 right-[-10%] hidden h-[78%] w-[52%] -translate-y-1/2 rounded-full blur-[64px] [background:rgba(233,34,60,0.05)] lg:block"></div>
 			<div aria-hidden="true" class="pointer-events-none absolute top-[18%] left-[-8%] hidden h-[44%] w-[42%] rounded-full blur-[64px] [background:rgba(233,34,60,0.03)] lg:block"></div>
 			<div aria-hidden="true" class="absolute inset-y-0 left-0 hidden w-full bg-[linear-gradient(90deg,rgba(247,247,247,0.96)_0%,rgba(247,247,247,0.92)_38%,rgba(247,247,247,0.82)_54%,rgba(247,247,247,0.44)_70%,rgba(247,247,247,0)_100%)] lg:block lg:w-[60%]"></div>
 			<div aria-hidden="true" class="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white/35 to-transparent md:hidden"></div>
-			<div class="la-home-hero-content relative z-10 px-6 pt-10 pb-0 md:px-10 md:pt-10 md:pb-0 lg:max-w-[616px] lg:pr-10 lg:pt-[11.0625rem] lg:pb-[11.0625rem] lg:pl-[9.375rem]">
+			<div class="relative z-10 px-6 pt-10 pb-0 md:px-10 md:pt-10 md:pb-0 lg:max-w-[616px] lg:pr-10 lg:pt-[11.0625rem] lg:pb-[11.0625rem] lg:pl-[9.375rem]">
 				<div class="w-full">
 					<p class="body-xs-500 md:body-base-500 inline-flex max-w-full items-center gap-2 whitespace-normal rounded-full border border-gray-300 bg-white px-4 py-2 text-black shadow-sm">
 						<span class="h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse"></span>
@@ -120,10 +120,10 @@ get_header();
 					<p class="body-base-600 text-lg text-black lg:text-xl lg:leading-7"><?php echo esc_html( get_field( 'home_intro_section_highlight_text' ) ); ?></p>
 				</div>
 			</div>
-			<div class="overflow-hidden rounded-[1.25rem] border border-gray-300 bg-surface-card-soft shadow-none backdrop-blur-[2px]">
-				<div class="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-5 px-5 py-6 md:gap-6 lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-9 lg:px-8 lg:py-10"><p class="body-base-600 shrink-0 text-lg leading-7 tracking-tighter text-gray-600 uppercase">Project title</p><p class="body-base-400 min-w-0 justify-self-end w-full max-w-[10.5rem] text-right text-black md:w-auto md:max-w-[440px] md:text-right md:text-xl md:leading-8 lg:w-full lg:max-w-none">PCAT for Aged Care</p></div>
-				<div class="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-5 border-t border-gray-200 px-5 py-6 md:gap-6 lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-9 lg:px-8 lg:py-10"><p class="body-base-600 shrink-0 text-lg leading-7 tracking-tighter text-gray-600 uppercase">Funding</p><p class="body-base-400 min-w-0 justify-self-end w-full max-w-[10.5rem] text-right text-black md:w-auto md:max-w-[440px] md:text-right md:text-xl md:leading-8 lg:w-full lg:max-w-none">The Aged Care Research and Industry Innovation Australia fund (ARIIA)</p></div>
-				<div class="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-5 border-t border-gray-200 px-5 py-6 md:gap-6 lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-9 lg:px-8 lg:py-10"><p class="body-base-600 shrink-0 text-lg leading-7 tracking-tighter text-gray-600 uppercase">Institution</p><p class="body-base-400 min-w-0 justify-self-end w-full max-w-[10.5rem] text-right text-black md:w-auto md:max-w-[440px] md:text-right md:text-xl md:leading-8 lg:w-full lg:max-w-none">La Trobe University</p></div>
+			<div class="la-home-intro-meta overflow-hidden rounded-[1.25rem] border border-gray-300 bg-surface-card-soft shadow-none backdrop-blur-[2px]">
+				<div class="la-home-intro-meta-row grid grid-cols-[auto_1fr] items-center gap-5 px-5 py-6 md:gap-6 lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-9 lg:px-8 lg:py-10"><p class="body-base-600 shrink-0 text-lg leading-7 tracking-tighter text-gray-600 uppercase">Project title</p><p class="la-home-intro-meta-value body-base-400 justify-self-end w-[228px] max-w-full text-right text-black md:w-auto md:max-w-[440px] md:text-right md:text-xl md:leading-8 lg:w-full lg:max-w-none">PCAT for Aged Care</p></div>
+				<div class="la-home-intro-meta-row grid grid-cols-[auto_1fr] items-center gap-5 border-t border-gray-200 px-5 py-6 md:gap-6 lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-9 lg:px-8 lg:py-10"><p class="body-base-600 shrink-0 text-lg leading-7 tracking-tighter text-gray-600 uppercase">Funding</p><p class="la-home-intro-meta-value body-base-400 justify-self-end w-[228px] max-w-full text-right text-black md:w-auto md:max-w-[440px] md:text-right md:text-xl md:leading-8 lg:w-full lg:max-w-none">The Aged Care Research and Industry Innovation Australia fund (ARIIA)</p></div>
+				<div class="la-home-intro-meta-row grid grid-cols-[auto_1fr] items-center gap-5 border-t border-gray-200 px-5 py-6 md:gap-6 lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-9 lg:px-8 lg:py-10"><p class="body-base-600 shrink-0 text-lg leading-7 tracking-tighter text-gray-600 uppercase">Institution</p><p class="la-home-intro-meta-value body-base-400 justify-self-end w-[228px] max-w-full text-right text-black md:w-auto md:max-w-[440px] md:text-right md:text-xl md:leading-8 lg:w-full lg:max-w-none">La Trobe University</p></div>
 			</div>
 		</div>
 	</section>

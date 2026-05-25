@@ -668,14 +668,16 @@ h6 {
     width: 100%;
   }
 }
-@media (max-width: 767.98px) {
-  .la-home-hero-content {
-    overflow-x: clip;
-  }
+.la-home-intro-meta-row {
+  grid-template-columns: auto minmax(0, 1fr);
 }
-@media (min-width: 1024px) and (max-width: 1279.98px) {
-  .la-home-hero-content {
-    padding-left: 7.5rem !important;
+.la-home-intro-meta-value {
+  min-width: 0;
+  width: min(228px, 100%);
+}
+@media (min-width: 768px) {
+  .la-home-intro-meta-value {
+    width: auto;
   }
 }
 .la-swatch {
