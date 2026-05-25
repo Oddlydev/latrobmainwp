@@ -518,6 +518,7 @@ function initHowItWorksTimelines() {
 		function setStepState(index, isFilled) {
 			const marker = steps[index];
 			const row = stepRows[index];
+			const hasIcon = marker?.dataset.hasIcon === "true";
 
 			if (!marker || !row) {
 				return;
@@ -529,8 +530,10 @@ function initHowItWorksTimelines() {
 			marker.classList.toggle("bg-brand-1", isFilled);
 			marker.classList.toggle("text-white", isFilled);
 			marker.classList.toggle("border-brand-1", !isFilled);
-			marker.classList.toggle("bg-white", !isFilled);
-			marker.classList.toggle("text-brand-1", !isFilled);
+			marker.classList.toggle("bg-white", !isFilled && hasIcon);
+			marker.classList.toggle("text-brand-1", !isFilled && hasIcon);
+			marker.classList.toggle("bg-brand-1", !isFilled && !hasIcon);
+			marker.classList.toggle("text-white", !isFilled && !hasIcon);
 		}
 
 		function updateProgress() {
