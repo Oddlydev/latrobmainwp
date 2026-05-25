@@ -616,6 +616,12 @@ h6 {
   position: relative;
   z-index: 1;
 }
+.la-how-step-icon {
+  display: block;
+  background-color: currentColor;
+  -webkit-mask: var(--la-how-step-icon) center/contain no-repeat;
+  mask: var(--la-how-step-icon) center/contain no-repeat;
+}
 @media (min-width: 768px) {
   .la-how-it-works-section::before {
     background-image: var(--la-how-it-works-tablet-background-image);

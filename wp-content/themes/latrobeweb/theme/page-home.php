@@ -14,7 +14,7 @@ get_header();
 	<section id="top" class="scroll-mt-24">
 		<div class="relative overflow-hidden border border-gray-200 bg-white text-black shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
 			<img
-				src="<?php echo esc_url( get_field( 'home_hero_section_images' )['home_hero_section_desktop_image'] ); ?>"
+				src="<?php echo esc_url( get_field( 'home_hero_section_images' )['home_hero_section_images'][0]['home_hero_section_desktop_image'] ); ?>"
 				alt=""
 				aria-hidden="true"
 				class="absolute top-[-3.499px] left-[-2.003px] hidden h-[100.42%] w-[100.168%] max-w-none object-cover object-[78%_center] lg:block"
@@ -70,7 +70,7 @@ get_header();
 				<div aria-hidden="true" class="la-home-hero-image-blend la-home-hero-image-blend-mobile"></div>
 				<div aria-hidden="true" class="la-home-hero-image-accent la-home-hero-image-accent-mobile"></div>
 				<img
-					src="<?php echo esc_url( get_field( 'home_hero_section_images' )['home_hero_section_mobile_image'] ); ?>"
+					src="<?php echo esc_url( get_field( 'home_hero_section_images' )['home_hero_section_images'][0]['home_hero_section_mobile_image'] ); ?>"
 					alt=""
 					aria-hidden="true"
 					class="la-home-hero-image-mobile block h-auto w-full object-cover object-center"
@@ -80,7 +80,7 @@ get_header();
 				<div aria-hidden="true" class="la-home-hero-image-blend la-home-hero-image-blend-tablet"></div>
 				<div aria-hidden="true" class="la-home-hero-image-accent la-home-hero-image-accent-tablet"></div>
 				<img
-					src="<?php echo esc_url( get_field( 'home_hero_section_images' )['home_hero_section_tablet_image'] ); ?>"
+					src="<?php echo esc_url( get_field( 'home_hero_section_images' )['home_hero_section_images'][0]['home_hero_section_tablet_image'] ); ?>"
 					alt=""
 					aria-hidden="true"
 					class="la-home-hero-image-tablet block h-auto w-full object-cover object-center"
@@ -239,7 +239,7 @@ get_header();
 							<div class="la-how-step-row relative grid grid-cols-[auto_1fr] items-start gap-x-5 <?php echo $index === count( $how_it_works_items ) - 1 ? 'pb-5' : ''; ?> lg:mx-auto lg:w-fit lg:max-w-none lg:grid-cols-[462px_56px_462px] lg:items-center lg:gap-x-14 lg:gap-y-0 lg:pb-0" data-how-it-works-step-row data-how-step-side="<?php echo $is_left ? 'left' : 'right'; ?>">
 								<div class="la-how-step-marker z-20 col-start-1 row-start-1 flex h-12 w-12 items-center justify-center self-start mt-5 rounded-full border-2 border-brand-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:h-[60px] md:w-[60px] md:border-[3px] lg:absolute lg:left-1/2 lg:top-1/2 lg:mt-0 lg:h-14 lg:w-14 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:border-[3px] <?php echo esc_attr( $step_icon_class ); ?>" data-how-it-works-step data-has-icon="<?php echo ! empty( $step['home_how_it_work_item_icon'] ) ? 'true' : 'false'; ?>">
 									<?php if ( ! empty( $step['home_how_it_work_item_icon'] ) ) : ?>
-										<img src="<?php echo esc_url( $step['home_how_it_work_item_icon'] ); ?>" alt="" class="h-6 w-6 object-contain md:h-[25.7px] md:w-[25.7px] lg:h-[26px] lg:w-[26px]" />
+										<span class="la-how-step-icon h-6 w-6 md:h-[25.7px] md:w-[25.7px] lg:h-[26px] lg:w-[26px]" style="--la-how-step-icon:url('<?php echo esc_url( $step['home_how_it_work_item_icon'] ); ?>');"></span>
 									<?php endif; ?>
 								</div>
 								<article class="la-how-step-card col-start-2 row-start-1 min-w-0 w-full rounded-lg px-0 py-5 text-left transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform lg:py-4 <?php echo $is_left ? 'lg:col-start-1 lg:pl-0 lg:pr-0 lg:text-right' : 'lg:col-start-3 lg:pl-0 lg:pr-0 lg:text-left'; ?>">
