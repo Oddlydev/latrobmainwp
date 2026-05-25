@@ -90,9 +90,9 @@ if ( 'contact' === $variant ) :
                 <div class="bg-contact-icon-surface text-brand-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"><?php echo wp_kses( $icon, latrobeweb_get_svg_allowed() ); ?></div>
 		<div>
 			<p class="eyebrow text-gray-500"><?php echo esc_html( $label ); ?></p>
-			<?php $contact_value_class = 'body-base-500 inline text-black group-hover:text-brand-1 group-hover:underline group-hover:decoration-solid group-hover:[text-decoration-skip-ink:none] group-hover:[text-decoration-thickness:8%] group-hover:[text-underline-offset:25%] group-hover:[text-underline-position:from-font]'; ?>
+			<?php $contact_value_class = 'body-base-500 inline text-black group-hover:text-brand-1'; ?>
 			<?php if ( $href ) : ?>
-				<a href="<?php echo esc_url( $href ); ?>" class="<?php echo esc_attr( $contact_value_class ); ?>"><?php echo esc_html( $value ); ?></a>
+				<a href="<?php echo esc_url( $href ); ?>" class="<?php echo esc_attr( $contact_value_class . ' group-hover:underline group-hover:decoration-solid group-hover:[text-decoration-skip-ink:none] group-hover:[text-decoration-thickness:8%] group-hover:[text-underline-offset:25%] group-hover:[text-underline-position:from-font]' ); ?>"><?php echo esc_html( $value ); ?></a>
 			<?php else : ?>
 				<span class="<?php echo esc_attr( $contact_value_class ); ?>"><?php echo esc_html( $value ); ?></span>
 			<?php endif; ?>
