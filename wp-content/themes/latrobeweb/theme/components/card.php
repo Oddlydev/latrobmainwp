@@ -72,7 +72,12 @@ if ( 'type-4' === $variant ) :
                 <div class="bg-red-light text-la-red-1 flex h-12 w-12 items-center justify-center rounded-xl"><?php echo wp_kses( $icon, latrobeweb_get_svg_allowed() ); ?></div>
                 <div class="space-y-1">
                         <p class="text-gray-500 font-sans text-base font-semibold leading-6 tracking-[0.8px] uppercase [font-feature-settings:'dlig'_on]"><?php echo esc_html( $eyebrow ); ?></p>
-                        <p class="body-base-500 text-black group-hover:text-brand-1 group-hover:underline group-hover:decoration-solid group-hover:[text-decoration-skip-ink:none] group-hover:[text-decoration-thickness:8%] group-hover:[text-underline-offset:25%] group-hover:[text-underline-position:from-font]"><?php echo esc_html( $value ); ?></p>
+			<?php $type_4_value_class = 'body-base-500 text-black group-hover:text-brand-1'; ?>
+			<?php if ( $href ) : ?>
+				<a href="<?php echo esc_url( $href ); ?>" class="<?php echo esc_attr( $type_4_value_class . ' group-hover:underline group-hover:decoration-solid group-hover:[text-decoration-skip-ink:none] group-hover:[text-decoration-thickness:8%] group-hover:[text-underline-offset:25%] group-hover:[text-underline-position:from-font]' ); ?>"><?php echo esc_html( $value ); ?></a>
+			<?php else : ?>
+				<p class="<?php echo esc_attr( $type_4_value_class ); ?>"><?php echo esc_html( $value ); ?></p>
+			<?php endif; ?>
                 </div>
 	</article>
 	<?php
