@@ -609,7 +609,7 @@ h6 {
   z-index: 0;
   pointer-events: none;
   opacity: 0.2;
-  background: url("./assets/images/how-it-works-mobile.png") 100px 100px
+  background: var(--la-how-it-works-mobile-background-image) 100px 100px
 		repeat;
 }
 .la-how-it-works-section > * {
@@ -618,12 +618,12 @@ h6 {
 }
 @media (min-width: 768px) {
   .la-how-it-works-section::before {
-    background-image: url("./assets/images/how-it-works-tablet.png");
+    background-image: var(--la-how-it-works-tablet-background-image);
   }
 }
 @media (min-width: 1024px) {
   .la-how-it-works-section::before {
-    background-image: url("./assets/images/how-it-works-desktop.png");
+    background-image: var(--la-how-it-works-desktop-background-image);
   }
 }
 .la-swatch {
