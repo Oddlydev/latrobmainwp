@@ -12,15 +12,6 @@ $hero_image_count = 5;
 $hero_image_index = wp_rand( 1, $hero_image_count );
 
 
-$steps = array(
-	array( 'id' => 's1', 'number' => '01', 'title' => 'Log in securely', 'description' => 'Use your PCAT credentials to access the portal. Your assigned facility and patient list load automatically upon sign-in.', 'side' => 'left', 'icon' => 'lock-26' ),
-	array( 'id' => 's2', 'number' => '02', 'title' => 'Select your patient', 'description' => 'Browse your patient list filtered by risk level, recent activity, or name. High-priority patients are surfaced immediately.', 'side' => 'right', 'icon' => 'search-26' ),
-	array( 'id' => 's3', 'number' => '03', 'title' => 'Complete the assessment', 'description' => 'Work through the structured, research-validated assessment form. Guided prompts ensure every clinical indicator is captured.', 'side' => 'left', 'icon' => 'checklist-26' ),
-	array( 'id' => 's4', 'number' => '04', 'title' => 'Review suggested actions', 'description' => 'Based on the assessment responses, PCAT surfaces recommended clinical actions and flags risk indicators.', 'side' => 'right', 'icon' => 'bell-26' ),
-	array( 'id' => 's5', 'number' => '05', 'title' => 'View Trends & Predictive Analysis', 'description' => 'Examine an interactive chart showing the patient\'s assessment score history over the past 7 days, alongside a model-generated trend forecast.', 'side' => 'left', 'icon' => 'trend-26' ),
-	array( 'id' => 's6', 'number' => '06', 'title' => 'Hand over seamlessly', 'description' => 'At the end of each shift, PCAT compiles an up-to-date summary of each patient\'s status, recent assessments, and outstanding actions.', 'side' => 'right', 'icon' => 'node-26' ),
-);
-
 ?>
 
 <main class="overflow-hidden bg-gray-50 lg:bg-white">
@@ -224,63 +215,40 @@ $steps = array(
 		</div>
 	</section>
 
-	<section class="la-how-it-works-section py-10 lg:py-20">
+	<?php $how_it_works_background_images = (array) get_field( 'home_how_it_works_section_background_images' ); ?>
+	<section class="la-how-it-works-section py-10 lg:py-20" style="--la-how-it-works-mobile-background-image:url('<?php echo esc_url( $how_it_works_background_images['home_how_it_works_section_mobile_background_image'] ?? '' ); ?>');--la-how-it-works-tablet-background-image:url('<?php echo esc_url( $how_it_works_background_images['home_how_it_works_section_tablet_background_image'] ?? '' ); ?>');--la-how-it-works-desktop-background-image:url('<?php echo esc_url( $how_it_works_background_images['home_how_it_works_section_desktop_background_image'] ?? '' ); ?>');">
 		<div class="mx-auto w-full lg:max-w-[1295px]">
 			<span id="how-it-works" class="block scroll-mt-4" aria-hidden="true"></span>
 			<div class="relative overflow-hidden" data-how-it-works data-how-marker-ratio="0.72">
-				<?php latrobeweb_render_section_header( array( 'eyebrow' => 'How It Works', 'title' => 'From login to care record in minutes', 'eyebrow_class' => 'text-brand-1', 'centered' => false, 'class_name' => 'relative z-10 mx-6 mb-5 sm:mx-auto sm:mb-7 sm:max-w-[680px] lg:mx-auto lg:mb-12 lg:max-w-none lg:text-center' ) ); ?>
+				<div class="relative z-10 mx-6 mb-5 sm:mx-auto sm:mb-7 sm:max-w-[680px] lg:mx-auto lg:mb-12 lg:max-w-none lg:text-center">
+					<p class="eyebrow text-brand-1"><?php echo esc_html( get_field( 'home_how_it_works_section_label_text' ) ); ?></p>
+					<h2 class="mt-2 font-display text-[1.875rem] leading-[110%] font-black tracking-tighter text-black md:font-bold md:tracking-normal lg:text-[2.25rem] lg:leading-[110%] lg:font-bold"><?php echo esc_html( get_field( 'home_how_it_works_section_title' ) ); ?></h2>
+				</div>
 				<div class="relative z-10 mx-6 sm:mx-auto sm:max-w-[680px] lg:mx-auto lg:max-w-none">
 					<div class="la-how-track absolute top-5 bottom-5 left-[22px] w-1 rounded-full bg-red-100 md:top-0 md:bottom-0 md:left-[28px] lg:left-1/2 lg:top-0 lg:bottom-0 lg:w-1 lg:-translate-x-1/2" data-how-it-works-track aria-hidden="true">
 						<div class="la-how-track-fill w-full rounded-full bg-brand-1 transition-[height] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-[height]" data-how-it-works-fill></div>
 					</div>
 					<div class="space-y-10 py-5 lg:space-y-16 lg:py-0">
-						<?php foreach ( $steps as $index => $step ) : ?>
-							<?php $is_left = 'left' === $step['side']; ?>
+						<?php $how_it_works_items = (array) get_field( 'home_how_it_works_section_details' ); ?>
+						<?php foreach ( $how_it_works_items as $index => $step ) : ?>
+							<?php $is_left = 0 === $index % 2; ?>
 							<?php
-							$title_width_class = 'max-w-none';
-							$desktop_title_width_class = 'lg:max-w-none';
 							$description_width_class = 'lg:max-w-[340px]';
-
-							if ( in_array( $step['id'], array( 's3', 's4' ), true ) ) {
-								$title_width_class = 'max-w-[165px]';
-							} elseif ( 's5' === $step['id'] ) {
-								$title_width_class = 'max-w-[220px] md:max-w-[175px]';
-							} elseif ( 's6' === $step['id'] ) {
-								$title_width_class = 'max-w-[220px] md:max-w-none';
-							}
-
-							if ( 's4' === $step['id'] ) {
-								$desktop_title_width_class = 'lg:max-w-[245px]';
-							}
-
-							if ( 's1' === $step['id'] ) {
-								$description_width_class = 'lg:max-w-[332px]';
-							} elseif ( 's2' === $step['id'] ) {
-								$description_width_class = 'lg:max-w-[336px]';
-							} elseif ( 's3' === $step['id'] ) {
-								$description_width_class = 'lg:max-w-[310px]';
-							} elseif ( 's4' === $step['id'] ) {
-								$description_width_class = 'lg:max-w-[320px]';
-							} elseif ( 's5' === $step['id'] ) {
-								$description_width_class = 'lg:max-w-[340px]';
-							} elseif ( 's6' === $step['id'] ) {
-								$description_width_class = 'lg:max-w-[336px]';
-							}
 
 							$heading_row_class = $is_left
 								? 'flex w-full items-baseline gap-3 font-display text-black lg:flex lg:w-full lg:max-w-[448px] lg:justify-end lg:gap-3 lg:ml-auto lg:text-right'
 								: 'flex w-full items-baseline gap-3 font-display text-black lg:inline-grid lg:w-full lg:max-w-[448px] lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-x-3 lg:text-left';
 							?>
-							<div class="la-how-step-row relative grid grid-cols-[auto_1fr] items-start gap-x-5 <?php echo $index === count( $steps ) - 1 ? 'pb-5' : ''; ?> lg:mx-auto lg:w-fit lg:max-w-none lg:grid-cols-[462px_56px_462px] lg:items-center lg:gap-x-14 lg:gap-y-0 lg:pb-0" data-how-it-works-step-row data-how-step-side="<?php echo $is_left ? 'left' : 'right'; ?>">
+							<div class="la-how-step-row relative grid grid-cols-[auto_1fr] items-start gap-x-5 <?php echo $index === count( $how_it_works_items ) - 1 ? 'pb-5' : ''; ?> lg:mx-auto lg:w-fit lg:max-w-none lg:grid-cols-[462px_56px_462px] lg:items-center lg:gap-x-14 lg:gap-y-0 lg:pb-0" data-how-it-works-step-row data-how-step-side="<?php echo $is_left ? 'left' : 'right'; ?>">
 								<div class="la-how-step-marker z-20 col-start-1 row-start-1 flex h-12 w-12 items-center justify-center self-start mt-5 rounded-full border-2 border-brand-1 bg-white text-brand-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] [&_svg]:h-6 [&_svg]:w-6 md:h-[60px] md:w-[60px] md:border-[3px] md:[&_svg]:h-[25.7px] md:[&_svg]:w-[25.7px] lg:absolute lg:left-1/2 lg:top-1/2 lg:mt-0 lg:h-14 lg:w-14 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:border-[3px] lg:[&_svg]:h-[26px] lg:[&_svg]:w-[26px]" data-how-it-works-step>
-									<?php echo wp_kses( latrobeweb_get_icon_markup( $step['icon'] ), latrobeweb_get_svg_allowed() ); ?>
+									<img src="<?php echo esc_url( $step['home_how_it_work_item_icon'] ); ?>" alt="" class="h-6 w-6 object-contain md:h-[25.7px] md:w-[25.7px] lg:h-[26px] lg:w-[26px]" />
 								</div>
 								<article class="la-how-step-card col-start-2 row-start-1 min-w-0 w-full rounded-lg px-0 py-5 text-left transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform lg:py-4 <?php echo $is_left ? 'lg:col-start-1 lg:pl-0 lg:pr-0 lg:text-right' : 'lg:col-start-3 lg:pl-0 lg:pr-0 lg:text-left'; ?>">
 									<div class="<?php echo esc_attr( $heading_row_class ); ?>">
-										<span class="shrink-0 text-right font-display text-xl font-light leading-7 tracking-tighter text-gray-500"><?php echo esc_html( $step['number'] ); ?></span>
-										<h4 class="<?php echo esc_attr( $title_width_class ); ?> <?php echo esc_attr( $desktop_title_width_class ); ?> font-display text-xl font-bold leading-7 tracking-tighter text-black sm:max-w-none md:text-xl md:leading-8 lg:text-2xl lg:leading-8"><?php echo esc_html( $step['title'] ); ?></h4>
+										<span class="shrink-0 text-right font-display text-xl font-light leading-7 tracking-tighter text-gray-500"><?php echo esc_html( $step['home_how_it_work_item_number'] ); ?></span>
+										<h4 class="max-w-none font-display text-xl font-bold leading-7 tracking-tighter text-black sm:max-w-none md:text-xl md:leading-8 lg:max-w-none lg:text-2xl lg:leading-8"><?php echo esc_html( $step['home_how_it_work_item_title'] ); ?></h4>
 									</div>
-									<p class="mt-3 font-display text-lg font-normal leading-6 tracking-normal text-gray-500 lg:mt-[5px] lg:text-base lg:leading-6 <?php echo esc_attr( $description_width_class ); ?> <?php echo $is_left ? 'lg:ml-auto' : ''; ?>"><?php echo esc_html( $step['description'] ); ?></p>
+									<p class="mt-3 font-display text-lg font-normal leading-6 tracking-normal text-gray-500 lg:mt-[5px] lg:text-base lg:leading-6 <?php echo esc_attr( $description_width_class ); ?> <?php echo $is_left ? 'lg:ml-auto' : ''; ?>"><?php echo esc_html( $step['home_how_it_work_item_description'] ); ?></p>
 								</article>
 							</div>
 						<?php endforeach; ?>
@@ -428,7 +396,7 @@ $steps = array(
 		</div>
 	</section>
 
-	<section class="la-home-cta-section" style="--la-cta-background-image:url('<?php echo esc_url( latrobeweb_asset_uri( 'images/black-section-bg.png' ) ); ?>');">
+	<section class="la-home-cta-section" style="--la-cta-background-image:url('<?php echo esc_url( get_field( 'home_cta_section_background_image' ) ); ?>');">
 		<div class="mx-auto w-full px-6 text-center sm:max-w-[680px] sm:px-0 lg:max-w-[1295px]">
 			<div class="space-y-4 md:space-y-4 lg:space-y-4">
 				<h2 class="text-center font-display text-[1.875rem] leading-[110%] font-black tracking-tighter text-white md:font-bold md:tracking-normal lg:text-[2.25rem] lg:leading-[110%] lg:font-bold"><?php echo esc_html( get_field( 'home_cta_section_title' ) ); ?></h2>
