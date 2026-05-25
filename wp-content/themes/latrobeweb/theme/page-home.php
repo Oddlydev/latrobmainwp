@@ -17,7 +17,7 @@ get_header();
 				src="<?php echo esc_url( get_field( 'home_hero_section_images' )['home_hero_section_images'][0]['home_hero_section_desktop_image'] ); ?>"
 				alt=""
 				aria-hidden="true"
-				class="absolute top-[-3.499px] left-[-2.003px] hidden h-[100.42%] w-[100.168%] max-w-none object-cover object-[78%_center] lg:block"
+				class="absolute inset-0 hidden h-full w-full object-cover object-center lg:block"
 			/>
 			<div aria-hidden="true" class="pointer-events-none absolute top-1/2 right-[-10%] hidden h-[78%] w-[52%] -translate-y-1/2 rounded-full blur-[64px] [background:rgba(233,34,60,0.05)] lg:block"></div>
 			<div aria-hidden="true" class="pointer-events-none absolute top-[18%] left-[-8%] hidden h-[44%] w-[42%] rounded-full blur-[64px] [background:rgba(233,34,60,0.03)] lg:block"></div>
@@ -240,7 +240,7 @@ get_header();
 								: 'flex w-full items-baseline gap-3 font-display text-black lg:inline-grid lg:w-full lg:max-w-[448px] lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-x-3 lg:text-left';
 							?>
 							<div class="la-how-step-row relative grid grid-cols-[auto_1fr] items-start gap-x-5 <?php echo $index === count( $how_it_works_items ) - 1 ? 'pb-5' : ''; ?> lg:mx-auto lg:w-full lg:max-w-[860px] lg:grid-cols-[minmax(0,1fr)_56px_minmax(0,1fr)] lg:items-center lg:gap-x-5 lg:gap-y-0 lg:pb-0 xl:w-fit xl:max-w-none xl:grid-cols-[462px_56px_462px] xl:gap-x-14" data-how-it-works-step-row data-how-step-side="<?php echo $is_left ? 'left' : 'right'; ?>">
-								<div class="la-how-step-marker z-20 col-start-1 row-start-1 flex h-12 w-12 items-center justify-center self-start mt-5 rounded-full border-2 border-brand-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:h-[60px] md:w-[60px] md:border-[3px] lg:absolute lg:left-1/2 lg:top-1/2 lg:mt-0 lg:h-14 lg:w-14 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:border-[3px] <?php echo esc_attr( $step_icon_class ); ?>" data-how-it-works-step data-has-icon="<?php echo $has_step_icon ? 'true' : 'false'; ?>">
+								<div class="la-how-step-marker z-20 col-start-1 row-start-1 flex h-12 w-12 items-center justify-center self-start mt-5 rounded-full border-2 border-brand-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:h-[60px] md:w-[60px] md:border-[3px] lg:col-start-2 lg:justify-self-center lg:self-center lg:mt-0 lg:h-14 lg:w-14 lg:border-[3px] <?php echo esc_attr( $step_icon_class ); ?>" data-how-it-works-step data-has-icon="<?php echo $has_step_icon ? 'true' : 'false'; ?>">
 									<?php if ( ! empty( $step_red_icon ) ) : ?>
 										<img src="<?php echo esc_url( $step_red_icon ); ?>" alt="" class="la-how-step-icon la-how-step-icon--red h-6 w-6 object-contain md:h-[25.7px] md:w-[25.7px] lg:h-[26px] lg:w-[26px]" />
 									<?php endif; ?>
