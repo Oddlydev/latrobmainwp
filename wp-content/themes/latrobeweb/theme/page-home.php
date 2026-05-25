@@ -12,13 +12,6 @@ $hero_image_count = 5;
 $hero_image_index = wp_rand( 1, $hero_image_count );
 
 
-$about_feature_cards = array(
-	array( 'title' => 'Research Objective', 'description' => 'Develop and validate an AI-powered screening tool that identifies aged care residents with unmet palliative care needs earlier and more accurately than current practice.', 'icon' => 'target' ),
-	array( 'title' => 'Target Population', 'description' => 'Residents of Australian residential aged care facilities, with a focus on those with complex chronic conditions, dementia, and advanced frailty.', 'icon' => 'users' ),
-	array( 'title' => 'Methodology', 'description' => 'Mixed-methods approach combining clinical data analysis, machine learning model development, and co-design with aged care staff, residents, and families.', 'icon' => 'microscope' ),
-	array( 'title' => 'Expected Outcome', 'description' => 'An AI first evidence based prototype for aged care providers to support policy recommendations for palliative care identification in residential and community settings.', 'icon' => 'clipboard' ),
-);
-
 $core_feature_cards = array(
 	array( 'id' => 'dashboard-primary', 'src' => latrobeweb_asset_uri( 'images/core-features/1.svg' ), 'alt' => 'PCAT overview dashboard', 'left' => 39.92, 'top' => 3.34, 'width' => 27.03, 'height' => 53.06, 'class' => 'z-[9]', 'shadow' => 'large', 'kind' => 'dashboard', 'primary' => true, 'reveal_order' => -1 ),
 	array( 'id' => 'dashboard-secondary', 'src' => latrobeweb_asset_uri( 'images/core-features/2.svg' ), 'alt' => 'PCAT patient list dashboard', 'left' => 11.1, 'top' => 37.5, 'width' => 27.09, 'height' => 57.94, 'class' => 'z-[8]', 'shadow' => 'large', 'kind' => 'dashboard', 'primary' => false, 'reveal_order' => 5 ),
@@ -249,7 +242,15 @@ $faq_items = array(
 			<div class="relative bg-brand-3 p-3.5 md:p-5 lg:p-7">
 				<div class="grid gap-3 md:inline-grid md:w-full md:grid-cols-2 md:grid-rows-2 md:gap-3 lg:gap-5 xl:grid-cols-4 xl:grid-rows-1">
 					<?php foreach ( (array) get_field( 'home_hero_section_card_details' ) as $item ) : ?>
-						<?php latrobeweb_component( 'card', array( 'variant' => 'type-1', 'icon' => latrobeweb_get_icon_markup( $item['icon'] ), 'title' => $item['title'], 'description' => $item['description'] ) ); ?>
+						<article class="flex translate-y-0 items-center gap-5 rounded-2xl border border-gray-200 bg-white px-5 py-5 transition-[transform,box-shadow,background-color] duration-200 ease-out hover:-translate-y-1 hover:shadow-card-brand-inset">
+							<div class="bg-red-light flex h-12 w-12 items-center justify-center rounded-xl">
+								<img src="<?php echo esc_url( $item['home_care_hero_card_item_icon'] ); ?>" alt="" class="h-6 w-6 object-contain" />
+							</div>
+							<div>
+								<p class="body-base-600 text-black"><?php echo esc_html( $item['home_care_hero_card_item_title'] ); ?></p>
+								<p class="body-base-400 text-gray-500"><?php echo esc_html( $item['home_care_hero_card_item_description'] ); ?></p>
+							</div>
+						</article>
 					<?php endforeach; ?>
 				</div>
 			</div>
@@ -280,8 +281,14 @@ $faq_items = array(
 	<section class="border-b border-ink-faint pt-5 pb-10 md:pt-7 lg:pt-12 lg:pb-20">
 		<div class="mx-auto w-full px-6 sm:max-w-[680px] sm:px-0 lg:max-w-[1295px]">
 			<div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-				<?php foreach ( $about_feature_cards as $item ) : ?>
-					<?php latrobeweb_component( 'card', array( 'variant' => 'type-2', 'class_name' => 'h-full', 'icon' => latrobeweb_get_icon_markup( $item['icon'] ), 'title' => $item['title'], 'description' => $item['description'] ) ); ?>
+				<?php foreach ( (array) get_field( 'home_intro_card_details' ) as $item ) : ?>
+					<article class="bg-surface-card-soft flex translate-y-0 flex-col rounded-2xl border border-gray-200 p-6 transition-[transform,box-shadow,background-color] duration-200 ease-out hover:-translate-y-1 hover:shadow-la-shadow-3 h-full">
+						<div class="bg-red-light mb-4 flex h-12 w-12 items-center justify-center rounded-xl">
+							<img src="<?php echo esc_url( $item['home_intro_card_item_icon'] ); ?>" alt="" class="h-6 w-6 object-contain" />
+						</div>
+						<h3 class="body-base-600 text-black"><?php echo esc_html( $item['home_intro_card_item_title'] ); ?></h3>
+						<p class="body-base-400 mt-2 text-gray-500"><?php echo esc_html( $item['home_intro_card_item_description'] ); ?></p>
+					</article>
 				<?php endforeach; ?>
 			</div>
 		</div>
