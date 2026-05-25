@@ -272,13 +272,17 @@ $support_cards = array(
 							} elseif ( 's6' === $step['id'] ) {
 								$description_width_class = 'lg:max-w-[336px]';
 							}
+
+							$heading_row_class = $is_left
+								? 'flex w-full items-baseline gap-3 font-display text-black lg:flex lg:w-full lg:max-w-[448px] lg:justify-end lg:gap-3 lg:ml-auto lg:text-right'
+								: 'flex w-full items-baseline gap-3 font-display text-black lg:inline-grid lg:w-full lg:max-w-[448px] lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-x-3 lg:text-left';
 							?>
 							<div class="la-how-step-row relative grid grid-cols-[auto_1fr] items-start gap-x-5 <?php echo $index === count( $steps ) - 1 ? 'pb-5' : ''; ?> lg:mx-auto lg:w-fit lg:max-w-none lg:grid-cols-[462px_56px_462px] lg:items-center lg:gap-x-14 lg:gap-y-0 lg:pb-0" data-how-it-works-step-row data-how-step-side="<?php echo $is_left ? 'left' : 'right'; ?>">
 								<div class="la-how-step-marker z-20 col-start-1 row-start-1 flex h-12 w-12 items-center justify-center self-start mt-5 rounded-full border-2 border-brand-1 bg-white text-brand-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] [&_svg]:h-6 [&_svg]:w-6 md:h-[60px] md:w-[60px] md:border-[3px] md:[&_svg]:h-[25.7px] md:[&_svg]:w-[25.7px] lg:absolute lg:left-1/2 lg:top-1/2 lg:mt-0 lg:h-14 lg:w-14 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:border-[3px] lg:[&_svg]:h-[26px] lg:[&_svg]:w-[26px]" data-how-it-works-step>
 									<?php echo wp_kses( latrobeweb_get_icon_markup( $step['icon'] ), latrobeweb_get_svg_allowed() ); ?>
 								</div>
 								<article class="la-how-step-card col-start-2 row-start-1 min-w-0 w-full rounded-lg px-0 py-5 text-left transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform lg:py-4 <?php echo $is_left ? 'lg:col-start-1 lg:pl-0 lg:pr-0 lg:text-right' : 'lg:col-start-3 lg:pl-0 lg:pr-0 lg:text-left'; ?>">
-									<div class="flex w-full items-baseline gap-3 font-display text-black lg:inline-grid lg:w-full lg:max-w-[448px] lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-x-3 <?php echo $is_left ? 'lg:ml-auto lg:text-right' : 'lg:text-left'; ?>">
+									<div class="<?php echo esc_attr( $heading_row_class ); ?>">
 										<span class="shrink-0 text-right font-display text-xl font-light leading-7 tracking-tighter text-gray-500"><?php echo esc_html( $step['number'] ); ?></span>
 										<h4 class="<?php echo esc_attr( $title_width_class ); ?> <?php echo esc_attr( $desktop_title_width_class ); ?> font-display text-xl font-bold leading-7 tracking-tighter text-black sm:max-w-none md:text-xl md:leading-8 lg:text-2xl lg:leading-8"><?php echo esc_html( $step['title'] ); ?></h4>
 									</div>
@@ -466,9 +470,11 @@ $support_cards = array(
 			</div>
 			<div class="grid gap-5 md:gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.95fr)] lg:items-start lg:gap-12">
 				<div class="space-y-4 md:space-y-4 lg:space-y-5">
-					<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Email', 'value' => get_field( 'home_contact_section_email' ), 'icon' => latrobeweb_get_icon_markup( 'mail' ), 'href' => 'mailto:' . get_field( 'home_contact_section_email' ) ) ); ?>
-					<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Institution', 'value' => get_field( 'home_contact_section_institution' ), 'icon' => latrobeweb_get_icon_markup( 'globe' ) ) ); ?>
-					<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Location', 'value' => get_field( 'home_contact_section_location' ), 'icon' => latrobeweb_get_icon_markup( 'pin' ) ) ); ?>
+					<?php foreach ( (array) get_field( 'home_contact_section_details' ) as $item ) : ?>
+						<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Email', 'value' => $item['home_contact_section_email'], 'icon' => latrobeweb_get_icon_markup( 'mail' ), 'href' => 'mailto:' . $item['home_contact_section_email'] ) ); ?>
+						<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Institution', 'value' => $item['home_contact_section_institution'], 'icon' => latrobeweb_get_icon_markup( 'globe' ) ) ); ?>
+						<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Location', 'value' => $item['home_contact_section_location'], 'icon' => latrobeweb_get_icon_markup( 'pin' ) ) ); ?>
+					<?php endforeach; ?>
 				</div>
 				<article class="self-start w-full rounded-xl border border-red-200 bg-white px-6 py-6 shadow-none lg:w-[623px]">
 					<div class="flex items-center gap-3">
