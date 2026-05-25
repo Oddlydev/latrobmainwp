@@ -34,8 +34,8 @@ get_header();
 					</p>
 					<div class="mt-5 space-y-4 md:mt-5 md:space-y-5 lg:mt-12 lg:space-y-6">
 						<h1 class="font-display text-4xl leading-[110%] font-bold tracking-normal text-black md:font-black lg:text-[60px] lg:font-black">
-							<span class="block lg:whitespace-nowrap"><?php echo esc_html( get_field( 'home_hero_section_title' ) ); ?></span>
-							<span class="mt-1 block text-brand-1 md:mt-0 md:inline lg:block lg:whitespace-nowrap"><?php echo esc_html( get_field( 'home_hero_section_title_highlighted_text' ) ); ?></span>
+							<span class="block whitespace-nowrap"><?php echo esc_html( get_field( 'home_hero_section_title' ) ); ?></span>
+							<span class="mt-1 block whitespace-nowrap text-brand-1 md:mt-0 md:inline lg:block"><?php echo esc_html( get_field( 'home_hero_section_title_highlighted_text' ) ); ?></span>
 						</h1>
 						<p class="body-base-400 max-w-full pt-0 text-gray-600 md:w-full md:max-w-full md:pt-0 lg:w-[616px] lg:max-w-[616px] lg:pt-0">
 							<?php echo esc_html( get_field( 'home_hero_section_description' ) ); ?>
@@ -121,9 +121,9 @@ get_header();
 				</div>
 			</div>
 			<div class="overflow-hidden rounded-[1.25rem] border border-gray-300 bg-surface-card-soft shadow-none backdrop-blur-[2px]">
-				<div class="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-5 px-5 py-6 md:gap-6 lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-9 lg:px-8 lg:py-10"><p class="body-base-600 shrink-0 text-lg leading-7 tracking-tighter text-gray-600 uppercase">Project title</p><p class="body-base-400 min-w-0 justify-self-end max-w-full text-right text-black md:max-w-[440px] md:text-right md:text-xl md:leading-8 lg:w-full lg:max-w-none">PCAT for Aged Care</p></div>
-				<div class="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-5 border-t border-gray-200 px-5 py-6 md:gap-6 lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-9 lg:px-8 lg:py-10"><p class="body-base-600 shrink-0 text-lg leading-7 tracking-tighter text-gray-600 uppercase">Funding</p><p class="body-base-400 min-w-0 justify-self-end max-w-full text-right text-black md:max-w-[440px] md:text-right md:text-xl md:leading-8 lg:w-full lg:max-w-none">The Aged Care Research and Industry Innovation Australia fund (ARIIA)</p></div>
-				<div class="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-5 border-t border-gray-200 px-5 py-6 md:gap-6 lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-9 lg:px-8 lg:py-10"><p class="body-base-600 shrink-0 text-lg leading-7 tracking-tighter text-gray-600 uppercase">Institution</p><p class="body-base-400 min-w-0 justify-self-end max-w-full text-right text-black md:max-w-[440px] md:text-right md:text-xl md:leading-8 lg:w-full lg:max-w-none">La Trobe University</p></div>
+				<div class="grid grid-cols-[auto_1fr] items-center gap-5 px-5 py-6 md:gap-6 lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-9 lg:px-8 lg:py-10"><p class="body-base-600 shrink-0 text-lg leading-7 tracking-tighter text-gray-600 uppercase">Project title</p><p class="body-base-400 justify-self-end w-[228px] max-w-full text-right text-black md:w-auto md:max-w-[440px] md:text-right md:text-xl md:leading-8 lg:w-full lg:max-w-none">PCAT for Aged Care</p></div>
+				<div class="grid grid-cols-[auto_1fr] items-center gap-5 border-t border-gray-200 px-5 py-6 md:gap-6 lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-9 lg:px-8 lg:py-10"><p class="body-base-600 shrink-0 text-lg leading-7 tracking-tighter text-gray-600 uppercase">Funding</p><p class="body-base-400 justify-self-end w-[228px] max-w-full text-right text-black md:w-auto md:max-w-[440px] md:text-right md:text-xl md:leading-8 lg:w-full lg:max-w-none">The Aged Care Research and Industry Innovation Australia fund (ARIIA)</p></div>
+				<div class="grid grid-cols-[auto_1fr] items-center gap-5 border-t border-gray-200 px-5 py-6 md:gap-6 lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-9 lg:px-8 lg:py-10"><p class="body-base-600 shrink-0 text-lg leading-7 tracking-tighter text-gray-600 uppercase">Institution</p><p class="body-base-400 justify-self-end w-[228px] max-w-full text-right text-black md:w-auto md:max-w-[440px] md:text-right md:text-xl md:leading-8 lg:w-full lg:max-w-none">La Trobe University</p></div>
 			</div>
 		</div>
 	</section>

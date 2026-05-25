@@ -310,6 +310,7 @@ html {
   scroll-behavior: smooth;
   background-color: var(--color-white);
   color: var(--color-black);
+  overflow-x: hidden;
 }
 body {
   min-height: 100vh;
@@ -318,6 +319,7 @@ body {
   color: var(--color-black);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 a {
   transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
