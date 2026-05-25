@@ -34,15 +34,6 @@ $steps = array(
 	array( 'id' => 's6', 'number' => '06', 'title' => 'Hand over seamlessly', 'description' => 'At the end of each shift, PCAT compiles an up-to-date summary of each patient\'s status, recent assessments, and outstanding actions.', 'side' => 'right', 'icon' => 'node-26' ),
 );
 
-$team_members = array(
-	array( 'eyebrow' => 'Principal Investigator', 'title' => 'Prof. Hanan Khalil', 'description' => 'Lead researcher and grant recipient. Professor in the School of Psychology and Public Health, with expertise in evidence synthesis, aged care, and health services research.', 'footer' => 'La Trobe University - School of Psychology and Public Health' ),
-	array( 'eyebrow' => 'Project Lead', 'title' => 'Dr. Urooj Raza Khan', 'description' => 'Leads project management and provides digital health research leadership, ensuring seamless delivery, effective cross-functional collaboration, and strong alignment with grant requirements across all stakeholders.', 'footer' => 'La Trobe University - School of Psychology and Public Health' ),
-	array( 'eyebrow' => 'Business Analysis', 'title' => 'Pasindu Galgomuwa', 'description' => 'Bridging the gap between clinical requirements and technical implementation, translating research needs into the platform\'s digital architecture.', 'footer' => 'La Trobe University' ),
-	array( 'eyebrow' => 'Co-Investigators', 'title' => 'Research Team', 'description' => 'A multidisciplinary team spanning clinical informatics, palliative medicine, aged care nursing, and health technology design.', 'footer' => 'La Trobe University - ARIIA' ),
-	array( 'eyebrow' => 'Clinical Advisors', 'title' => 'Advisory Committee', 'description' => 'Aged care providers, specialists, consumer representatives, and family advocates who co-design and validate PCAT.', 'footer' => 'Partner Organisations' ),
-	array( 'eyebrow' => 'Platform Engineering', 'title' => 'ODDLY Global', 'description' => 'Technical partner responsible for the end-to-end platform design, UI/UX architecture, and software engineering of the PCAT application.', 'footer' => 'Technology Partner' ),
-);
-
 $support_cards = array(
 	array( 'label' => 'Host institution', 'logo' => latrobeweb_asset_uri( 'images/la-trobe-university-1.svg' ), 'alt' => 'La Trobe University logo' ),
 	array( 'label' => 'Funding partner', 'logo' => latrobeweb_asset_uri( 'images/ariia-logo-1.svg' ), 'alt' => 'ARIIA logo' ),
@@ -417,10 +408,20 @@ $faq_items = array(
 	<section class="border-t border-gray-200 py-10 md:py-10 lg:py-20">
 		<span id="team" class="block scroll-mt-4" aria-hidden="true"></span>
 		<div class="mx-auto w-full px-6 sm:max-w-[680px] sm:px-0 lg:max-w-[1295px]">
-			<?php latrobeweb_render_section_header( array( 'eyebrow' => 'Research team', 'title' => 'The people behind PCAT', 'eyebrow_class' => 'text-brand-1', 'title_class' => 'mb-0 max-w-[600px]', 'class_name' => 'max-w-2xl' ) ); ?>
+			<div class="max-w-2xl">
+				<p class="eyebrow text-brand-1"><?php echo esc_html( get_field( 'home_team_section_label_text' ) ); ?></p>
+				<h2 class="mt-2 mb-0 max-w-[600px] font-display text-[1.875rem] leading-[110%] font-black tracking-tighter text-black md:font-bold md:tracking-normal lg:text-[2.25rem] lg:leading-[110%] lg:font-bold"><?php echo esc_html( get_field( 'home_team_section_title' ) ); ?></h2>
+			</div>
 			<div class="mt-5 grid gap-5 md:mt-7 md:grid-cols-2 md:gap-x-5 md:gap-y-5 lg:mt-12 lg:gap-6 xl:grid-cols-3">
-				<?php foreach ( $team_members as $member ) : ?>
-					<?php latrobeweb_component( 'card', array( 'variant' => 'team', 'eyebrow' => $member['eyebrow'], 'title' => $member['title'], 'description' => $member['description'], 'footer' => $member['footer'] ) ); ?>
+				<?php foreach ( (array) get_field( 'home_team_section_details' ) as $member ) : ?>
+					<article class="translate-y-0 rounded-2xl border border-gray-200 bg-white px-6 py-6 transition-[transform,box-shadow,background-color] duration-200 ease-out hover:bg-surface-card-hover hover:shadow-la-shadow-1">
+						<div class="flex flex-col gap-2">
+							<p class="eyebrow text-brand-1"><?php echo esc_html( $member['home_team_section_member_designation'] ); ?></p>
+							<p class="body-base-600 font-bold text-black"><?php echo esc_html( $member['home_team_section_member_name'] ); ?></p>
+						</div>
+						<p class="body-base-400 mt-3 text-gray-500"><?php echo esc_html( $member['home_team_section_member_bio'] ); ?></p>
+						<p class="body-sm-400 mt-4 border-l-2 border-brand-1 pl-4 text-base leading-6 text-gray-500 md:text-base md:leading-6 lg:text-sm lg:leading-5"><?php echo esc_html( $member['home_team_section_member_location'] ); ?></p>
+					</article>
 				<?php endforeach; ?>
 			</div>
 		</div>
