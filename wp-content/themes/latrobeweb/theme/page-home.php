@@ -21,12 +21,6 @@ $steps = array(
 	array( 'id' => 's6', 'number' => '06', 'title' => 'Hand over seamlessly', 'description' => 'At the end of each shift, PCAT compiles an up-to-date summary of each patient\'s status, recent assessments, and outstanding actions.', 'side' => 'right', 'icon' => 'node-26' ),
 );
 
-$support_cards = array(
-	array( 'label' => 'Host institution', 'logo' => latrobeweb_asset_uri( 'images/la-trobe-university-1.svg' ), 'alt' => 'La Trobe University logo' ),
-	array( 'label' => 'Funding partner', 'logo' => latrobeweb_asset_uri( 'images/ariia-logo-1.svg' ), 'alt' => 'ARIIA logo' ),
-	array( 'label' => 'Healthcare partner', 'logo' => latrobeweb_asset_uri( 'images/monash-health-logo_dark-1.svg' ), 'alt' => 'Monash Health logo' ),
-);
-
 ?>
 
 <main class="overflow-hidden bg-gray-50 lg:bg-white">
@@ -331,7 +325,7 @@ $support_cards = array(
 						<div class="flex h-20 items-center justify-center pb-[30px]">
 							<img src="<?php echo esc_url( $item['home_partner_logo'] ); ?>" alt="" class="w-auto transition-transform duration-300 ease-out group-hover:scale-105" />
 						</div>
-						<p class="body-base-500 text-center uppercase text-gray-500"><?php echo esc_html( $support_cards[ $index ]['label'] ); ?></p>
+						<p class="body-base-500 text-center uppercase text-gray-500"><?php echo esc_html( 0 === $index ? 'Host institution' : ( 1 === $index ? 'Funding partner' : 'Healthcare partner' ) ); ?></p>
 					</article>
 				<?php endforeach; ?>
 			</div>
@@ -470,11 +464,10 @@ $support_cards = array(
 			</div>
 			<div class="grid gap-5 md:gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.95fr)] lg:items-start lg:gap-12">
 				<div class="space-y-4 md:space-y-4 lg:space-y-5">
-					<?php foreach ( (array) get_field( 'home_contact_section_details' ) as $item ) : ?>
-						<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Email', 'value' => $item['home_contact_section_email'], 'icon' => latrobeweb_get_icon_markup( 'mail' ), 'href' => 'mailto:' . $item['home_contact_section_email'] ) ); ?>
-						<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Institution', 'value' => $item['home_contact_section_institution'], 'icon' => latrobeweb_get_icon_markup( 'globe' ) ) ); ?>
-						<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Location', 'value' => $item['home_contact_section_location'], 'icon' => latrobeweb_get_icon_markup( 'pin' ) ) ); ?>
-					<?php endforeach; ?>
+					<?php $contact_details = get_field( 'home_contact_section_details' ); ?>
+					<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Email', 'value' => $contact_details['home_contact_section_email'], 'icon' => latrobeweb_get_icon_markup( 'mail' ), 'href' => 'mailto:' . $contact_details['home_contact_section_email'] ) ); ?>
+					<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Institution', 'value' => $contact_details['home_contact_section_institution'], 'icon' => latrobeweb_get_icon_markup( 'globe' ) ) ); ?>
+					<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Location', 'value' => $contact_details['home_contact_section_location'], 'icon' => latrobeweb_get_icon_markup( 'pin' ) ) ); ?>
 				</div>
 				<article class="self-start w-full rounded-xl border border-red-200 bg-white px-6 py-6 shadow-none lg:w-[623px]">
 					<div class="flex items-center gap-3">
