@@ -12,13 +12,6 @@ $hero_image_count = 5;
 $hero_image_index = wp_rand( 1, $hero_image_count );
 
 
-$hero_highlights = array(
-	array( 'title' => 'Real-time', 'description' => 'Assessment documentation', 'icon' => 'clipboard' ),
-	array( 'title' => 'Secure', 'description' => 'Role-based nurse access', 'icon' => 'mail' ),
-	array( 'title' => 'Analytics', 'description' => 'Patient outcome tracking', 'icon' => 'target' ),
-	array( 'title' => 'AI-First', 'description' => 'Built for intelligent care', 'icon' => 'document' ),
-);
-
 $about_feature_cards = array(
 	array( 'title' => 'Research Objective', 'description' => 'Develop and validate an AI-powered screening tool that identifies aged care residents with unmet palliative care needs earlier and more accurately than current practice.', 'icon' => 'target' ),
 	array( 'title' => 'Target Population', 'description' => 'Residents of Australian residential aged care facilities, with a focus on those with complex chronic conditions, dementia, and advanced frailty.', 'icon' => 'users' ),
@@ -37,15 +30,6 @@ $core_feature_cards = array(
 	array( 'id' => 'photo-wheelchair', 'src' => latrobeweb_asset_uri( 'images/core-features/8.png' ), 'alt' => 'Care team supporting an older patient in a wheelchair', 'left' => 59.2, 'top' => 66.5, 'width' => 13.38, 'height' => 25.07, 'class' => 'z-[5]', 'shadow' => 'small', 'kind' => 'photo', 'primary' => false, 'reveal_order' => 8 ),
 	array( 'id' => 'photo-smile', 'src' => latrobeweb_asset_uri( 'images/core-features/9.png' ), 'alt' => 'Nurse smiling with an older patient', 'left' => 67.49, 'top' => 6.96, 'width' => 24.48, 'height' => 26.32, 'class' => 'z-[5]', 'shadow' => 'small', 'kind' => 'photo', 'primary' => false, 'reveal_order' => 2 ),
 	array( 'id' => 'photo-hands', 'src' => latrobeweb_asset_uri( 'images/core-features/10.png' ), 'alt' => 'Close-up of hands in care support', 'left' => 93.66, 'top' => -7, 'width' => 7.34, 'height' => 27.86, 'class' => 'z-[7]', 'shadow' => 'small', 'kind' => 'photo', 'primary' => false, 'reveal_order' => 3 ),
-);
-
-$how_it_works_cards = array(
-	array( 'title' => 'Research-Validated Assessments', 'description' => 'Complete structured palliative care assessments built on peer-reviewed methodology. Forms are standardised, auto-timestamped, and designed so no critical clinical indicator is ever overlooked.', 'icon' => 'document' ),
-	array( 'title' => 'Risk Flagging & Escalation', 'description' => 'Assessment responses automatically surface risk indicators and suggest appropriate clinical actions. Senior nurses and administrators can filter all patients by risk level, ensuring priority cases are always visible.', 'icon' => 'warning' ),
-	array( 'title' => 'AI-First Design', 'description' => 'PCAT is architected from the ground up to integrate AI capabilities - enabling future features like predictive risk scoring, clinical trend analysis, and intelligent decision support.', 'icon' => 'brain' ),
-	array( 'title' => 'Trend Monitoring', 'description' => 'Visualise a patient\'s assessment score history and a model-generated 48-hour forecast - giving nurses an early signal of deterioration before it becomes critical.', 'icon' => 'trend' ),
-	array( 'title' => 'Multi-Centre Support', 'description' => 'PCAT supports multiple aged care centres under the same programme. Each nurse sees only the patients assigned to their facility, while coordinators retain a cross-centre overview.', 'icon' => 'building' ),
-	array( 'title' => 'Secure Access', 'description' => 'Nurses and administrators operate within tailored permission sets. Full audit logging ensures accountability, and all patient data is protected behind authenticated, encrypted access.', 'icon' => 'shield' ),
 );
 
 $steps = array(
@@ -264,7 +248,7 @@ $faq_items = array(
 			</div>
 			<div class="relative bg-brand-3 p-3.5 md:p-5 lg:p-7">
 				<div class="grid gap-3 md:inline-grid md:w-full md:grid-cols-2 md:grid-rows-2 md:gap-3 lg:gap-5 xl:grid-cols-4 xl:grid-rows-1">
-					<?php foreach ( $hero_highlights as $item ) : ?>
+					<?php foreach ( (array) get_field( 'home_hero_section_card_details' ) as $item ) : ?>
 						<?php latrobeweb_component( 'card', array( 'variant' => 'type-1', 'icon' => latrobeweb_get_icon_markup( $item['icon'] ), 'title' => $item['title'], 'description' => $item['description'] ) ); ?>
 					<?php endforeach; ?>
 				</div>
@@ -274,17 +258,10 @@ $faq_items = array(
 
 	<section class="mx-auto w-full px-6 pt-10 sm:max-w-[680px] sm:px-0 md:pt-10 lg:max-w-[1295px] lg:pt-20">
 		<span id="about" class="block scroll-mt-4" aria-hidden="true"></span>
-		<?php
-		latrobeweb_render_section_header(
-			array(
-				'eyebrow'       => get_field( 'home_intro_section_label_text' ) ?: 'About the project',
-				'title'         => get_field( 'home_intro_section_title' ) ?: 'Identifying palliative care needs - earlier, and with confidence',
-				'eyebrow_class' => 'm-0 text-red-600',
-				'title_class'   => 'mb-5 block max-w-[695px] md:mb-7 lg:mb-12 mt-2',
-				'class_name'    => 'max-w-[695px]',
-			)
-		);
-		?>
+		<div class="max-w-[695px]">
+			<p class="eyebrow m-0 text-red-600"><?php echo esc_html( get_field( 'home_intro_section_label_text' ) ); ?></p>
+			<h2 class="mt-2 mb-5 block max-w-[695px] font-display text-[1.875rem] leading-[110%] font-black tracking-tighter text-black md:mb-7 md:font-bold md:tracking-normal lg:mb-12 lg:text-[2.25rem] lg:leading-[110%] lg:font-bold"><?php echo esc_html( get_field( 'home_intro_section_title' ) ); ?></h2>
+		</div>
 		<div class="grid gap-5 md:gap-7 lg:grid-cols-2 lg:gap-12">
 			<div class="space-y-7">
 				<p class="body-base-400 max-w-[695px] text-gray-700 md:text-gray-500"><?php echo esc_html( get_field( 'home_intro_section_description' ) ); ?></p>
@@ -355,8 +332,14 @@ $faq_items = array(
 	<section class="border-b border-ink-faint pb-10 md:pb-20">
 		<div class="mx-auto w-full px-6 sm:max-w-[680px] sm:px-0 lg:max-w-[1295px]">
 			<div class="grid gap-5 md:grid-cols-2 lg:gap-6 xl:grid-cols-3">
-				<?php foreach ( $how_it_works_cards as $item ) : ?>
-					<?php latrobeweb_component( 'card', array( 'variant' => 'type-3', 'class_name' => 'h-full', 'icon' => latrobeweb_get_icon_markup( $item['icon'] ), 'title' => $item['title'], 'description' => $item['description'] ) ); ?>
+				<?php foreach ( (array) get_field( 'home_core_features_card_details' ) as $item ) : ?>
+					<article class="group flex translate-y-0 flex-col rounded-2xl border border-gray-200 bg-white p-6 transition-[transform,box-shadow,background-color] duration-200 ease-out hover:-translate-y-1 hover:shadow-la-shadow-4 h-full">
+						<div class="bg-red-light mb-3.5 flex h-12 w-12 items-center justify-center rounded-xl">
+							<img src="<?php echo esc_url( $item['home_core_features_card_item_icon'] ); ?>" alt="" class="h-6 w-6 object-contain" />
+						</div>
+						<h3 class="body-base-600 text-black group-hover:underline group-hover:decoration-brand-1 group-hover:[text-decoration-thickness:13.5%] group-hover:[text-underline-offset:25%]"><?php echo esc_html( $item['home_core_features_card_item_title'] ); ?></h3>
+						<p class="body-base-400 mt-3.5 text-gray-500 leading-[26px] md:text-lg md:leading-6 lg:text-base lg:leading-6"><?php echo esc_html( $item['home_core_features_card_item_description'] ); ?></p>
+					</article>
 				<?php endforeach; ?>
 			</div>
 		</div>
@@ -439,9 +422,9 @@ $faq_items = array(
 	<section class="border-t border-slate-200 border-b py-10 md:py-10 lg:py-20">
 		<div class="mx-auto w-full px-6 sm:max-w-[680px] sm:px-0 lg:max-w-[1295px]">
 			<div class="mx-auto max-w-5xl text-center">
-				<p class="eyebrow text-red-600">Funding &amp; Governance</p>
-				<h2 class="mt-2 font-display text-[1.875rem] leading-[110%] font-black tracking-tighter text-black md:font-bold md:tracking-normal lg:text-[2.25rem] lg:leading-[110%] lg:font-bold">Supported by</h2>
-				<p class="mx-auto mt-4 max-w-[550px] font-sans text-base leading-6 font-normal tracking-normal text-gray-500">PCAT is supported by La Trobe University, Aged Care Research and Industry Innovation Australia (ARIIA) and Monash Health.</p>
+				<p class="eyebrow text-red-600"><?php echo esc_html( get_field( 'home_partners_section_label_text' ) ); ?></p>
+				<h2 class="mt-2 font-display text-[1.875rem] leading-[110%] font-black tracking-tighter text-black md:font-bold md:tracking-normal lg:text-[2.25rem] lg:leading-[110%] lg:font-bold"><?php echo esc_html( get_field( 'home_partners_section_title' ) ); ?></h2>
+				<p class="mx-auto mt-4 max-w-[550px] font-sans text-base leading-6 font-normal tracking-normal text-gray-500"><?php echo esc_html( get_field( 'home_partners_section_description' ) ); ?></p>
 			</div>
 			<div class="mt-5 grid gap-5 md:mt-7 md:grid-cols-2 md:gap-5 lg:mt-12 lg:gap-6 xl:grid-cols-3">
 				<?php foreach ( $support_cards as $item ) : ?>
