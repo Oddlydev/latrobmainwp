@@ -12,19 +12,6 @@ $hero_image_count = 5;
 $hero_image_index = wp_rand( 1, $hero_image_count );
 
 
-$core_feature_cards = array(
-	array( 'id' => 'dashboard-primary', 'src' => latrobeweb_asset_uri( 'images/core-features/1.svg' ), 'alt' => 'PCAT overview dashboard', 'left' => 39.92, 'top' => 3.34, 'width' => 27.03, 'height' => 53.06, 'class' => 'z-[9]', 'shadow' => 'large', 'kind' => 'dashboard', 'primary' => true, 'reveal_order' => -1 ),
-	array( 'id' => 'dashboard-secondary', 'src' => latrobeweb_asset_uri( 'images/core-features/2.svg' ), 'alt' => 'PCAT patient list dashboard', 'left' => 11.1, 'top' => 37.5, 'width' => 27.09, 'height' => 57.94, 'class' => 'z-[8]', 'shadow' => 'large', 'kind' => 'dashboard', 'primary' => false, 'reveal_order' => 5 ),
-	array( 'id' => 'dashboard-tertiary', 'src' => latrobeweb_asset_uri( 'images/core-features/3.svg' ), 'alt' => 'PCAT patient profile dashboard', 'left' => 71.89, 'top' => 37.5, 'width' => 27.03, 'height' => 57.94, 'class' => 'z-[7]', 'shadow' => 'large', 'kind' => 'dashboard', 'primary' => false, 'reveal_order' => 6 ),
-	array( 'id' => 'photo-hug', 'src' => latrobeweb_asset_uri( 'images/core-features/4.png' ), 'alt' => 'Nurse comforting an older patient', 'left' => 1.39, 'top' => -1.49, 'width' => 20.54, 'height' => 32.59, 'class' => 'z-[6]', 'shadow' => 'small', 'kind' => 'photo', 'primary' => false, 'reveal_order' => 0, 'image_class' => 'la-core-feature-img--hug' ),
-	array( 'id' => 'photo-portrait', 'src' => latrobeweb_asset_uri( 'images/core-features/5.png' ), 'alt' => 'Portrait of an older patient', 'left' => -0.25, 'top' => 40, 'width' => 8.95, 'height' => 53.06, 'class' => 'z-[5]', 'shadow' => 'small', 'kind' => 'photo', 'primary' => false, 'reveal_order' => 4, 'image_class' => 'la-core-feature-img--portrait' ),
-	array( 'id' => 'photo-exam', 'src' => latrobeweb_asset_uri( 'images/core-features/6.png' ), 'alt' => 'Nurse checking an older patient', 'left' => 23.32, 'top' => 3.34, 'width' => 16.29, 'height' => 34.54, 'class' => 'z-[4]', 'shadow' => 'small', 'kind' => 'photo', 'primary' => false, 'reveal_order' => 1 ),
-	array( 'id' => 'photo-bench', 'src' => latrobeweb_asset_uri( 'images/core-features/7.png' ), 'alt' => 'Nurse sitting with an older patient outdoors', 'left' => 37.84, 'top' => 54.9, 'width' => 19.1, 'height' => 35.93, 'class' => 'z-[6]', 'shadow' => 'small', 'kind' => 'photo', 'primary' => false, 'reveal_order' => 7 ),
-	array( 'id' => 'photo-wheelchair', 'src' => latrobeweb_asset_uri( 'images/core-features/8.png' ), 'alt' => 'Care team supporting an older patient in a wheelchair', 'left' => 59.2, 'top' => 66.5, 'width' => 13.38, 'height' => 25.07, 'class' => 'z-[5]', 'shadow' => 'small', 'kind' => 'photo', 'primary' => false, 'reveal_order' => 8 ),
-	array( 'id' => 'photo-smile', 'src' => latrobeweb_asset_uri( 'images/core-features/9.png' ), 'alt' => 'Nurse smiling with an older patient', 'left' => 67.49, 'top' => 6.96, 'width' => 24.48, 'height' => 26.32, 'class' => 'z-[5]', 'shadow' => 'small', 'kind' => 'photo', 'primary' => false, 'reveal_order' => 2 ),
-	array( 'id' => 'photo-hands', 'src' => latrobeweb_asset_uri( 'images/core-features/10.png' ), 'alt' => 'Close-up of hands in care support', 'left' => 93.66, 'top' => -7, 'width' => 7.34, 'height' => 27.86, 'class' => 'z-[7]', 'shadow' => 'small', 'kind' => 'photo', 'primary' => false, 'reveal_order' => 3 ),
-);
-
 $steps = array(
 	array( 'id' => 's1', 'number' => '01', 'title' => 'Log in securely', 'description' => 'Use your PCAT credentials to access the portal. Your assigned facility and patient list load automatically upon sign-in.', 'side' => 'left', 'icon' => 'lock-26' ),
 	array( 'id' => 's2', 'number' => '02', 'title' => 'Select your patient', 'description' => 'Browse your patient list filtered by risk level, recent activity, or name. High-priority patients are surfaced immediately.', 'side' => 'right', 'icon' => 'search-26' ),
@@ -177,34 +164,46 @@ $support_cards = array(
 		<span id="features" class="block scroll-mt-4" aria-hidden="true"></span>
 		<div class="mx-auto w-full px-6 sm:max-w-[680px] sm:px-0 lg:max-w-[1295px]">
 			<div class="space-y-5 md:space-y-7 lg:space-y-12">
-				<?php latrobeweb_render_section_header( array( 'eyebrow' => 'Core Features', 'title' => "Everything nurses need, nothing they don't", 'eyebrow_class' => 'text-red-600', 'title_class' => 'lg:max-w-xl' ) ); ?>
+				<div>
+					<p class="eyebrow text-red-600"><?php echo esc_html( get_field( 'home_core_features_section_label_text' ) ); ?></p>
+					<h2 class="mt-2 font-display text-[1.875rem] leading-[110%] font-black tracking-tighter text-black md:font-bold md:tracking-normal lg:max-w-xl lg:text-[2.25rem] lg:leading-[110%] lg:font-bold"><?php echo esc_html( get_field( 'home_core_features_section_title' ) ); ?></h2>
+				</div>
 				<div class="la-core-feature-stage aspect-[4/3] sm:aspect-[1295/718]" data-core-feature-gallery data-reveal-count="9">
 					<div aria-hidden="true" class="la-core-feature-glow la-core-feature-glow--top inset-x-0 top-0 h-20"></div>
 					<div aria-hidden="true" class="la-core-feature-glow la-core-feature-glow--right inset-y-0 right-0 w-20"></div>
 					<div aria-hidden="true" class="la-core-feature-glow la-core-feature-glow--bottom inset-x-0 bottom-0 h-20"></div>
 					<div aria-hidden="true" class="la-core-feature-glow la-core-feature-glow--left inset-y-0 left-0 w-20"></div>
-					<?php foreach ( $core_feature_cards as $card ) : ?>
+					<?php
+					$core_feature_positions = array(
+						array( 'left' => '39.92', 'top' => '3.34', 'width' => '27.03', 'height' => '53.06' ),
+						array( 'left' => '11.1', 'top' => '37.5', 'width' => '27.09', 'height' => '57.94' ),
+						array( 'left' => '71.89', 'top' => '37.5', 'width' => '27.03', 'height' => '57.94' ),
+						array( 'left' => '1.39', 'top' => '-1.49', 'width' => '20.54', 'height' => '32.59' ),
+						array( 'left' => '-0.25', 'top' => '40', 'width' => '8.95', 'height' => '53.06' ),
+						array( 'left' => '23.32', 'top' => '3.34', 'width' => '16.29', 'height' => '34.54' ),
+						array( 'left' => '37.84', 'top' => '54.9', 'width' => '19.1', 'height' => '35.93' ),
+						array( 'left' => '59.2', 'top' => '66.5', 'width' => '13.38', 'height' => '25.07' ),
+						array( 'left' => '67.49', 'top' => '6.96', 'width' => '24.48', 'height' => '26.32' ),
+						array( 'left' => '93.66', 'top' => '-7', 'width' => '7.34', 'height' => '27.86' ),
+					);
+					?>
+					<?php foreach ( (array) get_field( 'home_core_features_section_image_details' ) as $index => $card ) : ?>
 						<?php
 						$card_motion_style = 'animation:none;';
 						$card_image_style  = 'transform:none;';
-
-						if ( 'photo' === $card['kind'] ) {
-							$card_image_style .= 'object-fit:cover;';
-						} else {
-							$card_image_style .= 'object-fit:contain;';
-						}
+						$card_position     = isset( $core_feature_positions[ $index ] ) ? $core_feature_positions[ $index ] : array( 'left' => '0', 'top' => '0', 'width' => '20', 'height' => '20' );
 						?>
-						<article class="absolute <?php echo esc_attr( $card['class'] ); ?>" style="left:<?php echo esc_attr( $card['left'] ); ?>%;top:<?php echo esc_attr( $card['top'] ); ?>%;width:<?php echo esc_attr( $card['width'] ); ?>%;height:<?php echo esc_attr( $card['height'] ); ?>%;">
+						<article class="absolute z-[5]" style="left:<?php echo esc_attr( $card_position['left'] ); ?>%;top:<?php echo esc_attr( $card_position['top'] ); ?>%;width:<?php echo esc_attr( $card_position['width'] ); ?>%;height:<?php echo esc_attr( $card_position['height'] ); ?>%;">
 							<div
-								class="la-core-feature-shell <?php echo $card['primary'] ? 'la-core-feature-shell--visible' : 'la-core-feature-shell--hidden'; ?> relative h-full w-full overflow-hidden rounded-sm border-[5px] border-white bg-transparent <?php echo 'large' === $card['shadow'] ? 'la-core-feature-shell--large' : 'la-core-feature-shell--small'; ?>"
+								class="la-core-feature-shell <?php echo 0 === $index ? 'la-core-feature-shell--visible' : 'la-core-feature-shell--hidden'; ?> relative h-full w-full overflow-hidden rounded-sm border-[5px] border-white bg-transparent <?php echo $index < 3 ? 'la-core-feature-shell--large' : 'la-core-feature-shell--small'; ?>"
 								data-core-feature-card
-								data-card-id="<?php echo esc_attr( $card['id'] ); ?>"
-								data-reveal-order="<?php echo esc_attr( $card['reveal_order'] ); ?>"
-								data-primary="<?php echo $card['primary'] ? 'true' : 'false'; ?>"
+								data-card-id="core-feature-<?php echo esc_attr( $index ); ?>"
+								data-reveal-order="<?php echo esc_attr( 0 === $index ? '-1' : $index - 4 ); ?>"
+								data-primary="<?php echo 0 === $index ? 'true' : 'false'; ?>"
 							>
 								<div class="la-core-feature-clip la-core-feature-clip--r4 relative h-full min-h-0 w-full min-w-0 overflow-hidden rounded-none">
-									<div class="la-core-feature-motion <?php echo $card['primary'] ? 'la-core-feature-motion--primary' : 'la-core-feature-motion--secondary'; ?> relative h-full w-full" style="<?php echo esc_attr( $card_motion_style ); ?>">
-										<img src="<?php echo esc_url( $card['src'] ); ?>" alt="<?php echo esc_attr( $card['alt'] ); ?>" class="la-core-feature-img <?php echo 'photo' === $card['kind'] ? 'la-core-feature-img--photo' : 'la-core-feature-img--dashboard'; ?> <?php echo isset( $card['image_class'] ) ? esc_attr( $card['image_class'] ) : ''; ?> pointer-events-none absolute inset-0 z-0 box-border h-full w-full max-w-none select-none object-cover object-center" style="<?php echo esc_attr( $card_image_style ); ?>" draggable="false" />
+									<div class="la-core-feature-motion <?php echo 0 === $index ? 'la-core-feature-motion--primary' : 'la-core-feature-motion--secondary'; ?> relative h-full w-full" style="<?php echo esc_attr( $card_motion_style ); ?>">
+										<img src="<?php echo esc_url( $card['home_core_features_item_image'] ); ?>" alt="" class="la-core-feature-img <?php echo $index < 3 ? 'la-core-feature-img--dashboard' : 'la-core-feature-img--photo'; ?> <?php echo 4 === $index ? 'la-core-feature-img--portrait' : ''; ?> <?php echo 3 === $index ? 'la-core-feature-img--hug' : ''; ?> pointer-events-none absolute inset-0 z-0 box-border h-full w-full max-w-none select-none object-cover object-center" style="<?php echo esc_attr( $card_image_style ); ?>" draggable="false" />
 									</div>
 								</div>
 							</div>
@@ -338,15 +337,81 @@ $support_cards = array(
 	<section class="la-home-faq-section mx-auto w-full px-6 py-10 sm:max-w-[680px] sm:px-0 md:py-10 lg:max-w-[1295px] lg:py-20">
 		<span id="faq" class="block scroll-mt-4" aria-hidden="true"></span>
 		<div class="la-home-faq-stack space-y-5 md:space-y-7 lg:space-y-12">
+			<?php
+			$faq_items  = (array) get_field( 'home_faq_section_details' );
+			$faq_labels = array();
+
+			foreach ( $faq_items as $item ) {
+				$faq_label = $item['home_faq_item_label'];
+				$faq_slug  = sanitize_title( $faq_label );
+
+				if ( ! isset( $faq_labels[ $faq_slug ] ) ) {
+					$faq_labels[ $faq_slug ] = array(
+						'label' => $faq_label,
+						'count' => 0,
+					);
+				}
+
+				$faq_labels[ $faq_slug ]['count']++;
+			}
+			?>
 			<div class="max-w-5xl mx-auto text-center">
 				<p class="eyebrow text-red-600"><?php echo esc_html( get_field( 'home_faq_section_label_text' ) ); ?></p>
 				<h2 class="mt-2 font-display text-[1.875rem] leading-[110%] font-black tracking-tighter text-black md:font-bold md:tracking-normal lg:text-[2.25rem] lg:leading-[110%] lg:font-bold"><?php echo esc_html( get_field( 'home_faq_section_title' ) ); ?></h2>
 				<p class="mx-auto mt-4 max-w-4xl text-center font-sans text-base leading-6 font-normal tracking-normal text-gray-500"><?php echo esc_html( get_field( 'home_faq_section_description' ) ); ?></p>
 			</div>
-			<div class="w-full lg:mx-auto lg:max-w-[896px]">
+			<div class="w-full" data-faq-shell>
+				<div class="mb-6 flex w-full items-center gap-1 overflow-hidden p-1.5 max-lg:px-0 md:mb-5 lg:mx-auto lg:mb-6 lg:max-w-[1220px] lg:p-0" data-faq-filters>
+					<button type="button" class="inline-flex h-11 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-transparent bg-transparent text-black transition-opacity duration-150 hover:opacity-70 disabled:pointer-events-none disabled:m-0 disabled:w-0 disabled:min-w-0 disabled:overflow-hidden disabled:border-0 disabled:p-0 disabled:opacity-0 lg:w-7" data-faq-filter-prev aria-label="<?php esc_attr_e( 'Show previous FAQ categories', 'latrobeweb' ); ?>">
+						<span class="rotate-180">
+							<?php echo wp_kses( latrobeweb_get_icon_markup( 'chevron-right-small' ), latrobeweb_get_svg_allowed() ); ?>
+						</span>
+					</button>
+					<div class="min-w-0 w-full flex-[1_0_0] overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:flex-auto lg:px-0" data-faq-filter-scroller>
+						<div class="flex min-w-max items-center gap-1" role="tablist" aria-label="<?php esc_attr_e( 'FAQ categories', 'latrobeweb' ); ?>">
+							<?php
+							latrobeweb_component(
+								'chip',
+								array(
+									'label'      => 'All',
+									'count'      => (string) count( $faq_items ),
+									'class_name' => 'shrink-0 flex-none',
+									'pressed'    => true,
+									'attributes' => array(
+										'data-faq-filter' => 'all',
+										'role'            => 'tab',
+										'aria-selected'   => 'true',
+									),
+								)
+							);
+							?>
+							<?php foreach ( $faq_labels as $faq_slug => $faq_label ) : ?>
+								<?php
+								latrobeweb_component(
+									'chip',
+									array(
+										'label'      => $faq_label['label'],
+										'count'      => (string) $faq_label['count'],
+										'class_name' => 'shrink-0 flex-none',
+										'attributes' => array(
+											'data-faq-filter' => $faq_slug,
+											'role'            => 'tab',
+											'aria-selected'   => 'false',
+										),
+									)
+								);
+								?>
+							<?php endforeach; ?>
+						</div>
+					</div>
+					<button type="button" class="inline-flex h-11 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-transparent bg-transparent text-black transition-opacity duration-150 hover:opacity-70 disabled:pointer-events-none disabled:opacity-0 lg:relative lg:z-[1] lg:-ml-6 lg:w-7 lg:bg-white" data-faq-filter-next aria-label="<?php esc_attr_e( 'Show more FAQ categories', 'latrobeweb' ); ?>">
+						<?php echo wp_kses( latrobeweb_get_icon_markup( 'chevron-right-small' ), latrobeweb_get_svg_allowed() ); ?>
+					</button>
+				</div>
+				<div class="w-full lg:mx-auto lg:max-w-[896px]">
 				<div class="overflow-hidden rounded-2xl border border-gray-100 bg-surface-card" data-accordion>
-					<?php foreach ( (array) get_field( 'home_faq_section_details' ) as $item ) : ?>
-						<div class="border-b border-gray-100 last:border-b-0" data-accordion-item>
+					<?php foreach ( $faq_items as $item ) : ?>
+						<div class="border-b border-gray-100 last:border-b-0" data-accordion-item data-faq-categories="<?php echo esc_attr( sanitize_title( $item['home_faq_item_label'] ) ); ?>">
 							<button type="button" class="la-accordion-trigger group relative flex w-full items-center justify-start px-5 py-5 text-left md:px-6 md:py-5 lg:px-6 lg:py-5" aria-expanded="false" data-accordion-trigger>
 								<span class="body-base-500 text-left text-black group-hover:underline lg:font-medium"><?php echo esc_html( $item['home_faq_item_title'] ); ?></span>
 								<svg class="la-accordion-icon absolute right-6 top-1/2 -translate-y-1/2 shrink-0 text-black transition-all duration-200 md:hidden lg:block" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path data-accordion-icon-desktop fill-rule="evenodd" clip-rule="evenodd" d="M4.21967 6.21967C4.51256 5.92678 4.98744 5.92678 5.28033 6.21967L8 8.93934L10.7197 6.21967C11.0126 5.92678 11.4874 5.92678 11.7803 6.21967C12.0732 6.51256 12.0732 6.98744 11.7803 7.28033L8.53033 10.5303C8.23744 10.8232 7.76256 10.8232 7.46967 10.5303L4.21967 7.28033C3.92678 6.98744 3.92678 6.51256 4.21967 6.21967Z" fill="currentColor"/></svg>
@@ -360,6 +425,7 @@ $support_cards = array(
 						</div>
 					<?php endforeach; ?>
 				</div>
+			</div>
 			</div>
 		</div>
 	</section>
