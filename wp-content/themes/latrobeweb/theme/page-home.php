@@ -40,118 +40,6 @@ $support_cards = array(
 	array( 'label' => 'Healthcare partner', 'logo' => latrobeweb_asset_uri( 'images/monash-health-logo_dark-1.svg' ), 'alt' => 'Monash Health logo' ),
 );
 
-$faq_filters = array(
-	array( 'slug' => 'about-pcat', 'label' => 'About PCAT' ),
-	array( 'slug' => 'who-its-for', 'label' => "Who it's for" ),
-	array( 'slug' => 'using-the-tool', 'label' => 'Using the tool' ),
-	array( 'slug' => 'data-privacy-security', 'label' => 'Data, privacy and security' ),
-	array( 'slug' => 'implementation-support', 'label' => 'Implementation and support' ),
-	array( 'slug' => 'evidence-research', 'label' => 'Evidence and research' ),
-	array( 'slug' => 'contact', 'label' => 'Contact' ),
-);
-
-$faq_items = array(
-	array(
-		'title'      => 'What is PCAT?',
-		'content'    => 'PCAT (Palliative Care Assessment Toolkit) is an AI-powered, web-based clinical decision-support tool developed by La Trobe University. It helps nurses and frontline staff systematically identify residents who may benefit from palliative care and evaluate their needs using evidence-based assessment frameworks.',
-		'categories' => array( 'about-pcat' ),
-	),
-	array(
-		'title'      => 'Who developed PCAT?',
-		'content'    => 'PCAT was developed by a research team at La Trobe University\'s School of Psychology and Public Health, led by Professor Hanan Khalil and her team, in partnership with Sunraysia Community Health Services and Monash Health. The digital AI-powered version is funded through an ARIIA (Aged Care Research and Industry Innovation Australia) accelerator grant.',
-		'categories' => array( 'about-pcat' ),
-	),
-	array(
-		'title'      => 'What does the "AI-powered" part of PCAT actually do?',
-		'content'    => 'The AI component supports clinicians by analysing the information entered during an assessment, prioritising patients by urgency and care needs, prompting users to capture key clinical indicators of decline, and generating structured summaries that support care planning and communication with families and GPs.',
-		'categories' => array( 'about-pcat' ),
-	),
-	array(
-		'title'      => 'Which clinical frameworks underpin PCAT?',
-		'content'    => 'PCAT integrates well-established palliative care assessment frameworks, including SPICT™ (Supportive and Palliative Care Indicators Tool) and Palliative Care Needs Rounds, to ensure assessments are standardised and evidence-based.',
-		'categories' => array( 'about-pcat' ),
-	),
-	array(
-		'title'      => 'Who is PCAT designed for?',
-		'content'    => 'PCAT is designed for the aged care workforce as well as community settings - registered nurses, enrolled nurses, personal care workers, clinical managers, and allied health staff working in residential aged care facilities. It is particularly valuable for rural and regional facilities where access to specialist palliative care is limited.',
-		'categories' => array( 'who-its-for' ),
-	),
-	array(
-		'title'      => 'Do I need a clinical background to use PCAT?',
-		'content'    => 'PCAT is intended for staff with a clinical role. Some sections are suitable for personal care workers to contribute observations, while clinical decision-making sections are designed to be completed by nursing staff or clinical leads.',
-		'categories' => array( 'who-its-for' ),
-	),
-	array(
-		'title'      => 'Can GPs, pharmacists, and community palliative care nurses use PCAT?',
-		'content'    => 'Yes. PCAT is built around a multidisciplinary approach. GPs, pharmacists and community palliative care teams can contribute to and access assessments to support coordinated care planning.',
-		'categories' => array( 'who-its-for' ),
-	),
-	array(
-		'title'      => 'How long does an assessment take?',
-		'content'    => 'A typical PCAT assessment is designed to be significantly faster than traditional paper-based palliative care assessments. Most assessments can be completed in around 10-15 minutes, with the AI reducing administrative burden by pre-populating and summarising information.',
-		'categories' => array( 'using-the-tool' ),
-	),
-	array(
-		'title'      => 'What outcomes does PCAT help deliver?',
-		'content'    => 'PCAT aims to support earlier identification of residents approaching end-of-life, reduce avoidable hospital transfers, improve symptom management, strengthen communication with families, and support more person-centred end-of-life care.',
-		'categories' => array( 'using-the-tool' ),
-	),
-	array(
-		'title'      => 'Is PCAT a substitute for clinical judgement?',
-		'content'    => 'No. PCAT is a decision-support tool using AI for prediction keeping human-in-the-loop. It guides and prompts clinicians but does not replace clinical judgement, specialist palliative care advice, or shared decision-making with residents and families.',
-		'categories' => array( 'using-the-tool' ),
-	),
-	array(
-		'title'      => 'Can assessments be updated over time?',
-		'content'    => 'Yes. PCAT supports repeat assessments so care teams can track changes in a resident\'s condition, adjust care plans, and document trajectory of decline over time.',
-		'categories' => array( 'using-the-tool' ),
-	),
-	array(
-		'title'      => 'Is resident information kept secure?',
-		'content'    => 'Yes. PCAT is built to comply with Australian privacy and health information standards, including the Privacy Act 1988 and relevant aged care data governance requirements. All data is encrypted in transit and at rest.',
-		'categories' => array( 'data-privacy-security' ),
-	),
-	array(
-		'title'      => 'Who can see the information I enter?',
-		'content'    => 'Access is role-based. Only authorised staff within your facility (and, where applicable, linked multidisciplinary team members such as GPs) can view resident assessments.',
-		'categories' => array( 'data-privacy-security' ),
-	),
-	array(
-		'title'      => 'Is resident data used to train the AI?',
-		'content'    => 'Identifiable resident data is not used to train commercial AI models. Any model improvement work is conducted under ethics-approved research protocols using de-identified data.',
-		'categories' => array( 'data-privacy-security' ),
-	),
-	array(
-		'title'      => 'How does a facility get started with PCAT?',
-		'content'    => 'Facilities can register their interest through the La Trobe University PCAT team. Onboarding includes user account setup, staff training on using the tool, and ongoing implementation support.',
-		'categories' => array( 'implementation-support' ),
-	),
-	array(
-		'title'      => 'Is there a cost to use PCAT?',
-		'content'    => 'During the current research and co-design phase, PCAT is being offered to participating facilities as part of the ARIIA-funded project. Longer-term pricing and licensing arrangements will be communicated as the tool moves towards full rollout.',
-		'categories' => array( 'implementation-support' ),
-	),
-	array(
-		'title'      => 'What support is available once we\'re using PCAT?',
-		'content'    => 'Participating facilities receive ongoing support from the La Trobe research team and regular check-ins during the implementation period.',
-		'categories' => array( 'implementation-support' ),
-	),
-	array(
-		'title'      => 'Is PCAT evidence-based?',
-		'content'    => 'Yes. The original PCAT was evaluated in rural aged care facilities and demonstrated measurable improvements in end-of-life care planning, medication availability, and psychological and spiritual support, along with increased staff confidence. The digital AI-powered version builds directly on that evidence base.',
-		'categories' => array( 'evidence-research' ),
-	),
-	array(
-		'title'      => 'Can our facility participate in PCAT research?',
-		'content'    => 'Yes. La Trobe University welcomes expressions of interest from aged care providers interested in co-design, pilot testing, or implementation research. Contact the research team for more information.',
-		'categories' => array( 'evidence-research' ),
-	),
-	array(
-		'title'      => 'Who do I contact for more information?',
-		'content'    => 'For enquiries about PCAT, including partnership, implementation, or research collaboration, please contact Professor Hanan Khalil at La Trobe University: <a href="mailto:h.khalil@latrobe.edu.au">h.khalil@latrobe.edu.au</a>.',
-		'categories' => array( 'contact' ),
-	),
-);
 ?>
 
 <main class="overflow-hidden bg-gray-50 lg:bg-white">
@@ -450,56 +338,28 @@ $faq_items = array(
 	<section class="la-home-faq-section mx-auto w-full px-6 py-10 sm:max-w-[680px] sm:px-0 md:py-10 lg:max-w-[1295px] lg:py-20">
 		<span id="faq" class="block scroll-mt-4" aria-hidden="true"></span>
 		<div class="la-home-faq-stack space-y-5 md:space-y-7 lg:space-y-12">
-			<?php latrobeweb_render_section_header( array( 'eyebrow' => 'FAQ', 'title' => 'Common Questions', 'lead' => 'Everything you need to know before logging in.', 'eyebrow_class' => 'text-red-600', 'lead_class' => 'mx-auto mt-4 max-w-4xl text-center', 'centered' => true, 'class_name' => 'max-w-5xl' ) ); ?>
-			<div class="w-full" data-faq-shell>
-				<div class="mb-6 flex w-full items-center gap-1 overflow-hidden p-1.5 max-lg:px-0 md:mb-5 lg:mx-auto lg:mb-6 lg:max-w-[1220px] lg:p-0" data-faq-filters>
-					<button type="button" class="inline-flex h-11 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-transparent bg-transparent text-black transition-opacity duration-150 hover:opacity-70 disabled:pointer-events-none disabled:m-0 disabled:w-0 disabled:min-w-0 disabled:overflow-hidden disabled:border-0 disabled:p-0 disabled:opacity-0 lg:w-7" data-faq-filter-prev aria-label="<?php esc_attr_e( 'Show previous FAQ categories', 'latrobeweb' ); ?>">
-						<span class="rotate-180">
-							<?php echo wp_kses( latrobeweb_get_icon_markup( 'chevron-right-small' ), latrobeweb_get_svg_allowed() ); ?>
-						</span>
-					</button>
-					<div class="min-w-0 w-full flex-[1_0_0] overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:flex-auto lg:px-0" data-faq-filter-scroller>
-						<div class="flex min-w-max items-center gap-1" role="tablist" aria-label="<?php esc_attr_e( 'FAQ categories', 'latrobeweb' ); ?>">
-							<?php
-							latrobeweb_component(
-								'chip',
-								array(
-									'label'      => 'All',
-									'count'      => (string) count( $faq_items ),
-									'class_name' => 'shrink-0 flex-none',
-									'pressed'    => true,
-									'attributes' => array(
-										'data-faq-filter' => 'all',
-										'role'            => 'tab',
-										'aria-selected'   => 'true',
-									),
-								)
-							);
-							?>
-							<?php foreach ( $faq_filters as $filter ) : ?>
-								<?php
-								latrobeweb_component(
-								'chip',
-								array(
-									'label'      => $filter['label'],
-									'count'      => '0',
-									'class_name' => 'shrink-0 flex-none',
-									'attributes' => array(
-										'data-faq-filter' => $filter['slug'],
-										'role'            => 'tab',
-											'aria-selected'   => 'false',
-										),
-									)
-								);
-								?>
-							<?php endforeach; ?>
+			<div class="max-w-5xl mx-auto text-center">
+				<p class="eyebrow text-red-600"><?php echo esc_html( get_field( 'home_faq_section_label_text' ) ); ?></p>
+				<h2 class="mt-2 font-display text-[1.875rem] leading-[110%] font-black tracking-tighter text-black md:font-bold md:tracking-normal lg:text-[2.25rem] lg:leading-[110%] lg:font-bold"><?php echo esc_html( get_field( 'home_faq_section_title' ) ); ?></h2>
+				<p class="mx-auto mt-4 max-w-4xl text-center font-sans text-base leading-6 font-normal tracking-normal text-gray-500"><?php echo esc_html( get_field( 'home_faq_section_description' ) ); ?></p>
+			</div>
+			<div class="w-full lg:mx-auto lg:max-w-[896px]">
+				<div class="overflow-hidden rounded-2xl border border-gray-100 bg-surface-card" data-accordion>
+					<?php foreach ( (array) get_field( 'home_faq_section_details' ) as $item ) : ?>
+						<div class="border-b border-gray-100 last:border-b-0" data-accordion-item>
+							<button type="button" class="la-accordion-trigger group relative flex w-full items-center justify-start px-5 py-5 text-left md:px-6 md:py-5 lg:px-6 lg:py-5" aria-expanded="false" data-accordion-trigger>
+								<span class="body-base-500 text-left text-black group-hover:underline lg:font-medium"><?php echo esc_html( $item['home_faq_item_title'] ); ?></span>
+								<svg class="la-accordion-icon absolute right-6 top-1/2 -translate-y-1/2 shrink-0 text-black transition-all duration-200 md:hidden lg:block" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path data-accordion-icon-desktop fill-rule="evenodd" clip-rule="evenodd" d="M4.21967 6.21967C4.51256 5.92678 4.98744 5.92678 5.28033 6.21967L8 8.93934L10.7197 6.21967C11.0126 5.92678 11.4874 5.92678 11.7803 6.21967C12.0732 6.51256 12.0732 6.98744 11.7803 7.28033L8.53033 10.5303C8.23744 10.8232 7.76256 10.8232 7.46967 10.5303L4.21967 7.28033C3.92678 6.98744 3.92678 6.51256 4.21967 6.21967Z" fill="currentColor"/></svg>
+								<svg class="absolute top-1/2 hidden h-4 w-4 -translate-y-1/2 shrink-0 text-black md:right-5 md:block lg:hidden" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path data-accordion-icon-tablet fill-rule="evenodd" clip-rule="evenodd" d="M4.21967 6.21967C4.51256 5.92678 4.98744 5.92678 5.28033 6.21967L8 8.93934L10.7197 6.21967C11.0126 5.92678 11.4874 5.92678 11.7803 6.21967C12.0732 6.51256 12.0732 6.98744 11.7803 7.28033L8.53033 10.5303C8.23744 10.8232 7.76256 10.8232 7.46967 10.5303L4.21967 7.28033C3.92678 6.98744 3.92678 6.51256 4.21967 6.21967Z" fill="currentColor"/></svg>
+							</button>
+							<div class="overflow-hidden opacity-0 transition-[height,opacity] duration-300 ease-out" aria-hidden="true" data-accordion-panel style="height:0px;">
+								<div data-accordion-panel-inner>
+									<div class="la-wysiwyg body-base-400 pl-5 pr-5 pb-5 text-left text-gray-600 md:pl-5 md:pr-10 md:pb-5 lg:pl-6 lg:pr-10 lg:pb-5"><?php echo wp_kses_post( $item['home_faq_item_description'] ); ?></div>
+								</div>
+							</div>
 						</div>
-					</div>
-					<button type="button" class="inline-flex h-11 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-transparent bg-transparent text-black transition-opacity duration-150 hover:opacity-70 disabled:pointer-events-none disabled:opacity-0 lg:relative lg:z-[1] lg:-ml-6 lg:w-7 lg:bg-white" data-faq-filter-next aria-label="<?php esc_attr_e( 'Show more FAQ categories', 'latrobeweb' ); ?>">
-						<?php echo wp_kses( latrobeweb_get_icon_markup( 'chevron-right-small' ), latrobeweb_get_svg_allowed() ); ?>
-					</button>
+					<?php endforeach; ?>
 				</div>
-				<?php latrobeweb_component( 'accordion', array( 'items' => $faq_items, 'default_open_id' => '__none__', 'class_name' => 'w-full lg:mx-auto lg:max-w-[896px]' ) ); ?>
 			</div>
 		</div>
 	</section>
