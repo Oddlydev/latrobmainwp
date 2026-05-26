@@ -4696,6 +4696,11 @@ h6 {
   }
 }
 @media (width >= 64rem) {
+  .lg\:max-w-\[716px\] {
+    max-width: 716px;
+  }
+}
+@media (width >= 64rem) {
   .lg\:max-w-\[896px\] {
     max-width: 896px;
   }
