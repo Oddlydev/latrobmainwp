@@ -322,6 +322,20 @@ h6 {
 	object-position: 78% center;
 }
 
+.la-home-hero-desktop-overlay {
+	width: 100%;
+	background: linear-gradient(
+		272deg,
+		rgba(255, 255, 255, 0) 32.8%,
+		rgba(255, 255, 255, 0.7) 42.13%,
+		var(--color-brand-2) 52.66%
+	);
+}
+
+.la-home-hero-text-layer {
+	isolation: isolate;
+}
+
 .la-home-hero-accent-right {
 	@apply pointer-events-none absolute top-1/2 right-[-10%] hidden h-[78%] w-[52%] -translate-y-1/2 rounded-[33554400px] lg:block;
 	background: rgba(233, 34, 60, 0.05);
