@@ -718,26 +718,19 @@ h6 {
   box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
 }
 .la-home-hero-image-desktop {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: auto;
-  width: 100%;
-  height: 100%;
-  max-width: 100;
-  object-fit: cover;
+  object-position: 78% center;
 }
 .la-home-hero-desktop-overlay {
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
   background: linear-gradient(
-		to right,
+		93deg,
 		var(--color-brand-2) 0%,
-		var(--color-brand-2) 47.45%,
-		rgba(255, 255, 255, 0.7) 50.65%,
-		rgba(255, 255, 255, 0) 59.79%
+		var(--color-brand-2) 16%,
+		rgba(255, 255, 255, 0.92) 28%,
+		rgba(255, 255, 255, 0.72) 42%,
+		rgba(255, 255, 255, 0.48) 54%,
+		rgba(255, 255, 255, 0.22) 66%,
+		rgba(255, 255, 255, 0.08) 78%,
+		rgba(255, 255, 255, 0) 90%
 	);
 }
 .la-home-hero-text-layer {
@@ -2745,6 +2738,9 @@ h6 {
 }
 .w-\[56px\] {
   width: 56px;
+}
+.w-\[58\%\] {
+  width: 58%;
 }
 .w-\[69px\] {
   width: 69px;
@@ -5138,6 +5134,11 @@ h6 {
   }
 }
 @media (width >= 80rem) {
+  .xl\:w-\[60\%\] {
+    width: 60%;
+  }
+}
+@media (width >= 80rem) {
   .xl\:w-fit {
     width: fit-content;
   }
@@ -5299,6 +5300,11 @@ h6 {
   .xl\:leading-8 {
     --tw-leading: calc(var(--spacing) * 8);
     line-height: calc(var(--spacing) * 8);
+  }
+}
+@media (width >= 96rem) {
+  .\32 xl\:w-\[62\%\] {
+    width: 62%;
   }
 }
 .prose-a\:text-primary :is(a):not(:where([class~='not-prose'],[class~='not-prose'] *)) {
