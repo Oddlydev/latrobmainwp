@@ -253,14 +253,19 @@ h6 {
 	}
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1279px) {
 	.la-how-track {
 		left: 30px;
 		transform: translateX(-50%);
 	}
+
+	.la-how-steps {
+		width: min(100%, 42rem);
+		margin-inline: auto;
+	}
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
 	.la-how-it-works-section::before {
 		background-image: url("./assets/images/how-it-works-desktop.png");
 	}
@@ -573,7 +578,7 @@ h6 {
 	@apply opacity-100;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
 	.la-how-step-row[data-filled="true"]:hover .la-how-step-card {
 		transform: translateX(0);
 	}

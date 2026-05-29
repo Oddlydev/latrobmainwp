@@ -221,39 +221,39 @@ get_header();
 					<h2 class="mt-2 font-display text-[1.875rem] leading-[110%] font-black tracking-tighter text-black md:font-bold md:tracking-normal lg:text-[2.25rem] lg:leading-[110%] lg:font-bold"><?php echo esc_html( get_field( 'home_how_it_works_section_title' ) ); ?></h2>
 				</div>
 				<div class="la-page-shell relative z-10">
-					<div class="la-how-track absolute top-5 bottom-5 w-1 rounded-full bg-red-100 md:top-0 md:bottom-0 lg:left-1/2 lg:top-0 lg:bottom-0 lg:w-1 lg:-translate-x-1/2" data-how-it-works-track aria-hidden="true">
+					<div class="la-how-track absolute top-5 bottom-5 w-1 rounded-full bg-red-100 md:top-0 md:bottom-0 xl:left-1/2 xl:top-0 xl:bottom-0 xl:w-1 xl:-translate-x-1/2" data-how-it-works-track aria-hidden="true">
 						<div class="la-how-track-fill w-full rounded-full bg-brand-1 transition-[height] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-[height]" data-how-it-works-fill></div>
 					</div>
-					<div class="space-y-10 py-5 lg:space-y-16 lg:py-0">
+					<div class="la-how-steps space-y-10 py-5 xl:space-y-16 xl:py-0">
 						<?php $how_it_works_items = (array) get_field( 'home_how_it_works_section_details' ); ?>
 						<?php foreach ( $how_it_works_items as $index => $step ) : ?>
 							<?php $is_left = 0 === $index % 2; ?>
 							<?php
-							$description_width_class = 'lg:max-w-[340px]';
+							$description_width_class = 'xl:max-w-[340px]';
 							$step_red_icon           = is_array( $step['home_how_it_work_item_red_icon'] ?? '' ) ? $step['home_how_it_work_item_red_icon']['url'] : $step['home_how_it_work_item_red_icon'];
 							$step_white_icon         = is_array( $step['home_how_it_work_item_white_icon'] ?? '' ) ? $step['home_how_it_work_item_white_icon']['url'] : $step['home_how_it_work_item_white_icon'];
 							$has_step_icon           = ! empty( $step_red_icon ) || ! empty( $step_white_icon );
 							$step_icon_class         = $has_step_icon ? 'bg-white text-brand-1' : 'bg-brand-1 text-white';
 
 							$heading_row_class = $is_left
-								? 'flex w-full items-baseline gap-3 font-display text-black lg:flex lg:w-full lg:max-w-[448px] lg:justify-end lg:gap-3 lg:ml-auto lg:text-right'
-								: 'flex w-full items-baseline gap-3 font-display text-black lg:inline-grid lg:w-full lg:max-w-[448px] lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-x-3 lg:text-left';
+								? 'flex w-full items-baseline gap-3 font-display text-black xl:flex xl:w-full xl:max-w-[448px] xl:justify-end xl:gap-3 xl:ml-auto xl:text-right'
+								: 'flex w-full items-baseline gap-3 font-display text-black xl:inline-grid xl:w-full xl:max-w-[448px] xl:grid-cols-[auto_minmax(0,1fr)] xl:gap-x-3 xl:text-left';
 							?>
-							<div class="la-how-step-row relative grid grid-cols-[auto_1fr] items-start gap-x-5 <?php echo $index === count( $how_it_works_items ) - 1 ? 'pb-5' : ''; ?> lg:mx-auto lg:w-fit lg:max-w-none lg:grid-cols-[462px_56px_462px] lg:items-center lg:gap-x-14 lg:gap-y-0 lg:pb-0" data-how-it-works-step-row data-how-step-side="<?php echo $is_left ? 'left' : 'right'; ?>">
-								<div class="la-how-step-marker relative z-20 col-start-1 row-start-1 flex h-12 w-12 items-center justify-center self-start mt-5 rounded-full border-2 border-brand-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:h-[60px] md:w-[60px] md:border-[3px] lg:absolute lg:left-1/2 lg:top-1/2 lg:mt-0 lg:h-14 lg:w-14 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:border-[3px] <?php echo esc_attr( $step_icon_class ); ?>" data-how-it-works-step data-has-icon="<?php echo $has_step_icon ? 'true' : 'false'; ?>" data-filled="false">
+							<div class="la-how-step-row relative grid grid-cols-[auto_1fr] items-start gap-x-5 <?php echo $index === count( $how_it_works_items ) - 1 ? 'pb-5' : ''; ?> xl:mx-auto xl:w-fit xl:max-w-none xl:grid-cols-[462px_56px_462px] xl:items-center xl:gap-x-14 xl:gap-y-0 xl:pb-0" data-how-it-works-step-row data-how-step-side="<?php echo $is_left ? 'left' : 'right'; ?>">
+								<div class="la-how-step-marker relative z-20 col-start-1 row-start-1 flex h-12 w-12 items-center justify-center self-start mt-5 rounded-full border-2 border-brand-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:h-[60px] md:w-[60px] md:border-[3px] xl:absolute xl:left-1/2 xl:top-1/2 xl:mt-0 xl:h-14 xl:w-14 xl:-translate-x-1/2 xl:-translate-y-1/2 xl:border-[3px] <?php echo esc_attr( $step_icon_class ); ?>" data-how-it-works-step data-has-icon="<?php echo $has_step_icon ? 'true' : 'false'; ?>" data-filled="false">
 									<?php if ( ! empty( $step_red_icon ) ) : ?>
-										<img src="<?php echo esc_url( $step_red_icon ); ?>" alt="" class="la-how-step-icon la-how-step-icon--red h-6 w-6 object-contain md:h-[25.7px] md:w-[25.7px] lg:h-[26px] lg:w-[26px]" />
+										<img src="<?php echo esc_url( $step_red_icon ); ?>" alt="" class="la-how-step-icon la-how-step-icon--red h-6 w-6 object-contain md:h-[25.7px] md:w-[25.7px] xl:h-[26px] xl:w-[26px]" />
 									<?php endif; ?>
 									<?php if ( ! empty( $step_white_icon ) ) : ?>
-										<img src="<?php echo esc_url( $step_white_icon ); ?>" alt="" class="la-how-step-icon la-how-step-icon--white h-6 w-6 object-contain md:h-[25.7px] md:w-[25.7px] lg:h-[26px] lg:w-[26px]" />
+										<img src="<?php echo esc_url( $step_white_icon ); ?>" alt="" class="la-how-step-icon la-how-step-icon--white h-6 w-6 object-contain md:h-[25.7px] md:w-[25.7px] xl:h-[26px] xl:w-[26px]" />
 									<?php endif; ?>
 								</div>
-								<article class="la-how-step-card col-start-2 row-start-1 min-w-0 w-full rounded-lg px-0 py-5 text-left transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform lg:py-4 <?php echo $is_left ? 'lg:col-start-1 lg:pl-0 lg:pr-0 lg:text-right' : 'lg:col-start-3 lg:pl-0 lg:pr-0 lg:text-left'; ?>">
+								<article class="la-how-step-card col-start-2 row-start-1 min-w-0 w-full rounded-lg px-0 py-5 text-left transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform xl:py-4 <?php echo $is_left ? 'xl:col-start-1 xl:pl-0 xl:pr-0 xl:text-right' : 'xl:col-start-3 xl:pl-0 xl:pr-0 xl:text-left'; ?>">
 									<div class="<?php echo esc_attr( $heading_row_class ); ?>">
 										<span class="shrink-0 text-right font-display text-xl font-light leading-7 tracking-tighter text-gray-500"><?php echo esc_html( $step['home_how_it_work_item_number'] ); ?></span>
-										<h4 class="max-w-none font-display text-xl font-bold leading-7 tracking-tighter text-black sm:max-w-none md:text-xl md:leading-8 lg:max-w-none lg:text-2xl lg:leading-8"><?php echo esc_html( $step['home_how_it_work_item_title'] ); ?></h4>
+										<h4 class="max-w-none font-display text-xl font-bold leading-7 tracking-tighter text-black sm:max-w-none md:text-xl md:leading-8 xl:max-w-none xl:text-2xl xl:leading-8"><?php echo esc_html( $step['home_how_it_work_item_title'] ); ?></h4>
 									</div>
-									<p class="mt-3 font-display text-lg font-normal leading-6 tracking-normal text-gray-500 lg:mt-[5px] lg:text-base lg:leading-6 <?php echo esc_attr( $description_width_class ); ?> <?php echo $is_left ? 'lg:ml-auto' : ''; ?>"><?php echo esc_html( $step['home_how_it_work_item_description'] ); ?></p>
+									<p class="mt-3 font-display text-lg font-normal leading-6 tracking-normal text-gray-500 xl:mt-[5px] xl:text-base xl:leading-6 <?php echo esc_attr( $description_width_class ); ?> <?php echo $is_left ? 'xl:ml-auto' : ''; ?>"><?php echo esc_html( $step['home_how_it_work_item_description'] ); ?></p>
 								</article>
 							</div>
 						<?php endforeach; ?>
