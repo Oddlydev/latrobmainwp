@@ -837,8 +837,10 @@ h6 {
 		),
 		var(--la-hero-mobile-bg);
   background-repeat: no-repeat;
-  background-size: 100% 100%, cover;
-  background-position: center, center bottom;
+  background-size: 100% 100%,
+		cover;
+  background-position: center,
+		center bottom;
 }
 .la-home-hero-image-tablet-shell {
   position: relative;
@@ -861,14 +863,16 @@ h6 {
 .la-home-hero-image-tablet-overlay {
   pointer-events: none;
   position: absolute;
-  inset: calc(var(--spacing) * 0);
+  inset-inline: calc(var(--spacing) * 0);
+  top: calc(var(--spacing) * 0);
   z-index: 1;
+  height: 9.5rem;
   background: linear-gradient(
 		to bottom,
 		var(--color-brand-2) 0%,
-		var(--color-brand-2) 28.99%,
-		rgba(255, 255, 255, 0.7) 43.16%,
-		rgba(255, 255, 255, 0) 52.12%
+		var(--color-brand-2) 38%,
+		rgba(255, 255, 255, 0.55) 62%,
+		rgba(255, 255, 255, 0) 100%
 	);
 }
 .la-home-hero-image-blend,
