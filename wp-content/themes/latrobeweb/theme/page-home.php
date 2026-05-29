@@ -26,10 +26,9 @@ get_header();
 				aria-hidden="true"
 				class="la-home-hero-image-desktop absolute inset-y-0 right-0 hidden h-full w-[58%] object-cover lg:block xl:w-[60%] 2xl:w-[62%]"
 			/>
-			<div aria-hidden="true" class="la-home-hero-wash pointer-events-none absolute inset-y-0 left-0 hidden lg:block"></div>
 			<div
 				aria-hidden="true"
-				class="la-home-hero-desktop-overlay pointer-events-none absolute inset-y-0 right-0 hidden h-full w-[58%] lg:block xl:w-[60%] 2xl:w-[62%]"
+				class="la-home-hero-desktop-overlay pointer-events-none absolute inset-y-0 left-0 hidden h-full lg:block"
 			></div>
 			<div class="la-home-hero-text-layer relative z-10 px-6 pt-10 pb-0 md:px-10 md:pt-10 md:pb-0 lg:max-w-[716px] lg:pr-10 lg:pt-[11.0625rem] lg:pb-[11.0625rem] lg:pl-[9.375rem]">
 				<div class="w-full">
