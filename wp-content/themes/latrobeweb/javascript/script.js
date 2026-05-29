@@ -508,8 +508,9 @@ function initHowItWorksTimelines() {
 		const steps = Array.from(timeline.querySelectorAll("[data-how-it-works-step]"));
 		const stepRows = Array.from(timeline.querySelectorAll("[data-how-it-works-step-row]"));
 		const markerRatio = Number.parseFloat(timeline.dataset.howMarkerRatio || "0.5");
+		const trackBoundsHost = track?.offsetParent instanceof HTMLElement ? track.offsetParent : timeline;
 
-		if (!track || !fill || !steps.length || steps.length !== stepRows.length) {
+		if (!track || !fill || !steps.length || steps.length !== stepRows.length || !(trackBoundsHost instanceof HTMLElement)) {
 			return;
 		}
 
@@ -545,7 +546,32 @@ function initHowItWorksTimelines() {
 			marker.classList.remove("bg-white", "text-brand-1");
 		}
 
+		function updateTrackGeometry() {
+			const firstMarker = steps[0];
+			const lastMarker = steps[steps.length - 1];
+
+			if (!firstMarker || !lastMarker) {
+				return;
+			}
+
+			const hostRect = trackBoundsHost.getBoundingClientRect();
+			const firstRect = firstMarker.getBoundingClientRect();
+			const lastRect = lastMarker.getBoundingClientRect();
+			const markerCenterX = firstRect.left - hostRect.left + firstRect.width / 2;
+			const firstMarkerCenterY = firstRect.top - hostRect.top + firstRect.height / 2;
+			const lastMarkerCenterY = lastRect.top - hostRect.top + lastRect.height / 2;
+			const trackHeight = Math.max(0, lastMarkerCenterY - firstMarkerCenterY);
+
+			track.style.left = `${markerCenterX}px`;
+			track.style.top = `${firstMarkerCenterY}px`;
+			track.style.bottom = "auto";
+			track.style.height = `${trackHeight}px`;
+			track.style.transform = "translateX(-50%)";
+		}
+
 		function updateProgress() {
+			updateTrackGeometry();
+
 			const trackRect = track.getBoundingClientRect();
 			const markerY = window.innerHeight * markerRatio;
 			const fillHeight = Math.min(trackRect.height, Math.max(0, markerY - trackRect.top));
