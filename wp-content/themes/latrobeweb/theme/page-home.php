@@ -83,11 +83,11 @@ get_header();
 			<?php endif; ?>
 			<?php if ( $home_hero_tablet_url ) : ?>
 				<div class="la-home-hero-image-tablet-shell hidden md:block lg:hidden" aria-hidden="true">
-					<div
-						class="la-home-hero-image-tablet-image"
-						role="img"
-						style="--la-hero-tablet-bg: url('<?php echo $home_hero_tablet_url; ?>');"
-					></div>
+					<img
+						src="<?php echo $home_hero_tablet_url; ?>"
+						alt=""
+						class="la-home-hero-image-tablet"
+					/>
 					<div class="la-home-hero-image-tablet-overlay"></div>
 				</div>
 			<?php endif; ?>
