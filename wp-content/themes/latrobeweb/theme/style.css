@@ -956,17 +956,7 @@ h6 {
   opacity: 1;
 }
 .la-home-hero-image-tablet-shell::after {
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  top: 5rem;
-  left: 3.5rem;
-  z-index: 1;
-  height: 14.90975rem;
-  width: 14.90975rem;
-  border-radius: 16009193px;
-  background: rgba(233, 34, 60, 0.02);
-  filter: blur(30.535140991210938px);
+  content: none;
 }
 .la-home-hero-title {
   font-family: var(--font-display);
