@@ -388,40 +388,35 @@ h6 {
 		center bottom;
 }
 
-/* Tablet (md–lg) — Figma Hero MD: image layer + overlay layer */
+/* Tablet (md–lg) — gradient baked into image layer top (no overlay box seam) */
 .la-home-hero-image-tablet-shell {
-	@apply bg-brand-2 relative z-0 w-full overflow-hidden;
-	margin-top: -2rem;
+	@apply relative z-0 w-full overflow-hidden;
+	margin-top: -3rem;
 	min-height: 31rem;
 }
 
 .la-home-hero-image-tablet-image {
 	@apply absolute inset-0;
 	background-color: var(--color-brand-2);
-	background-image: var(--la-hero-tablet-bg);
+	background-image: linear-gradient(
+			to bottom,
+			rgb(255 255 255 / 1) 0%,
+			rgb(255 255 255 / 0.92) 8%,
+			rgb(255 255 255 / 0.78) 20%,
+			rgb(255 255 255 / 0.58) 35%,
+			rgb(255 255 255 / 0.38) 50%,
+			rgb(255 255 255 / 0.2) 65%,
+			rgb(255 255 255 / 0.08) 80%,
+			rgb(255 255 255 / 0) 100%
+		),
+		var(--la-hero-tablet-bg);
 	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center 22%;
-}
-
-.la-home-hero-image-tablet-overlay {
-	@apply pointer-events-none absolute inset-x-0 z-[1];
-	top: -2rem;
-	height: 12rem;
-	background: linear-gradient(
-		to bottom,
-		rgb(255 255 255 / 1) 0%,
-		rgb(255 255 255 / 0.96) 12%,
-		rgb(255 255 255 / 0.86) 26%,
-		rgb(255 255 255 / 0.7) 40%,
-		rgb(255 255 255 / 0.5) 54%,
-		rgb(255 255 255 / 0.3) 68%,
-		rgb(255 255 255 / 0.14) 82%,
-		rgb(255 255 255 / 0.04) 94%,
-		rgb(255 255 255 / 0) 100%
-	);
-	-webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
-	mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
+	background-size:
+		100% 13rem,
+		cover;
+	background-position:
+		top center,
+		center 22%;
 }
 
 .la-home-hero-image-blend,

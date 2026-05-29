@@ -88,7 +88,6 @@ get_header();
 					style="--la-hero-tablet-bg: url('<?php echo $home_hero_tablet_url; ?>');"
 				>
 					<div class="la-home-hero-image-tablet-image" role="img"></div>
-					<div class="la-home-hero-image-tablet-overlay"></div>
 				</div>
 			<?php endif; ?>
 			<div class="relative bg-brand-3 p-3.5 md:p-5 lg:p-7">
