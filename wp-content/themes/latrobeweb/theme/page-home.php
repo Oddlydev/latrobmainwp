@@ -14,7 +14,7 @@ get_header();
 	<section id="top" class="scroll-mt-24">
 		<?php $home_hero_section_images = (array) get_field( 'home_hero_section_images' ); ?>
 		<?php $home_hero_image_rows = $home_hero_section_images['home_hero_section_images'] ?? array(); ?>
-		<?php $home_hero_image_row = ! empty( $home_hero_image_rows ) ? $home_hero_image_rows[ array_rand( $home_hero_image_rows ) ] : array(); ?>
+		<?php $home_hero_image_row = ! empty( $home_hero_image_rows ) ? reset( $home_hero_image_rows ) : array(); ?>
 		<div class="relative overflow-hidden border border-gray-200 bg-white text-black shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
 			<img
 				src="<?php echo esc_url( $home_hero_image_row['home_hero_section_desktop_image'] ?? '' ); ?>"
