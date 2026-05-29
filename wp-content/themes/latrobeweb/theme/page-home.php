@@ -82,13 +82,14 @@ get_header();
 				></div>
 			<?php endif; ?>
 			<?php if ( $home_hero_tablet_url ) : ?>
-				<div
-					class="la-home-hero-image-tablet-shell hidden md:block lg:hidden"
-					aria-hidden="true"
-					style="--la-hero-tablet-bg: url('<?php echo $home_hero_tablet_url; ?>');"
-				>
-					<div class="la-home-hero-image-tablet-image" role="img"></div>
-					<div class="la-home-hero-image-tablet-overlay"></div>
+				<div class="la-home-hero-image-tablet-shell relative hidden overflow-hidden md:block lg:hidden" aria-hidden="true">
+					<div aria-hidden="true" class="la-home-hero-image-blend la-home-hero-image-blend-tablet"></div>
+					<div aria-hidden="true" class="la-home-hero-image-accent la-home-hero-image-accent-tablet"></div>
+					<img
+						src="<?php echo $home_hero_tablet_url; ?>"
+						alt=""
+						class="la-home-hero-image-tablet block h-auto w-full object-cover object-center"
+					/>
 				</div>
 			<?php endif; ?>
 			<div class="relative bg-brand-3 p-3.5 md:p-5 lg:p-7">
