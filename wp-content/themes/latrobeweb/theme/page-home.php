@@ -76,10 +76,11 @@ get_header();
 			<?php if ( $home_hero_mobile_url ) : ?>
 				<div
 					class="la-home-hero-image-mobile-shell md:hidden"
-					role="img"
 					aria-hidden="true"
 					style="--la-hero-mobile-bg: url('<?php echo $home_hero_mobile_url; ?>');"
-				></div>
+				>
+					<div class="la-home-hero-image-mobile-image" role="img"></div>
+				</div>
 			<?php endif; ?>
 			<?php if ( $home_hero_tablet_url ) : ?>
 				<div

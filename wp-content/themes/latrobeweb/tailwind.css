@@ -365,26 +365,34 @@ h6 {
 	@apply absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white/35 to-transparent md:hidden lg:hidden;
 }
 
-/* Mobile & tablet only — layered gradient + image (Figma); desktop unchanged */
+/* Mobile — gradient baked into image layer top (same as tablet) */
 .la-home-hero-image-mobile-shell {
-	@apply relative w-full overflow-hidden;
-	margin-top: -5rem;
+	@apply relative z-0 w-full overflow-hidden md:hidden;
+	margin-top: -3rem;
 	min-height: 17.5rem;
-	background-image:
-		linear-gradient(
+}
+
+.la-home-hero-image-mobile-image {
+	@apply absolute inset-0;
+	background-color: var(--color-brand-2);
+	background-image: linear-gradient(
 			to bottom,
-			var(--color-brand-2) 0%,
-			var(--color-brand-2) 47.45%,
-			rgba(255, 255, 255, 0.7) 50.65%,
-			rgba(255, 255, 255, 0) 59.79%
+			rgb(255 255 255 / 1) 0%,
+			rgb(255 255 255 / 0.92) 8%,
+			rgb(255 255 255 / 0.78) 20%,
+			rgb(255 255 255 / 0.58) 35%,
+			rgb(255 255 255 / 0.38) 50%,
+			rgb(255 255 255 / 0.2) 65%,
+			rgb(255 255 255 / 0.08) 80%,
+			rgb(255 255 255 / 0) 100%
 		),
 		var(--la-hero-mobile-bg);
 	background-repeat: no-repeat;
 	background-size:
-		100% 100%,
+		100% 11rem,
 		cover;
 	background-position:
-		center,
+		top center,
 		center bottom;
 }
 
