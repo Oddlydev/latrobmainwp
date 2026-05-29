@@ -846,7 +846,7 @@ h6 {
   width: 100%;
   overflow: hidden;
   background-color: var(--color-brand-2);
-  margin-top: -5.5rem;
+  margin-top: 0rem;
   min-height: 31rem;
 }
 .la-home-hero-image-tablet-image {
