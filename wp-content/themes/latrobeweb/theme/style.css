@@ -634,9 +634,21 @@ h6 {
 .la-how-step-marker[data-filled="true"] .la-how-step-icon--white {
   display: block;
 }
+@media (max-width: 767px) {
+  .la-how-track {
+    left: 24px;
+    transform: translateX(-50%);
+  }
+}
 @media (min-width: 768px) {
   .la-how-it-works-section::before {
     background-image: var(--la-how-it-works-tablet-background-image);
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .la-how-track {
+    left: 30px;
+    transform: translateX(-50%);
   }
 }
 @media (min-width: 1024px) {
