@@ -846,28 +846,29 @@ h6 {
   width: 100%;
   overflow: hidden;
   background-color: var(--color-brand-2);
-  margin-top: -5rem;
-  height: 26rem;
+  margin-top: -3.5rem;
 }
 .la-home-hero-image-tablet {
-  position: absolute;
-  inset: calc(var(--spacing) * 0);
   display: block;
-  height: 100%;
+  height: auto;
   width: 100%;
   object-fit: cover;
-  object-position: center 38%;
+  min-height: 22rem;
+  object-position: center 32%;
 }
 .la-home-hero-image-tablet-overlay {
   pointer-events: none;
   position: absolute;
-  inset: calc(var(--spacing) * 0);
+  inset-inline: calc(var(--spacing) * 0);
+  top: calc(var(--spacing) * 0);
   z-index: 1;
+  height: 9.5rem;
   background: linear-gradient(
-		3deg,
-		rgba(255, 255, 255, 0) 47.88%,
-		rgba(255, 255, 255, 0.7) 56.84%,
-		var(--color-brand-2) 71.01%
+		to bottom,
+		var(--color-brand-2) 0%,
+		var(--color-brand-2) 28.99%,
+		rgba(255, 255, 255, 0.7) 43.16%,
+		rgba(255, 255, 255, 0) 52.12%
 	);
 }
 .la-home-hero-image-blend,

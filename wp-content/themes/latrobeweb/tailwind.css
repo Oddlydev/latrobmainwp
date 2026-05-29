@@ -383,25 +383,27 @@ h6 {
 	background-position: center, center bottom;
 }
 
-/* Tablet (md–lg) — image + Figma overlay; desktop unchanged */
+/* Tablet (md–lg) — Figma: image layer + overlay layer (fade band at top only) */
 .la-home-hero-image-tablet-shell {
 	@apply relative z-0 w-full overflow-hidden bg-brand-2;
-	margin-top: -5rem;
-	height: 26rem;
+	margin-top: -3.5rem;
 }
 
 .la-home-hero-image-tablet {
-	@apply absolute inset-0 block h-full w-full object-cover;
-	object-position: center 38%;
+	@apply block h-auto w-full object-cover;
+	min-height: 22rem;
+	object-position: center 32%;
 }
 
 .la-home-hero-image-tablet-overlay {
-	@apply pointer-events-none absolute inset-0 z-[1];
+	@apply pointer-events-none absolute inset-x-0 top-0 z-[1];
+	height: 9.5rem;
 	background: linear-gradient(
-		3deg,
-		rgba(255, 255, 255, 0) 47.88%,
-		rgba(255, 255, 255, 0.7) 56.84%,
-		var(--color-brand-2) 71.01%
+		to bottom,
+		var(--color-brand-2) 0%,
+		var(--color-brand-2) 28.99%,
+		rgba(255, 255, 255, 0.7) 43.16%,
+		rgba(255, 255, 255, 0) 52.12%
 	);
 }
 
