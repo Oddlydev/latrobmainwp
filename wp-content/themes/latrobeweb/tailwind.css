@@ -370,7 +370,8 @@ h6 {
 	@apply relative w-full overflow-hidden;
 	margin-top: -5rem;
 	min-height: 17.5rem;
-	background-image: linear-gradient(
+	background-image:
+		linear-gradient(
 			to bottom,
 			var(--color-brand-2) 0%,
 			var(--color-brand-2) 47.45%,
@@ -379,14 +380,18 @@ h6 {
 		),
 		var(--la-hero-mobile-bg);
 	background-repeat: no-repeat;
-	background-size: 100% 100%, cover;
-	background-position: center, center bottom;
+	background-size:
+		100% 100%,
+		cover;
+	background-position:
+		center,
+		center bottom;
 }
 
 /* Tablet (md–lg) — Figma Hero MD: image layer + overlay layer */
 .la-home-hero-image-tablet-shell {
-	@apply relative z-0 w-full overflow-hidden bg-brand-2;
-	margin-top: -5.5rem;
+	@apply bg-brand-2 relative z-0 w-full overflow-hidden;
+	margin-top: 0rem;
 	min-height: 31rem;
 }
 
@@ -459,7 +464,6 @@ h6 {
 	width: 23.8555625rem;
 	opacity: 1;
 }
-
 
 .la-home-hero-title {
 	@apply font-display text-4xl leading-[110%] font-bold tracking-normal text-black md:font-black lg:text-[60px] lg:font-black;
