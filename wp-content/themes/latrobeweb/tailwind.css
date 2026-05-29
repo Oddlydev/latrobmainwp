@@ -334,10 +334,11 @@ h6 {
 	height: 100%;
 	pointer-events: none;
 	background: linear-gradient(
-		272deg,
-		rgba(255, 255, 255, 0) 32.8%,
-		rgba(255, 255, 255, 0.7) 60.13%,
-		var(--color-brand-2) 69.66%
+		to right,
+		var(--color-brand-2) 0%,
+		var(--color-brand-2) 47.45%,
+		rgba(255, 255, 255, 0.7) 50.65%,
+		rgba(255, 255, 255, 0) 59.79%
 	);
 }
 
