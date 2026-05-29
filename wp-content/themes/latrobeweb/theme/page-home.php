@@ -20,7 +20,7 @@ get_header();
 				src="<?php echo esc_url( $home_hero_image_row['home_hero_section_desktop_image'] ?? '' ); ?>"
 				alt=""
 				aria-hidden="true"
-				class="la-home-hero-image-desktop absolute inset-0 hidden lg:block"
+				class="la-home-hero-image-desktop absolute hidden lg:block"
 			/>
 			<div aria-hidden="true" class="la-home-hero-desktop-overlay absolute inset-0 hidden lg:block"></div>
 			<div class="la-home-hero-text-layer relative z-10 px-6 pt-10 pb-0 md:px-10 md:pt-10 md:pb-0 lg:max-w-[716px] lg:pr-10 lg:pt-[11.0625rem] lg:pb-[11.0625rem] lg:pl-[9.375rem]">
