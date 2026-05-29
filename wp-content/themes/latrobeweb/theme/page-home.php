@@ -74,12 +74,13 @@ get_header();
 				</div>
 			</div>
 			<?php if ( $home_hero_mobile_url ) : ?>
-				<div
-					class="la-home-hero-image-mobile-shell md:hidden"
-					aria-hidden="true"
-					style="--la-hero-mobile-bg: url('<?php echo $home_hero_mobile_url; ?>');"
-				>
-					<div class="la-home-hero-image-mobile-image" role="img"></div>
+				<div class="la-home-hero-image-mobile-shell md:hidden" aria-hidden="true">
+					<img
+						src="<?php echo $home_hero_mobile_url; ?>"
+						alt=""
+						class="la-home-hero-image-mobile"
+					/>
+					<div class="la-home-hero-image-mobile-overlay"></div>
 				</div>
 			<?php endif; ?>
 			<?php if ( $home_hero_tablet_url ) : ?>

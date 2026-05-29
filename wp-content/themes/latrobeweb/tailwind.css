@@ -365,35 +365,29 @@ h6 {
 	@apply absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white/35 to-transparent md:hidden lg:hidden;
 }
 
-/* Mobile — gradient baked into image layer top (same as tablet) */
+/* Mobile — full image + top fade overlay */
 .la-home-hero-image-mobile-shell {
-	@apply relative z-0 w-full overflow-hidden md:hidden;
-	margin-top: -3rem;
-	min-height: 17.5rem;
+	@apply relative z-0 w-full md:hidden;
 }
 
-.la-home-hero-image-mobile-image {
-	@apply absolute inset-0;
-	background-color: var(--color-brand-2);
-	background-image: linear-gradient(
-			to bottom,
-			rgb(255 255 255 / 1) 0%,
-			rgb(255 255 255 / 0.92) 8%,
-			rgb(255 255 255 / 0.78) 20%,
-			rgb(255 255 255 / 0.58) 35%,
-			rgb(255 255 255 / 0.38) 50%,
-			rgb(255 255 255 / 0.2) 65%,
-			rgb(255 255 255 / 0.08) 80%,
-			rgb(255 255 255 / 0) 100%
-		),
-		var(--la-hero-mobile-bg);
-	background-repeat: no-repeat;
-	background-size:
-		100% 11rem,
-		cover;
-	background-position:
-		top center,
-		center bottom;
+.la-home-hero-image-mobile {
+	@apply block h-auto w-full;
+}
+
+.la-home-hero-image-mobile-overlay {
+	@apply pointer-events-none absolute inset-x-0 top-0;
+	height: 11rem;
+	background: linear-gradient(
+		to bottom,
+		rgb(255 255 255 / 1) 0%,
+		rgb(255 255 255 / 0.92) 8%,
+		rgb(255 255 255 / 0.78) 20%,
+		rgb(255 255 255 / 0.58) 35%,
+		rgb(255 255 255 / 0.38) 50%,
+		rgb(255 255 255 / 0.2) 65%,
+		rgb(255 255 255 / 0.08) 80%,
+		rgb(255 255 255 / 0) 100%
+	);
 }
 
 /* Tablet (md–lg) — gradient baked into image layer top (no overlay box seam) */
