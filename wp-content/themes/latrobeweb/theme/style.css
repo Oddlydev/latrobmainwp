@@ -848,7 +848,7 @@ h6 {
   width: 100%;
   overflow: hidden;
   background-color: var(--color-brand-2);
-  margin-top: 0rem;
+  margin-top: -2rem;
   min-height: 31rem;
 }
 .la-home-hero-image-tablet-image {
@@ -864,16 +864,23 @@ h6 {
   pointer-events: none;
   position: absolute;
   inset-inline: calc(var(--spacing) * 0);
-  top: calc(var(--spacing) * 0);
   z-index: 1;
-  height: 9.5rem;
+  top: -2rem;
+  height: 12rem;
   background: linear-gradient(
 		to bottom,
-		var(--color-brand-2) 0%,
-		var(--color-brand-2) 38%,
-		rgba(255, 255, 255, 0.55) 62%,
-		rgba(255, 255, 255, 0) 100%
+		rgb(255 255 255 / 1) 0%,
+		rgb(255 255 255 / 0.96) 12%,
+		rgb(255 255 255 / 0.86) 26%,
+		rgb(255 255 255 / 0.7) 40%,
+		rgb(255 255 255 / 0.5) 54%,
+		rgb(255 255 255 / 0.3) 68%,
+		rgb(255 255 255 / 0.14) 82%,
+		rgb(255 255 255 / 0.04) 94%,
+		rgb(255 255 255 / 0) 100%
 	);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
 }
 .la-home-hero-image-blend,
 .la-home-hero-image-accent {
