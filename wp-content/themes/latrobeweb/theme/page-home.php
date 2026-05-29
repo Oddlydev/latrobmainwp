@@ -22,7 +22,7 @@ get_header();
 				aria-hidden="true"
 				class="la-home-hero-image-desktop absolute inset-0 hidden lg:block"
 			/>
-			<div aria-hidden="true" class="la-home-hero-desktop-overlay absolute inset-y-0 left-0 hidden lg:block"></div>
+			<div aria-hidden="true" class="la-home-hero-desktop-overlay absolute inset-0 hidden lg:block"></div>
 			<div class="la-home-hero-text-layer relative z-10 px-6 pt-10 pb-0 md:px-10 md:pt-10 md:pb-0 lg:max-w-[716px] lg:pr-10 lg:pt-[11.0625rem] lg:pb-[11.0625rem] lg:pl-[9.375rem]">
 				<div class="w-full">
 					<p class="body-xs-500 md:body-base-500 inline-flex max-w-full items-center gap-2 whitespace-normal rounded-full border border-gray-300 bg-white px-4 py-2 text-black shadow-sm">
