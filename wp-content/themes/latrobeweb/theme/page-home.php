@@ -24,7 +24,7 @@ get_header();
 				src="<?php echo esc_url( $home_hero_image_row['home_hero_section_desktop_image'] ?? '' ); ?>"
 				alt=""
 				aria-hidden="true"
-				class="la-home-hero-image-desktop absolute inset-y-0 right-0 hidden h-full w-[58%] object-cover lg:block xl:w-[60%] 2xl:w-[62%]"
+				class="la-home-hero-image-desktop absolute inset-y-0 right-0 hidden h-full w-[58%] object-cover lg:block xl:w-[60%] 2xl:w-[100%]"
 			/>
 			<div
 				aria-hidden="true"
