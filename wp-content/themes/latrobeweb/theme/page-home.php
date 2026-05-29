@@ -224,7 +224,7 @@ get_header();
 					<h2 class="mt-2 font-display text-[1.875rem] leading-[110%] font-black tracking-tighter text-black md:font-bold md:tracking-normal lg:text-[2.25rem] lg:leading-[110%] lg:font-bold"><?php echo esc_html( get_field( 'home_how_it_works_section_title' ) ); ?></h2>
 				</div>
 				<div class="la-page-shell relative z-10">
-					<div class="la-how-track absolute top-5 bottom-5 left-[22px] w-1 rounded-full bg-red-100 md:top-0 md:bottom-0 md:left-[28px] lg:left-1/2 lg:top-0 lg:bottom-0 lg:w-1 lg:-translate-x-1/2" data-how-it-works-track aria-hidden="true">
+					<div class="la-how-track absolute top-5 bottom-5 w-1 rounded-full bg-red-100 md:top-0 md:bottom-0 lg:left-1/2 lg:top-0 lg:bottom-0 lg:w-1 lg:-translate-x-1/2" data-how-it-works-track aria-hidden="true">
 						<div class="la-how-track-fill w-full rounded-full bg-brand-1 transition-[height] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-[height]" data-how-it-works-fill></div>
 					</div>
 					<div class="space-y-10 py-5 lg:space-y-16 lg:py-0">
