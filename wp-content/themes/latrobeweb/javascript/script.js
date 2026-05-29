@@ -558,12 +558,12 @@ function initHowItWorksTimelines() {
 			const firstRect = firstMarker.getBoundingClientRect();
 			const lastRect = lastMarker.getBoundingClientRect();
 			const markerCenterX = firstRect.left - hostRect.left + firstRect.width / 2;
-			const firstMarkerCenterY = firstRect.top - hostRect.top + firstRect.height / 2;
-			const lastMarkerCenterY = lastRect.top - hostRect.top + lastRect.height / 2;
-			const trackHeight = Math.max(0, lastMarkerCenterY - firstMarkerCenterY);
+			const firstMarkerTopY = firstRect.top - hostRect.top;
+			const lastMarkerBottomY = lastRect.bottom - hostRect.top;
+			const trackHeight = Math.max(0, lastMarkerBottomY - firstMarkerTopY);
 
 			track.style.left = `${markerCenterX}px`;
-			track.style.top = `${firstMarkerCenterY}px`;
+			track.style.top = `${firstMarkerTopY}px`;
 			track.style.bottom = "auto";
 			track.style.height = `${trackHeight}px`;
 			track.style.transform = "translateX(-50%)";
