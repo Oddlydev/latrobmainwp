@@ -322,8 +322,8 @@ h6 {
 }
 
 .la-home-hero-desktop-overlay {
-	inset: 0;
-	width: 100%;
+	left: 0;
+	width: 62%;
 	height: 100%;
 	pointer-events: none;
 	background: linear-gradient(
