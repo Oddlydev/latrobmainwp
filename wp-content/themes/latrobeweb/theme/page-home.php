@@ -14,7 +14,11 @@ get_header();
 	<section id="top" class="scroll-mt-24">
 		<?php $home_hero_section_images = (array) get_field( 'home_hero_section_images' ); ?>
 		<?php $home_hero_image_rows = $home_hero_section_images['home_hero_section_images'] ?? array(); ?>
-		<?php $home_hero_image_row = ! empty( $home_hero_image_rows ) ? $home_hero_image_rows[ array_rand( $home_hero_image_rows ) ] : array(); ?>
+		<?php
+		$home_hero_image_row   = ! empty( $home_hero_image_rows ) ? $home_hero_image_rows[ array_rand( $home_hero_image_rows ) ] : array();
+		$home_hero_mobile_url  = esc_url( $home_hero_image_row['home_hero_section_mobile_image'] ?? '' );
+		$home_hero_tablet_url  = esc_url( $home_hero_image_row['home_hero_section_tablet_image'] ?? '' );
+		?>
 		<div class="relative overflow-hidden border border-gray-200 bg-white text-black shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
 			<img
 				src="<?php echo esc_url( $home_hero_image_row['home_hero_section_desktop_image'] ?? '' ); ?>"
@@ -66,22 +70,22 @@ get_header();
 					?>
 				</div>
 			</div>
-			<div class="la-home-hero-image-mobile-shell relative overflow-hidden md:hidden">
-				<img
-					src="<?php echo esc_url( $home_hero_image_row['home_hero_section_mobile_image'] ?? '' ); ?>"
-					alt=""
+			<?php if ( $home_hero_mobile_url ) : ?>
+				<div
+					class="la-home-hero-image-mobile-shell md:hidden"
+					role="img"
 					aria-hidden="true"
-					class="la-home-hero-image-mobile block h-auto w-full object-cover object-center"
-				/>
-			</div>
-			<div class="la-home-hero-image-tablet-shell relative hidden overflow-hidden md:block lg:hidden">
-				<img
-					src="<?php echo esc_url( $home_hero_image_row['home_hero_section_tablet_image'] ?? '' ); ?>"
-					alt=""
+					style="--la-hero-mobile-bg: url('<?php echo $home_hero_mobile_url; ?>');"
+				></div>
+			<?php endif; ?>
+			<?php if ( $home_hero_tablet_url ) : ?>
+				<div
+					class="la-home-hero-image-tablet-shell hidden md:block lg:hidden"
+					role="img"
 					aria-hidden="true"
-					class="la-home-hero-image-tablet block h-auto w-full object-cover object-center"
-				/>
-			</div>
+					style="--la-hero-tablet-bg: url('<?php echo $home_hero_tablet_url; ?>');"
+				></div>
+			<?php endif; ?>
 			<div class="relative bg-brand-3 p-3.5 md:p-5 lg:p-7">
 				<div class="grid gap-3 md:inline-grid md:w-full md:grid-cols-2 md:grid-rows-2 md:gap-3 lg:gap-5 xl:grid-cols-4 xl:grid-rows-1">
 					<?php foreach ( (array) get_field( 'home_hero_section_card_details' ) as $item ) : ?>
