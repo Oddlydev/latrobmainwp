@@ -549,6 +549,7 @@ function initHowItWorksTimelines() {
 		function updateTrackGeometry() {
 			const firstMarker = steps[0];
 			const lastMarker = steps[steps.length - 1];
+			const trackCapOffset = 12;
 
 			if (!firstMarker || !lastMarker) {
 				return;
@@ -558,8 +559,8 @@ function initHowItWorksTimelines() {
 			const firstRect = firstMarker.getBoundingClientRect();
 			const lastRect = lastMarker.getBoundingClientRect();
 			const markerCenterX = firstRect.left - hostRect.left + firstRect.width / 2;
-			const firstMarkerTopY = firstRect.top - hostRect.top;
-			const lastMarkerBottomY = lastRect.bottom - hostRect.top;
+			const firstMarkerTopY = firstRect.top - hostRect.top - trackCapOffset;
+			const lastMarkerBottomY = lastRect.bottom - hostRect.top + trackCapOffset;
 			const trackHeight = Math.max(0, lastMarkerBottomY - firstMarkerTopY);
 
 			track.style.left = `${markerCenterX}px`;

@@ -706,10 +706,10 @@ h6 {
     gap: 1.5rem;
   }
   .la-home-intro-meta-row > .la-home-intro-meta-value {
-    justify-self: start;
+    justify-self: stretch;
     width: 100%;
     margin-left: 0;
-    text-align: left;
+    text-align: right;
   }
 }
 @media (max-width: 349px) {
