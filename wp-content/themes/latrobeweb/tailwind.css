@@ -452,9 +452,10 @@ h6 {
 	}
 
 	.la-home-intro-meta-row > .la-home-intro-meta-value {
-		justify-self: stretch;
+		justify-self: start;
 		width: 100%;
 		margin-left: 0;
+		text-align: left;
 	}
 }
 

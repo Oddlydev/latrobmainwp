@@ -694,9 +694,10 @@ h6 {
     gap: 1.5rem;
   }
   .la-home-intro-meta-row > .la-home-intro-meta-value {
-    justify-self: stretch;
+    justify-self: start;
     width: 100%;
     margin-left: 0;
+    text-align: left;
   }
 }
 @media (max-width: 349px) {
