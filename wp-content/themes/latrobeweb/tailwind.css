@@ -421,6 +421,18 @@ h6 {
 	@apply grid gap-5 md:grid-cols-2 lg:gap-6 xl:grid-cols-3;
 }
 
+.la-page-shell {
+	margin-inline: auto;
+	width: 100%;
+	padding-inline: 1.5rem;
+}
+
+@media (min-width: 768px) {
+	.la-page-shell {
+		padding-inline: 2.75rem;
+	}
+}
+
 .la-home-intro-meta-row {
 	grid-template-columns: auto minmax(0, 1fr);
 }

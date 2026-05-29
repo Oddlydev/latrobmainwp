@@ -1050,6 +1050,16 @@ h6 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+.la-page-shell {
+  margin-inline: auto;
+  width: 100%;
+  padding-inline: calc(var(--spacing) * 6);
+}
+@media (min-width: 768px) {
+  .la-page-shell {
+    padding-inline: 2.75rem;
+  }
+}
 .la-how-track-fill {
   height: 0;
 }

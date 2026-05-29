@@ -107,7 +107,7 @@ get_header();
 		</div>
 	</section>
 
-	<section class="mx-auto w-full px-6 pt-10 sm:max-w-[680px] sm:px-0 md:pt-10 lg:max-w-[1295px] lg:pt-20">
+	<section class="la-page-shell pt-10 md:pt-10 lg:pt-20">
 		<span id="about" class="block scroll-mt-4" aria-hidden="true"></span>
 		<div class="max-w-[695px]">
 			<p class="eyebrow m-0 text-red-600"><?php echo esc_html( get_field( 'home_intro_section_label_text' ) ); ?></p>
@@ -129,7 +129,7 @@ get_header();
 	</section>
 
 	<section class="border-b border-ink-faint pt-5 pb-10 md:pt-7 lg:pt-12 lg:pb-20">
-		<div class="mx-auto w-full px-6 sm:max-w-[680px] sm:px-0 lg:max-w-[1295px]">
+		<div class="la-page-shell">
 			<div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
 				<?php foreach ( (array) get_field( 'home_intro_card_details' ) as $item ) : ?>
 					<article class="bg-surface-card-soft flex translate-y-0 flex-col rounded-2xl border border-gray-200 p-6 transition-[transform,box-shadow,background-color] duration-200 ease-out hover:-translate-y-1 hover:shadow-la-shadow-3 h-full">
@@ -146,7 +146,7 @@ get_header();
 
 	<section class="pt-10 pb-5 md:pt-10 md:pb-7 lg:pt-20 lg:pb-12">
 		<span id="features" class="block scroll-mt-4" aria-hidden="true"></span>
-		<div class="mx-auto w-full px-6 sm:max-w-[680px] sm:px-0 lg:max-w-[1295px]">
+		<div class="la-page-shell">
 			<div class="space-y-5 md:space-y-7 lg:space-y-12">
 				<div>
 					<p class="eyebrow text-red-600"><?php echo esc_html( get_field( 'home_core_features_section_label_text' ) ); ?></p>
@@ -199,7 +199,7 @@ get_header();
 	</section>
 
 	<section class="border-b border-ink-faint pb-10 md:pb-20">
-		<div class="mx-auto w-full px-6 sm:max-w-[680px] sm:px-0 lg:max-w-[1295px]">
+		<div class="la-page-shell">
 			<div class="grid gap-5 md:grid-cols-2 lg:gap-6 xl:grid-cols-3">
 				<?php foreach ( (array) get_field( 'home_core_features_card_details' ) as $item ) : ?>
 					<article class="group flex translate-y-0 flex-col rounded-2xl border border-gray-200 bg-white p-6 transition-[transform,box-shadow,background-color] duration-200 ease-out hover:-translate-y-1 hover:shadow-la-shadow-4 h-full">
@@ -216,14 +216,14 @@ get_header();
 
 	<?php $how_it_works_background_images = (array) get_field( 'home_how_it_works_section_background_images' ); ?>
 	<section class="la-how-it-works-section py-10 lg:py-20" style="--la-how-it-works-mobile-background-image:url('<?php echo esc_url( $how_it_works_background_images['home_how_it_works_section_mobile_background_image'] ?? '' ); ?>');--la-how-it-works-tablet-background-image:url('<?php echo esc_url( $how_it_works_background_images['home_how_it_works_section_tablet_background_image'] ?? '' ); ?>');--la-how-it-works-desktop-background-image:url('<?php echo esc_url( $how_it_works_background_images['home_how_it_works_section_desktop_background_image'] ?? '' ); ?>');">
-		<div class="mx-auto w-full lg:max-w-[1295px]">
+		<div class="w-full">
 			<span id="how-it-works" class="block scroll-mt-4" aria-hidden="true"></span>
 			<div class="relative overflow-hidden" data-how-it-works data-how-marker-ratio="0.72">
-				<div class="relative z-10 mx-6 mb-5 sm:mx-auto sm:mb-7 sm:max-w-[680px] lg:mx-auto lg:mb-12 lg:max-w-none lg:text-center">
+				<div class="la-page-shell relative z-10 mb-5 md:mb-7 lg:mb-12 lg:text-center">
 					<p class="eyebrow text-brand-1"><?php echo esc_html( get_field( 'home_how_it_works_section_label_text' ) ); ?></p>
 					<h2 class="mt-2 font-display text-[1.875rem] leading-[110%] font-black tracking-tighter text-black md:font-bold md:tracking-normal lg:text-[2.25rem] lg:leading-[110%] lg:font-bold"><?php echo esc_html( get_field( 'home_how_it_works_section_title' ) ); ?></h2>
 				</div>
-				<div class="relative z-10 mx-6 sm:mx-auto sm:max-w-[680px] lg:mx-auto lg:max-w-none">
+				<div class="la-page-shell relative z-10">
 					<div class="la-how-track absolute top-5 bottom-5 left-[22px] w-1 rounded-full bg-red-100 md:top-0 md:bottom-0 md:left-[28px] lg:left-1/2 lg:top-0 lg:bottom-0 lg:w-1 lg:-translate-x-1/2" data-how-it-works-track aria-hidden="true">
 						<div class="la-how-track-fill w-full rounded-full bg-brand-1 transition-[height] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-[height]" data-how-it-works-fill></div>
 					</div>
@@ -268,7 +268,7 @@ get_header();
 
 	<section class="border-t border-gray-200 py-10 md:py-10 lg:py-20">
 		<span id="team" class="block scroll-mt-4" aria-hidden="true"></span>
-		<div class="mx-auto w-full px-6 sm:max-w-[680px] sm:px-0 lg:max-w-[1295px]">
+		<div class="la-page-shell">
 			<div class="max-w-2xl">
 				<p class="eyebrow text-brand-1"><?php echo esc_html( get_field( 'home_team_section_label_text' ) ); ?></p>
 				<h2 class="mt-2 mb-0 max-w-[600px] font-display text-[1.875rem] leading-[110%] font-black tracking-tighter text-black md:font-bold md:tracking-normal lg:text-[2.25rem] lg:leading-[110%] lg:font-bold"><?php echo esc_html( get_field( 'home_team_section_title' ) ); ?></h2>
@@ -289,7 +289,7 @@ get_header();
 	</section>
 
 	<section class="border-t border-slate-200 border-b py-10 md:py-10 lg:py-20">
-		<div class="mx-auto w-full px-6 sm:max-w-[680px] sm:px-0 lg:max-w-[1295px]">
+		<div class="la-page-shell">
 			<div class="mx-auto max-w-5xl text-center">
 				<p class="eyebrow text-red-600"><?php echo esc_html( get_field( 'home_partners_section_label_text' ) ); ?></p>
 				<h2 class="mt-2 font-display text-[1.875rem] leading-[110%] font-black tracking-tighter text-black md:font-bold md:tracking-normal lg:text-[2.25rem] lg:leading-[110%] lg:font-bold"><?php echo esc_html( get_field( 'home_partners_section_title' ) ); ?></h2>
@@ -308,7 +308,7 @@ get_header();
 		</div>
 	</section>
 
-	<section class="la-home-faq-section mx-auto w-full px-6 py-10 sm:max-w-[680px] sm:px-0 md:py-10 lg:max-w-[1295px] lg:py-20">
+	<section class="la-home-faq-section la-page-shell py-10 md:py-10 lg:py-20">
 		<span id="faq" class="block scroll-mt-4" aria-hidden="true"></span>
 		<div class="la-home-faq-stack space-y-5 md:space-y-7 lg:space-y-12">
 			<?php
@@ -405,7 +405,7 @@ get_header();
 	</section>
 
 	<section class="la-home-cta-section" style="--la-cta-background-image:url('<?php echo esc_url( get_field( 'home_cta_section_background_image' ) ); ?>');">
-		<div class="mx-auto w-full px-6 text-center sm:max-w-[680px] sm:px-0 lg:max-w-[1295px]">
+		<div class="la-page-shell text-center">
 			<div class="space-y-4 md:space-y-4 lg:space-y-4">
 				<h2 class="text-center font-display text-[1.875rem] leading-[110%] font-black tracking-tighter text-white md:font-bold md:tracking-normal lg:text-[2.25rem] lg:leading-[110%] lg:font-bold"><?php echo esc_html( get_field( 'home_cta_section_title' ) ); ?></h2>
 				<p class="body-base-400 text-center text-gray-400"><?php echo esc_html( get_field( 'home_cta_section_description' ) ); ?></p>
@@ -430,7 +430,7 @@ get_header();
 		</div>
 	</section>
 
-	<section class="mx-auto w-full px-6 py-10 sm:max-w-[680px] sm:px-0 md:py-10 lg:max-w-[1295px] lg:py-20">
+	<section class="la-page-shell py-10 md:py-10 lg:py-20">
 		<span id="contact" class="block scroll-mt-4" aria-hidden="true"></span>
 		<div class="space-y-5 md:space-y-7 lg:space-y-12">
 			<div class="max-w-[695px] text-left">
