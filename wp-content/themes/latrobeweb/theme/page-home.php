@@ -15,9 +15,21 @@ get_header();
 		<?php $home_hero_section_images = (array) get_field( 'home_hero_section_images' ); ?>
 		<?php $home_hero_image_rows = $home_hero_section_images['home_hero_section_images'] ?? array(); ?>
 		<?php
-		$home_hero_image_row   = ! empty( $home_hero_image_rows ) ? $home_hero_image_rows[ array_rand( $home_hero_image_rows ) ] : array();
-		$home_hero_mobile_url  = esc_url( $home_hero_image_row['home_hero_section_mobile_image'] ?? '' );
-		$home_hero_tablet_url  = esc_url( $home_hero_image_row['home_hero_section_tablet_image'] ?? '' );
+		$home_hero_image_row = ! empty( $home_hero_image_rows ) ? $home_hero_image_rows[ array_rand( $home_hero_image_rows ) ] : array();
+
+		$resolve_hero_image_url = static function ( $image ) {
+			if ( is_array( $image ) && ! empty( $image['url'] ) ) {
+				return esc_url( $image['url'] );
+			}
+			if ( is_numeric( $image ) ) {
+				$attachment_url = wp_get_attachment_image_url( (int) $image, 'full' );
+				return $attachment_url ? esc_url( $attachment_url ) : '';
+			}
+			return $image ? esc_url( (string) $image ) : '';
+		};
+
+		$home_hero_mobile_url = $resolve_hero_image_url( $home_hero_image_row['home_hero_section_mobile_image'] ?? '' );
+		$home_hero_tablet_url = $resolve_hero_image_url( $home_hero_image_row['home_hero_section_tablet_image'] ?? '' );
 		?>
 		<div class="relative overflow-hidden border border-gray-200 bg-white text-black shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
 			<img
@@ -74,13 +86,15 @@ get_header();
 				</div>
 			</div>
 			<?php if ( $home_hero_mobile_url ) : ?>
-				<div class="la-home-hero-image-mobile-shell md:hidden" aria-hidden="true">
+				<div class="la-home-hero-image-mobile-shell md:hidden">
 					<img
 						src="<?php echo $home_hero_mobile_url; ?>"
 						alt=""
+						aria-hidden="true"
 						class="la-home-hero-image-mobile"
+						decoding="async"
 					/>
-					<div class="la-home-hero-image-mobile-overlay"></div>
+					<div class="la-home-hero-image-mobile-overlay" aria-hidden="true"></div>
 				</div>
 			<?php endif; ?>
 			<?php if ( $home_hero_tablet_url ) : ?>

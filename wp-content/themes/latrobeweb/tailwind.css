@@ -367,15 +367,15 @@ h6 {
 
 /* Mobile — full image + top fade overlay */
 .la-home-hero-image-mobile-shell {
-	@apply relative z-0 w-full md:hidden;
+	@apply relative z-0 block w-full md:hidden;
 }
 
 .la-home-hero-image-mobile {
-	@apply block h-auto w-full;
+	@apply relative z-0 block h-auto w-full max-w-full;
 }
 
 .la-home-hero-image-mobile-overlay {
-	@apply pointer-events-none absolute inset-x-0 top-0;
+	@apply pointer-events-none absolute inset-x-0 top-0 z-[1];
 	height: 11rem;
 	background: linear-gradient(
 		to bottom,

@@ -825,6 +825,7 @@ h6 {
 .la-home-hero-image-mobile-shell {
   position: relative;
   z-index: 0;
+  display: block;
   width: 100%;
 }
 @media (width >= 48rem) {
@@ -833,15 +834,19 @@ h6 {
   }
 }
 .la-home-hero-image-mobile {
+  position: relative;
+  z-index: 0;
   display: block;
   height: auto;
   width: 100%;
+  max-width: 100%;
 }
 .la-home-hero-image-mobile-overlay {
   pointer-events: none;
   position: absolute;
   inset-inline: calc(var(--spacing) * 0);
   top: calc(var(--spacing) * 0);
+  z-index: 1;
   height: 11rem;
   background: linear-gradient(
 		to bottom,
@@ -2075,6 +2080,9 @@ h6 {
 }
 .relative {
   position: relative;
+}
+.static {
+  position: static;
 }
 .inset-0 {
   inset: calc(var(--spacing) * 0);
