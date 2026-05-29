@@ -673,11 +673,36 @@ h6 {
 }
 .la-home-intro-meta-value {
   min-width: 0;
-  width: min(228px, 100%);
 }
-@media (min-width: 768px) {
+@media (max-width: 1023px) {
+  .la-home-intro-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
   .la-home-intro-meta-value {
-    width: auto;
+    flex: 0 1 auto;
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .la-home-intro-meta-row {
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 349px) {
+  .la-home-intro-meta-row {
+    display: block;
+  }
+  .la-home-intro-meta-value {
+    display: block;
+    width: 100%;
+    max-width: none;
+    margin-top: 0.75rem;
+    margin-left: 0;
+    text-align: left;
   }
 }
 .la-swatch {

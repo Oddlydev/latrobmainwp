@@ -421,6 +421,50 @@ h6 {
 	@apply grid gap-5 md:grid-cols-2 lg:gap-6 xl:grid-cols-3;
 }
 
+.la-home-intro-meta-row {
+	grid-template-columns: auto minmax(0, 1fr);
+}
+
+.la-home-intro-meta-value {
+	min-width: 0;
+}
+
+@media (max-width: 1023px) {
+	.la-home-intro-meta-row {
+		display: flex;
+		align-items: center;
+		gap: 1.25rem;
+	}
+
+	.la-home-intro-meta-value {
+		flex: 0 1 auto;
+		width: fit-content;
+		max-width: 100%;
+		margin-left: auto;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	.la-home-intro-meta-row {
+		gap: 1.5rem;
+	}
+}
+
+@media (max-width: 349px) {
+	.la-home-intro-meta-row {
+		display: block;
+	}
+
+	.la-home-intro-meta-value {
+		display: block;
+		width: 100%;
+		max-width: none;
+		margin-top: 0.75rem;
+		margin-left: 0;
+		text-align: left;
+	}
+}
+
 .la-how-track-fill {
 	height: 0;
 }
