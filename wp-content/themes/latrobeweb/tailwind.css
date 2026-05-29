@@ -313,12 +313,15 @@ h6 {
 }
 
 .la-home-hero-image-desktop {
-	inset: 0;
-	width: 100%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: auto;
+	width: 76%;
 	height: 100%;
 	max-width: none;
 	object-fit: cover;
-	object-position: right center;
+	object-position: 78% center;
 }
 
 .la-home-hero-desktop-overlay {
@@ -327,11 +330,10 @@ h6 {
 	height: 100%;
 	pointer-events: none;
 	background: linear-gradient(
-		90deg,
-		var(--color-brand-2) 0%,
-		var(--color-brand-2) 52%,
-		rgba(255, 255, 255, 0.7) 64%,
-		rgba(255, 255, 255, 0) 76%
+		272deg,
+		rgba(255, 255, 255, 0) 32.8%,
+		rgba(255, 255, 255, 0.7) 42.13%,
+		var(--color-brand-2) 52.66%
 	);
 }
 
