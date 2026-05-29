@@ -1060,6 +1060,28 @@ h6 {
 .la-how-track-fill {
   height: 0;
 }
+.la-how-step-marker {
+  position: relative;
+}
+.la-how-step-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  transform: translate(-50%, -50%);
+}
+.la-how-step-icon--white {
+  opacity: 0;
+  visibility: hidden;
+}
+.la-how-step-marker[data-filled="true"] .la-how-step-icon--red {
+  opacity: 0;
+  visibility: hidden;
+}
+.la-how-step-marker[data-filled="true"] .la-how-step-icon--white {
+  opacity: 1;
+  visibility: visible;
+}
 .la-how-step-row[data-filled="true"] .la-how-step-card {
   --tw-translate-x: calc(var(--spacing) * 0);
   translate: var(--tw-translate-x) var(--tw-translate-y);
