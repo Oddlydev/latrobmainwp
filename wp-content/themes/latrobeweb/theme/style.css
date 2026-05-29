@@ -846,23 +846,23 @@ h6 {
   width: 100%;
   overflow: hidden;
   background-color: var(--color-brand-2);
-  margin-top: -3.5rem;
+  margin-top: -5.5rem;
+  min-height: 31rem;
 }
-.la-home-hero-image-tablet {
-  display: block;
-  height: auto;
-  width: 100%;
-  object-fit: cover;
-  min-height: 22rem;
-  object-position: center 32%;
+.la-home-hero-image-tablet-image {
+  position: absolute;
+  inset: calc(var(--spacing) * 0);
+  background-color: var(--color-brand-2);
+  background-image: var(--la-hero-tablet-bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 22%;
 }
 .la-home-hero-image-tablet-overlay {
   pointer-events: none;
   position: absolute;
-  inset-inline: calc(var(--spacing) * 0);
-  top: calc(var(--spacing) * 0);
+  inset: calc(var(--spacing) * 0);
   z-index: 1;
-  height: 9.5rem;
   background: linear-gradient(
 		to bottom,
 		var(--color-brand-2) 0%,

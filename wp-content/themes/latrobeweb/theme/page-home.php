@@ -46,7 +46,7 @@ get_header();
 						</p>
 					</div>
 				</div>
-				<div class="mt-5 flex flex-wrap gap-4 pb-5 md:pb-7 lg:mt-12 lg:pb-0">
+				<div class="mt-5 flex flex-wrap gap-4 pb-5 md:pb-0 lg:mt-12 lg:pb-0">
 					<?php
 					latrobeweb_component(
 						'button',
@@ -82,12 +82,12 @@ get_header();
 				></div>
 			<?php endif; ?>
 			<?php if ( $home_hero_tablet_url ) : ?>
-				<div class="la-home-hero-image-tablet-shell hidden md:block lg:hidden" aria-hidden="true">
-					<img
-						src="<?php echo $home_hero_tablet_url; ?>"
-						alt=""
-						class="la-home-hero-image-tablet"
-					/>
+				<div
+					class="la-home-hero-image-tablet-shell hidden md:block lg:hidden"
+					aria-hidden="true"
+					style="--la-hero-tablet-bg: url('<?php echo $home_hero_tablet_url; ?>');"
+				>
+					<div class="la-home-hero-image-tablet-image" role="img"></div>
 					<div class="la-home-hero-image-tablet-overlay"></div>
 				</div>
 			<?php endif; ?>
