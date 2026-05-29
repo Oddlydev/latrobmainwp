@@ -329,9 +329,8 @@ h6 {
 	background: linear-gradient(
 		94deg,
 		var(--color-brand-2) 0%,
-		var(--color-brand-2) 58%,
-		rgba(255, 255, 255, 0.7) 68%,
-		rgba(255, 255, 255, 0) 78%
+		rgba(255, 255, 255, 0.7) 15%,
+		rgba(255, 255, 255, 0) 33%
 	);
 }
 
