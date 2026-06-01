@@ -28,26 +28,32 @@ get_header();
 			return $image ? esc_url( (string) $image ) : '';
 		};
 
-		$home_hero_mobile_url = $resolve_hero_image_url( $home_hero_image_row['home_hero_section_mobile_image'] ?? '' );
-		$home_hero_tablet_url = $resolve_hero_image_url( $home_hero_image_row['home_hero_section_tablet_image'] ?? '' );
+		$home_hero_mobile_url            = $resolve_hero_image_url( $home_hero_image_row['home_hero_section_mobile_image'] ?? '' );
+		$home_hero_tablet_url            = $resolve_hero_image_url( $home_hero_image_row['home_hero_section_tablet_image'] ?? '' );
 		$home_hero_tablet_horizontal_url = $resolve_hero_image_url( $home_hero_image_row['home_hero_section_tablet_horizontal_image'] ?? '' );
 		$home_hero_desktop_url           = $resolve_hero_image_url( $home_hero_image_row['home_hero_section_desktop_image'] ?? '' );
+
+		// Older repeater rows may not have the newer tablet-specific fields populated yet.
+		$home_hero_mobile_display_url            = $home_hero_mobile_url ?: $home_hero_tablet_url ?: $home_hero_desktop_url;
+		$home_hero_tablet_display_url            = $home_hero_tablet_url ?: $home_hero_mobile_url ?: $home_hero_desktop_url;
+		$home_hero_tablet_horizontal_display_url = $home_hero_tablet_horizontal_url ?: $home_hero_desktop_url ?: $home_hero_tablet_url;
+		$home_hero_desktop_display_url           = $home_hero_desktop_url ?: $home_hero_tablet_horizontal_url ?: $home_hero_tablet_url;
 		?>
 		<div class="relative overflow-hidden border border-gray-200 bg-white text-black shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
-			<?php if ( $home_hero_tablet_horizontal_url ) : ?>
+			<?php if ( $home_hero_tablet_horizontal_display_url ) : ?>
 				<img
-					src="<?php echo $home_hero_tablet_horizontal_url; ?>"
+					src="<?php echo $home_hero_tablet_horizontal_display_url; ?>"
 					alt=""
 					aria-hidden="true"
 					class="la-home-hero-image-desktop absolute inset-y-0 right-0 hidden h-full w-full object-cover object-right lg:block xl:hidden"
 				/>
 			<?php endif; ?>
-			<?php if ( $home_hero_desktop_url ) : ?>
+			<?php if ( $home_hero_desktop_display_url ) : ?>
 				<img
-					src="<?php echo $home_hero_desktop_url; ?>"
+					src="<?php echo $home_hero_desktop_display_url; ?>"
 					alt=""
 					aria-hidden="true"
-					class="la-home-hero-image-desktop absolute inset-y-0 right-0 hidden h-full w-full object-cover object-right <?php echo esc_attr( $home_hero_tablet_horizontal_url ? 'xl:block' : 'lg:block' ); ?> 2xl:w-full"
+					class="la-home-hero-image-desktop absolute inset-y-0 right-0 hidden h-full w-full object-cover object-right <?php echo esc_attr( $home_hero_tablet_horizontal_display_url ? 'xl:block' : 'lg:block' ); ?> 2xl:w-full"
 				/>
 			<?php endif; ?>
 			<div
@@ -97,10 +103,10 @@ get_header();
 					?>
 				</div>
 			</div>
-			<?php if ( $home_hero_mobile_url ) : ?>
+			<?php if ( $home_hero_mobile_display_url ) : ?>
 				<div class="la-home-hero-image-mobile-shell md:hidden">
 					<img
-						src="<?php echo $home_hero_mobile_url; ?>"
+						src="<?php echo $home_hero_mobile_display_url; ?>"
 						alt=""
 						aria-hidden="true"
 						class="la-home-hero-image-mobile"
@@ -109,13 +115,16 @@ get_header();
 					<div class="la-home-hero-image-mobile-overlay" aria-hidden="true"></div>
 				</div>
 			<?php endif; ?>
-			<?php if ( $home_hero_tablet_url ) : ?>
-				<div
-					class="la-home-hero-image-tablet-shell hidden md:block lg:hidden"
-					aria-hidden="true"
-					style="--la-hero-tablet-bg: url('<?php echo $home_hero_tablet_url; ?>');"
-				>
-					<div class="la-home-hero-image-tablet-image" role="img"></div>
+			<?php if ( $home_hero_tablet_display_url ) : ?>
+				<div class="la-home-hero-image-tablet-shell hidden md:block lg:hidden" aria-hidden="true">
+					<img
+						src="<?php echo $home_hero_tablet_display_url; ?>"
+						alt=""
+						aria-hidden="true"
+						class="la-home-hero-image-tablet-image"
+						decoding="async"
+					/>
+					<div class="la-home-hero-image-tablet-overlay" aria-hidden="true"></div>
 				</div>
 			<?php endif; ?>
 			<div class="relative bg-brand-3 p-3.5 md:p-5 lg:p-7">
