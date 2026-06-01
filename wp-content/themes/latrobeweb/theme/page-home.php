@@ -30,19 +30,19 @@ get_header();
 
 		$home_hero_mobile_url = $resolve_hero_image_url( $home_hero_image_row['home_hero_section_mobile_image'] ?? '' );
 		$home_hero_tablet_url = $resolve_hero_image_url( $home_hero_image_row['home_hero_section_tablet_image'] ?? '' );
-		$home_hero_desktop_url = $resolve_hero_image_url( $home_hero_image_row['home_hero_section_desktop_image'] ?? '' );
 		?>
-		<div
-			class="relative overflow-hidden border border-gray-200 bg-white text-black shadow-[0_12px_40px_rgba(15,23,42,0.08)] lg:[background-image:var(--la-hero-desktop-bg)] lg:bg-cover lg:bg-no-repeat lg:[background-position:78%_center]"
-			<?php if ( $home_hero_desktop_url ) : ?>
-				style="--la-hero-desktop-bg: url('<?php echo $home_hero_desktop_url; ?>');"
-			<?php endif; ?>
-		>
+		<div class="relative overflow-hidden border border-gray-200 bg-white text-black shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
+			<img
+				src="<?php echo esc_url( $home_hero_image_row['home_hero_section_desktop_image'] ?? '' ); ?>"
+				alt=""
+				aria-hidden="true"
+				class="la-home-hero-image-desktop absolute inset-y-0 right-0 hidden h-full object-cover lg:block lg:w-[52%] xl:w-[60%] 2xl:w-full"
+			/>
 			<div
 				aria-hidden="true"
-				class="la-home-hero-desktop-overlay pointer-events-none absolute inset-0 hidden lg:block"
+				class="la-home-hero-desktop-overlay pointer-events-none absolute inset-y-0 left-0 hidden h-full lg:block lg:w-[64%] xl:w-[52%]"
 			></div>
-			<div class="relative z-10 isolate px-6 pt-10 pb-0 md:px-10 md:pt-10 md:pb-0 lg:max-w-[32rem] lg:px-10 lg:pt-[4.5rem] lg:pb-[4.5rem] xl:max-w-[716px] xl:pr-10 xl:pt-[11.0625rem] xl:pb-[11.0625rem] xl:pl-[4rem]">
+			<div class="la-home-hero-text-layer relative z-10 px-6 pt-10 pb-0 md:px-10 md:pt-10 md:pb-0 lg:max-w-[32rem] lg:px-10 lg:pt-[4.5rem] lg:pb-[4.5rem] xl:max-w-[716px] xl:pr-10 xl:pt-[11.0625rem] xl:pb-[11.0625rem] xl:pl-[4rem]">
 				<div class="w-full">
 					<p class="body-xs-500 md:body-base-500 inline-flex max-w-full items-center gap-2 whitespace-normal rounded-full border border-gray-300 bg-white px-4 py-2 text-black shadow-sm">
 						<span class="h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse"></span>

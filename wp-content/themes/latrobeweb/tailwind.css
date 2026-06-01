@@ -314,7 +314,16 @@ h6 {
 	@apply px-5 py-3 lg:px-8 lg:py-4;
 }
 
+.la-home-hero-shell {
+	@apply shadow-soft relative overflow-hidden border border-gray-200 bg-white text-black;
+}
+
+.la-home-hero-image-desktop {
+	object-position: 78% center;
+}
+
 .la-home-hero-desktop-overlay {
+	width: 52%;
 	background: linear-gradient(
 		to right,
 		var(--color-brand-2) 0%,
@@ -323,6 +332,38 @@ h6 {
 		rgba(255, 255, 255, 0.35) 94%,
 		rgba(255, 255, 255, 0) 100%
 	);
+}
+
+.la-home-hero-text-layer {
+	isolation: isolate;
+}
+
+.la-home-hero-accent-right {
+	@apply pointer-events-none absolute top-1/2 right-[-10%] hidden h-[78%] w-[52%] -translate-y-1/2 rounded-[33554400px] lg:block;
+	background: rgba(233, 34, 60, 0.05);
+	filter: blur(64px);
+}
+
+.la-home-hero-accent-left {
+	@apply pointer-events-none absolute top-[18%] left-[-8%] hidden h-[44%] w-[42%] rounded-[33554400px] lg:block;
+	background: rgba(233, 34, 60, 0.03);
+	filter: blur(64px);
+}
+
+.la-home-hero-wash {
+	@apply absolute inset-y-0 left-0 hidden w-full lg:block lg:w-[60%];
+	background: linear-gradient(
+		90deg,
+		rgba(247, 247, 247, 0.96) 0%,
+		rgba(247, 247, 247, 0.92) 38%,
+		rgba(247, 247, 247, 0.82) 54%,
+		rgba(247, 247, 247, 0.44) 70%,
+		rgba(247, 247, 247, 0) 100%
+	);
+}
+
+.la-home-hero-top-fade {
+	@apply absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white/35 to-transparent md:hidden lg:hidden;
 }
 
 /* Mobile — full image + top fade overlay */
@@ -379,6 +420,63 @@ h6 {
 	background-position:
 		top center,
 		center 22%;
+}
+
+.la-home-hero-image-blend,
+.la-home-hero-image-accent {
+	@apply pointer-events-none absolute inset-x-0 top-0 z-[1];
+}
+
+.la-home-hero-image-blend {
+	height: 7.5rem;
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0.92) 0%,
+		rgba(255, 255, 255, 0.74) 28%,
+		rgba(255, 255, 255, 0.24) 62%,
+		rgba(255, 255, 255, 0) 100%
+	);
+	transform: translateY(-0.45rem);
+}
+
+.la-home-hero-image-blend-mobile {
+	height: 6.5rem;
+	transform: translateY(-0.375rem);
+}
+
+.la-home-hero-image-blend-tablet {
+	height: 7.5rem;
+	transform: translateY(-0.45rem);
+}
+
+.la-home-hero-image-accent {
+	left: 50%;
+	border-radius: 16009193px;
+	background: rgba(233, 34, 60, 0.05);
+	filter: blur(30.535140991210938px);
+	transform: translateX(-50%);
+}
+
+.la-home-hero-image-accent-mobile {
+	top: 1rem;
+	height: 11.5rem;
+	width: 11.5rem;
+	opacity: 1;
+}
+
+.la-home-hero-image-accent-tablet {
+	top: 1.5rem;
+	height: 23.8555625rem;
+	width: 23.8555625rem;
+	opacity: 1;
+}
+
+.la-home-hero-title {
+	@apply font-display text-4xl leading-[110%] font-bold tracking-normal text-black md:font-black lg:text-[60px] lg:font-black;
+}
+
+.la-home-hero-cta {
+	@apply mt-5 flex flex-wrap gap-4 pb-5 md:pb-7 lg:mt-12 lg:pb-0;
 }
 
 .la-card-grid-4 {
