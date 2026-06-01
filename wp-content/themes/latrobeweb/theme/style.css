@@ -835,7 +835,7 @@ h6 {
   }
 }
 .la-home-hero-image-mobile-shell {
-  height: clamp(18rem, 50vh, 24rem);
+  height: clamp(17rem, 42vh, 22rem);
 }
 .la-home-hero-image-mobile {
   position: absolute;
@@ -846,7 +846,7 @@ h6 {
   width: 100%;
   max-width: none;
   object-fit: cover;
-  object-position: 78% center;
+  object-position: 72% top;
 }
 .la-home-hero-image-mobile-overlay {
   pointer-events: none;
@@ -872,8 +872,8 @@ h6 {
   z-index: 0;
   width: 100%;
   overflow: hidden;
-  margin-top: -3rem;
-  height: clamp(24rem, 50vh, 31rem);
+  margin-top: 0;
+  height: clamp(21rem, 42vh, 27rem);
 }
 .la-home-hero-image-tablet-image {
   position: absolute;
@@ -892,10 +892,10 @@ h6 {
 		),
 		var(--la-hero-tablet-bg);
   background-repeat: no-repeat;
-  background-size: 100% 13rem,
+  background-size: 100% 10rem,
 		cover;
   background-position: top center,
-		78% center;
+		72% top;
 }
 .la-home-hero-image-blend,
 .la-home-hero-image-accent {
