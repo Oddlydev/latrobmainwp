@@ -785,7 +785,7 @@ add_action( 'widgets_init', 'latrobeweb_widgets_init' );
  * Enqueue scripts and styles.
  */
 function latrobeweb_scripts() {
-	$style_paths  = array( 'theme/style.css' );
+	$style_paths  = array( 'style.css', 'theme/style.css' );
 	$script_paths = array( 'js/script.min.js', 'theme/js/script.min.js' );
 
 	wp_enqueue_style( 'latrobeweb-fonts', LATROBEWEB_FONT_URL, array(), null );
