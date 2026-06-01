@@ -827,19 +827,26 @@ h6 {
   z-index: 0;
   display: block;
   width: 100%;
+  overflow: hidden;
 }
 @media (width >= 48rem) {
   .la-home-hero-image-mobile-shell {
     display: none;
   }
 }
+.la-home-hero-image-mobile-shell {
+  height: clamp(18rem, 50vh, 24rem);
+}
 .la-home-hero-image-mobile {
-  position: relative;
+  position: absolute;
+  inset: calc(var(--spacing) * 0);
   z-index: 0;
   display: block;
-  height: auto;
+  height: 100%;
   width: 100%;
-  max-width: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: 78% center;
 }
 .la-home-hero-image-mobile-overlay {
   pointer-events: none;
@@ -866,7 +873,7 @@ h6 {
   width: 100%;
   overflow: hidden;
   margin-top: -3rem;
-  min-height: 31rem;
+  height: clamp(24rem, 50vh, 31rem);
 }
 .la-home-hero-image-tablet-image {
   position: absolute;
@@ -888,7 +895,7 @@ h6 {
   background-size: 100% 13rem,
 		cover;
   background-position: top center,
-		center 22%;
+		78% center;
 }
 .la-home-hero-image-blend,
 .la-home-hero-image-accent {
@@ -4633,11 +4640,6 @@ h6 {
   }
 }
 @media (width >= 64rem) {
-  .lg\:w-\[52\%\] {
-    width: 52%;
-  }
-}
-@media (width >= 64rem) {
   .lg\:w-\[64\%\] {
     width: 64%;
   }
@@ -5190,11 +5192,6 @@ h6 {
   }
 }
 @media (width >= 80rem) {
-  .xl\:w-\[60\%\] {
-    width: 60%;
-  }
-}
-@media (width >= 80rem) {
   .xl\:w-\[616px\] {
     width: 616px;
   }
@@ -5312,11 +5309,6 @@ h6 {
   .xl\:border-\[3px\] {
     border-style: var(--tw-border-style);
     border-width: 3px;
-  }
-}
-@media (width >= 80rem) {
-  .xl\:\[object-position\:78\%_center\] {
-    object-position: 78% center;
   }
 }
 @media (width >= 80rem) {

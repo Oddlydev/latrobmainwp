@@ -368,11 +368,13 @@ h6 {
 
 /* Mobile — full image + top fade overlay */
 .la-home-hero-image-mobile-shell {
-	@apply relative z-0 block w-full md:hidden;
+	@apply relative z-0 block w-full overflow-hidden md:hidden;
+	height: clamp(18rem, 50vh, 24rem);
 }
 
 .la-home-hero-image-mobile {
-	@apply relative z-0 block h-auto w-full max-w-full;
+	@apply absolute inset-0 z-0 block h-full w-full max-w-none object-cover;
+	object-position: 78% center;
 }
 
 .la-home-hero-image-mobile-overlay {
@@ -395,7 +397,7 @@ h6 {
 .la-home-hero-image-tablet-shell {
 	@apply relative z-0 w-full overflow-hidden;
 	margin-top: -3rem;
-	min-height: 31rem;
+	height: clamp(24rem, 50vh, 31rem);
 }
 
 .la-home-hero-image-tablet-image {
@@ -419,7 +421,7 @@ h6 {
 		cover;
 	background-position:
 		top center,
-		center 22%;
+		78% center;
 }
 
 .la-home-hero-image-blend,
