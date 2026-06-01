@@ -1174,7 +1174,7 @@ h6 {
   border-style: var(--tw-border-style);
   border-width: 1px;
   border-color: var(--color-white);
-  background-color: transparent;
+  background-color: var(--color-white);
   padding-inline: calc(var(--spacing) * 4);
   padding-top: calc(var(--spacing) * 10);
   padding-bottom: calc(var(--spacing) * 20);
@@ -1265,11 +1265,20 @@ h6 {
 }
 .la-article-header {
   margin-bottom: calc(var(--spacing) * 5);
+  border-bottom-style: var(--tw-border-style);
+  border-bottom-width: 1px;
+  border-color: var(--color-gray-200);
+  padding-bottom: calc(var(--spacing) * 5);
   text-align: center;
 }
 @media (width >= 48rem) {
   .la-article-header {
     margin-bottom: calc(var(--spacing) * 6);
+  }
+}
+@media (width >= 48rem) {
+  .la-article-header {
+    padding-bottom: calc(var(--spacing) * 6);
   }
 }
 .la-article-header h1 {

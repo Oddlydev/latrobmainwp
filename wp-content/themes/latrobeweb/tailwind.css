@@ -634,7 +634,7 @@ h6 {
 }
 
 .la-article-shell {
-	@apply mx-auto w-full max-w-[808px] overflow-hidden rounded-xl border border-white bg-transparent px-4 pt-10 pb-20 sm:px-6 md:pt-10 md:pb-20 lg:pt-14 lg:pb-24;
+	@apply mx-auto w-full max-w-[808px] overflow-hidden rounded-xl border border-white bg-white px-4 pt-10 pb-20 sm:px-6 md:pt-10 md:pb-20 lg:pt-14 lg:pb-24;
 }
 
 .la-wysiwyg-preview-frame {
@@ -650,7 +650,7 @@ h6 {
 }
 
 .la-article-header {
-	@apply mb-5 text-center md:mb-6;
+	@apply mb-5 border-b border-gray-200 pb-5 text-center md:mb-6 md:pb-6;
 }
 
 .la-article-header h1 {
