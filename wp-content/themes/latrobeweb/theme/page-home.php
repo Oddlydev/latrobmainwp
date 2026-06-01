@@ -52,7 +52,7 @@ get_header();
 					src="<?php echo $home_hero_desktop_display_url; ?>"
 					alt=""
 					aria-hidden="true"
-					class="la-home-hero-image-desktop absolute inset-y-0 right-0 hidden h-full w-full object-cover object-right <?php echo esc_attr( $home_hero_tablet_horizontal_display_url ? 'xl:block' : 'lg:block' ); ?> 2xl:w-full"
+					class="la-home-hero-image-desktop absolute inset-y-0 right-0 hidden h-full w-full object-cover object-right xl:block 2xl:w-full"
 				/>
 			<?php endif; ?>
 			<div
