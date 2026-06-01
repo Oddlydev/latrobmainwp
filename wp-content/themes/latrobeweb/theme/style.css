@@ -1192,32 +1192,32 @@ h6 {
     padding-bottom: calc(var(--spacing) * 5);
   }
 }
-@media (width >= 64rem) {
+@media (width >= 80rem) {
   .la-article-shell {
     margin-inline: auto;
   }
 }
-@media (width >= 64rem) {
+@media (width >= 80rem) {
   .la-article-shell {
     max-width: 808px;
   }
 }
-@media (width >= 64rem) {
+@media (width >= 80rem) {
   .la-article-shell {
     border-radius: var(--radius-xl);
   }
 }
-@media (width >= 64rem) {
+@media (width >= 80rem) {
   .la-article-shell {
     padding-inline: calc(var(--spacing) * 6);
   }
 }
-@media (width >= 64rem) {
+@media (width >= 80rem) {
   .la-article-shell {
     padding-top: calc(var(--spacing) * 14);
   }
 }
-@media (width >= 64rem) {
+@media (width >= 80rem) {
   .la-article-shell {
     padding-bottom: calc(var(--spacing) * 24);
   }
@@ -1249,28 +1249,32 @@ h6 {
     max-width: 100%;
   }
 }
-@media (width >= 64rem) {
+@media (width >= 80rem) {
   .la-wysiwyg-preview-frame {
     margin-inline: auto;
   }
 }
-@media (width >= 64rem) {
+@media (width >= 80rem) {
   .la-wysiwyg-preview-frame {
     margin-block: calc(var(--spacing) * 10);
   }
 }
-@media (width >= 64rem) {
+@media (width >= 80rem) {
   .la-wysiwyg-preview-frame {
     max-width: 860px;
   }
 }
-@media (width >= 64rem) {
+@media (width >= 80rem) {
   .la-wysiwyg-preview-frame {
     border-radius: var(--radius-3xl);
   }
 }
-
-@media (width >= 64rem) {
+@media (width >= 80rem) {
+  .la-wysiwyg-preview-frame {
+    background-color: var(--color-gray-200);
+  }
+}
+@media (width >= 80rem) {
   .la-wysiwyg-preview-frame {
     padding: calc(var(--spacing) * 5);
   }
