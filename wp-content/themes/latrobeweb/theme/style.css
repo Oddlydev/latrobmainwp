@@ -883,24 +883,29 @@ h6 {
 .la-home-hero-image-tablet-image {
   position: absolute;
   inset: calc(var(--spacing) * 0);
-  background-color: var(--color-brand-2);
-  background-image: linear-gradient(
-			to bottom,
-			rgb(255 255 255 / 1) 0%,
-			rgb(255 255 255 / 0.92) 8%,
-			rgb(255 255 255 / 0.78) 20%,
-			rgb(255 255 255 / 0.58) 35%,
-			rgb(255 255 255 / 0.38) 50%,
-			rgb(255 255 255 / 0.2) 65%,
-			rgb(255 255 255 / 0.08) 80%,
-			rgb(255 255 255 / 0) 100%
-		),
-		var(--la-hero-tablet-bg);
-  background-repeat: no-repeat;
-  background-size: 100% 10rem,
-		cover;
-  background-position: top center,
-		72% bottom;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 72% bottom;
+}
+.la-home-hero-image-tablet-overlay {
+  pointer-events: none;
+  position: absolute;
+  inset-inline: calc(var(--spacing) * 0);
+  top: calc(var(--spacing) * 0);
+  z-index: 1;
+  height: 10rem;
+  background: linear-gradient(
+		to bottom,
+		rgb(255 255 255 / 1) 0%,
+		rgb(255 255 255 / 0.92) 8%,
+		rgb(255 255 255 / 0.78) 20%,
+		rgb(255 255 255 / 0.58) 35%,
+		rgb(255 255 255 / 0.38) 50%,
+		rgb(255 255 255 / 0.2) 65%,
+		rgb(255 255 255 / 0.08) 80%,
+		rgb(255 255 255 / 0) 100%
+	);
 }
 .la-home-hero-image-blend,
 .la-home-hero-image-accent {
@@ -1366,6 +1371,10 @@ h6 {
 .la-wysiwyg ul li + li {
   margin-top: calc(var(--spacing) * 4);
 }
+.la-privacy-policy-page .la-wysiwyg ul li + li,
+.la-privacy-policy-page .la-wysiwyg ol li + li {
+  margin-top: calc(var(--spacing) * 2);
+}
 .la-wysiwyg ul li::before {
   content: "";
   position: absolute;
@@ -1391,6 +1400,21 @@ h6 {
 }
 .la-wysiwyg ol li::marker {
   color: var(--color-brand-1);
+}
+.la-privacy-policy-page .la-wysiwyg > :where(h1, h2, h3, h4):not(:first-child) {
+  margin-top: calc(var(--spacing) * 12);
+}
+.la-privacy-policy-page
+	.la-wysiwyg
+	> :where(
+		p,
+		ul,
+		ol,
+		blockquote,
+		.wp-block-quote,
+		.wp-block-pullquote
+	):not(:first-child) {
+  margin-top: calc(var(--spacing) * 10);
 }
 .la-wysiwyg :where(figure, .wp-block-image) {
   margin-inline: auto;
@@ -4658,6 +4682,11 @@ h6 {
   }
 }
 @media (width >= 64rem) {
+  .lg\:w-\[516px\] {
+    width: 516px;
+  }
+}
+@media (width >= 64rem) {
   .lg\:w-\[623px\] {
     width: 623px;
   }
@@ -4668,13 +4697,13 @@ h6 {
   }
 }
 @media (width >= 64rem) {
-  .lg\:max-w-\[25rem\] {
-    max-width: 25rem;
+  .lg\:max-w-\[32rem\] {
+    max-width: 32rem;
   }
 }
 @media (width >= 64rem) {
-  .lg\:max-w-\[32rem\] {
-    max-width: 32rem;
+  .lg\:max-w-\[516px\] {
+    max-width: 516px;
   }
 }
 @media (width >= 64rem) {

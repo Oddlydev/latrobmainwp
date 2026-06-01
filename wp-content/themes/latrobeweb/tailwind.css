@@ -407,28 +407,24 @@ h6 {
 }
 
 .la-home-hero-image-tablet-image {
-	@apply absolute inset-0;
-	background-color: var(--color-brand-2);
-	background-image:
-		linear-gradient(
-			to bottom,
-			rgb(255 255 255 / 1) 0%,
-			rgb(255 255 255 / 0.92) 8%,
-			rgb(255 255 255 / 0.78) 20%,
-			rgb(255 255 255 / 0.58) 35%,
-			rgb(255 255 255 / 0.38) 50%,
-			rgb(255 255 255 / 0.2) 65%,
-			rgb(255 255 255 / 0.08) 80%,
-			rgb(255 255 255 / 0) 100%
-		),
-		var(--la-hero-tablet-bg);
-	background-repeat: no-repeat;
-	background-size:
-		100% 10rem,
-		cover;
-	background-position:
-		top center,
-		72% bottom;
+	@apply absolute inset-0 h-full w-full object-cover;
+	object-position: 72% bottom;
+}
+
+.la-home-hero-image-tablet-overlay {
+	@apply pointer-events-none absolute inset-x-0 top-0 z-[1];
+	height: 10rem;
+	background: linear-gradient(
+		to bottom,
+		rgb(255 255 255 / 1) 0%,
+		rgb(255 255 255 / 0.92) 8%,
+		rgb(255 255 255 / 0.78) 20%,
+		rgb(255 255 255 / 0.58) 35%,
+		rgb(255 255 255 / 0.38) 50%,
+		rgb(255 255 255 / 0.2) 65%,
+		rgb(255 255 255 / 0.08) 80%,
+		rgb(255 255 255 / 0) 100%
+	);
 }
 
 .la-home-hero-image-blend,
@@ -710,6 +706,11 @@ h6 {
 	@apply mt-4;
 }
 
+.la-privacy-policy-page .la-wysiwyg ul li + li,
+.la-privacy-policy-page .la-wysiwyg ol li + li {
+	@apply mt-2;
+}
+
 .la-wysiwyg ul li::before {
 	content: "";
 	position: absolute;
@@ -737,6 +738,23 @@ h6 {
 
 .la-wysiwyg ol li::marker {
 	@apply text-brand-1;
+}
+
+.la-privacy-policy-page .la-wysiwyg > :where(h1, h2, h3, h4):not(:first-child) {
+	@apply mt-12;
+}
+
+.la-privacy-policy-page
+	.la-wysiwyg
+	> :where(
+		p,
+		ul,
+		ol,
+		blockquote,
+		.wp-block-quote,
+		.wp-block-pullquote
+	):not(:first-child) {
+	@apply mt-10;
 }
 
 .la-wysiwyg :where(figure, .wp-block-image) {

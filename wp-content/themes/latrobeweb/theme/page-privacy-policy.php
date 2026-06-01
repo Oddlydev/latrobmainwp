@@ -15,7 +15,7 @@ if ( have_posts() ) {
 $content = apply_filters( 'the_content', get_the_content() );
 ?>
 
-<div class="la-wysiwyg-preview-frame">
+<div class="la-wysiwyg-preview-frame la-privacy-policy-page">
 	<?php
 	latrobeweb_render_rich_text_article(
 		array(
