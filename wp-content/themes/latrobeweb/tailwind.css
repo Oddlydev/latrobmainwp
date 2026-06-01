@@ -369,12 +369,12 @@ h6 {
 /* Mobile — full image + top fade overlay */
 .la-home-hero-image-mobile-shell {
 	@apply relative z-0 block w-full overflow-hidden md:hidden;
-	height: clamp(17rem, 42vh, 22rem);
+	height: 40vh;
 }
 
 .la-home-hero-image-mobile {
 	@apply absolute inset-0 z-0 block h-full w-full max-w-none object-cover;
-	object-position: 72% bottom;
+	object-position: bottom;
 }
 
 .la-home-hero-image-mobile-overlay {
@@ -397,13 +397,14 @@ h6 {
 .la-home-hero-image-tablet-shell {
 	@apply relative z-0 w-full overflow-hidden;
 	margin-top: 0;
-	height: clamp(23rem, 46vh, 29rem);
+	height: 80vh;
 }
 
 .la-home-hero-image-tablet-image {
 	@apply absolute inset-0;
 	background-color: var(--color-brand-2);
-	background-image: linear-gradient(
+	background-image:
+		linear-gradient(
 			to bottom,
 			rgb(255 255 255 / 1) 0%,
 			rgb(255 255 255 / 0.92) 8%,

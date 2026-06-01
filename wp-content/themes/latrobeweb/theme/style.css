@@ -835,7 +835,7 @@ h6 {
   }
 }
 .la-home-hero-image-mobile-shell {
-  height: clamp(17rem, 42vh, 22rem);
+  height: 40vh;
 }
 .la-home-hero-image-mobile {
   position: absolute;
@@ -846,7 +846,7 @@ h6 {
   width: 100%;
   max-width: none;
   object-fit: cover;
-  object-position: 72% bottom;
+  object-position: bottom;
 }
 .la-home-hero-image-mobile-overlay {
   pointer-events: none;
