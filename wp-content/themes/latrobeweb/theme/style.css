@@ -873,7 +873,7 @@ h6 {
   width: 100%;
   overflow: hidden;
   margin-top: 0;
-  height: clamp(23rem, 46vh, 29rem);
+  height: 80vh;
 }
 .la-home-hero-image-tablet-image {
   position: absolute;
