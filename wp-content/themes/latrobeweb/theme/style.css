@@ -2772,9 +2772,6 @@ h6 {
 .w-\[56px\] {
   width: 56px;
 }
-.w-\[58\%\] {
-  width: 58%;
-}
 .w-\[69px\] {
   width: 69px;
 }
@@ -5167,11 +5164,6 @@ h6 {
   }
 }
 @media (width >= 80rem) {
-  .xl\:w-\[60\%\] {
-    width: 60%;
-  }
-}
-@media (width >= 80rem) {
   .xl\:w-fit {
     width: fit-content;
   }
@@ -5333,11 +5325,6 @@ h6 {
   .xl\:leading-8 {
     --tw-leading: calc(var(--spacing) * 8);
     line-height: calc(var(--spacing) * 8);
-  }
-}
-@media (width >= 96rem) {
-  .\32 xl\:w-\[100\%\] {
-    width: 100%;
   }
 }
 .prose-a\:text-primary :is(a):not(:where([class~='not-prose'],[class~='not-prose'] *)) {

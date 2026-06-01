@@ -13,6 +13,7 @@
 /**
  * Add the WordPress file header.
  */
+/* Source file only. Generated CSS is written to `theme/style.css`. */
 @import "./tailwind/custom/file-header.css";
 
 /**
