@@ -4826,6 +4826,11 @@ h6 {
   }
 }
 @media (width >= 64rem) {
+  .lg\:object-right {
+    object-position: right;
+  }
+}
+@media (width >= 64rem) {
   .lg\:p-0 {
     padding: calc(var(--spacing) * 0);
   }
@@ -5307,6 +5312,11 @@ h6 {
   .xl\:border-\[3px\] {
     border-style: var(--tw-border-style);
     border-width: 3px;
+  }
+}
+@media (width >= 80rem) {
+  .xl\:\[object-position\:78\%_center\] {
+    object-position: 78% center;
   }
 }
 @media (width >= 80rem) {
