@@ -378,6 +378,12 @@ h6 {
 	}
 }
 
+@media (min-width: 768px) {
+	.la-home-hero-image-mobile-shell {
+		display: none !important;
+	}
+}
+
 .la-home-hero-image-mobile {
 	@apply absolute inset-0 z-0 block h-full w-full max-w-none object-cover;
 	object-position: bottom;
@@ -402,8 +408,21 @@ h6 {
 /* Tablet (md–lg) — gradient baked into image layer top (no overlay box seam) */
 .la-home-hero-image-tablet-shell {
 	@apply relative z-0 w-full overflow-hidden;
+	display: none;
 	margin-top: 0;
 	height: 80vh;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	.la-home-hero-image-tablet-shell {
+		display: block !important;
+	}
+}
+
+@media (min-width: 1024px) {
+	.la-home-hero-image-tablet-shell {
+		display: none !important;
+	}
 }
 
 .la-home-hero-image-tablet-image {
