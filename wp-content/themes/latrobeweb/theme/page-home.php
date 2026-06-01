@@ -42,7 +42,7 @@ get_header();
 				aria-hidden="true"
 				class="la-home-hero-desktop-overlay pointer-events-none absolute inset-y-0 left-0 hidden h-full lg:block"
 			></div>
-			<div class="la-home-hero-text-layer relative z-10 px-6 pt-10 pb-0 md:px-10 md:pt-10 md:pb-0 lg:max-w-[716px] lg:pr-10 lg:pt-[11.0625rem] lg:pb-[11.0625rem] lg:pl-[9.375rem]">
+			<div class="la-home-hero-text-layer relative z-10 px-6 pt-10 pb-0 md:px-10 md:pt-10 md:pb-0 xl:max-w-[716px] lg:pr-10 lg:pt-[11.0625rem] lg:pb-[11.0625rem] lg:pl-[4rem]">
 				<div class="w-full">
 					<p class="body-xs-500 md:body-base-500 inline-flex max-w-full items-center gap-2 whitespace-normal rounded-full border border-gray-300 bg-white px-4 py-2 text-black shadow-sm">
 						<span class="h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse"></span>
@@ -53,7 +53,7 @@ get_header();
 							<span class="block lg:whitespace-nowrap"><?php echo esc_html( get_field( 'home_hero_section_title' ) ); ?></span>
 							<span class="mt-1 block text-brand-1 md:mt-0 md:inline lg:block lg:whitespace-nowrap"><?php echo esc_html( get_field( 'home_hero_section_title_highlighted_text' ) ); ?></span>
 						</h1>
-						<p class="body-base-400 max-w-full pt-0 text-gray-600 md:w-full md:max-w-full md:pt-0 lg:w-[616px] lg:max-w-[616px] lg:pt-0">
+						<p class="body-base-400 max-w-full pt-0 text-gray-600 md:w-full md:max-w-full md:pt-0 lg:w-[400px] lg:max-w-[400px] xl:w-[616px] xl:max-w-[616px] lg:pt-0">
 							<?php echo esc_html( get_field( 'home_hero_section_description' ) ); ?>
 						</p>
 					</div>
