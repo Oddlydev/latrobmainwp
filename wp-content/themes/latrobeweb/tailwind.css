@@ -638,7 +638,7 @@ h6 {
 }
 
 .la-wysiwyg-preview-frame {
-	@apply mx-4 my-6 rounded-3xl bg-gray-200 p-5 sm:mx-auto sm:my-8 sm:w-full sm:max-w-[860px] lg:my-10;
+	@apply mx-4 my-6 p-5 sm:mx-auto sm:my-8 sm:w-full sm:max-w-[860px] lg:my-10;
 }
 
 .la-wysiwyg-preview-frame .la-article-shell {
@@ -765,14 +765,9 @@ h6 {
 
 .la-privacy-policy-page
 	.la-wysiwyg
-	> :where(
-		p,
-		ul,
-		ol,
-		blockquote,
-		.wp-block-quote,
-		.wp-block-pullquote
-	):not(:first-child) {
+	> :where(p, ul, ol, blockquote, .wp-block-quote, .wp-block-pullquote):not(
+		:first-child
+	) {
 	@apply mt-5;
 }
 
