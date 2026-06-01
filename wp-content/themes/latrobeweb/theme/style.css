@@ -837,6 +837,11 @@ h6 {
 .la-home-hero-image-mobile-shell {
   height: 50vh;
 }
+@media (min-width: 490px) and (max-width: 767px) {
+  .la-home-hero-image-mobile-shell {
+    height: 90vh;
+  }
+}
 .la-home-hero-image-mobile {
   position: absolute;
   inset: calc(var(--spacing) * 0);
@@ -3234,6 +3239,9 @@ h6 {
 .object-center {
   object-position: center;
 }
+.object-right {
+  object-position: right;
+}
 .p-0 {
   padding: calc(var(--spacing) * 0);
 }
@@ -4640,8 +4648,8 @@ h6 {
   }
 }
 @media (width >= 64rem) {
-  .lg\:w-\[64\%\] {
-    width: 64%;
+  .lg\:w-\[48\%\] {
+    width: 48%;
   }
 }
 @media (width >= 64rem) {
@@ -4825,11 +4833,6 @@ h6 {
 @media (width >= 64rem) {
   .lg\:bg-white {
     background-color: var(--color-white);
-  }
-}
-@media (width >= 64rem) {
-  .lg\:object-right {
-    object-position: right;
   }
 }
 @media (width >= 64rem) {
@@ -5152,8 +5155,18 @@ h6 {
   }
 }
 @media (width >= 80rem) {
+  .xl\:block {
+    display: block;
+  }
+}
+@media (width >= 80rem) {
   .xl\:flex {
     display: flex;
+  }
+}
+@media (width >= 80rem) {
+  .xl\:hidden {
+    display: none;
   }
 }
 @media (width >= 80rem) {

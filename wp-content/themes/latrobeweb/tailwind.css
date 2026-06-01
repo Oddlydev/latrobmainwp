@@ -372,6 +372,12 @@ h6 {
 	height: 50vh;
 }
 
+@media (min-width: 490px) and (max-width: 767px) {
+	.la-home-hero-image-mobile-shell {
+		height: 90vh;
+	}
+}
+
 .la-home-hero-image-mobile {
 	@apply absolute inset-0 z-0 block h-full w-full max-w-none object-cover;
 	object-position: bottom;
