@@ -641,6 +641,10 @@ h6 {
 	@apply m-0 w-full max-w-full bg-transparent p-0 sm:m-0 sm:max-w-full md:m-0 md:max-w-full xl:my-10 xl:mx-auto xl:max-w-[860px] xl:rounded-3xl xl:bg-gray-200 xl:p-5;
 }
 
+.la-wysiwyg-preview-frame:not(.la-privacy-policy-page) {
+	@apply lg:p-11;
+}
+
 .la-article {
 	@apply w-full;
 }

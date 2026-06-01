@@ -1279,6 +1279,11 @@ h6 {
     padding: calc(var(--spacing) * 5);
   }
 }
+@media (width >= 64rem) {
+  .la-wysiwyg-preview-frame:not(.la-privacy-policy-page) {
+    padding: calc(var(--spacing) * 11);
+  }
+}
 .la-article {
   width: 100%;
 }
