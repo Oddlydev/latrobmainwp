@@ -650,7 +650,7 @@ h6 {
 }
 
 .la-article-header {
-	@apply mb-10 text-center md:mb-12;
+	@apply mb-5 text-center md:mb-6;
 }
 
 .la-article-header h1 {
@@ -658,7 +658,7 @@ h6 {
 }
 
 .la-article-meta {
-	@apply body-sm-400 mt-3 inline-flex items-center justify-center gap-3 text-gray-500;
+	@apply body-sm-400 mt-2 inline-flex items-center justify-center gap-1.5 text-gray-500;
 }
 
 .la-article-meta-separator {
@@ -670,7 +670,7 @@ h6 {
 }
 
 .la-wysiwyg > :where(h1, h2, h3, h4):not(:first-child) {
-	@apply mt-12 md:mt-14;
+	@apply mt-6;
 }
 
 .la-wysiwyg
@@ -684,11 +684,11 @@ h6 {
 		.wp-block-quote,
 		.wp-block-pullquote
 	):not(:first-child) {
-	@apply mt-6;
+	@apply mt-5;
 }
 
 .la-wysiwyg > :where(figure, .wp-block-image):not(:first-child) {
-	@apply mt-8;
+	@apply mt-5;
 }
 
 .la-wysiwyg :where(p, li) {
@@ -760,7 +760,7 @@ h6 {
 }
 
 .la-privacy-policy-page .la-wysiwyg > :where(h1, h2, h3, h4):not(:first-child) {
-	@apply mt-12;
+	@apply mt-6;
 }
 
 .la-privacy-policy-page
@@ -773,7 +773,7 @@ h6 {
 		.wp-block-quote,
 		.wp-block-pullquote
 	):not(:first-child) {
-	@apply mt-10;
+	@apply mt-5;
 }
 
 .la-wysiwyg :where(figure, .wp-block-image) {

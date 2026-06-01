@@ -1261,23 +1261,23 @@ h6 {
   width: 100%;
 }
 .la-article-header {
-  margin-bottom: calc(var(--spacing) * 10);
+  margin-bottom: calc(var(--spacing) * 5);
   text-align: center;
 }
 @media (width >= 48rem) {
   .la-article-header {
-    margin-bottom: calc(var(--spacing) * 12);
+    margin-bottom: calc(var(--spacing) * 6);
   }
 }
 .la-article-header h1 {
   text-align: center;
 }
 .la-article-meta {
-  margin-top: calc(var(--spacing) * 3);
+  margin-top: calc(var(--spacing) * 2);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: calc(var(--spacing) * 3);
+  gap: calc(var(--spacing) * 1.5);
   font-family: var(--font-sans);
   font-feature-settings: "dlig" on;
   font-size: var(--text-sm);
@@ -1301,12 +1301,7 @@ h6 {
   color: var(--color-gray-500);
 }
 .la-wysiwyg > :where(h1, h2, h3, h4):not(:first-child) {
-  margin-top: calc(var(--spacing) * 12);
-}
-@media (width >= 48rem) {
-  .la-wysiwyg > :where(h1, h2, h3, h4):not(:first-child) {
-    margin-top: calc(var(--spacing) * 14);
-  }
+  margin-top: calc(var(--spacing) * 6);
 }
 .la-wysiwyg
 	> :where(
@@ -1319,10 +1314,10 @@ h6 {
 		.wp-block-quote,
 		.wp-block-pullquote
 	):not(:first-child) {
-  margin-top: calc(var(--spacing) * 6);
+  margin-top: calc(var(--spacing) * 5);
 }
 .la-wysiwyg > :where(figure, .wp-block-image):not(:first-child) {
-  margin-top: calc(var(--spacing) * 8);
+  margin-top: calc(var(--spacing) * 5);
 }
 .la-wysiwyg :where(p, li) {
   font-family: var(--font-sans);
@@ -1418,7 +1413,7 @@ h6 {
   color: var(--color-brand-1);
 }
 .la-privacy-policy-page .la-wysiwyg > :where(h1, h2, h3, h4):not(:first-child) {
-  margin-top: calc(var(--spacing) * 12);
+  margin-top: calc(var(--spacing) * 6);
 }
 .la-privacy-policy-page
 	.la-wysiwyg
@@ -1430,7 +1425,7 @@ h6 {
 		.wp-block-quote,
 		.wp-block-pullquote
 	):not(:first-child) {
-  margin-top: calc(var(--spacing) * 10);
+  margin-top: calc(var(--spacing) * 5);
 }
 .la-wysiwyg :where(figure, .wp-block-image) {
   margin-inline: auto;
