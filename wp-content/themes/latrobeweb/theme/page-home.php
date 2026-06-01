@@ -36,29 +36,29 @@ get_header();
 				src="<?php echo esc_url( $home_hero_image_row['home_hero_section_desktop_image'] ?? '' ); ?>"
 				alt=""
 				aria-hidden="true"
-				class="la-home-hero-image-desktop absolute inset-y-0 right-0 hidden h-full w-full object-cover lg:block"
+				class="la-home-hero-image-desktop absolute inset-y-0 right-0 hidden h-full object-cover lg:block lg:w-[52%] xl:w-[60%] 2xl:w-full"
 			/>
 			<div
 				aria-hidden="true"
-				class="la-home-hero-desktop-overlay pointer-events-none absolute inset-y-0 left-0 hidden h-full lg:block"
+				class="la-home-hero-desktop-overlay pointer-events-none absolute inset-y-0 left-0 hidden h-full lg:block lg:w-[64%] xl:w-[52%]"
 			></div>
-			<div class="la-home-hero-text-layer relative z-10 px-6 pt-10 pb-0 md:px-10 md:pt-10 md:pb-0 xl:max-w-[716px] lg:pr-10 lg:pt-[11.0625rem] lg:pb-[11.0625rem] lg:pl-[4rem]">
+			<div class="la-home-hero-text-layer relative z-10 px-6 pt-10 pb-0 md:px-10 md:pt-10 md:pb-0 lg:max-w-[32rem] lg:px-10 lg:pt-[4.5rem] lg:pb-[4.5rem] xl:max-w-[716px] xl:pr-10 xl:pt-[11.0625rem] xl:pb-[11.0625rem] xl:pl-[4rem]">
 				<div class="w-full">
 					<p class="body-xs-500 md:body-base-500 inline-flex max-w-full items-center gap-2 whitespace-normal rounded-full border border-gray-300 bg-white px-4 py-2 text-black shadow-sm">
 						<span class="h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse"></span>
 						<?php echo esc_html( get_field( 'home_hero_section_label_text' ) ); ?>
 					</p>
 					<div class="mt-5 space-y-4 md:mt-5 md:space-y-5 lg:mt-12 lg:space-y-6">
-						<h1 class="font-display text-4xl leading-[110%] font-bold tracking-normal text-black md:font-black lg:text-[60px] lg:font-black">
+						<h1 class="font-display text-4xl leading-[110%] font-bold tracking-normal text-black md:font-black lg:text-[3rem] lg:leading-[1.08] lg:font-black xl:text-[60px] xl:leading-[110%]">
 							<span class="block lg:whitespace-nowrap"><?php echo esc_html( get_field( 'home_hero_section_title' ) ); ?></span>
 							<span class="mt-1 block text-brand-1 md:mt-0 md:inline lg:block lg:whitespace-nowrap"><?php echo esc_html( get_field( 'home_hero_section_title_highlighted_text' ) ); ?></span>
 						</h1>
-						<p class="body-base-400 max-w-full pt-0 text-gray-600 md:w-full md:max-w-full md:pt-0 lg:w-[400px] lg:max-w-[400px] xl:w-[616px] xl:max-w-[616px] lg:pt-0">
+						<p class="body-base-400 max-w-full pt-0 text-gray-600 md:w-full md:max-w-full md:pt-0 lg:w-full lg:max-w-[25rem] lg:text-base lg:leading-7 xl:w-[616px] xl:max-w-[616px] lg:pt-0">
 							<?php echo esc_html( get_field( 'home_hero_section_description' ) ); ?>
 						</p>
 					</div>
 				</div>
-				<div class="mt-5 flex flex-wrap gap-4 pb-5 md:pb-0 lg:mt-12 lg:pb-0">
+				<div class="mt-5 flex flex-wrap gap-4 pb-5 md:pb-0 lg:mt-8 lg:pb-0 xl:mt-12">
 					<?php
 					latrobeweb_component(
 						'button',

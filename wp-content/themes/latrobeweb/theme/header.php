@@ -21,7 +21,7 @@
 	<a href="#content" class="sr-only"><?php esc_html_e( 'Skip to content', 'latrobeweb' ); ?></a>
 
 	<header id="masthead" class="border-b border-gray-200 bg-gradient-1 text-white shadow-md">
-		<div class="px-4 py-4 lg:px-12 lg:py-4">
+		<div class="px-4 py-4 lg:px-6 xl:px-12 lg:py-4">
 			<div class="flex items-center justify-between gap-4 lg:hidden">
 				<?php latrobeweb_site_brand( array( 'title' => 'PCAT', 'subtitle' => 'Palliative Care Assessment Tool', 'logo_width_class' => 'w-[51px]' ) ); ?>
 
