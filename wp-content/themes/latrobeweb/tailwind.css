@@ -654,7 +654,7 @@ h6 {
 }
 
 .la-article-header h1 {
-	@apply text-center;
+	@apply font-display text-center text-[1.875rem] leading-[110%] font-black tracking-tighter text-black md:text-[2.5rem] md:font-bold md:tracking-normal lg:text-[3.75rem] lg:leading-[110%];
 }
 
 .la-article-meta {
@@ -692,7 +692,7 @@ h6 {
 }
 
 .la-wysiwyg :where(p, li) {
-	@apply body-copy-400 text-gray-500;
+	@apply font-dlig font-sans text-[15px] leading-7 font-normal tracking-normal text-gray-500 md:text-base md:leading-7;
 }
 
 .la-wysiwyg p {
@@ -700,11 +700,11 @@ h6 {
 }
 
 .la-wysiwyg :where(strong, b) {
-	@apply body-copy-600 text-black;
+	@apply font-dlig font-sans text-[15px] leading-7 font-semibold tracking-normal text-black md:text-base md:leading-7;
 }
 
 .la-wysiwyg a {
-	@apply body-copy-500 text-brand-1 underline decoration-solid decoration-[0.095em] underline-offset-[25%];
+	@apply font-dlig font-sans text-[15px] leading-7 font-medium tracking-normal text-brand-1 underline decoration-solid decoration-[0.095em] underline-offset-[25%] md:text-base md:leading-7;
 	text-decoration-skip-ink: none;
 	text-underline-position: from-font;
 }
@@ -757,6 +757,18 @@ h6 {
 
 .la-wysiwyg ol li::marker {
 	@apply text-brand-1;
+}
+
+.la-wysiwyg h2 {
+	@apply font-display text-[1.875rem] leading-[110%] font-black tracking-tighter text-black md:text-[2rem] md:font-bold md:tracking-normal lg:text-[2.25rem] lg:leading-[110%];
+}
+
+.la-wysiwyg h3 {
+	@apply font-display text-2xl leading-8 font-black tracking-tighter text-black md:text-[1.75rem] md:leading-9 md:tracking-normal lg:text-[1.875rem];
+}
+
+.la-wysiwyg h4 {
+	@apply font-display text-xl leading-7 font-bold tracking-tighter text-black md:text-2xl md:leading-8 md:tracking-normal;
 }
 
 .la-privacy-policy-page .la-wysiwyg > :where(h1, h2, h3, h4):not(:first-child) {
