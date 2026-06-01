@@ -36,7 +36,7 @@ get_header();
 		// Older repeater rows may not have the newer tablet-specific fields populated yet.
 		$home_hero_mobile_display_url            = $home_hero_mobile_url ?: $home_hero_tablet_url ?: $home_hero_desktop_url;
 		$home_hero_tablet_display_url            = $home_hero_tablet_url ?: $home_hero_mobile_url ?: $home_hero_desktop_url;
-		$home_hero_tablet_horizontal_display_url = $home_hero_tablet_horizontal_url ?: $home_hero_desktop_url ?: $home_hero_tablet_url;
+		$home_hero_tablet_horizontal_display_url = $home_hero_tablet_horizontal_url;
 		$home_hero_desktop_display_url           = $home_hero_desktop_url ?: $home_hero_tablet_horizontal_url ?: $home_hero_tablet_url;
 		?>
 		<div class="relative overflow-hidden border border-gray-200 bg-white text-black shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
