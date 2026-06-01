@@ -65,7 +65,7 @@ get_header();
 							<span class="block lg:whitespace-nowrap"><?php echo esc_html( get_field( 'home_hero_section_title' ) ); ?></span>
 							<span class="mt-1 block text-brand-1 md:mt-0 md:inline lg:block lg:whitespace-nowrap"><?php echo esc_html( get_field( 'home_hero_section_title_highlighted_text' ) ); ?></span>
 						</h1>
-						<p class="body-base-400 max-w-full pt-0 text-gray-600 md:w-full md:max-w-full md:pt-0 lg:w-full lg:max-w-[25rem] lg:text-base lg:leading-7 xl:w-[616px] xl:max-w-[616px] lg:pt-0">
+						<p class="body-base-400 max-w-full pt-0 text-gray-600 md:w-full md:max-w-full md:pt-0 lg:w-full lg:max-w-[516px] lg:w-[516px] lg:text-base lg:leading-7 xl:w-[616px] xl:max-w-[616px] lg:pt-0">
 							<?php echo esc_html( get_field( 'home_hero_section_description' ) ); ?>
 						</p>
 					</div>
