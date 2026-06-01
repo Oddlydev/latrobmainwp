@@ -645,6 +645,10 @@ h6 {
 	@apply lg:p-11;
 }
 
+.la-privacy-policy-page .la-article-shell {
+	@apply lg:p-11;
+}
+
 .la-article {
 	@apply w-full;
 }

@@ -1264,23 +1264,14 @@ h6 {
     max-width: 860px;
   }
 }
-@media (width >= 80rem) {
-  .la-wysiwyg-preview-frame {
-    border-radius: var(--radius-3xl);
-  }
-}
-@media (width >= 80rem) {
-  .la-wysiwyg-preview-frame {
-    background-color: var(--color-gray-200);
-  }
-}
-@media (width >= 80rem) {
-  .la-wysiwyg-preview-frame {
-    padding: calc(var(--spacing) * 5);
+
+@media (width >= 64rem) {
+  .la-wysiwyg-preview-frame:not(.la-privacy-policy-page) {
+    padding: calc(var(--spacing) * 11);
   }
 }
 @media (width >= 64rem) {
-  .la-wysiwyg-preview-frame:not(.la-privacy-policy-page) {
+  .la-privacy-policy-page .la-article-shell {
     padding: calc(var(--spacing) * 11);
   }
 }
