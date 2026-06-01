@@ -369,7 +369,7 @@ h6 {
 /* Mobile — full image + top fade overlay */
 .la-home-hero-image-mobile-shell {
 	@apply relative z-0 block w-full overflow-hidden md:hidden;
-	height: 40vh;
+	height: 50vh;
 }
 
 .la-home-hero-image-mobile {
