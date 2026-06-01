@@ -30,17 +30,29 @@ get_header();
 
 		$home_hero_mobile_url = $resolve_hero_image_url( $home_hero_image_row['home_hero_section_mobile_image'] ?? '' );
 		$home_hero_tablet_url = $resolve_hero_image_url( $home_hero_image_row['home_hero_section_tablet_image'] ?? '' );
+		$home_hero_tablet_horizontal_url = $resolve_hero_image_url( $home_hero_image_row['home_hero_section_tablet_horizontal_image'] ?? '' );
+		$home_hero_desktop_url           = $resolve_hero_image_url( $home_hero_image_row['home_hero_section_desktop_image'] ?? '' );
 		?>
 		<div class="relative overflow-hidden border border-gray-200 bg-white text-black shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
-			<img
-				src="<?php echo esc_url( $home_hero_image_row['home_hero_section_desktop_image'] ?? '' ); ?>"
-				alt=""
-				aria-hidden="true"
-				class="la-home-hero-image-desktop absolute inset-y-0 right-0 hidden h-full object-cover lg:block w-full lg:object-right  2xl:w-full"
-			/>
+			<?php if ( $home_hero_tablet_horizontal_url ) : ?>
+				<img
+					src="<?php echo $home_hero_tablet_horizontal_url; ?>"
+					alt=""
+					aria-hidden="true"
+					class="la-home-hero-image-desktop absolute inset-y-0 right-0 hidden h-full w-full object-cover object-right lg:block xl:hidden"
+				/>
+			<?php endif; ?>
+			<?php if ( $home_hero_desktop_url ) : ?>
+				<img
+					src="<?php echo $home_hero_desktop_url; ?>"
+					alt=""
+					aria-hidden="true"
+					class="la-home-hero-image-desktop absolute inset-y-0 right-0 hidden h-full w-full object-cover object-right <?php echo esc_attr( $home_hero_tablet_horizontal_url ? 'xl:block' : 'lg:block' ); ?> 2xl:w-full"
+				/>
+			<?php endif; ?>
 			<div
 				aria-hidden="true"
-				class="la-home-hero-desktop-overlay pointer-events-none absolute inset-y-0 left-0 hidden h-full lg:block lg:w-[64%] xl:w-[52%]"
+				class="la-home-hero-desktop-overlay pointer-events-none absolute inset-y-0 left-0 hidden h-full lg:block lg:w-[48%] xl:w-[52%]"
 			></div>
 			<div class="la-home-hero-text-layer relative z-10 px-6 pt-10 pb-0 md:px-10 md:pt-10 md:pb-0 lg:max-w-[32rem] lg:px-10 lg:pt-[4.5rem] lg:pb-[4.5rem] xl:max-w-[716px] xl:pr-10 xl:pt-[11.0625rem] xl:pb-[11.0625rem] xl:pl-[4rem]">
 				<div class="w-full">
