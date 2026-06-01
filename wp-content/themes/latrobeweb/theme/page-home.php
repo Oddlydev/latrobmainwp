@@ -36,7 +36,7 @@ get_header();
 				src="<?php echo esc_url( $home_hero_image_row['home_hero_section_desktop_image'] ?? '' ); ?>"
 				alt=""
 				aria-hidden="true"
-				class="la-home-hero-image-desktop absolute inset-y-0 right-0 hidden h-full object-cover lg:block lg:w-[52%] lg:object-right xl:w-[60%] xl:[object-position:78%_center] 2xl:w-full"
+				class="la-home-hero-image-desktop absolute inset-y-0 right-0 hidden h-full object-cover lg:block w-full lg:object-right  2xl:w-full"
 			/>
 			<div
 				aria-hidden="true"
