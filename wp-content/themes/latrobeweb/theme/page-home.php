@@ -37,14 +37,59 @@ get_header();
 		$home_hero_tablet_display_url            = $home_hero_tablet_url;
 		$home_hero_tablet_horizontal_display_url = $home_hero_tablet_horizontal_url;
 		$home_hero_desktop_display_url           = $home_hero_desktop_url;
+
+		$home_hero_shell_style_parts = array();
+		if ( $home_hero_mobile_display_url ) {
+			$home_hero_shell_style_parts[] = "--la-home-hero-mobile-image:url('{$home_hero_mobile_display_url}')";
+			$home_hero_shell_style_parts[] = "background-image:url('{$home_hero_mobile_display_url}')";
+		}
+		if ( $home_hero_tablet_display_url ) {
+			$home_hero_shell_style_parts[] = "--la-home-hero-tablet-image:url('{$home_hero_tablet_display_url}')";
+		}
+		if ( $home_hero_tablet_horizontal_display_url ) {
+			$home_hero_shell_style_parts[] = "--la-home-hero-tablet-horizontal-image:url('{$home_hero_tablet_horizontal_display_url}')";
+		}
+		if ( $home_hero_desktop_display_url ) {
+			$home_hero_shell_style_parts[] = "--la-home-hero-desktop-image:url('{$home_hero_desktop_display_url}')";
+		}
+		$home_hero_shell_style = implode( ';', $home_hero_shell_style_parts );
 		?>
-		<div class="relative overflow-hidden border border-gray-200 bg-white text-black shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
+		<style>
+			.la-home-hero-shell {
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+
+			@media (min-width: 768px) {
+				.la-home-hero-shell {
+					background-image: var(--la-home-hero-tablet-image, var(--la-home-hero-mobile-image));
+				}
+			}
+
+			@media (min-width: 1024px) {
+				.la-home-hero-shell {
+					background-image: var(--la-home-hero-tablet-horizontal-image, var(--la-home-hero-tablet-image, var(--la-home-hero-mobile-image)));
+					background-position: right center;
+				}
+			}
+
+			@media (min-width: 1280px) {
+				.la-home-hero-shell {
+					background-image: var(--la-home-hero-desktop-image, var(--la-home-hero-tablet-horizontal-image, var(--la-home-hero-tablet-image, var(--la-home-hero-mobile-image))));
+				}
+			}
+		</style>
+		<div class="la-home-hero-shell" <?php echo $home_hero_shell_style ? 'style="' . esc_attr( $home_hero_shell_style ) . '"' : ''; ?>>
 			<?php if ( $home_hero_tablet_horizontal_display_url ) : ?>
 				<img
 					src="<?php echo $home_hero_tablet_horizontal_display_url; ?>"
 					alt=""
 					aria-hidden="true"
 					class="la-home-hero-image-desktop absolute inset-y-0 right-0 hidden h-full w-full object-cover object-right lg:block xl:hidden"
+					loading="eager"
+					fetchpriority="high"
+					decoding="sync"
 				/>
 			<?php endif; ?>
 			<?php if ( $home_hero_desktop_display_url ) : ?>
@@ -53,6 +98,9 @@ get_header();
 					alt=""
 					aria-hidden="true"
 					class="la-home-hero-image-desktop absolute inset-y-0 right-0 hidden h-full w-full object-cover object-right xl:block 2xl:w-full"
+					loading="eager"
+					fetchpriority="high"
+					decoding="sync"
 				/>
 			<?php endif; ?>
 			<div
@@ -105,11 +153,13 @@ get_header();
 			<?php if ( $home_hero_mobile_display_url ) : ?>
 				<div class="la-home-hero-image-mobile-shell md:hidden">
 					<img
-						src="<?php echo $home_hero_mobile_display_url; ?>"
-						alt=""
-						aria-hidden="true"
-						class="la-home-hero-image-mobile"
-						decoding="async"
+					src="<?php echo $home_hero_mobile_display_url; ?>"
+					alt=""
+					aria-hidden="true"
+					class="la-home-hero-image-mobile"
+					loading="eager"
+					fetchpriority="high"
+					decoding="sync"
 					/>
 					<div class="la-home-hero-image-mobile-overlay" aria-hidden="true"></div>
 				</div>
@@ -121,7 +171,9 @@ get_header();
 						alt=""
 						aria-hidden="true"
 						class="la-home-hero-image-tablet-image"
-						decoding="async"
+						loading="eager"
+						fetchpriority="high"
+						decoding="sync"
 					/>
 					<div class="la-home-hero-image-tablet-overlay" aria-hidden="true"></div>
 				</div>
