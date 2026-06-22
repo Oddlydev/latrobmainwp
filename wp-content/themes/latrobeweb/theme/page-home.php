@@ -15,8 +15,6 @@ get_header();
 		<?php $home_hero_section_images = (array) get_field( 'home_hero_section_images' ); ?>
 		<?php $home_hero_image_rows = $home_hero_section_images['home_hero_section_images'] ?? array(); ?>
 		<?php
-		$home_hero_image_row = ! empty( $home_hero_image_rows ) ? $home_hero_image_rows[ array_rand( $home_hero_image_rows ) ] : array();
-
 		$resolve_hero_image_url = static function ( $image ) {
 			if ( is_array( $image ) && ! empty( $image['url'] ) ) {
 				return esc_url( $image['url'] );
@@ -28,10 +26,25 @@ get_header();
 			return $image ? esc_url( (string) $image ) : '';
 		};
 
-		$home_hero_mobile_url            = $resolve_hero_image_url( $home_hero_image_row['home_hero_section_mobile_image'] ?? '' );
-		$home_hero_tablet_url            = $resolve_hero_image_url( $home_hero_image_row['home_hero_section_tablet_image'] ?? '' );
-		$home_hero_tablet_horizontal_url = $resolve_hero_image_url( $home_hero_image_row['home_hero_section_tablet_horizontal_image'] ?? '' );
-		$home_hero_desktop_url           = $resolve_hero_image_url( $home_hero_image_row['home_hero_section_desktop_image'] ?? '' );
+		$home_hero_image_sets = array();
+		foreach ( $home_hero_image_rows as $home_hero_image_row ) {
+			$home_hero_image_set = array(
+				'mobile'            => $resolve_hero_image_url( $home_hero_image_row['home_hero_section_mobile_image'] ?? '' ),
+				'tablet'            => $resolve_hero_image_url( $home_hero_image_row['home_hero_section_tablet_image'] ?? '' ),
+				'tablet_horizontal' => $resolve_hero_image_url( $home_hero_image_row['home_hero_section_tablet_horizontal_image'] ?? '' ),
+				'desktop'           => $resolve_hero_image_url( $home_hero_image_row['home_hero_section_desktop_image'] ?? '' ),
+			);
+
+			if ( array_filter( $home_hero_image_set ) ) {
+				$home_hero_image_sets[] = $home_hero_image_set;
+			}
+		}
+
+		$home_hero_fallback_images = $home_hero_image_sets[0] ?? array();
+		$home_hero_mobile_url      = $home_hero_fallback_images['mobile'] ?? '';
+		$home_hero_tablet_url      = $home_hero_fallback_images['tablet'] ?? '';
+		$home_hero_tablet_horizontal_url = $home_hero_fallback_images['tablet_horizontal'] ?? '';
+		$home_hero_desktop_url     = $home_hero_fallback_images['desktop'] ?? '';
 
 		$home_hero_mobile_display_url            = $home_hero_mobile_url;
 		$home_hero_tablet_display_url            = $home_hero_tablet_url;
@@ -53,6 +66,7 @@ get_header();
 			$home_hero_shell_style_parts[] = "--la-home-hero-desktop-image:url('{$home_hero_desktop_display_url}')";
 		}
 		$home_hero_shell_style = implode( ';', $home_hero_shell_style_parts );
+		$home_hero_images_json = wp_json_encode( $home_hero_image_sets, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
 		?>
 		<style>
 			.la-home-hero-shell {
@@ -80,9 +94,10 @@ get_header();
 				}
 			}
 		</style>
-		<div class="la-home-hero-shell" <?php echo $home_hero_shell_style ? 'style="' . esc_attr( $home_hero_shell_style ) . '"' : ''; ?>>
+		<div id="la-home-hero-shell" class="la-home-hero-shell" <?php echo $home_hero_shell_style ? 'style="' . esc_attr( $home_hero_shell_style ) . '"' : ''; ?>>
 			<?php if ( $home_hero_tablet_horizontal_display_url ) : ?>
 				<img
+					id="la-home-hero-image-tablet-horizontal"
 					src="<?php echo $home_hero_tablet_horizontal_display_url; ?>"
 					alt=""
 					aria-hidden="true"
@@ -94,6 +109,7 @@ get_header();
 			<?php endif; ?>
 			<?php if ( $home_hero_desktop_display_url ) : ?>
 				<img
+					id="la-home-hero-image-desktop"
 					src="<?php echo $home_hero_desktop_display_url; ?>"
 					alt=""
 					aria-hidden="true"
@@ -153,9 +169,10 @@ get_header();
 			<?php if ( $home_hero_mobile_display_url ) : ?>
 				<div class="la-home-hero-image-mobile-shell md:hidden">
 					<img
-					src="<?php echo $home_hero_mobile_display_url; ?>"
-					alt=""
-					aria-hidden="true"
+						id="la-home-hero-image-mobile"
+						src="<?php echo $home_hero_mobile_display_url; ?>"
+						alt=""
+						aria-hidden="true"
 					class="la-home-hero-image-mobile"
 					loading="eager"
 					fetchpriority="high"
@@ -167,6 +184,7 @@ get_header();
 			<?php if ( $home_hero_tablet_display_url ) : ?>
 				<div class="la-home-hero-image-tablet-shell hidden md:block lg:hidden" aria-hidden="true">
 					<img
+						id="la-home-hero-image-tablet"
 						src="<?php echo $home_hero_tablet_display_url; ?>"
 						alt=""
 						aria-hidden="true"
@@ -177,6 +195,61 @@ get_header();
 					/>
 					<div class="la-home-hero-image-tablet-overlay" aria-hidden="true"></div>
 				</div>
+			<?php endif; ?>
+			<?php if ( count( $home_hero_image_sets ) > 1 && $home_hero_images_json ) : ?>
+				<script>
+					(() => {
+						const heroImages = <?php echo $home_hero_images_json; ?>;
+						if (!Array.isArray(heroImages) || heroImages.length < 2) {
+							return;
+						}
+
+						const storageKey = 'la-home-hero-image-index';
+						const previousIndex = Number.parseInt(sessionStorage.getItem(storageKey) || '', 10);
+						let nextIndex = Math.floor(Math.random() * heroImages.length);
+
+						if (Number.isInteger(previousIndex) && previousIndex === nextIndex) {
+							nextIndex = (nextIndex + 1) % heroImages.length;
+						}
+
+						sessionStorage.setItem(storageKey, String(nextIndex));
+
+						const selected = heroImages[nextIndex];
+						const shell = document.getElementById('la-home-hero-shell');
+
+						if (shell) {
+							if (selected.mobile) {
+								shell.style.setProperty('--la-home-hero-mobile-image', `url("${selected.mobile}")`);
+								shell.style.backgroundImage = `url("${selected.mobile}")`;
+							}
+							if (selected.tablet) {
+								shell.style.setProperty('--la-home-hero-tablet-image', `url("${selected.tablet}")`);
+							}
+							if (selected.tablet_horizontal) {
+								shell.style.setProperty('--la-home-hero-tablet-horizontal-image', `url("${selected.tablet_horizontal}")`);
+							}
+							if (selected.desktop) {
+								shell.style.setProperty('--la-home-hero-desktop-image', `url("${selected.desktop}")`);
+							}
+						}
+
+						const setImageSource = (id, src) => {
+							if (!src) {
+								return;
+							}
+
+							const image = document.getElementById(id);
+							if (image) {
+								image.src = src;
+							}
+						};
+
+						setImageSource('la-home-hero-image-mobile', selected.mobile);
+						setImageSource('la-home-hero-image-tablet', selected.tablet);
+						setImageSource('la-home-hero-image-tablet-horizontal', selected.tablet_horizontal);
+						setImageSource('la-home-hero-image-desktop', selected.desktop);
+					})();
+				</script>
 			<?php endif; ?>
 			<div class="relative bg-brand-3 p-3.5 md:p-5 lg:p-7">
 				<div class="grid gap-3 md:inline-grid md:w-full md:grid-cols-2 md:grid-rows-2 md:gap-3 lg:gap-5 xl:grid-cols-4 xl:grid-rows-1">
