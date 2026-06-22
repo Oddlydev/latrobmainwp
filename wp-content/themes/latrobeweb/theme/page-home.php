@@ -482,7 +482,7 @@ get_header();
 					<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Institution', 'value' => $contact_details['home_contact_section_institution'], 'icon' => latrobeweb_get_icon_markup( 'globe' ) ) ); ?>
 					<?php latrobeweb_component( 'card', array( 'variant' => 'contact', 'label' => 'Location', 'value' => $contact_details['home_contact_section_location'], 'icon' => latrobeweb_get_icon_markup( 'pin' ) ) ); ?>
 				</div>
-				<article class="self-start w-full rounded-xl border border-red-200 bg-white px-6 py-6 shadow-none lg:w-[623px]">
+				<article class="self-start w-full rounded-xl border border-red-200 bg-white px-6 py-6 shadow-none lg:w-[623px] min-[1600px]:min-w-212 min-[1600px]:min-h-70.5">
 					<div class="flex items-center gap-3">
 						<div class="flex shrink-0 items-center justify-center">
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
