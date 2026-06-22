@@ -1264,7 +1264,21 @@ h6 {
     max-width: 860px;
   }
 }
-
+@media (width >= 80rem) {
+  .la-wysiwyg-preview-frame {
+    border-radius: var(--radius-3xl);
+  }
+}
+@media (width >= 80rem) {
+  .la-wysiwyg-preview-frame {
+    background-color: var(--color-gray-200);
+  }
+}
+@media (width >= 80rem) {
+  .la-wysiwyg-preview-frame {
+    padding: calc(var(--spacing) * 5);
+  }
+}
 @media (width >= 64rem) {
   .la-wysiwyg-preview-frame:not(.la-privacy-policy-page) {
     padding: calc(var(--spacing) * 11);
@@ -4329,6 +4343,16 @@ h6 {
 @media (width < 64rem) {
   .max-lg\:px-0 {
     padding-inline: calc(var(--spacing) * 0);
+  }
+}
+@media (width >= 1600px) {
+  .min-\[1600px\]\:min-h-70\.5 {
+    min-height: calc(var(--spacing) * 70.5);
+  }
+}
+@media (width >= 1600px) {
+  .min-\[1600px\]\:min-w-212 {
+    min-width: calc(var(--spacing) * 212);
   }
 }
 @media (width >= 40rem) {
