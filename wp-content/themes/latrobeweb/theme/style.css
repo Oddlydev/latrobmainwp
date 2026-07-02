@@ -1269,11 +1269,11 @@ h6 {
     border-radius: var(--radius-3xl);
   }
 }
-@media (width >= 80rem) {
+/* @media (width >= 80rem) {
   .la-wysiwyg-preview-frame {
     background-color: var(--color-gray-200);
   }
-}
+} */
 @media (width >= 80rem) {
   .la-wysiwyg-preview-frame {
     padding: calc(var(--spacing) * 5);
